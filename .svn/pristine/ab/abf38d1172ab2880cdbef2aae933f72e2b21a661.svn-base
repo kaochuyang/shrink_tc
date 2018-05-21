@@ -1,0 +1,4 @@
+#!/bin/sh
+cp -afr stc_actDny ~ftp
+sync
+

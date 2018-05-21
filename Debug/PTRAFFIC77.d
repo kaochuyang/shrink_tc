@@ -1,0 +1,5 @@
+PTRAFFIC77.d PTRAFFIC77.o: ../PTRAFFIC77.cpp ../PTRAFFIC77.h ../var.h
+
+../PTRAFFIC77.h:
+
+../var.h:

@@ -1,0 +1,5 @@
+PDEVICERTMS.d PDEVICERTMS.o: ../PDEVICERTMS.cpp ../PDEVICERTMS.h ../var.h
+
+../PDEVICERTMS.h:
+
+../var.h:

@@ -1,0 +1,6 @@
+PTRAFFIC87VD.d PTRAFFIC87VD.o: ../PTRAFFIC87VD.cpp ../PTRAFFIC87VD.h \
+  ../var.h
+
+../PTRAFFIC87VD.h:
+
+../var.h:

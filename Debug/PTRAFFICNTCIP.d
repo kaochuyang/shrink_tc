@@ -1,0 +1,6 @@
+PTRAFFICNTCIP.d PTRAFFICNTCIP.o: ../PTRAFFICNTCIP.cpp ../PTRAFFICNTCIP.h \
+  ../var.h
+
+../PTRAFFICNTCIP.h:
+
+../var.h:

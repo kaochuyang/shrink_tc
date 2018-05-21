@@ -1,0 +1,2267 @@
+# depslib dependency file v1.0
+1321845996 source:/home/arwen/桌面/比對TC/stc_actDny/CDataToMessageOK.cpp
+	"CDataToMessageOK.h"
+	"SMEM.h"
+	"CHexToInt.h"
+	<stdio.h>
+	<time.h>
+	<string.h>
+
+1295848462 /home/arwen/桌面/比對TC/stc_actDny/CDataToMessageOK.h
+	"var.h"
+
+1321869213 /home/arwen/桌面/比對TC/stc_actDny/var.h
+	<time.h>
+
+1321868210 /home/arwen/桌面/比對TC/stc_actDny/SMEM.h
+	"var.h"
+	"STORAGE.h"
+	"RS232.h"
+	"UDP.h"
+	"CPEDPUSHBUTTON.h"
+	<pthread.h>
+
+1321868242 /home/arwen/桌面/比對TC/stc_actDny/STORAGE.h
+	"var.h"
+	"IODEVICE.h"
+	<pthread.h>
+	<stdio.h>
+
+1293761418 /home/arwen/桌面/比對TC/stc_actDny/IODEVICE.h
+	"var.h"
+
+1293761428 /home/arwen/桌面/比對TC/stc_actDny/RS232.h
+	"var.h"
+	"IODEVICE.h"
+	<pthread.h>
+
+1293761428 /home/arwen/桌面/比對TC/stc_actDny/UDP.h
+	"var.h"
+	"IODEVICE.h"
+	<sys/socket.h>
+	<netinet/in.h>
+	<netdb.h>
+	<pthread.h>
+
+1321510610 /home/arwen/桌面/比對TC/stc_actDny/CPEDPUSHBUTTON.h
+	"var.h"
+	<pthread.h>
+	<stack>
+	<queue>
+	<deque>
+
+1293761417 /home/arwen/桌面/比對TC/stc_actDny/CHexToInt.h
+
+1293761417 source:/home/arwen/桌面/比對TC/stc_actDny/CHexToInt.cpp
+	"CHexToInt.h"
+	<ctype.h>
+	<stdio.h>
+	"var.h"
+
+1293761417 source:/home/arwen/桌面/比對TC/stc_actDny/CIOCom.cpp
+	"CIOCom.h"
+	<stdio.h>
+	<sys/types.h>
+	<sys/stat.h>
+	<fcntl.h>
+	<unistd.h>
+	<stdlib.h>
+	<strings.h>
+
+1293761417 /home/arwen/桌面/比對TC/stc_actDny/CIOCom.h
+	<termios.h>
+
+1321519417 source:/home/arwen/桌面/比對TC/stc_actDny/CPEDPUSHBUTTON.cpp
+	"CPEDPUSHBUTTON.h"
+	"SMEM.h"
+	"var.h"
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+	"CSTC.h"
+	"CPlanInfo.h"
+	"CPhaseInfo.h"
+	"CSegmentInfo.h"
+
+1293761428 /home/arwen/桌面/比對TC/stc_actDny/WRITEJOB.h
+	"var.h"
+	"JOB.h"
+
+1293761419 /home/arwen/桌面/比對TC/stc_actDny/JOB.h
+	"var.h"
+
+1321846901 /home/arwen/桌面/比對TC/stc_actDny/CSTC.h
+	<fstream>
+	"CReverseTime.h"
+	"CSegmentInfo.h"
+	"CPhaseInfo.h"
+	"CPlanInfo.h"
+	"CIOCom.h"
+	"CPacketCluster.h"
+	"CRTMSDecoder.h"
+	"CRTMSInformation.h"
+	"CTrafficAnalyzer.h"
+
+1293761417 /home/arwen/桌面/比對TC/stc_actDny/CReverseTime.h
+	<pthread.h>
+
+1317350987 /home/arwen/桌面/比對TC/stc_actDny/CSegmentInfo.h
+	<pthread.h>
+
+1293761417 /home/arwen/桌面/比對TC/stc_actDny/CPhaseInfo.h
+	<pthread.h>
+
+1317956784 /home/arwen/桌面/比對TC/stc_actDny/CPlanInfo.h
+	<pthread.h>
+
+1293761417 /home/arwen/桌面/比對TC/stc_actDny/CPacketCluster.h
+
+1293761417 /home/arwen/桌面/比對TC/stc_actDny/CRTMSDecoder.h
+	"CRTMSInformation.h"
+	"CPacketCluster.h"
+
+1293761417 /home/arwen/桌面/比對TC/stc_actDny/CRTMSInformation.h
+	"CTarget.h"
+
+1293761423 /home/arwen/桌面/比對TC/stc_actDny/CTarget.h
+
+1293761423 /home/arwen/桌面/比對TC/stc_actDny/CTrafficAnalyzer.h
+	"CTarget.h"
+
+1293761417 source:/home/arwen/桌面/比對TC/stc_actDny/CPacketCluster.cpp
+	"CPacketCluster.h"
+
+1293761417 source:/home/arwen/桌面/比對TC/stc_actDny/CPhaseInfo.cpp
+	"CPhaseInfo.h"
+	<stdio.h>
+	<stdlib.h>
+
+1317956780 source:/home/arwen/桌面/比對TC/stc_actDny/CPlanInfo.cpp
+	"CPlanInfo.h"
+	<stdio.h>
+	<stdlib.h>
+
+1320282912 source:/home/arwen/桌面/比對TC/stc_actDny/CREATEXML.cpp
+	"CREATEXML.h"
+	"CSTC.h"
+	"CSTORINI.h"
+	"SMEM.h"
+
+1320212179 /home/arwen/桌面/比對TC/stc_actDny/CREATEXML.h
+	"var.h"
+
+1319073896 /home/arwen/桌面/比對TC/stc_actDny/CSTORINI.h
+	"inifile.h"
+
+1319074602 /home/arwen/桌面/比對TC/stc_actDny/inifile.h
+	<map>
+	<string>
+	<string.h>
+	<wchar.h>
+
+1293761417 source:/home/arwen/桌面/比對TC/stc_actDny/CRTMSDecoder.cpp
+	"CRTMSDecoder.h"
+	<string.h>
+	<stdio.h>
+
+1293761417 source:/home/arwen/桌面/比對TC/stc_actDny/CRTMSInformation.cpp
+	"CRTMSInformation.h"
+	<stdio.h>
+
+1293761417 source:/home/arwen/桌面/比對TC/stc_actDny/CReverseTime.cpp
+	"CReverseTime.h"
+	<stdio.h>
+	<stdlib.h>
+
+1321846841 source:/home/arwen/桌面/比對TC/stc_actDny/CSTC.cpp
+	"CSTC.h"
+	"light.h"
+	"CTools.h"
+	"SMEM.h"
+	"WRITEJOB.h"
+	"CDataToMessageOK.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<unistd.h>
+	<pthread.h>
+	<signal.h>
+	<time.h>
+	<mntent.h>
+	<sstream>
+	<iomanip>
+	"screenCurrentLightStatus.h"
+	"screenStrategy.h"
+	"CTIMER.h"
+	"SCREENHWReset.h"
+	"screenRedCountHWCheckSel.h"
+	"CSTORINI.h"
+	"CREATEXML.h"
+
+1293761419 /home/arwen/桌面/比對TC/stc_actDny/light.h
+
+1293761423 /home/arwen/桌面/比對TC/stc_actDny/CTools.h
+
+1293761428 /home/arwen/桌面/比對TC/stc_actDny/screenCurrentLightStatus.h
+	"SCREEN.h"
+
+1293761428 /home/arwen/桌面/比對TC/stc_actDny/SCREEN.h
+	"var.h"
+
+1293761419 /home/arwen/桌面/比對TC/stc_actDny/screenStrategy.h
+	"SCREEN.h"
+
+1321847099 /home/arwen/桌面/比對TC/stc_actDny/CTIMER.h
+	<pthread.h>
+
+1293761419 /home/arwen/桌面/比對TC/stc_actDny/SCREENHWReset.h
+	"SCREEN.h"
+	"var.h"
+
+1293761418 /home/arwen/桌面/比對TC/stc_actDny/screenRedCountHWCheckSel.h
+	"SCREEN.h"
+
+1319073879 source:/home/arwen/桌面/比對TC/stc_actDny/CSTORINI.cpp
+	"CSTORINI.h"
+	<iostream>
+	<string>
+	<sstream>
+	<ctype.h>
+	<stdio.h>
+	"var.h"
+
+1319078788 source:/home/arwen/桌面/比對TC/stc_actDny/CSegmentInfo.cpp
+	"CSegmentInfo.h"
+	<stdio.h>
+	<stdlib.h>
+
+1321847079 source:/home/arwen/桌面/比對TC/stc_actDny/CTIMER.cpp
+	"CTIMER.h"
+	"var.h"
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+	"SMEM.h"
+	"DIGITALIO.h"
+	"SCREENMain.h"
+	"SCREENCtlSetup.h"
+	"SCREENModifyDT.h"
+	"SCREENNone.h"
+	"SCREENOnline.h"
+	"SCREENCommStat.h"
+	"SCREENTotalRun.h"
+	"screenCurrentLightStatus.h"
+	"screenChainStatus.h"
+	"SCREENOperStat.h"
+	"screenActuateArwenStatus.h"
+	"screenActuateArwenManyStatus.h"
+	"screenReverseMenu.h"
+	"SCREENControlStrategyMenu.h"
+	"ScreenActuateArwenFlashManyStatus.h"
+	"SCREENPedSwitchStatus.h"
+	"screenActuateArwenVDInfo.h"
+	<stdio.h>
+	<sys/types.h>
+	<unistd.h>
+	<stdlib.h>
+	<pthread.h>
+	<signal.h>
+	<time.h>
+	"CSTC.h"
+
+1293761427 /home/arwen/桌面/比對TC/stc_actDny/DIGITALIO.h
+	"var.h"
+	"pthread.h"
+
+1293761418 /home/arwen/桌面/比對TC/stc_actDny/SCREENMain.h
+	"SCREEN.h"
+
+1293761427 /home/arwen/桌面/比對TC/stc_actDny/SCREENCtlSetup.h
+	"SCREEN.h"
+
+1293761422 /home/arwen/桌面/比對TC/stc_actDny/SCREENModifyDT.h
+	"SCREEN.h"
+
+1293761422 /home/arwen/桌面/比對TC/stc_actDny/SCREENNone.h
+	"SCREEN.h"
+	"var.h"
+
+1293761422 /home/arwen/桌面/比對TC/stc_actDny/SCREENOnline.h
+	"SCREEN.h"
+	"var.h"
+
+1293761419 /home/arwen/桌面/比對TC/stc_actDny/SCREENCommStat.h
+	"SCREEN.h"
+
+1293761419 /home/arwen/桌面/比對TC/stc_actDny/SCREENTotalRun.h
+	"SCREEN.h"
+
+1293761419 /home/arwen/桌面/比對TC/stc_actDny/screenChainStatus.h
+	"SCREEN.h"
+
+1293761422 /home/arwen/桌面/比對TC/stc_actDny/SCREENOperStat.h
+	"SCREEN.h"
+
+1317000217 /home/arwen/桌面/比對TC/stc_actDny/screenActuateArwenStatus.h
+	"SCREEN.h"
+
+1293761428 /home/arwen/桌面/比對TC/stc_actDny/screenActuateArwenManyStatus.h
+	"SCREEN.h"
+
+1293761422 /home/arwen/桌面/比對TC/stc_actDny/screenReverseMenu.h
+	"SCREEN.h"
+	"CReverseTime.h"
+
+1293761419 /home/arwen/桌面/比對TC/stc_actDny/SCREENControlStrategyMenu.h
+	"SCREEN.h"
+	"var.h"
+
+1293761428 /home/arwen/桌面/比對TC/stc_actDny/ScreenActuateArwenFlashManyStatus.h
+	"SCREEN.h"
+
+1321518263 /home/arwen/桌面/比對TC/stc_actDny/SCREENPedSwitchStatus.h
+	"SCREEN.h"
+
+1317952306 /home/arwen/桌面/比對TC/stc_actDny/screenActuateArwenVDInfo.h
+	"SCREEN.h"
+
+1293761423 source:/home/arwen/桌面/比對TC/stc_actDny/CTools.cpp
+	<stdio.h>
+	"CTools.h"
+
+1293761423 source:/home/arwen/桌面/比對TC/stc_actDny/CTrafficAnalyzer.cpp
+	"CTrafficAnalyzer.h"
+	<stdio.h>
+
+1293761417 source:/home/arwen/桌面/比對TC/stc_actDny/ConfigFile.cpp
+	"ConfigFile.h"
+
+1293761417 /home/arwen/桌面/比對TC/stc_actDny/ConfigFile.h
+	<string>
+	<map>
+	<iostream>
+	<fstream>
+	<sstream>
+	<deque>
+
+1293761427 source:/home/arwen/桌面/比對TC/stc_actDny/DIGITALIO.cpp
+	"DIGITALIO.h"
+	"SMEM.h"
+	<stdio.h>
+	<sys/perm.h>
+	<sys/io.h>
+	<stdio.h>
+
+1293761427 source:/home/arwen/桌面/比對TC/stc_actDny/DYNCTLJOB.cpp
+	"DYNCTLJOB.h"
+	"PROTOCOL.h"
+	"SMEM.h"
+	"WRITEJOB.h"
+
+1293761427 /home/arwen/桌面/比對TC/stc_actDny/DYNCTLJOB.h
+	"var.h"
+	"JOB.h"
+
+1293761428 /home/arwen/桌面/比對TC/stc_actDny/PROTOCOL.h
+	"var.h"
+	"PTRAFFIC.h"
+	"PDEVICE.h"
+
+1320128973 /home/arwen/桌面/比對TC/stc_actDny/PTRAFFIC.h
+	"var.h"
+	"PTRAFFIC77.h"
+	"PTRAFFIC87.h"
+	"PTRAFFIC92.h"
+	"PTRAFFICNTCIP.h"
+	"PTRAFFICCCJ.h"
+	"PTRAFFICREVSYNC.h"
+	"PTRAFFICAMEGIDS.h"
+	"PTRAFFIC92VD.h"
+	"PTRAFFIC92WEB.h"
+
+1293761428 /home/arwen/桌面/比對TC/stc_actDny/PTRAFFIC77.h
+	"var.h"
+
+1293761428 /home/arwen/桌面/比對TC/stc_actDny/PTRAFFIC87.h
+	"var.h"
+	"PTRAFFIC87COMM.h"
+	"PTRAFFIC87TC.h"
+	"PTRAFFIC87CMS.h"
+	"PTRAFFIC87VD.h"
+
+1293761428 /home/arwen/桌面/比對TC/stc_actDny/PTRAFFIC87COMM.h
+	"var.h"
+
+1293761428 /home/arwen/桌面/比對TC/stc_actDny/PTRAFFIC87TC.h
+	"var.h"
+
+1293761428 /home/arwen/桌面/比對TC/stc_actDny/PTRAFFIC87CMS.h
+	"var.h"
+
+1293761418 /home/arwen/桌面/比對TC/stc_actDny/PTRAFFIC87VD.h
+	"var.h"
+
+1293761418 /home/arwen/桌面/比對TC/stc_actDny/PTRAFFIC92.h
+	"var.h"
+	"PTRAFFIC92COMM.h"
+	"PTRAFFIC92TC.h"
+	"PTRAFFIC92CMS.h"
+	"PTRAFFIC92VD.h"
+	"PTRAFFIC92OTHER.h"
+
+1293761418 /home/arwen/桌面/比對TC/stc_actDny/PTRAFFIC92COMM.h
+	"var.h"
+	"SMEM.h"
+
+1293761418 /home/arwen/桌面/比對TC/stc_actDny/PTRAFFIC92TC.h
+	"var.h"
+	"SMEM.h"
+
+1293761418 /home/arwen/桌面/比對TC/stc_actDny/PTRAFFIC92CMS.h
+	"var.h"
+	"SMEM.h"
+
+1317951957 /home/arwen/桌面/比對TC/stc_actDny/PTRAFFIC92VD.h
+	"var.h"
+	"SMEM.h"
+
+1293761418 /home/arwen/桌面/比對TC/stc_actDny/PTRAFFIC92OTHER.h
+	"var.h"
+	"SMEM.h"
+
+1293761428 /home/arwen/桌面/比對TC/stc_actDny/PTRAFFICNTCIP.h
+	"var.h"
+
+1321867524 /home/arwen/桌面/比對TC/stc_actDny/PTRAFFICCCJ.h
+	"var.h"
+	"SMEM.h"
+
+1293761428 /home/arwen/桌面/比對TC/stc_actDny/PTRAFFICREVSYNC.h
+	"var.h"
+
+1293761418 /home/arwen/桌面/比對TC/stc_actDny/PTRAFFICAMEGIDS.h
+	"var.h"
+	"SMEM.h"
+
+1320129617 /home/arwen/桌面/比對TC/stc_actDny/PTRAFFIC92WEB.h
+	"var.h"
+	"SMEM.h"
+
+1296023771 /home/arwen/桌面/比對TC/stc_actDny/PDEVICE.h
+	"var.h"
+	"PDEVICESS.h"
+	"PDEVICERTMS.h"
+	"PDEVICEKEYPAD.h"
+	"PDEVICETRAFFICLIGHT.h"
+	"PDEVICEREVMANUALPAD.h"
+	"PDEVICEPEDPUSHBUTTON.h"
+
+1293761428 /home/arwen/桌面/比對TC/stc_actDny/PDEVICESS.h
+	"var.h"
+
+1293761428 /home/arwen/桌面/比對TC/stc_actDny/PDEVICERTMS.h
+	"var.h"
+
+1293761428 /home/arwen/桌面/比對TC/stc_actDny/PDEVICEKEYPAD.h
+	"var.h"
+
+1321866647 /home/arwen/桌面/比對TC/stc_actDny/PDEVICETRAFFICLIGHT.h
+	"var.h"
+
+1293761428 /home/arwen/桌面/比對TC/stc_actDny/PDEVICEREVMANUALPAD.h
+	"var.h"
+
+1321508116 /home/arwen/桌面/比對TC/stc_actDny/PDEVICEPEDPUSHBUTTON.h
+	"var.h"
+
+1293761427 source:/home/arwen/桌面/比對TC/stc_actDny/IODEVICE.cpp
+	"IODEVICE.h"
+
+1293761419 source:/home/arwen/桌面/比對TC/stc_actDny/JOB.cpp
+	"JOB.h"
+
+1293761419 source:/home/arwen/桌面/比對TC/stc_actDny/LCD240x128.cpp
+	"LCD240x128.h"
+	<stdio.h>
+	<sys/perm.h>
+	<sys/io.h>
+
+1293761419 /home/arwen/桌面/比對TC/stc_actDny/LCD240x128.h
+	"pthread.h"
+
+1293761421 source:/home/arwen/桌面/比對TC/stc_actDny/PARSE.cpp
+	"PARSE.h"
+
+1293761421 /home/arwen/桌面/比對TC/stc_actDny/PARSE.h
+	"var.h"
+
+1293761421 source:/home/arwen/桌面/比對TC/stc_actDny/PARSENMEA.cpp
+	"PARSENMEA.h"
+	"SMEM.h"
+	"CTIMER.h"
+	"CSTC.h"
+	"SCREENOperStat.h"
+	"CHexToInt.h"
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<unistd.h>
+
+1293761422 /home/arwen/桌面/比對TC/stc_actDny/PARSENMEA.h
+	"var.h"
+	"PARSE.h"
+
+1293761422 source:/home/arwen/桌面/比對TC/stc_actDny/PARSERTMS.cpp
+	"PARSERTMS.h"
+
+1293761422 /home/arwen/桌面/比對TC/stc_actDny/PARSERTMS.h
+	"var.h"
+	"PARSE.h"
+
+1293761422 source:/home/arwen/桌面/比對TC/stc_actDny/PARSESS.cpp
+	"PARSESS.h"
+	<stdio.h>
+	<string.h>
+
+1293761422 /home/arwen/桌面/比對TC/stc_actDny/PARSESS.h
+	"var.h"
+	"CHexToInt.h"
+
+1321847363 source:/home/arwen/桌面/比對TC/stc_actDny/PARSETRAFFIC.cpp
+	"PARSETRAFFIC.h"
+	"SMEM.h"
+	<stdio.h>
+	<string.h>
+	"screenCurrentCommPacket.h"
+
+1321847380 /home/arwen/桌面/比對TC/stc_actDny/PARSETRAFFIC.h
+	"var.h"
+	"PARSE.h"
+
+1293761428 /home/arwen/桌面/比對TC/stc_actDny/screenCurrentCommPacket.h
+	"SCREEN.h"
+
+1293761422 source:/home/arwen/桌面/比對TC/stc_actDny/PARSEV3.cpp
+	"PARSEV3.h"
+	"SMEM.h"
+	"WRITEJOB.h"
+	<stdio.h>
+	<string.h>
+
+1293761422 /home/arwen/桌面/比對TC/stc_actDny/PARSEV3.h
+	"var.h"
+	"PARSE.h"
+
+1296023645 source:/home/arwen/桌面/比對TC/stc_actDny/PDEVICE.cpp
+	"PDEVICE.h"
+
+1321521769 source:/home/arwen/桌面/比對TC/stc_actDny/PDEVICEPEDPUSHBUTTON.cpp
+	"PDEVICEPEDPUSHBUTTON.h"
+	<stdio.h>
+	"SMEM.h"
+	"ConfigFile.h"
+	"CDataToMessageOK.h"
+
+1293761428 source:/home/arwen/桌面/比對TC/stc_actDny/PDEVICEREVMANUALPAD.cpp
+	"PDEVICEREVMANUALPAD.h"
+	"SMEM.h"
+	"WRITEJOB.h"
+	"CDataToMessageOK.h"
+	"CSTC.h"
+	"unistd.h"
+	<stdio.h>
+
+1293761428 source:/home/arwen/桌面/比對TC/stc_actDny/PDEVICERTMS.cpp
+	"PDEVICERTMS.h"
+
+1293761428 source:/home/arwen/桌面/比對TC/stc_actDny/PDEVICESS.cpp
+	"PDEVICESS.h"
+	"CHexToInt.h"
+	"CDataToMessageOK.h"
+	"SMEM.h"
+	"WRITEJOB.h"
+	<string.h>
+
+1321866660 source:/home/arwen/桌面/比對TC/stc_actDny/PDEVICETRAFFICLIGHT.cpp
+	"PDEVICETRAFFICLIGHT.h"
+	"SMEM.h"
+	"WRITEJOB.h"
+	"CDataToMessageOK.h"
+	"CSTC.h"
+	"CSTORINI.h"
+	<stdio.h>
+
+1320128689 source:/home/arwen/桌面/比對TC/stc_actDny/PROTOCOL.cpp
+	"PROTOCOL.h"
+
+1320137714 source:/home/arwen/桌面/比對TC/stc_actDny/PTRAFFIC.cpp
+	"PTRAFFIC.h"
+
+1293761428 source:/home/arwen/桌面/比對TC/stc_actDny/PTRAFFIC77.cpp
+	"PTRAFFIC77.h"
+
+1293761428 source:/home/arwen/桌面/比對TC/stc_actDny/PTRAFFIC87.cpp
+	"PTRAFFIC87.h"
+
+1293761428 source:/home/arwen/桌面/比對TC/stc_actDny/PTRAFFIC87CMS.cpp
+	"PTRAFFIC87CMS.h"
+
+1293761428 source:/home/arwen/桌面/比對TC/stc_actDny/PTRAFFIC87COMM.cpp
+	"PTRAFFIC87COMM.h"
+
+1293761428 source:/home/arwen/桌面/比對TC/stc_actDny/PTRAFFIC87TC.cpp
+	"PTRAFFIC87TC.h"
+
+1293761419 source:/home/arwen/桌面/比對TC/stc_actDny/PTRAFFIC87VD.cpp
+	"PTRAFFIC87VD.h"
+
+1293761418 source:/home/arwen/桌面/比對TC/stc_actDny/PTRAFFIC92.cpp
+	"PTRAFFIC92.h"
+	"WRITEJOB.h"
+	"SMEM.h"
+
+1293761418 source:/home/arwen/桌面/比對TC/stc_actDny/PTRAFFIC92CMS.cpp
+	"PTRAFFIC92CMS.h"
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+	"CTIMER.h"
+	<stdio.h>
+	<stdlib.h>
+	<error.h>
+
+1321866846 source:/home/arwen/桌面/比對TC/stc_actDny/PTRAFFIC92COMM.cpp
+	"PTRAFFIC92COMM.h"
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+	"CTIMER.h"
+	"DIGITALIO.h"
+	"SCREENOnline.h"
+	"SCREENHWReset.h"
+	"CHexToInt.h"
+	"CSTC.h"
+	"READJOB.h"
+	<unistd.h>
+	<stdio.h>
+	<stdlib.h>
+	<error.h>
+
+1293761428 /home/arwen/桌面/比對TC/stc_actDny/READJOB.h
+	"var.h"
+	"JOB.h"
+
+1293761418 source:/home/arwen/桌面/比對TC/stc_actDny/PTRAFFIC92OTHER.cpp
+	"PTRAFFIC92OTHER.h"
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+	"CTIMER.h"
+	<stdio.h>
+	<stdlib.h>
+	<error.h>
+
+1321867032 source:/home/arwen/桌面/比對TC/stc_actDny/PTRAFFIC92TC.cpp
+	"PTRAFFIC92TC.h"
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+	"CTIMER.h"
+	"DIGITALIO.h"
+	"CHexToInt.h"
+	"CSTC.h"
+	"CTools.h"
+	"SCREENLast92TCPlanSegmentUpdate.h"
+	<unistd.h>
+	<stdio.h>
+	<stdlib.h>
+	<error.h>
+	"CTIMER.h"
+
+1293761417 /home/arwen/桌面/比對TC/stc_actDny/SCREENLast92TCPlanSegmentUpdate.h
+	"SCREEN.h"
+
+1321522960 source:/home/arwen/桌面/比對TC/stc_actDny/PTRAFFIC92VD.cpp
+	"PTRAFFIC92VD.h"
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+	"CTIMER.h"
+	<stdio.h>
+	<stdlib.h>
+	<error.h>
+	"screenActuateArwenVDInfo.h"
+
+1320199586 source:/home/arwen/桌面/比對TC/stc_actDny/PTRAFFIC92WEB.cpp
+	"PTRAFFIC92WEB.h"
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+	"CSTC.h"
+	"SCREENLast92TCPlanSegmentUpdate.h"
+
+1293761418 source:/home/arwen/桌面/比對TC/stc_actDny/PTRAFFICAMEGIDS.cpp
+	"PTRAFFICAMEGIDS.h"
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+	"CTIMER.h"
+	"DIGITALIO.h"
+	"CHexToInt.h"
+	"CSTC.h"
+	"CTools.h"
+	"SCREENLast92TCPlanSegmentUpdate.h"
+	<unistd.h>
+	<stdio.h>
+	<stdlib.h>
+	<error.h>
+	"CTIMER.h"
+
+1321867514 source:/home/arwen/桌面/比對TC/stc_actDny/PTRAFFICCCJ.cpp
+	"PTRAFFICCCJ.h"
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+	"CTIMER.h"
+	"DIGITALIO.h"
+	"CHexToInt.h"
+	"CSTC.h"
+	"CTools.h"
+	"SCREENTFDStatus.h"
+	<unistd.h>
+	<stdio.h>
+	<stdlib.h>
+	<error.h>
+	"SCREENLast92TCPlanSegmentUpdate.h"
+	"screenActuateArwenStatus.h"
+	"SCREENMain.h"
+	"SCREENCtlSetup.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"CTIMER.h"
+	"CPlanInfo.h"
+	"CPhaseInfo.h"
+	"CSegmentInfo.h"
+
+1293761419 /home/arwen/桌面/比對TC/stc_actDny/SCREENTFDStatus.h
+	"SCREEN.h"
+	"var.h"
+
+1293761428 source:/home/arwen/桌面/比對TC/stc_actDny/PTRAFFICNTCIP.cpp
+	"PTRAFFICNTCIP.h"
+
+1293761428 source:/home/arwen/桌面/比對TC/stc_actDny/PTRAFFICREVSYNC.cpp
+	"PTRAFFICREVSYNC.h"
+	"SMEM.h"
+	"WRITEJOB.h"
+	"CDataToMessageOK.h"
+	"CSTC.h"
+	"unistd.h"
+	<stdio.h>
+	<math.h>
+
+1320136926 source:/home/arwen/桌面/比對TC/stc_actDny/READJOB.cpp
+	"READJOB.h"
+	"PROTOCOL.h"
+	"SMEM.h"
+	"WRITEJOB.h"
+	"screenRedCountHWCheck.h"
+
+1293761418 /home/arwen/桌面/比對TC/stc_actDny/screenRedCountHWCheck.h
+	"SCREEN.h"
+
+1321867547 source:/home/arwen/桌面/比對TC/stc_actDny/RS232.cpp
+	"RS232.h"
+	<stdio.h>
+	<fcntl.h>
+	<termios.h>
+	<unistd.h>
+	<string.h>
+
+1293761428 source:/home/arwen/桌面/比對TC/stc_actDny/SCREEN.cpp
+	"SCREEN.h"
+	"LCD240x128.h"
+	<stdio.h>
+	<string.h>
+
+1293761428 source:/home/arwen/桌面/比對TC/stc_actDny/SCREENABOErr.cpp
+	"SCREENABOErr.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"SCREENModifyDT.h"
+	"SCREENHWCycle.h"
+	"SCREENModifyPWD.h"
+	"SCREENDBSetup.h"
+	"SCREENSendCycle.h"
+	"SCREENMain.h"
+	"SCREENCtlSetup.h"
+	<stdio.h>
+
+1293761428 /home/arwen/桌面/比對TC/stc_actDny/SCREENABOErr.h
+	"SCREEN.h"
+	"var.h"
+
+1293761428 /home/arwen/桌面/比對TC/stc_actDny/SCREENHWCycle.h
+	"SCREEN.h"
+
+1293761422 /home/arwen/桌面/比對TC/stc_actDny/SCREENModifyPWD.h
+	"SCREEN.h"
+
+1293761428 /home/arwen/桌面/比對TC/stc_actDny/SCREENDBSetup.h
+	"SCREEN.h"
+
+1293761422 /home/arwen/桌面/比對TC/stc_actDny/SCREENSendCycle.h
+	"SCREEN.h"
+
+1298527695 source:/home/arwen/桌面/比對TC/stc_actDny/SCREENActuateArwenLongGreenStatus.cpp
+	"SCREENActuateArwenLongGreenStatus.h"
+
+1298527679 /home/arwen/桌面/比對TC/stc_actDny/SCREENActuateArwenLongGreenStatus.h
+	"SCREEN.h"
+
+1316681575 source:/home/arwen/桌面/比對TC/stc_actDny/SCREENActuateStrategyMenu.cpp
+	"SCREENActuateStrategyMenu.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"screenRunTableList.h"
+	"screenSegtypeMenu.h"
+	"screenVDPhaseMapTable.h"
+	"screenVDActPhaseEdit.h"
+	"screenFlashMode.h"
+	"screenPlan.h"
+	"SCREENControlStrategyMenu.h"
+	"CSTC.h"
+	<stdio.h>
+	"SMEM.h"
+	<time.h>
+	"ConfigFile.h"
+
+1293761419 /home/arwen/桌面/比對TC/stc_actDny/SCREENActuateStrategyMenu.h
+	"SCREEN.h"
+	"var.h"
+
+1293761422 /home/arwen/桌面/比對TC/stc_actDny/screenRunTableList.h
+	"SCREEN.h"
+
+1293761422 /home/arwen/桌面/比對TC/stc_actDny/screenSegtypeMenu.h
+	"SCREEN.h"
+
+1293761419 /home/arwen/桌面/比對TC/stc_actDny/screenVDPhaseMapTable.h
+	"SCREEN.h"
+	"CSegmentInfo.h"
+
+1316685501 /home/arwen/桌面/比對TC/stc_actDny/screenVDActPhaseEdit.h
+	"SCREEN.h"
+
+1313464568 /home/arwen/桌面/比對TC/stc_actDny/screenFlashMode.h
+	"SCREEN.h"
+	<stdio.h>
+	<string.h>
+	"ConfigFile.h"
+
+1293761422 /home/arwen/桌面/比對TC/stc_actDny/screenPlan.h
+	"SCREEN.h"
+
+1293761419 source:/home/arwen/桌面/比對TC/stc_actDny/SCREENCmdSet.cpp
+	"SCREENCmdSet.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"SCREENMain.h"
+	"SCREENCtlSetup.h"
+	"SCREENFWVerDT.h"
+	"SCREENLockdb.h"
+	<stdio.h>
+
+1293761419 /home/arwen/桌面/比對TC/stc_actDny/SCREENCmdSet.h
+	"SCREEN.h"
+	"var.h"
+
+1293761428 /home/arwen/桌面/比對TC/stc_actDny/SCREENFWVerDT.h
+	"SCREEN.h"
+	"var.h"
+
+1293761418 /home/arwen/桌面/比對TC/stc_actDny/SCREENLockdb.h
+	"SCREEN.h"
+	"var.h"
+
+1293761419 source:/home/arwen/桌面/比對TC/stc_actDny/SCREENCommStat.cpp
+	"SCREENCommStat.h"
+	"SCREENMain.h"
+	"SCREENSystemInfoMenu.h"
+	"SCREENHWReset.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"DIGITALIO.h"
+	<unistd.h>
+	<stdio.h>
+	<stdlib.h>
+	<error.h>
+	"CSTC.h"
+	"WRITEJOB.h"
+
+1293761419 /home/arwen/桌面/比對TC/stc_actDny/SCREENSystemInfoMenu.h
+	"SCREEN.h"
+	"var.h"
+
+1293761419 source:/home/arwen/桌面/比對TC/stc_actDny/SCREENControlStrategyMenu.cpp
+	"SCREENControlStrategyMenu.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"screenRunTableList.h"
+	"screenSegtypeMenu.h"
+	"SCREENActuateStrategyMenu.h"
+	"screenPlan.h"
+	"CSTC.h"
+	<stdio.h>
+	"SMEM.h"
+	<time.h>
+
+1293761419 source:/home/arwen/桌面/比對TC/stc_actDny/SCREENCtlNo.cpp
+	"SCREENCtlNo.h"
+	"SCREENMain.h"
+	"SCREENCtlSetup.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"SCREENABOErr.h"
+	"SCREENLcnEncode.h"
+
+1293761427 /home/arwen/桌面/比對TC/stc_actDny/SCREENCtlNo.h
+	"SCREEN.h"
+
+1293761418 /home/arwen/桌面/比對TC/stc_actDny/SCREENLcnEncode.h
+	"SCREEN.h"
+
+1295839583 source:/home/arwen/桌面/比對TC/stc_actDny/SCREENCtlSetup.cpp
+	"SCREENCtlSetup.h"
+	"SCREENMain.h"
+	"SCREENCtlNo.h"
+	"SCREENLastDown.h"
+	"SCREENModifyDT.h"
+	"SCREENFWVerDT.h"
+	"SCREENHWCycle.h"
+	"SCREENModifyPWD.h"
+	"SCREENDBSetup.h"
+	"SCREENOperStat.h"
+	"SCREENOperMode.h"
+	"SCREENCommStat.h"
+	"SCREENTotalRun.h"
+	"SCREENSendCycle.h"
+	"screenRedCountMenu.h"
+	"screenActuateEdit.h"
+	"screenDirLightBoardMappingMenu.h"
+	"SCREENUpdateDB.h"
+	"screenCurrentCommPacket.h"
+	"SCREENV3Related.h"
+	"screenPassModeSet.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	<time.h>
+
+1293761418 /home/arwen/桌面/比對TC/stc_actDny/SCREENLastDown.h
+	"SCREEN.h"
+
+1293761422 /home/arwen/桌面/比對TC/stc_actDny/SCREENOperMode.h
+	"SCREEN.h"
+
+1293761419 /home/arwen/桌面/比對TC/stc_actDny/screenRedCountMenu.h
+	"SCREEN.h"
+
+1293761419 /home/arwen/桌面/比對TC/stc_actDny/screenActuateEdit.h
+	"SCREEN.h"
+
+1293761428 /home/arwen/桌面/比對TC/stc_actDny/screenDirLightBoardMappingMenu.h
+	"SCREEN.h"
+
+1293761419 /home/arwen/桌面/比對TC/stc_actDny/SCREENUpdateDB.h
+	"SCREEN.h"
+
+1293761419 /home/arwen/桌面/比對TC/stc_actDny/SCREENV3Related.h
+	"SCREEN.h"
+	"var.h"
+
+1293761422 /home/arwen/桌面/比對TC/stc_actDny/screenPassModeSet.h
+	"SCREEN.h"
+
+1293761428 source:/home/arwen/桌面/比對TC/stc_actDny/SCREENDBSetup.cpp
+	"SCREENDBSetup.h"
+	"SCREENMain.h"
+	"SCREENLockdb.h"
+	"SCREENABOErr.h"
+	"SCREENV3Related.h"
+	"LCD240x128.h"
+	"SMEM.h"
+
+1297667880 source:/home/arwen/桌面/比對TC/stc_actDny/SCREENDirMap.cpp
+	"SCREENDirMap.h"
+	"SCREENMain.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+	"screenDirLightBoardMappingMenu.h"
+	"SCREENCtlSetup.h"
+
+1293761428 /home/arwen/桌面/比對TC/stc_actDny/SCREENDirMap.h
+	"SCREEN.h"
+
+1293761428 source:/home/arwen/桌面/比對TC/stc_actDny/SCREENFWVerDT.cpp
+	"SCREENFWVerDT.h"
+	"SCREENMain.h"
+	"SCREENSystemInfoMenu.h"
+	"SCREENCmdSet.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"stdlib.h"
+
+1293761428 source:/home/arwen/桌面/比對TC/stc_actDny/SCREENHWCycle.cpp
+	"SCREENHWCycle.h"
+	"SCREENMain.h"
+	"SCREENV3Related.h"
+	"SCREENLockdb.h"
+	"SCREENABOErr.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+
+1293761428 source:/home/arwen/桌面/比對TC/stc_actDny/SCREENHWReset.cpp
+	"SCREENHWReset.h"
+	"LCD240x128.h"
+	"SMEM.h"
+
+1293761417 source:/home/arwen/桌面/比對TC/stc_actDny/SCREENLast92TCPlanSegmentUpdate.cpp
+	"SCREENLast92TCPlanSegmentUpdate.h"
+	"SCREENMain.h"
+	"SCREENCtlSetup.h"
+	"LCD240x128.h"
+	"SMEM.h"
+
+1293761417 source:/home/arwen/桌面/比對TC/stc_actDny/SCREENLastDown.cpp
+	"SCREENLastDown.h"
+	"SCREENMain.h"
+	"SCREENSystemInfoMenu.h"
+	"LCD240x128.h"
+	"SMEM.h"
+
+1293761418 source:/home/arwen/桌面/比對TC/stc_actDny/SCREENLcnEncode.cpp
+	"SCREENLcnEncode.h"
+	"SCREENMain.h"
+	"SCREENCtlSetup.h"
+	"SCREENCtlNo.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"SCREENLockdb.h"
+
+1297667931 source:/home/arwen/桌面/比對TC/stc_actDny/SCREENLightBoardMap.cpp
+	"SCREENLightBoardMap.h"
+	"screenDirLightBoardMappingMenu.h"
+	"SCREENMain.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+	"SCREENCtlSetup.h"
+
+1293761418 /home/arwen/桌面/比對TC/stc_actDny/SCREENLightBoardMap.h
+	"SCREEN.h"
+
+1293761418 source:/home/arwen/桌面/比對TC/stc_actDny/SCREENLockdb.cpp
+	"SCREENLockdb.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"SCREENModifyDT.h"
+	"SCREENHWCycle.h"
+	"SCREENModifyPWD.h"
+	"SCREENDBSetup.h"
+	"SCREENSendCycle.h"
+	"SCREENCmdSet.h"
+	"SCREENLcnEncode.h"
+	"SCREENMain.h"
+	<stdio.h>
+
+1293761418 source:/home/arwen/桌面/比對TC/stc_actDny/SCREENLogin.cpp
+	<string.h>
+	<stdlib.h>
+	"SCREENLogin.h"
+	"SCREENLoginErr.h"
+	"SCREENLogo.h"
+	"SCREENOnline.h"
+	"SCREENOffline.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"SCREENMain.h"
+
+1293761418 /home/arwen/桌面/比對TC/stc_actDny/SCREENLogin.h
+	"SCREEN.h"
+
+1293761418 /home/arwen/桌面/比對TC/stc_actDny/SCREENLoginErr.h
+	"SCREEN.h"
+
+1293761418 /home/arwen/桌面/比對TC/stc_actDny/SCREENLogo.h
+	"SCREEN.h"
+	"var.h"
+
+1293761422 /home/arwen/桌面/比對TC/stc_actDny/SCREENOffline.h
+	"SCREEN.h"
+	"var.h"
+
+1293761418 source:/home/arwen/桌面/比對TC/stc_actDny/SCREENLoginErr.cpp
+	"SCREENLoginErr.h"
+	"SCREENLogo.h"
+	"SCREENLogin.h"
+	"LCD240x128.h"
+	"SMEM.h"
+
+1293761418 source:/home/arwen/桌面/比對TC/stc_actDny/SCREENLogo.cpp
+	"SCREENLogo.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"SCREENLogin.h"
+	<stdio.h>
+	<stdlib.h>
+
+1293761419 source:/home/arwen/桌面/比對TC/stc_actDny/SCREENMBSelect.cpp
+	"SCREENMBSelect.h"
+	"SCREENMain.h"
+	"SCREENOperStat.h"
+	"SCREENLockdb.h"
+	"SCREENWarning.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+
+1293761422 /home/arwen/桌面/比對TC/stc_actDny/SCREENMBSelect.h
+	"SCREEN.h"
+
+1293761428 /home/arwen/桌面/比對TC/stc_actDny/SCREENWarning.h
+	"SCREEN.h"
+
+1317632106 source:/home/arwen/桌面/比對TC/stc_actDny/SCREENMain.cpp
+	"SCREENMain.h"
+	"SCREENLogo.h"
+	"SCREENCtlSetup.h"
+	"SCREENUpdateDB.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"screenSegtypeMenu.h"
+	"screenSegtype.h"
+	"screenPlan.h"
+	"screenRunTableList.h"
+	"screenRTMSInfo.h"
+	"screenReverseMenu.h"
+	"screenActuateEdit.h"
+	"SCREENDirMap.h"
+	"screenDirLightBoardMappingMenu.h"
+	"SCREENLast92TCPlanSegmentUpdate.h"
+	"screenChainMenu.h"
+	"SCREENControlStrategyMenu.h"
+	"SCREENNetworkSet.h"
+	<time.h>
+
+1317354036 /home/arwen/桌面/比對TC/stc_actDny/screenSegtype.h
+	"SCREEN.h"
+
+1293761422 /home/arwen/桌面/比對TC/stc_actDny/screenRTMSInfo.h
+	"SCREEN.h"
+
+1293761419 /home/arwen/桌面/比對TC/stc_actDny/screenChainMenu.h
+	"SCREEN.h"
+
+1293761422 /home/arwen/桌面/比對TC/stc_actDny/SCREENNetworkSet.h
+	"SCREEN.h"
+
+1293761422 source:/home/arwen/桌面/比對TC/stc_actDny/SCREENModifyDT.cpp
+	"SCREENModifyDT.h"
+	"SCREENMain.h"
+	"SCREENCtlSetup.h"
+	"SCREENLockdb.h"
+	"SMEM.h"
+	"LCD240x128.h"
+	"CTIMER.h"
+	"CSTC.h"
+	<stdio.h>
+	<stdlib.h>
+	<unistd.h>
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+	"var.h"
+
+1297668040 source:/home/arwen/桌面/比對TC/stc_actDny/SCREENModifyPWD.cpp
+	"SCREENModifyPWD.h"
+	"SCREENMain.h"
+	"SCREENCtlSetup.h"
+	"SCREENLockdb.h"
+	"SCREENV3Related.h"
+	"LCD240x128.h"
+	"SMEM.h"
+
+1321845853 source:/home/arwen/桌面/比對TC/stc_actDny/SCREENNetmaskSet.cpp
+	"SCREENNetworkSet.h"
+	"SCREENNetmaskSet.h"
+	"SCREENNetworkSetConfirm.h"
+	"SCREENMain.h"
+	"SCREENCtlSetup.h"
+	"LCD240x128.h"
+	"SMEM.h"
+
+1321845854 /home/arwen/桌面/比對TC/stc_actDny/SCREENNetmaskSet.h
+	"SCREEN.h"
+
+1321870510 /home/arwen/桌面/比對TC/stc_actDny/SCREENNetworkSetConfirm.h
+	"SCREEN.h"
+	"var.h"
+
+1321870451 source:/home/arwen/桌面/比對TC/stc_actDny/SCREENNetworkSet.cpp
+	"SCREENNetworkSet.h"
+	"SCREENNetmaskSet.h"
+	"SCREENNetworkSetConfirm.h"
+	"SCREENMain.h"
+	"SCREENSystemInfoMenu.h"
+	"LCD240x128.h"
+	"SMEM.h"
+
+1321870498 source:/home/arwen/桌面/比對TC/stc_actDny/SCREENNetworkSetConfirm.cpp
+	"SCREENNetworkSetConfirm.h"
+	"SCREENNetworkSet.h"
+	"SCREENHWReset.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"DIGITALIO.h"
+	"CSTC.h"
+	"WRITEJOB.h"
+	<unistd.h>
+	<stdio.h>
+	<stdlib.h>
+	<error.h>
+
+1293761422 source:/home/arwen/桌面/比對TC/stc_actDny/SCREENNone.cpp
+	"SCREENNone.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"SCREENLogo.h"
+
+1293761422 source:/home/arwen/桌面/比對TC/stc_actDny/SCREENOffline.cpp
+	"SCREENOffline.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"SMEM.h"
+	"SCREENLogo.h"
+
+1293761422 source:/home/arwen/桌面/比對TC/stc_actDny/SCREENOnline.cpp
+	"SCREENOnline.h"
+	"SCREENLogo.h"
+	"SCREENMain.h"
+	"LCD240x128.h"
+	"SMEM.h"
+
+1293761422 source:/home/arwen/桌面/比對TC/stc_actDny/SCREENOperMode.cpp
+	"SCREENOperMode.h"
+	"SCREENMain.h"
+	"SCREENCtlSetup.h"
+	"LCD240x128.h"
+	"SMEM.h"
+
+1293761422 source:/home/arwen/桌面/比對TC/stc_actDny/SCREENOperStat.cpp
+	"SCREENOperStat.h"
+	"SCREENMain.h"
+	"SCREENCtlSetup.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"SCREENMBSelect.h"
+	"SCREENUart2.h"
+	<string.h>
+
+1293761419 /home/arwen/桌面/比對TC/stc_actDny/SCREENUart2.h
+	"SCREEN.h"
+
+1302504319 source:/home/arwen/桌面/比對TC/stc_actDny/SCREENPedSignalHWSet.cpp
+	"SCREENPedSignalHWSet.h"
+	"LCD240x128.h"
+	<stdio.h>
+	"SMEM.h"
+	"SCREENMain.h"
+	"SCREENPedSignalMenu.h"
+	"CSTORINI.h"
+
+1295598991 /home/arwen/桌面/比對TC/stc_actDny/SCREENPedSignalHWSet.h
+	"SCREEN.h"
+	"var.h"
+
+1295595734 /home/arwen/桌面/比對TC/stc_actDny/SCREENPedSignalMenu.h
+	"var.h"
+	"SCREEN.h"
+
+1295601284 source:/home/arwen/桌面/比對TC/stc_actDny/SCREENPedSignalMenu.cpp
+	"SCREENPedSignalMenu.h"
+	"LCD240x128.h"
+	<stdio.h>
+	"SMEM.h"
+	"screenActuateEdit.h"
+	"SCREENMain.h"
+	"SCREENCtlSetup.h"
+	"SCREENPedSignalHWSet.h"
+
+1321518520 source:/home/arwen/桌面/比對TC/stc_actDny/SCREENPedSwitchStatus.cpp
+	"SCREENPedSwitchStatus.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"ScreenActuateArwenMenu.h"
+	<stdio.h>
+	"SMEM.h"
+
+1293761428 /home/arwen/桌面/比對TC/stc_actDny/ScreenActuateArwenMenu.h
+	"SCREEN.h"
+
+1293761418 source:/home/arwen/桌面/比對TC/stc_actDny/SCREENRedCountMap.cpp
+	"SCREENRedCountMap.h"
+	"SCREENMain.h"
+	"screenRedCountMenu.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+
+1293761418 /home/arwen/桌面/比對TC/stc_actDny/SCREENRedCountMap.h
+	"SCREEN.h"
+
+1297667296 source:/home/arwen/桌面/比對TC/stc_actDny/SCREENSendCycle.cpp
+	"SCREENSendCycle.h"
+	"SCREENMain.h"
+	"SCREENLockdb.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"SCREENABOErr.h"
+	"SCREENCtlSetup.h"
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+
+1293761419 source:/home/arwen/桌面/比對TC/stc_actDny/SCREENSystemInfoMenu.cpp
+	"SCREENSystemInfoMenu.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"screenPlan.h"
+	"SCREENFWVerDT.h"
+	"SCREENCommStat.h"
+	"screenCurrentCommPacket.h"
+	"SCREENLastDown.h"
+	"CSTC.h"
+	<stdio.h>
+	"SMEM.h"
+
+1293761419 source:/home/arwen/桌面/比對TC/stc_actDny/SCREENTFDStatus.cpp
+	"screenRunTableList.h"
+	"SCREENTFDStatus.h"
+	"SCREENLogo.h"
+	"SCREENMain.h"
+	"LCD240x128.h"
+	"SMEM.h"
+
+1293761419 source:/home/arwen/桌面/比對TC/stc_actDny/SCREENTotalRun.cpp
+	"SCREENTotalRun.h"
+	"SCREENMain.h"
+	"SCREENCtlSetup.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	<time.h>
+	<stdio.h>
+	<stdlib.h>
+
+1313542076 source:/home/arwen/桌面/比對TC/stc_actDny/SCREENUart2.cpp
+	"SCREENUart2.h"
+	"SCREENMain.h"
+	"SCREENOperStat.h"
+	"SCREENLockdb.h"
+	"SCREENWarning.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+
+1293761419 source:/home/arwen/桌面/比對TC/stc_actDny/SCREENUpdateDB.cpp
+	"SCREENUpdateDB.h"
+	"SCREENMain.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+	"SCREENLast92TCPlanSegmentUpdate.h"
+
+1295601396 source:/home/arwen/桌面/比對TC/stc_actDny/SCREENV3Related.cpp
+	"SCREENV3Related.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"SCREENCtlSetup.h"
+	"screenPlan.h"
+	"SCREENHWCycle.h"
+	"SCREENModifyPWD.h"
+	"SCREENDBSetup.h"
+	"CSTC.h"
+	<stdio.h>
+	"SMEM.h"
+
+1293761419 source:/home/arwen/桌面/比對TC/stc_actDny/SCREENWarning.cpp
+	"SCREENWarning.h"
+	"SCREENMain.h"
+	"SCREENMBSelect.h"
+	"SCREENUart2.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"SCREENHWReset.h"
+	"WRITEJOB.h"
+	<unistd.h>
+	<stdio.h>
+	<stdlib.h>
+	<error.h>
+	"CSTC.h"
+
+1321922387 source:/home/arwen/桌面/比對TC/stc_actDny/PDEVICEKEYPAD.cpp
+	"PDEVICEKEYPAD.h"
+	"SMEM.h"
+	"WRITEJOB.h"
+	"SCREENNone.h"
+	"SCREENLogo.h"
+	"SCREENLogin.h"
+	"SCREENLoginErr.h"
+	"SCREENMain.h"
+	"SCREENCtlSetup.h"
+	"SCREENCtlNo.h"
+	"SCREENLastDown.h"
+	"SCREENModifyDT.h"
+	"SCREENFWVerDT.h"
+	"SCREENHWCycle.h"
+	"SCREENModifyPWD.h"
+	"SCREENDBSetup.h"
+	"SCREENOperStat.h"
+	"SCREENOperMode.h"
+	"SCREENCommStat.h"
+	"SCREENSendCycle.h"
+	"SCREENUpdateDB.h"
+	"SCREENOnline.h"
+	"SCREENOffline.h"
+	"SCREENLockdb.h"
+	"SCREENTotalRun.h"
+	"SCREENABOErr.h"
+	"SCREENCmdSet.h"
+	"SCREENHWReset.h"
+	"SCREENLcnEncode.h"
+	"screenPlan.h"
+	"screenWeekDay.h"
+	"screenSegtype.h"
+	"screenSegtypeMenu.h"
+	"screenSpecialDay.h"
+	"screenSegtypeSel.h"
+	"screenRunTableList.h"
+	"screenStrategy.h"
+	"screenRTMSInfo.h"
+	"screenCurrentLightStatus.h"
+	"screenCurrentCommPacket.h"
+	"screenRedCountHWCheck.h"
+	"screenRedCountHWCheckSel.h"
+	"screenRedCountMenu.h"
+	"screenRedCountHWVerMenu.h"
+	"SCREENRedCountMap.h"
+	"screenReverseMenu.h"
+	"screenReverse.h"
+	"screenRevWeekDay.h"
+	"screenRevSpecialDay.h"
+	"screenActuateEdit.h"
+	"screenPassModeSet.h"
+	"SCREENDirMap.h"
+	"screenDirLightBoardMappingMenu.h"
+	"SCREENLightBoardMap.h"
+	"screenPlanEditF2.h"
+	"screenSegtypeEditF2.h"
+	"screenWeekDayEditF2.h"
+	"screenSpecialDayView.h"
+	"screenSpecialDayEditF2.h"
+	"screenPhasePreview.h"
+	"screenSegtypePreview.h"
+	"screenPlanPreview.h"
+	"SCREENLast92TCPlanSegmentUpdate.h"
+	"screenChainMenu.h"
+	"screenMotherChainSet.h"
+	"screenChildChainSet.h"
+	"screenChainStatus.h"
+	"screenLightPreview.h"
+	"screenLightEdit.h"
+	"SCREENNetworkSetConfirm.h"
+	"SCREENNetworkSet.h"
+	"SCREENNetmaskSet.h"
+	"SCREENMBSelect.h"
+	"SCREENUart2.h"
+	"SCREENWarning.h"
+	"SCREENTFDStatus.h"
+	"screenRedCountHWCheckDevID.h"
+	"screenRedCountHWCheckCycleNum.h"
+	"screenRedCountHWCheckNum88.h"
+	"screenRailwayChainSet.h"
+	"screenActuateArwenStatus.h"
+	"SCREENControlStrategyMenu.h"
+	"SCREENSystemInfoMenu.h"
+	"SCREENV3Related.h"
+	"screenActuateArwenManyStatus.h"
+	"screenVDPhaseMapTable.h"
+	"screenVDPhaseMapTableEdit.h"
+	"SCREENActuateStrategyMenu.h"
+	"screenVDActPhaseEdit.h"
+	"screenFlashMode.h"
+	"ScreenActuateArwenMenu.h"
+	"ScreenActuateArwenFlashManyStatus.h"
+	"SCREENPedSignalMenu.h"
+	"SCREENPedSignalHWSet.h"
+	"SCREENPedSwitchStatus.h"
+	"screenActuateArwenVDInfo.h"
+	"screenActuatePlaySwitch.h"
+	"screenSegmentVDPhaseMapTableEdit.h"
+	"CDataToMessageOK.h"
+	"CSTC.h"
+	"unistd.h"
+	<stdio.h>
+
+1293761428 /home/arwen/桌面/比對TC/stc_actDny/screenWeekDay.h
+	"SCREEN.h"
+	"CSegmentInfo.h"
+
+1293761422 /home/arwen/桌面/比對TC/stc_actDny/screenSpecialDay.h
+	"SCREEN.h"
+	"CSegmentInfo.h"
+
+1293761422 /home/arwen/桌面/比對TC/stc_actDny/screenSegtypeSel.h
+	"SCREEN.h"
+
+1293761418 /home/arwen/桌面/比對TC/stc_actDny/screenRedCountHWVerMenu.h
+	"SCREEN.h"
+
+1293761422 /home/arwen/桌面/比對TC/stc_actDny/screenReverse.h
+	"SCREEN.h"
+	"CReverseTime.h"
+
+1293761422 /home/arwen/桌面/比對TC/stc_actDny/screenRevWeekDay.h
+	"SCREEN.h"
+	"CReverseTime.h"
+
+1293761422 /home/arwen/桌面/比對TC/stc_actDny/screenRevSpecialDay.h
+	"SCREEN.h"
+	"CReverseTime.h"
+
+1293761422 /home/arwen/桌面/比對TC/stc_actDny/screenPlanEditF2.h
+	"SCREEN.h"
+
+1317632485 /home/arwen/桌面/比對TC/stc_actDny/screenSegtypeEditF2.h
+	"SCREEN.h"
+
+1293761428 /home/arwen/桌面/比對TC/stc_actDny/screenWeekDayEditF2.h
+	"SCREEN.h"
+	"CSegmentInfo.h"
+
+1293761419 /home/arwen/桌面/比對TC/stc_actDny/screenSpecialDayView.h
+	"SCREEN.h"
+	"CSegmentInfo.h"
+
+1293761422 /home/arwen/桌面/比對TC/stc_actDny/screenSpecialDayEditF2.h
+	"SCREEN.h"
+	"CSegmentInfo.h"
+
+1293761422 /home/arwen/桌面/比對TC/stc_actDny/screenPhasePreview.h
+	"SCREEN.h"
+	"CSegmentInfo.h"
+
+1293761422 /home/arwen/桌面/比對TC/stc_actDny/screenSegtypePreview.h
+	"SCREEN.h"
+
+1293761418 /home/arwen/桌面/比對TC/stc_actDny/screenPlanPreview.h
+	"SCREEN.h"
+
+1293761422 /home/arwen/桌面/比對TC/stc_actDny/screenMotherChainSet.h
+	"SCREEN.h"
+
+1293761419 /home/arwen/桌面/比對TC/stc_actDny/screenChildChainSet.h
+	"SCREEN.h"
+
+1293761418 /home/arwen/桌面/比對TC/stc_actDny/screenLightPreview.h
+	"SCREEN.h"
+
+1293761418 /home/arwen/桌面/比對TC/stc_actDny/screenLightEdit.h
+	"SCREEN.h"
+
+1293761418 /home/arwen/桌面/比對TC/stc_actDny/screenRedCountHWCheckDevID.h
+	"SCREEN.h"
+
+1293761418 /home/arwen/桌面/比對TC/stc_actDny/screenRedCountHWCheckCycleNum.h
+	"SCREEN.h"
+
+1293761418 /home/arwen/桌面/比對TC/stc_actDny/screenRedCountHWCheckNum88.h
+	"SCREEN.h"
+
+1293761418 /home/arwen/桌面/比對TC/stc_actDny/screenRailwayChainSet.h
+	"SCREEN.h"
+
+1293761419 /home/arwen/桌面/比對TC/stc_actDny/screenVDPhaseMapTableEdit.h
+	"SCREEN.h"
+	"CSegmentInfo.h"
+
+1318469740 /home/arwen/桌面/比對TC/stc_actDny/screenActuatePlaySwitch.h
+	"SCREEN.h"
+
+1319164659 /home/arwen/桌面/比對TC/stc_actDny/screenSegmentVDPhaseMapTableEdit.h
+	"SCREEN.h"
+	"CSegmentInfo.h"
+
+1321922498 source:/home/arwen/桌面/比對TC/stc_actDny/SMEM.cpp
+	"SMEM.h"
+	"WRITEJOB.h"
+	"CDataToMessageOK.h"
+	"CTIMER.h"
+	"CSTC.h"
+	"DIGITALIO.h"
+	"CSTORINI.h"
+	"ConfigFile.h"
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<unistd.h>
+
+1321868230 source:/home/arwen/桌面/比對TC/stc_actDny/STORAGE.cpp
+	"STORAGE.h"
+	<time.h>
+	<string.h>
+	<stdlib.h>
+
+1302055092 source:/home/arwen/桌面/比對TC/stc_actDny/ScreenActuateArwenFlashManyStatus.cpp
+	"ScreenActuateArwenFlashManyStatus.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"ScreenActuateArwenMenu.h"
+	"CSTC.h"
+	<stdio.h>
+	"WRITEJOB.h"
+	"CDataToMessageOK.h"
+	"SMEM.h"
+	"CPlanInfo.h"
+
+1303196460 source:/home/arwen/桌面/比對TC/stc_actDny/ScreenActuateArwenMenu.cpp
+	"ScreenActuateArwenMenu.h"
+	"screenRunTableList.h"
+	"SCREENMain.h"
+	"screenActuateArwenManyStatus.h"
+	"ScreenActuateArwenFlashManyStatus.h"
+	"SCREENPedSwitchStatus.h"
+	"screenActuateArwenVDInfo.h"
+	"screenActuateArwenStatus.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	<stdio.h>
+	<stdlib.h>
+
+1293761428 source:/home/arwen/桌面/比對TC/stc_actDny/UDP.cpp
+	"UDP.h"
+	<stdio.h>
+	<sys/types.h>
+	<arpa/inet.h>
+	<unistd.h>
+	<string.h>
+
+1320199690 source:/home/arwen/桌面/比對TC/stc_actDny/WRITEJOB.cpp
+	"WRITEJOB.h"
+	"SMEM.h"
+	"PROTOCOL.h"
+	"CHexToInt.h"
+	<unistd.h>
+	"screenCurrentCommPacket.h"
+
+1319074596 source:/home/arwen/桌面/比對TC/stc_actDny/inifile.cpp
+	"inifile.h"
+	<algorithm>
+	<iostream>
+	<fstream>
+
+1293761419 source:/home/arwen/桌面/比對TC/stc_actDny/light.cpp
+	"light.h"
+	<unistd.h>
+	<sys/perm.h>
+	<sys/io.h>
+
+1321869040 source:/home/arwen/桌面/比對TC/stc_actDny/main.cpp
+	"var.h"
+	"SMEM.h"
+	"PARSETRAFFIC.h"
+	"PARSERTMS.h"
+	"PARSENMEA.h"
+	"PARSESS.h"
+	"READJOB.h"
+	"WRITEJOB.h"
+	"LCD240x128.h"
+	"DIGITALIO.h"
+	"CTIMER.h"
+	"CDataToMessageOK.h"
+	"SCREENLogo.h"
+	"STORAGE.h"
+	<stdio.h>
+	<string.h>
+	<unistd.h>
+	<pthread.h>
+	"CSTC.h"
+	"CSTORINI.h"
+	"CREATEXML.h"
+
+1321431681 source:/home/arwen/桌面/比對TC/stc_actDny/screenActuateArwenManyStatus.cpp
+	"screenActuateArwenManyStatus.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"ScreenActuateArwenMenu.h"
+	"screenActuateArwenStatus.h"
+	"CSTC.h"
+	<stdio.h>
+	"WRITEJOB.h"
+	"CDataToMessageOK.h"
+	"SMEM.h"
+
+1317023920 source:/home/arwen/桌面/比對TC/stc_actDny/screenActuateArwenStatus.cpp
+	"screenActuateArwenStatus.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"screenRunTableList.h"
+	"CSTC.h"
+	<stdio.h>
+	"WRITEJOB.h"
+	"CDataToMessageOK.h"
+	"SMEM.h"
+
+1321840292 source:/home/arwen/桌面/比對TC/stc_actDny/screenActuateArwenVDInfo.cpp
+	"screenActuateArwenVDInfo.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"screenRunTableList.h"
+	"CSTC.h"
+	"ScreenActuateArwenMenu.h"
+	<stdio.h>
+	"SMEM.h"
+
+1297667676 source:/home/arwen/桌面/比對TC/stc_actDny/screenActuateEdit.cpp
+	"screenActuateEdit.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"SCREENCtlSetup.h"
+	<stdio.h>
+	"SMEM.h"
+	<string.h>
+
+1319165092 source:/home/arwen/桌面/比對TC/stc_actDny/screenActuatePlaySwitch.cpp
+	"screenActuatePlaySwitch.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"screenSegtype.h"
+	"SMEM.h"
+	"CSTC.h"
+	<stdio.h>
+	"ConfigFile.h"
+	"screenSegmentVDPhaseMapTableEdit.h"
+
+1293761419 source:/home/arwen/桌面/比對TC/stc_actDny/screenChainMenu.cpp
+	"screenChainMenu.h"
+	"screenMotherChainSet.h"
+	"screenChildChainSet.h"
+	"screenRailwayChainSet.h"
+	<stdio.h>
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"SMEM.h"
+
+1302835494 source:/home/arwen/桌面/比對TC/stc_actDny/screenChainStatus.cpp
+	"screenChainStatus.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"screenRunTableList.h"
+	"CSTC.h"
+	<stdio.h>
+	"SMEM.h"
+
+1293761419 source:/home/arwen/桌面/比對TC/stc_actDny/screenChildChainSet.cpp
+	"screenChildChainSet.h"
+	"SCREENMain.h"
+	"screenChainMenu.h"
+	"SMEM.h"
+	"LCD240x128.h"
+	"CTIMER.h"
+	"CSTC.h"
+	<stdio.h>
+	<stdlib.h>
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+
+1293761427 source:/home/arwen/桌面/比對TC/stc_actDny/screenCurrentCommPacket.cpp
+	"screenCurrentCommPacket.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"SCREENSystemInfoMenu.h"
+	"CSTC.h"
+	"SCREENNetworkSet.h"
+	<stdio.h>
+	<string.h>
+	"SMEM.h"
+
+1293761428 source:/home/arwen/桌面/比對TC/stc_actDny/screenCurrentLightStatus.cpp
+	"screenCurrentLightStatus.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"screenRunTableList.h"
+	"CSTC.h"
+	<stdio.h>
+	"SMEM.h"
+
+1293761428 source:/home/arwen/桌面/比對TC/stc_actDny/screenDirLightBoardMappingMenu.cpp
+	"screenDirLightBoardMappingMenu.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	<stdio.h>
+	"SMEM.h"
+	"SCREENDirMap.h"
+	"SCREENLightBoardMap.h"
+	"SCREENCtlSetup.h"
+
+1313479030 source:/home/arwen/桌面/比對TC/stc_actDny/screenFlashMode.cpp
+	"screenFlashMode.h"
+	"SCREENControlStrategyMenu.h"
+	"screenVDPhaseMapTableEdit.h"
+	"var.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"SCREENCtlSetup.h"
+	<stdio.h>
+	"SMEM.h"
+	<string.h>
+	"CSTORINI.h"
+	"ConfigFile.h"
+	"SCREENActuateStrategyMenu.h"
+	"CPlanInfo.h"
+	"CPhaseInfo.h"
+	"CSTC.h"
+
+1293761418 source:/home/arwen/桌面/比對TC/stc_actDny/screenLightEdit.cpp
+	"screenLightEdit.h"
+	"screenSegtype.h"
+	"screenSegtypeEditF2.h"
+	"screenRunTableList.h"
+	"SCREENMain.h"
+	"screenWeekDay.h"
+	"LCD240x128.h"
+	"CSTC.h"
+	"screenPlan.h"
+	"screenLightPreview.h"
+	<stdio.h>
+	"SMEM.h"
+
+1293761418 source:/home/arwen/桌面/比對TC/stc_actDny/screenLightPreview.cpp
+	"screenLightPreview.h"
+	"screenSegtype.h"
+	"screenSegtypeEditF2.h"
+	"screenRunTableList.h"
+	"SCREENMain.h"
+	"screenWeekDay.h"
+	"LCD240x128.h"
+	"CSTC.h"
+	"screenPlan.h"
+	"screenLightEdit.h"
+	<stdio.h>
+	"SMEM.h"
+
+1293761422 source:/home/arwen/桌面/比對TC/stc_actDny/screenMotherChainSet.cpp
+	"screenMotherChainSet.h"
+	"SCREENMain.h"
+	"screenChainMenu.h"
+	"SMEM.h"
+	"LCD240x128.h"
+	"CTIMER.h"
+	"CSTC.h"
+	<stdio.h>
+	<stdlib.h>
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+
+1293761422 source:/home/arwen/桌面/比對TC/stc_actDny/screenPassModeSet.cpp
+	"screenPassModeSet.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	<stdio.h>
+	"SMEM.h"
+	<string.h>
+
+1293761422 source:/home/arwen/桌面/比對TC/stc_actDny/screenPhasePreview.cpp
+	"screenPhasePreview.h"
+	"SCREENMain.h"
+	"LCD240x128.h"
+	"screenPlanEditF2.h"
+	"screenPlan.h"
+	"CSTC.h"
+	"var.h"
+	<stdio.h>
+	"SMEM.h"
+
+1293761422 source:/home/arwen/桌面/比對TC/stc_actDny/screenPlan.cpp
+	"screenPlan.h"
+	"screenSegtype.h"
+	"screenRunTableList.h"
+	"SCREENMain.h"
+	"screenWeekDay.h"
+	"LCD240x128.h"
+	"CSTC.h"
+	"screenPlanEditF2.h"
+	"screenPhasePreview.h"
+	"screenLightPreview.h"
+	<stdio.h>
+	"SMEM.h"
+
+1293761422 source:/home/arwen/桌面/比對TC/stc_actDny/screenPlanEdit0523.cpp
+	"screenPlanEdit0523.h"
+	"screenRunTableList.h"
+	"SCREENMain.h"
+	"screenWeekDay.h"
+	"LCD240x128.h"
+	"CSTC.h"
+	<stdio.h>
+	"SMEM.h"
+
+1293761422 /home/arwen/桌面/比對TC/stc_actDny/screenPlanEdit0523.h
+	"SCREEN.h"
+
+1293761422 source:/home/arwen/桌面/比對TC/stc_actDny/screenPlanEditF2.cpp
+	"screenPlanEditF2.h"
+	"screenPlan.h"
+	"SCREENMain.h"
+	"LCD240x128.h"
+	"CSTC.h"
+	"screenPhasePreview.h"
+	<stdio.h>
+	"SMEM.h"
+
+1293761419 source:/home/arwen/桌面/比對TC/stc_actDny/screenPlanPreview.cpp
+	"screenPlanPreview.h"
+	"screenSegtype.h"
+	"screenSegtypeEditF2.h"
+	"screenRunTableList.h"
+	"SCREENMain.h"
+	"screenWeekDay.h"
+	"LCD240x128.h"
+	"CSTC.h"
+	<stdio.h>
+	"SMEM.h"
+
+1293761422 source:/home/arwen/桌面/比對TC/stc_actDny/screenRTMSInfo.cpp
+	"screenRTMSInfo.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	<stdio.h>
+	"SMEM.h"
+
+1293761418 source:/home/arwen/桌面/比對TC/stc_actDny/screenRailwayChainSet.cpp
+	"screenRailwayChainSet.h"
+	"SCREENMain.h"
+	"screenChainMenu.h"
+	"SMEM.h"
+	"LCD240x128.h"
+	"CTIMER.h"
+	"CSTC.h"
+	<stdio.h>
+	<stdlib.h>
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+
+1293761418 source:/home/arwen/桌面/比對TC/stc_actDny/screenRedCountHWCheck.cpp
+	"screenRedCountHWCheck.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"screenRunTableList.h"
+	"CSTC.h"
+	"WRITEJOB.h"
+	"CDataToMessageOK.h"
+	"screenRedCountMenu.h"
+	"screenRedCountHWCheckSel.h"
+	<stdio.h>
+	"SMEM.h"
+
+1293761418 source:/home/arwen/桌面/比對TC/stc_actDny/screenRedCountHWCheckCycleNum.cpp
+	"screenRedCountHWCheckCycleNum.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"screenRedCountMenu.h"
+	"WRITEJOB.h"
+	"CDataToMessageOK.h"
+	<stdio.h>
+	"SMEM.h"
+
+1293761418 source:/home/arwen/桌面/比對TC/stc_actDny/screenRedCountHWCheckDevID.cpp
+	"screenRedCountHWCheckDevID.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"screenRedCountMenu.h"
+	"WRITEJOB.h"
+	"CDataToMessageOK.h"
+	<stdio.h>
+	"SMEM.h"
+
+1293761418 source:/home/arwen/桌面/比對TC/stc_actDny/screenRedCountHWCheckNum88.cpp
+	"screenRedCountHWCheckNum88.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"screenRedCountMenu.h"
+	"WRITEJOB.h"
+	"CDataToMessageOK.h"
+	<stdio.h>
+	"SMEM.h"
+
+1293761418 source:/home/arwen/桌面/比對TC/stc_actDny/screenRedCountHWCheckSel.cpp
+	"screenRedCountHWCheckSel.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"screenRedCountHWCheck.h"
+	"screenRedCountMenu.h"
+	<stdio.h>
+	"SMEM.h"
+
+1293761418 source:/home/arwen/桌面/比對TC/stc_actDny/screenRedCountHWVerMenu.cpp
+	"screenRedCountHWVerMenu.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	<stdio.h>
+	<stdlib.h>
+	"CSTC.h"
+	"WRITEJOB.h"
+	"SMEM.h"
+	"screenRedCountMenu.h"
+	"SCREENHWReset.h"
+
+1293761418 source:/home/arwen/桌面/比對TC/stc_actDny/screenRedCountMenu.cpp
+	"screenRedCountMenu.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	<stdio.h>
+	"CSTC.h"
+	"SMEM.h"
+	"screenRedCountHWCheckSel.h"
+	"screenRedCountHWVerMenu.h"
+	"SCREENRedCountMap.h"
+	"screenRedCountHWCheckDevID.h"
+	"screenRedCountHWCheckNum88.h"
+	"screenRedCountHWCheckCycleNum.h"
+	"SCREENCtlSetup.h"
+
+1293761422 source:/home/arwen/桌面/比對TC/stc_actDny/screenRevSpecialDay.cpp
+	"screenRevSpecialDay.h"
+	"screenReverse.h"
+	"screenReverseMenu.h"
+	"SCREENMain.h"
+	"LCD240x128.h"
+	"CSTC.h"
+	"var.h"
+	<stdio.h>
+	"SMEM.h"
+
+1293761422 source:/home/arwen/桌面/比對TC/stc_actDny/screenRevWeekDay.cpp
+	"screenRevWeekDay.h"
+	"SCREENMain.h"
+	"screenReverse.h"
+	"screenReverseMenu.h"
+	"LCD240x128.h"
+	"CSTC.h"
+	<stdio.h>
+	"SMEM.h"
+
+1293761422 source:/home/arwen/桌面/比對TC/stc_actDny/screenReverse.cpp
+	"screenReverse.h"
+	"screenReverseMenu.h"
+	"SCREENMain.h"
+	"LCD240x128.h"
+	"CSTC.h"
+	"var.h"
+	<stdio.h>
+	"SMEM.h"
+
+1293761422 source:/home/arwen/桌面/比對TC/stc_actDny/screenReverseMenu.cpp
+	"screenReverseMenu.h"
+	<stdio.h>
+	"screenRevWeekDay.h"
+	"screenRevSpecialDay.h"
+	"CSTC.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"SMEM.h"
+
+1312256441 source:/home/arwen/桌面/比對TC/stc_actDny/screenRunTableList.cpp
+	"screenRunTableList.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"screenStrategy.h"
+	"screenSegtype.h"
+	"screenCurrentLightStatus.h"
+	"screenPlan.h"
+	"CSTC.h"
+	"SCREENTFDStatus.h"
+	"screenChainStatus.h"
+	"ScreenActuateArwenMenu.h"
+	"SCREENSystemInfoMenu.h"
+	<stdio.h>
+	"SMEM.h"
+
+1321577320 source:/home/arwen/桌面/比對TC/stc_actDny/screenSegmentVDPhaseMapTableEdit.cpp
+	"screenSegmentVDPhaseMapTableEdit.h"
+	"screenVDPhaseMapTable.h"
+	"SCREENMain.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"CSTORINI.h"
+	"SCREENActuateStrategyMenu.h"
+	"screenActuatePlaySwitch.h"
+
+1319184996 source:/home/arwen/桌面/比對TC/stc_actDny/screenSegtype.cpp
+	"screenSegtype.h"
+	"screenSegtypeMenu.h"
+	"screenSegtypeEditF2.h"
+	"screenWeekDay.h"
+	"screenSpecialDay.h"
+	"screenSegtypeSel.h"
+	"screenRunTableList.h"
+	"screenActuatePlaySwitch.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"SMEM.h"
+	"screenPlan.h"
+	"CSTC.h"
+	<stdio.h>
+
+1319185128 source:/home/arwen/桌面/比對TC/stc_actDny/screenSegtypeEditF2.cpp
+	"screenSegtypeEditF2.h"
+	"screenSegtype.h"
+	"screenSegtypeMenu.h"
+	"screenPlanPreview.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"SMEM.h"
+	"screenPlan.h"
+	"CSTC.h"
+	<stdio.h>
+
+1317632153 source:/home/arwen/桌面/比對TC/stc_actDny/screenSegtypeMenu.cpp
+	"screenSegtypeMenu.h"
+	"screenWeekDay.h"
+	"screenSpecialDay.h"
+	"screenSegtypeSel.h"
+	<stdio.h>
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"SCREENControlStrategyMenu.h"
+	"SMEM.h"
+
+1317348732 source:/home/arwen/桌面/比對TC/stc_actDny/screenSegtypePreview.cpp
+	"screenSegtypePreview.h"
+	"screenSegtype.h"
+	"screenWeekDayEditF2.h"
+	"screenWeekDay.h"
+	"screenSpecialDay.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"SMEM.h"
+	"screenPlan.h"
+	"CSTC.h"
+	<stdio.h>
+
+1293761422 source:/home/arwen/桌面/比對TC/stc_actDny/screenSegtypeSel.cpp
+	"screenSegtypeSel.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"screenSegtypeMenu.h"
+	"screenSegtype.h"
+	<stdio.h>
+	"SMEM.h"
+
+1293761422 source:/home/arwen/桌面/比對TC/stc_actDny/screenSpecialDay.cpp
+	"screenSpecialDay.h"
+	"screenSpecialDayView.h"
+	"SCREENMain.h"
+	"screenSegtype.h"
+	"screenSegtypeMenu.h"
+	"LCD240x128.h"
+	"CSTC.h"
+	<stdio.h>
+	"SMEM.h"
+
+1293761422 source:/home/arwen/桌面/比對TC/stc_actDny/screenSpecialDayEditF2.cpp
+	"screenSpecialDayEditF2.h"
+	"screenSpecialDayView.h"
+	"screenSpecialDay.h"
+	"screenSegtype.h"
+	"screenSegtypeMenu.h"
+	"SCREENMain.h"
+	"LCD240x128.h"
+	"CSTC.h"
+	"var.h"
+	<stdio.h>
+	"SMEM.h"
+
+1293761422 source:/home/arwen/桌面/比對TC/stc_actDny/screenSpecialDayView.cpp
+	"screenSpecialDayView.h"
+	"screenSpecialDayEditF2.h"
+	"screenSpecialDay.h"
+	"screenSegtype.h"
+	"screenSegtypeMenu.h"
+	"SCREENMain.h"
+	"LCD240x128.h"
+	"CSTC.h"
+	"var.h"
+	<stdio.h>
+	"SMEM.h"
+
+1293761419 source:/home/arwen/桌面/比對TC/stc_actDny/screenStrategy.cpp
+	"screenStrategy.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"screenRunTableList.h"
+	"CSTC.h"
+	<stdio.h>
+	"SMEM.h"
+
+1317086154 source:/home/arwen/桌面/比對TC/stc_actDny/screenVDActPhaseEdit.cpp
+	"screenVDActPhaseEdit.h"
+	"SCREENControlStrategyMenu.h"
+	"screenVDPhaseMapTableEdit.h"
+	"var.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"SCREENCtlSetup.h"
+	<stdio.h>
+	"SMEM.h"
+	<string.h>
+	"CSTORINI.h"
+	"ConfigFile.h"
+	"SCREENActuateStrategyMenu.h"
+
+1293761419 source:/home/arwen/桌面/比對TC/stc_actDny/screenVDPhaseMapTable.cpp
+	"screenVDPhaseMapTable.h"
+	"screenVDPhaseMapTableEdit.h"
+	"SCREENMain.h"
+	"SCREENControlStrategyMenu.h"
+	"LCD240x128.h"
+	"SMEM.h"
+
+1321525231 source:/home/arwen/桌面/比對TC/stc_actDny/screenVDPhaseMapTableEdit.cpp
+	"screenVDPhaseMapTableEdit.h"
+	"screenVDPhaseMapTable.h"
+	"SCREENMain.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"CSTORINI.h"
+	"SCREENActuateStrategyMenu.h"
+
+1293761428 source:/home/arwen/桌面/比對TC/stc_actDny/screenWeekDay.cpp
+	"screenWeekDay.h"
+	"screenWeekDayEditF2.h"
+	"SCREENMain.h"
+	"screenSegtype.h"
+	"screenSegtypeMenu.h"
+	"LCD240x128.h"
+	"CSTC.h"
+	<stdio.h>
+	"SMEM.h"
+
+1293761428 source:/home/arwen/桌面/比對TC/stc_actDny/screenWeekDayEditF2.cpp
+	"screenWeekDayEditF2.h"
+	"screenWeekDay.h"
+	"SCREENMain.h"
+	"screenSegtype.h"
+	"screenSegtypeMenu.h"
+	"LCD240x128.h"
+	"CSTC.h"
+	<stdio.h>
+	"screenSegtypePreview.h"
+	"SMEM.h"
+
