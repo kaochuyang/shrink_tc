@@ -63,7 +63,7 @@ public:
 
     typedef struct s_TC_stratage_set
     {
-        BYTE TC_ControlStategyIN;
+        BYTE TC_ControlStrategyIN;
         int SignalStepStatus_5F03_IntervalTimeIN;
         int TC_SignalStepStatus_5F03_IntervalTimeIN;
         int RedCountVerSelectIN;
@@ -77,26 +77,26 @@ public:
 
     typedef struct s_Compensation_param
     {
-        bool enable_switch;
+      //  bool enable_switch;
         unsigned short int cycle_num;
     };
 
     typedef struct s_Learn_mode_group
     {
-        bool enable_car_learn;
+    //    bool enable_car_learn;
         unsigned short int CarLearn;
-        bool enable_ped_learn;
+      //  bool enable_ped_learn;
         unsigned short int PedLearn;
-        bool enable_CarCountDown_learn;
+        //bool enable_CarCountDown_learn;
         unsigned short int CarCountDownLearn;
-        bool enable_PedCount_learn;
+        //bool enable_PedCount_learn;
         unsigned short int PedCountLearn;
 
     };
 
     typedef struct s_Ped_control_set
     {
-        bool enable_SWCount;
+      //  bool enable_SWCount;
         unsigned short int SWDevCount;
 
     };
@@ -112,7 +112,7 @@ public:
         BYTE sTC_MotherChainStartStepId;
         BYTE sTC_MotherChainEndStepId;
         short int TC_5F33StartOffset[64];
-        short int TC92_5F33EndOffset[64];
+        short int TC_5F33EndOffset[64];
     };
 
     typedef struct s_TC_project_data

@@ -1969,7 +1969,7 @@ void CSTC::ReSetStep(bool step_up)
         }//end else if(STRATEGY_FLASH)
 ////////////////////////////////////////////////////
         else if( _current_strategy==STRATEGY_MANUAL || _current_strategy==STRATEGY_CADC
-               || _current_strategy==STRATEGY_AUTO_CADC || _current_strategy==STRATEGY_TOD || _current_strategy==STRATEGY_ALLDYNAMIC)
+                 || _current_strategy==STRATEGY_AUTO_CADC || _current_strategy==STRATEGY_TOD || _current_strategy==STRATEGY_ALLDYNAMIC)
         {
             bool finding=true;
             smem.vSetStepRunCounter(0); //OT20140214
@@ -2543,7 +2543,7 @@ void CSTC::ReSetExtendTimer(void)
                            , _exec_plan._ptr_subplaninfo[_exec_phase_current_subphase]._pedgreen_flash_compensation );
 
                     _itimer_plan.it_value.tv_sec =
- _exec_plan._ptr_subplaninfo[_exec_phase_current_subphase].compensated_pedgreen_flash(_exec_plan._shorten_cycle);
+                        _exec_plan._ptr_subplaninfo[_exec_phase_current_subphase].compensated_pedgreen_flash(_exec_plan._shorten_cycle);
                     break;
 
                 case(2):
@@ -3211,7 +3211,7 @@ bool CSTC::vDetermine_ReverseTime(void)     //調撥
             if(    (    ( (currenttime->tm_year+1900) > holidayrev[i]._start_year )
                         || ( (currenttime->tm_year+1900)== holidayrev[i]._start_year && (currenttime->tm_mon+1) > holidayrev[i]._start_month )
                         || ( (currenttime->tm_year+1900)== holidayrev[i]._start_year && (currenttime->tm_mon+1)== holidayrev[i]._start_month
-                            && (currenttime->tm_mday)>= holidayrev[i]._start_day ) )
+                             && (currenttime->tm_mday)>= holidayrev[i]._start_day ) )
                     && (    ( (currenttime->tm_year+1900) < holidayrev[i]._end_year )
                             || ( (currenttime->tm_year+1900)== holidayrev[i]._end_year   && (currenttime->tm_mon+1) < holidayrev[i]._end_month )
                             || ( (currenttime->tm_year+1900)== holidayrev[i]._end_year   && (currenttime->tm_mon+1)== holidayrev[i]._end_month   && (currenttime->tm_mday)<= holidayrev[i]._end_day ) ) )
@@ -4499,7 +4499,7 @@ void CSTC::Lock_to_Determine_SegmentPlanPhase(void) //若執行觸動模式則�
                     smem.vSetUCData(actuateSwitchChange_for_Arwen,0);
                 }
                 printf("m_segment_lastActMode = %d _exec_segment._ptr_seg_exec_time[%d]._actMode = %d\n\n",m_segment_lastActMode,i,_exec_segment._ptr_seg_exec_time[i]._actMode);
-               /////////////////////////////////////////////////////////////////////////////////
+                /////////////////////////////////////////////////////////////////////////////////
                 if(m_segment_lastActMode !=_exec_segment._ptr_seg_exec_time[i]._actMode)
                 {
                     //arwen ++
@@ -5634,7 +5634,7 @@ void CSTC::vCalculateCompensation_in_CHAIN(void)
     try
     {
         if( _exec_plan._planid==FLASH_PLANID || _exec_plan._planid==ALLRED_PLANID
-           || _current_strategy==STRATEGY_MANUAL || _current_strategy==STRATEGY_ALLDYNAMIC) return;
+                || _current_strategy==STRATEGY_MANUAL || _current_strategy==STRATEGY_ALLDYNAMIC) return;
         printf("\n    CalculateCompensation_in_CHAIN\n");
         int iActualCompensationValue = 0;
         unsigned short int total_compensation = CalculateCompensationBaseInChain();
@@ -7111,8 +7111,8 @@ void CSTC::CalculateAndSendRedCount(const short int diff)    //聯嘉 紅燈倒�
 
         iSubCalCntTmp = 0;
         if( _exec_plan._phase_order==FLASH_PHASEORDER || _exec_plan._phase_order==ALLRED_PHASEORDER
-           || _current_strategy==STRATEGY_MANUAL || diff!=0 || _current_strategy==STRATEGY_ALLDYNAMIC
-           || _exec_plan._subphase_count > 8 || smem.vGetForceClockRedCountOneTime() == true)
+                || _current_strategy==STRATEGY_MANUAL || diff!=0 || _current_strategy==STRATEGY_ALLDYNAMIC
+                || _exec_plan._subphase_count > 8 || smem.vGetForceClockRedCountOneTime() == true)
         {
             smem.vSetForceClockRedCountOneTime(false);    //Do nothing
         }
@@ -7289,7 +7289,7 @@ void CSTC::CalculateAndSendRedCount(const short int diff)    //聯嘉 紅燈倒�
 
             MESSAGEOK _MsgOK;
             _MsgOK = oDataToMessageOK.vPackageINFOToVer94RedCount
-            (0x82, usiHCRedcountMapping[0], usiHCRedcountMapping[1], usiHCRedcountMapping[2], usiHCRedcountMapping[3], usiHCRedcountMapping[4]);
+                     (0x82, usiHCRedcountMapping[0], usiHCRedcountMapping[1], usiHCRedcountMapping[2], usiHCRedcountMapping[3], usiHCRedcountMapping[4]);
             _MsgOK.InnerOrOutWard = cOutWard;
 
             for(int i = 0; i < ucRedCountRepeatCount; i++)
@@ -15946,4 +15946,87 @@ void  CSTC::CheckDynSegAndSendNextPlanId()
     Lock_to_Determine_SegmentPlanPhase_DynSeg();
     vCCJTOMSendTODNextPlanID();
 }
+CPhaseInfo CSTC::Get_stc_phase(int phase_num)
+{
+    try
+    {
 
+        return phase[phase_num];
+    }
+    catch(...) {}
+}
+CPlanInfo CSTC:: Get_stc_plan(int plan_num)
+{
+    try
+    {
+        return plan[plan_num];
+    }
+    catch(...)
+    {
+        printf("Get_stc_plan fault");
+
+
+    }
+
+}
+CSegmentInfo CSTC::Get_stc_segment(int segment_num)
+{
+    try
+    {
+        return segment[segment_num];
+    }
+    catch(...) {}
+}
+
+CWeekDaySegType CSTC::Get_stc_weekdayseg(int weekdayseg_num)
+{
+    try
+    {
+        return weekdayseg[weekdayseg_num];
+    }
+
+    catch(...) {}
+}
+CHoliDaySegType CSTC::Get_stc_holidayseg(int holidayseg_num)
+{
+    try
+    {
+        return holidayseg[holidayseg_num];
+
+    }
+    catch(...) {}
+
+}
+CReverseTimeInfo  CSTC::  Get_stc_reversetime(int reversetime_num)
+{
+    try{
+    return reversetime[reversetime_num];
+    }catch(...){}
+}
+ CWeekDayRevType CSTC:: Get_stc_weekdayrev(int weekdayrev_num) //{0-6,7-13} according to {1-7,11-17}
+ {
+     try
+     {
+         return weekdayrev[weekdayrev_num];
+     }catch(...){}
+ }
+ CHoliDayRevType CSTC::Get_stc_holidayrev(int holidayrev_num) //{0-12} according to {4-16}
+ {
+     try
+     {
+         return holidayrev[holidayrev_num];
+     }catch(...){}
+ }
+unsigned short int CSTC::Get_exec_reversetime_current_rev_step()
+{
+    return _exec_reversetime_current_rev_step;
+}
+
+ControlStrategy CSTC::Get_current_stratage()
+{
+    return _current_strategy;
+}
+ControlStrategy CSTC::Get_old_stratage()
+{
+    return _old_strategy;
+}

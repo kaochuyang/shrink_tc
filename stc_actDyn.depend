@@ -37815,7 +37815,7 @@
 1437555520 /home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/JOB.h
 	"var.h"
 
-1441866954 /home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/CSTC.h
+1527254269 /home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/CSTC.h
 	<fstream>
 	"CReverseTime.h"
 	"CSegmentInfo.h"
@@ -37900,7 +37900,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1526460066 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/CSTC.cpp
+1527252473 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/CSTC.cpp
 	"CSTC.h"
 	"math.h"
 	"light.h"
@@ -40259,10 +40259,12 @@
 	"WRITEJOB.h"
 	"var.h"
 
-1527127245 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/shirink_app.cpp
+1527251452 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/shirink_app.cpp
 	"shirink_app.h"
+	"SMEM.h"
+	"CSTC.h"
 
-1527150732 /home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/shirink_app.h
+1527241324 /home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/shirink_app.h
 	"var.h"
 	"CReverseTime.h"
 	"CSegmentInfo.h"
