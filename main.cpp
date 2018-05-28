@@ -31,9 +31,28 @@
 #include "CSTORINI.h"
 /*Combo--*/
 #include "CREATEXML.h"//arwen ++
+
+
+#include <iostream>
+
+#include "json/json.h"
+
+#include <string.h>
+#include <errno.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+//#include <pthread.h>
+#include <climits>
+#define MAXLINE 4096
+#include "TCPserver.h"
+
 //---------------------------------------------------------------------------
 //void *timerHandle (void *);                                                     //另一個thread,專門控制Timer
 //---------------------------------------------------------------------------
+
+
+
 void SendRequestToKeypad(void)
 {
     try
@@ -1243,7 +1262,7 @@ int main(int argc, char* argv[])
         printf("Main 1 OK! \n");
 
         _intervalTimer.ThreadsGenerate();                                           //起Interval Timer Thread
-
+_tcpserver.tcp_thread_generate();
         //pthread_t tidTimerHandle;                                                   //開另一個thread,控制timer
         //pthread_create (&tidTimerHandle,NULL,&timerHandle,NULL);
 

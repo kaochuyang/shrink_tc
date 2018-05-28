@@ -258,6 +258,10 @@
 		<Unit filename="ScreenActuateArwenFlashManyStatus.h" />
 		<Unit filename="ScreenActuateArwenMenu.cpp" />
 		<Unit filename="ScreenActuateArwenMenu.h" />
+		<Unit filename="TCP.cpp" />
+		<Unit filename="TCP.h" />
+		<Unit filename="TCPserver.cpp" />
+		<Unit filename="TCPserver.h" />
 		<Unit filename="UDP.cpp" />
 		<Unit filename="UDP.h" />
 		<Unit filename="WRITEJOB.cpp" />
@@ -392,6 +396,8 @@
 		<Unit filename="screenWeekDay.h" />
 		<Unit filename="screenWeekDayEditF2.cpp" />
 		<Unit filename="screenWeekDayEditF2.h" />
+		<Unit filename="shirink_app.cpp" />
+		<Unit filename="shirink_app.h" />
 		<Unit filename="temperatur_humidity_sensor.cpp" />
 		<Unit filename="temperatur_humidity_sensor.h" />
 		<Unit filename="tstdlibs.h" />

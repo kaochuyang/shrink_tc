@@ -140,7 +140,7 @@ public:
     };
 /***    refresh_series catch tc data to shrink_app class       ****/
     void refresh_ip();
-    void refresh_railchan_parama();
+    void refresh_railchain_parama();
     void refresh_manual_setting();
     void refresh_proxy_transfer();
     void refresh_signal_card_direction();
@@ -153,6 +153,7 @@ public:
     void refresh_execute_data();
 /***     "set series" receive shrink_app_pad'data than set in tc, then use refresh_series update shrink_app's object    ***/
     void set_ip();
+    void set_railchain_parama();
     void set_manual_setting();
     void set_proxy_transfer();
     void set_signal_card_direction();
