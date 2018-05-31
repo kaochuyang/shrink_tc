@@ -7,7 +7,7 @@
 #include "CPlanInfo.h"
 #include "CIOCom.h"
 #include "CPacketCluster.h"
-
+#include "json/json.h"
 #include "CRTMSDecoder.h"
 #include "CRTMSInformation.h"
 #include "CTrafficAnalyzer.h"
@@ -15,6 +15,16 @@
 class shirink_app
 {
 public:
+Json::Value string_to_app;
+Json::Value phaseinfo;
+Json::Value subplaninfo;
+Json::Value planinfo;
+Json::Value segmentinfo;
+Json::Value current_state;
+Json::Value Holidaysegtype;
+Json::Value WeekdaySegtype;
+Json::FastWriter faster_writer;
+
     shirink_app();
     virtual ~shirink_app();
 
@@ -166,7 +176,7 @@ public:
     void set_execute_data();
  /***   "send series" send the tc's data with json form to shrink_app_pad  ***/
     void send_ip();
-    void send_manual_sendting();
+    void send_manual_setting();
     void send_proxy_transfer();
     void send_signal_card_direction();
     void send_tc_stratage_send();
@@ -174,8 +184,8 @@ public:
     void send_learn_mode_group();
     void send_ped_control_send();
     void send_chain_send_group();
-    void send_tc_project_data();
-    void send_execute_data();
+    void send_tc_project_data();// v
+    void send_execute_data();//v
 
 
 //protected:

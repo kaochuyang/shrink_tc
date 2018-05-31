@@ -1,6 +1,7 @@
 #include "shirink_app.h"
 #include "SMEM.h"
 #include "CSTC.h"
+
 shirink_app::shirink_app()
 {
     //ctor
@@ -67,16 +68,17 @@ void shirink_app::refresh_railchain_parama()
 
 
 }
- void shirink_app::refresh_manual_setting()
- {
-     try
-     {
-   /*      s_tc_manual_setting.dbOperStat=smem.GetDbOperStat();
-       //  s_tc_manual_setting.HWCycleCodeIN
-         s_tc_manual_setting.WayMappingRedCountIN=smem.vGetWayMappingRedCount();*/
-     }catch(...){}
+void shirink_app::refresh_manual_setting()
+{
+    try
+    {
+        /*      s_tc_manual_setting.dbOperStat=smem.GetDbOperStat();
+            //  s_tc_manual_setting.HWCycleCodeIN
+              s_tc_manual_setting.WayMappingRedCountIN=smem.vGetWayMappingRedCount();*/
+    }
+    catch(...) {}
 
- }
+}
 
 
 void shirink_app::refresh_proxy_transfer()
@@ -246,222 +248,389 @@ void shirink_app::refresh_execute_data()
 /***-------SET SERIRES----------------------****/
 void shirink_app::set_ip()
 {
-    try {
-    /*    for(int i=1; i<6; i++)
-        {
-            smem.SetLocalIP1(i,localIp1_[i]);
-            smem.SetdistIp0(i,distIp0_[i]);
-            smem.SetDistIP(i,distIp1_[i]);
-        }
-        for(int i=1; i<5; i++)
-        {
-            smem.SetNetmask(i,netmask[i]);
-            smem.SetGateway(i,gateway[i]);
-        }
+    try
+    {
+        /*    for(int i=1; i<6; i++)
+            {
+                smem.SetLocalIP1(i,localIp1_[i]);
+                smem.SetdistIp0(i,distIp0_[i]);
+                smem.SetDistIP(i,distIp1_[i]);
+            }
+            for(int i=1; i<5; i++)
+            {
+                smem.SetNetmask(i,netmask[i]);
+                smem.SetGateway(i,gateway[i]);
+            }
 
 
- char cRunString[256];
-        int localIp1_[6];//localIp[5]=localport
-        int distIp0_[6];//distIp0_[5]=distIp0_port
-        int distIp1_[6];//distIp1_[5]=distIp1_port
-        int netmask[5];
-        int gateway[5];
+         char cRunString[256];
+            int localIp1_[6];//localIp[5]=localport
+            int distIp0_[6];//distIp0_[5]=distIp0_port
+            int distIp1_[6];//distIp1_[5]=distIp1_port
+            int netmask[5];
+            int gateway[5];
 
-   system("rm -rf /bin/quickNetwork2");
-        system("rm -rf /cct/quickNetwork2");
-        bzero(cRunString, sizeof(cRunString));
-        sprintf(cRunString, "cp /bin/spaceSH /bin/quickNetwork2");
-        sprintf(cRunString, "cp /bin/spaceSH /cct/quickNetwork2");
-        system(cRunString);
-        bzero(cRunString, sizeof(cRunString));
-        sprintf(cRunString, "echo /sbin/ifconfig eth0:3 %d.%d.%d.%d netmask %d.%d.%d.%d >> /bin/quickNetwork2", localIp1_[1], localIp1_[2], localIp1_[3], localIp1_[4], netmask[1], netmask[2], netmask[3], netmask[4]);
-        system(cRunString);
-        bzero(cRunString, sizeof(cRunString));
-        sprintf(cRunString, "echo /sbin/route add default gw %d.%d.%d.%d >> /bin/quickNetwork2", gateway[1], gateway[2], gateway[3], gateway[4]);
-        system(cRunString);
-        bzero(cRunString, sizeof(cRunString));
-        sprintf(cRunString, "chmod +x /bin/quickNetwork2");
-        system(cRunString);
-
-
-        system("sync");
-        system("sync");
-        //  system("reboot");
+           system("rm -rf /bin/quickNetwork2");
+            system("rm -rf /cct/quickNetwork2");
+            bzero(cRunString, sizeof(cRunString));
+            sprintf(cRunString, "cp /bin/spaceSH /bin/quickNetwork2");
+            sprintf(cRunString, "cp /bin/spaceSH /cct/quickNetwork2");
+            system(cRunString);
+            bzero(cRunString, sizeof(cRunString));
+            sprintf(cRunString, "echo /sbin/ifconfig eth0:3 %d.%d.%d.%d netmask %d.%d.%d.%d >> /bin/quickNetwork2", localIp1_[1], localIp1_[2], localIp1_[3], localIp1_[4], netmask[1], netmask[2], netmask[3], netmask[4]);
+            system(cRunString);
+            bzero(cRunString, sizeof(cRunString));
+            sprintf(cRunString, "echo /sbin/route add default gw %d.%d.%d.%d >> /bin/quickNetwork2", gateway[1], gateway[2], gateway[3], gateway[4]);
+            system(cRunString);
+            bzero(cRunString, sizeof(cRunString));
+            sprintf(cRunString, "chmod +x /bin/quickNetwork2");
+            system(cRunString);
 
 
+            system("sync");
+            system("sync");
+            //  system("reboot");
 
-    */
+
+
+        */
 
     }
     catch(...) {}}
-    void shirink_app::set_railchain_parama()
+void shirink_app::set_railchain_parama()
+{
+    try
     {
-        try{
 
- /*       smem.vSetUCData(TC_TrainChainEnable);
-          smem.vSetUCData(TC_TrainComingBanSubphase);
-            smem.vSetUCData(TC_TrainComingForceJumpSubphase);*/
+        /*       smem.vSetUCData(TC_TrainChainEnable);
+                 smem.vSetUCData(TC_TrainComingBanSubphase);
+                   smem.vSetUCData(TC_TrainComingForceJumpSubphase);*/
 
-        }catch(...){}
     }
+    catch(...) {}
+}
 void shirink_app::set_manual_setting()
 {
-    try {
+    try
+    {
 
-    /*
-
-
-    smem.setDbOperastat();
-    smem.vSetWayMappingRedCount(1,2);
+        /*
 
 
-    */
+        smem.setDbOperastat();
+        smem.vSetWayMappingRedCount(1,2);
+
+
+        */
     }
     catch(...) {}}
 void shirink_app::set_proxy_transfer()
 {
-    try {
-    /*
-    smem.vSetPassMode()
-    smem.vSetPassServerLCN()
+    try
+    {
+        /*
+        smem.vSetPassMode()
+        smem.vSetPassServerLCN()
 
-    */
+        */
     }
     catch(...) {}}
 void shirink_app::set_signal_card_direction()
 {
-    try {
-    /*smem.vSetSignamMapMappingDir(i);
-    smem.vSetSignamMapMappingLightBoard(i);*/
+    try
+    {
+        /*smem.vSetSignamMapMappingDir(i);
+        smem.vSetSignamMapMappingLightBoard(i);*/
     }
     catch(...) {}}
 void shirink_app::set_tc_stratage_set()
 {
-    try {
-  /*
-    smem.vSetUCData(TC92_ucControlStrategy);
-        smem.vSetINTData(TC92SignalLightStatus_5F0F_IntervalTime);
-        smem.vSetINTData(TC92SignalStepStatus_5F03_IntervalTime);
-        smem.vSetINTData(TC92_RedCountVer);
-        smem.vSetBOOLData(TC_CCT_In_LongTanu_ActuateType_FunctionEnable);
-        smem.vSetUSIData(TC_CCT_In_LongTanu_ActuateType_Switch);
-        smem.vSetActuatePhaseExtend();
-        smem.vSetBOOLData(TC_Actuateautoswitch);
+    try
+    {
+        /*
+          smem.vSetUCData(TC92_ucControlStrategy);
+              smem.vSetINTData(TC92SignalLightStatus_5F0F_IntervalTime);
+              smem.vSetINTData(TC92SignalStepStatus_5F03_IntervalTime);
+              smem.vSetINTData(TC92_RedCountVer);
+              smem.vSetBOOLData(TC_CCT_In_LongTanu_ActuateType_FunctionEnable);
+              smem.vSetUSIData(TC_CCT_In_LongTanu_ActuateType_Switch);
+              smem.vSetActuatePhaseExtend();
+              smem.vSetBOOLData(TC_Actuateautoswitch);
 
-    */
+          */
 
     }
     catch(...) {}}
 void shirink_app::set_compensation()
 {
-    try {
+    try
+    {
         /*
         smem.SetCompensationcycle();
         */
 
-        }
+    }
     catch(...) {}}
 void shirink_app::set_learn_mode_group()
 {
-    try {
- /*
-        smem.SetCarLearnSwitch();
+    try
+    {
+        /*
+               smem.SetCarLearnSwitch();
 
-        smem.SetPedLearnSwitch();
+               smem.SetPedLearnSwitch();
 
-        smem.SetCarCountdownProperty();
+               smem.SetCarCountdownProperty();
 
-        smem.SetPedCountdownProperty();
+               smem.SetPedCountdownProperty();
 
-    */
+           */
 
     }
     catch(...) {}}
 void shirink_app::set_ped_control_set()
 {
-    try {
-    //smem.cPedPushButton.SetDevCount();
+    try
+    {
+        //smem.cPedPushButton.SetDevCount();
     }
     catch(...) {}}
 void shirink_app::set_chain_set_group()
 {
-    try {
-  /*
-     smem.vSetUCData(TC92_5F31Manual);
-        smem.vSetUCData(TC92_5F31TOD);
-        smem.vSetUCData(TC92_5F31StartSubPhaseId);
-        smem.vSetUCData(TC92_5F31EndSubPhaseId);
-        smem.vSetUCData(TC92_5F32StartSubPhaseId);
-        smem.vSetUCData(TC92_5F32EndSubPhaseId);
-        smem.vSetUCData(TC_MotherChainStartStepId);
-        smem.vSetUCData(TC_MotherChainEndStepId);
-        for(int i=0; i<64; i++)
-        {
-            smem.vSetChainOffset(1,i);
-            smem.vSetChainOffset(2,i);
-        }
-    */
+    try
+    {
+        /*
+           smem.vSetUCData(TC92_5F31Manual);
+              smem.vSetUCData(TC92_5F31TOD);
+              smem.vSetUCData(TC92_5F31StartSubPhaseId);
+              smem.vSetUCData(TC92_5F31EndSubPhaseId);
+              smem.vSetUCData(TC92_5F32StartSubPhaseId);
+              smem.vSetUCData(TC92_5F32EndSubPhaseId);
+              smem.vSetUCData(TC_MotherChainStartStepId);
+              smem.vSetUCData(TC_MotherChainEndStepId);
+              for(int i=0; i<64; i++)
+              {
+                  smem.vSetChainOffset(1,i);
+                  smem.vSetChainOffset(2,i);
+              }
+          */
     }
     catch(...) {}}
 void shirink_app::set_tc_project_data()
 {
-    try {
- /*   stc.Lock_to_Save_Phase();//phase
-    stc.Lock_to_Save_Plan();//plan
-    stc.Lock_to_Save_Segment();//segment
-    stc.Lock_to_Save_Segment_from_Panel()//weekday
-    stc.Lock_to_Save_HoliDaySegment();
-    stc.Lock_to_Save_WeekDayReversetime_from_Center();
-    stc.Lock_to_Save_HoliDaySegment()
-    stc.Lock_to_Save_ReverseTime_Step2();
-    */
+    try
+    {
+        /*   stc.Lock_to_Save_Phase();//phase
+           stc.Lock_to_Save_Plan();//plan
+           stc.Lock_to_Save_Segment();//segment
+           stc.Lock_to_Save_Segment_from_Panel()//weekday
+           stc.Lock_to_Save_HoliDaySegment();
+           stc.Lock_to_Save_WeekDayReversetime_from_Center();
+           stc.Lock_to_Save_HoliDaySegment()
+           stc.Lock_to_Save_ReverseTime_Step2();
+           */
 
     }
     catch(...) {}}
 void shirink_app::set_execute_data()
 {
-    try {
+    try
+    {
 
-  /*   iCurrentPhaseID  = stc.vGetUSIData(CSTC_exec_plan_phase_order);
-  iCurrentPlanID   = stc.vGetUSIData(CSTC_exec_plan_plan_ID);
+        /*   iCurrentPhaseID  = stc.vGetUSIData(CSTC_exec_plan_phase_order);
+        iCurrentPlanID   = stc.vGetUSIData(CSTC_exec_plan_plan_ID);
 
-//  stc.Lock_to_Load_Segment_for_Panel(iCurrentSegNo);
-  stc.Lock_to_Load_Plan_for_Panel(iCurrentPlanID);
-  stc.Lock_to_Load_Phase_for_Panel(iCurrentPhaseID);
+        //  stc.Lock_to_Load_Segment_for_Panel(iCurrentSegNo);
+        stc.Lock_to_Load_Plan_for_Panel(iCurrentPlanID);
+        stc.Lock_to_Load_Phase_for_Panel(iCurrentPhaseID);
 
-  iCurrentSubphase = stc.vGetUSIData(CSTC_exec_phase_current_subphase);
-  iCurrentSubphaseTotal = stc._panel_phase._subphase_count;
+        iCurrentSubphase = stc.vGetUSIData(CSTC_exec_phase_current_subphase);
+        iCurrentSubphaseTotal = stc._panel_phase._subphase_count;
 
-  iLastStep = iCurrentStep;
-  iCurrentStep     = stc.vGetUSIData(CSTC_exec_phase_current_subphase_step);
-//  iCurrentStepTotal = stc._panel_phase._total_step_count;
-  if(stc._panel_phase._total_step_count > 1) {
-    iCurrentStepTotal = 5; //default set to 5
-  }
+        iLastStep = iCurrentStep;
+        iCurrentStep     = stc.vGetUSIData(CSTC_exec_phase_current_subphase_step);
+        //  iCurrentStepTotal = stc._panel_phase._total_step_count;
+        if(stc._panel_phase._total_step_count > 1) {
+          iCurrentStepTotal = 5; //default set to 5
+        }
 
-  //Fuck Chen Ming Zu
-//  iCurrentStep = iCurrentStep + ((iCurrentSubphase)*5);
-  iCurrentStepTotal = iCurrentStepTotal*iCurrentSubphaseTotal;
+        //Fuck Chen Ming Zu
+        //  iCurrentStep = iCurrentStep + ((iCurrentSubphase)*5);
+        iCurrentStepTotal = iCurrentStepTotal*iCurrentSubphaseTotal;
 
-  usiStepSec = stc.vGetStepTime();
+        usiStepSec = stc.vGetStepTime();
 
-  ucTCControlStrategy = smem.vGetUCData(TC92_ucControlStrategy);
+        ucTCControlStrategy = smem.vGetUCData(TC92_ucControlStrategy);
 
-  vCalActTuningStatus();
-  vDisplayActionChange();
-  vRefreshActuateTimes();
-  vRefreshActSwitch();
+        vCalActTuningStatus();
+        vDisplayActionChange();
+        vRefreshActuateTimes();
+        vRefreshActSwitch();
 
-    */
+          */
 
     }
     catch(...) {}}
+void shirink_app::send_tc_project_data()
+{
+
+    try
+    {
+        refresh_tc_project_data();
+
+        Json::Value segcontext;
+        stc.Lock_to_Load_WeekDaySegment_for_Panel();
+        for(int i=0; i<14; i++)
+        {
+            segmentinfo["weekdaysegment"][i]=stc._panel_weekdayseg[i]._segment_type;
+        }
+        Json::Value specialdaycontext;
+        for(int i=8; i<21; i++)
+        {
+            stc.Lock_to_Load_HoliDaySegment_for_Panel(i);
+            specialdaycontext["segmenttype"]=stc._panel_holidayseg._segment_type;
+            specialdaycontext["start_year"]=stc._panel_holidayseg._start_year;
+            specialdaycontext["start_month"]=stc._panel_holidayseg._start_month;
+            specialdaycontext["start_day"]=stc._panel_holidayseg._start_day;
+            specialdaycontext["end_year"]=stc._panel_holidayseg._end_year;
+            specialdaycontext["end_month"]=stc._panel_holidayseg._end_month;
+            specialdaycontext["end_day"]=stc._panel_holidayseg._end_day;
+            string_to_app["specialday"][i-8]=specialdaycontext;
+        }
+
+
+        for(int i=0; i<21; i++)
+        {
+            stc.Lock_to_Load_Segment_for_Panel(i);
+            // segmentinfo["segment_type"][i]=stc._panel_segment._segment_type;
+            segmentinfo["segment_count"][i]=stc._panel_segment._segment_count;
+            for(int j=0; j<stc._panel_segment._segment_count; j++) //32
+            {
+                segcontext["hour"][j]=stc._panel_segment._ptr_seg_exec_time[j]._hour;
+                segcontext["minute"][j]=stc._panel_segment._ptr_seg_exec_time[j]._minute;
+                segcontext["plan"][j]=stc._panel_segment._ptr_seg_exec_time[j]._planid;
+                segcontext["actMode"][j]=stc._panel_segment._ptr_seg_exec_time[j]._actMode;
+            }
+            segmentinfo["segtype"][i]=segcontext;
+            //segmentinfo["segcontext"]=segcontext;
+        }
+
+        string_to_app["segement"]=segmentinfo;
+
+        Json::Value plancontext;
+        for(int j=0; j<32; j++)
+        {
+            stc.Lock_to_Load_Plan_for_Panel(j);
+
+            plancontext["plan_id"]=stc._panel_plan._planid;
+            plancontext["dir"]=stc._panel_plan._dir;
+
+            plancontext["phase_order"]=stc._panel_plan._phase_order;
+            plancontext["subphase_count"]=stc._panel_plan._subphase_count;
+            plancontext["cycle_time"]=stc._panel_plan._cycle_time;
+            plancontext["offset"]=stc._panel_plan._offset;
+            for (int i=0; i<8; i++)       //8
+            {
+                plancontext["subphase_green"][i]=stc._panel_plan._ptr_subplaninfo[i]._green;
+                plancontext["subphase_min_green"][i]=stc._panel_plan._ptr_subplaninfo[i]._min_green;
+                plancontext["subphase_max_green"][i]=stc._panel_plan._ptr_subplaninfo[i]._max_green;
+                plancontext["subphase_yellow"][i]=stc._panel_plan._ptr_subplaninfo[i]._yellow;
+                plancontext["subphase_allred"][i]=stc._panel_plan._ptr_subplaninfo[i]._allred;
+                plancontext["subphase_pedgreen_flash"][i]=stc._panel_plan._ptr_subplaninfo[i]._pedgreen_flash;
+                plancontext["subphase_pedred"][i]=stc._panel_plan._ptr_subplaninfo[i]._pedred;
+
+            }
+            string_to_app["plan"][j]=plancontext;
+        }
+        Json::Value step;
+
+        for(int i=0; i<256; i++)
+
+        {
+            stc.Lock_to_Load_Phase_for_Panel(i);
+            step["phase_ID"]=i;
+            step["phase_order"] = stc._panel_phase._phase_order;
+            step["signal_map"]= stc._panel_phase._signal_map;
+            step["signal_count"]= stc._panel_phase._signal_count;
+            step["subphase_count"]= stc._panel_phase._subphase_count;
+            for(int j=0; j<8; j++)
+                step["sub_stepcount"][j]= stc._panel_phase._ptr_subphase_step_count[j];
+
+            for(int i = 0; i < stc._panel_phase._subphase_count; i++)
+            {
+                for(int j = 0; j <  stc._panel_phase._ptr_subphase_step_count[j]; j++)
+                {
+                    for(int k = 0; k < stc._panel_phase._signal_count; k++)
+                    {
+                        step["step_light"][i][j][k] = stc._panel_phase._ptr_subphase_step_signal_status[i][j][k];
+
+                    }
+                }
+            }
+
+            string_to_app["phaseID"][i]=step;
+        }
 
 
 
+        printf("%s\n",string_to_app.toStyledString().c_str());
+    }
+    catch(...)
+    {
+
+    }
+
+
+}
+
+
+void shirink_app::send_execute_data()
+{
+    try
+    {
+
+        unsigned short int iCurrentPhaseID  = stc.vGetUSIData(CSTC_exec_plan_phase_order);
+        unsigned short int iCurrentPlanID   = stc.vGetUSIData(CSTC_exec_plan_plan_ID);
+        current_state["current_phaseID"]=iCurrentPhaseID;
+        current_state["current_planID"]=iCurrentPlanID;
+/*        stc.Lock_to_Load_Plan_for_Panel(iCurrentPhaseID);
+        stc.Lock_to_Load_Phase_for_Panel(iCurrentPlanID);
+*/
+        current_state["current_second"]=stc.vGetStepTime();
+        int iCurrentSubphase = stc.vGetUSIData(CSTC_exec_phase_current_subphase);
+
+        int iCurrentSubphaseTotal = stc._panel_phase._subphase_count;
+        current_state["current_subphase"]= iCurrentSubphase+1;
+        current_state["current_total_subphase"]= iCurrentSubphaseTotal;
+        int iCurrentStep     = stc.vGetUSIData(CSTC_exec_phase_current_subphase_step);
+        int iCurrentStepTotal = stc._panel_phase._total_step_count;
+        printf("current_total_subphase=%d,current_total_step=%d\n",iCurrentSubphaseTotal,iCurrentStepTotal);
+       current_state["current_step"]=iCurrentStep + ((iCurrentSubphase)*5)+1;
+        current_state["current_total_step"]=iCurrentStepTotal;
+
+
+        printf("%s\n",current_state.toStyledString().c_str());
+
+    }
+    catch(...) {}
+}
+
+void shirink_app::send_ip()
+{
+    try
+    {
 
 
 
+    }catch(...){}
+}
+void shirink_app::send_manual_setting()
+{
+    try
+    {
+
+    }catch(...){}
+}
 
 
 

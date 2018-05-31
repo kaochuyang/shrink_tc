@@ -37900,7 +37900,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1527254293 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/CSTC.cpp
+1527754399 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/CSTC.cpp
 	"CSTC.h"
 	"math.h"
 	"light.h"
@@ -39506,7 +39506,7 @@
 	<sys/perm.h>
 	<sys/io.h>
 
-1526870259 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/main.cpp
+1527759670 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/main.cpp
 	"var.h"
 	"SMEM.h"
 	"PARSETRAFFIC.h"
@@ -39530,6 +39530,15 @@
 	"CSTC.h"
 	"CSTORINI.h"
 	"CREATEXML.h"
+	<iostream>
+	"json/json.h"
+	<string.h>
+	<errno.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<climits>
+	"TCPserver.h"
 
 1437555508 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/screenActuateArwenManyStatus.cpp
 	"screenActuateArwenManyStatus.h"
@@ -40259,12 +40268,12 @@
 	"WRITEJOB.h"
 	"var.h"
 
-1527495547 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/shirink_app.cpp
+1527761304 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/shirink_app.cpp
 	"shirink_app.h"
 	"SMEM.h"
 	"CSTC.h"
 
-1527495389 /home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/shirink_app.h
+1527761304 /home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/shirink_app.h
 	"var.h"
 	"CReverseTime.h"
 	"CSegmentInfo.h"
@@ -40272,6 +40281,7 @@
 	"CPlanInfo.h"
 	"CIOCom.h"
 	"CPacketCluster.h"
+	"json/json.h"
 	"CRTMSDecoder.h"
 	"CRTMSInformation.h"
 	"CTrafficAnalyzer.h"
@@ -40294,9 +40304,11 @@
 	<netdb.h>
 	<pthread.h>
 
-1527502321 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/TCPserver.cpp
+1527759660 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/TCPserver.cpp
 	"TCPserver.h"
+	<iostream>
 	"json/json.h"
+	<string.h>
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -40307,7 +40319,8 @@
 	<unistd.h>
 	<climits>
 
-1527502393 /home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/TCPserver.h
+1527564434 /home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/TCPserver.h
+	"shirink_app.h"
 
 1525261501 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/json/json_reader.cpp
 	"reader.h"

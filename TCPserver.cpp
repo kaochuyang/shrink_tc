@@ -1,7 +1,7 @@
 #include "TCPserver.h"
-
+#include <iostream>
 #include "json/json.h"
-
+#include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -12,7 +12,7 @@
 #include <unistd.h>
 #include <climits>
 #define MAXLINE 4096
-
+using namespace std;
 TCPserver _tcpserver;
 TCPserver::TCPserver()
 {
@@ -40,6 +40,8 @@ void TCPserver::tcp_thread_generate()
 
 void* TCPserver::pthread_func(void *arg)
 {
+ string H;
+
       Json::Value root;
     Json::FastWriter fast_writer;
     root["REGION_ID"]="600901";
@@ -64,10 +66,17 @@ void* TCPserver::pthread_func(void *arg)
 
     cout<<A.find("\"")<<endl;
 
+shirink_app F;
+
+while(1)
+{
 
 
+F.send_execute_data();//send_tc_project_data();
+sleep(1);
+}
 
-    printf("%s\n",A.c_str());
+   // printf("%s\n",A.c_str());
 
     int listenfd,connfd;
     struct sockaddr_in servaddr;
@@ -114,6 +123,7 @@ void* TCPserver::pthread_func(void *arg)
             printf(" accpt socket error: %s (errno :%d)\n",strerror(errno),errno);
             return 0;
         }
+
     int chek=0;
         while((n=recv(connfd,buff,MAXLINE,0))>0)
         {
@@ -123,10 +133,15 @@ void* TCPserver::pthread_func(void *arg)
 
 
             printf("recv msg from client:%s\n",buff);
-            printf("\n");
+            printf("string size=%d\n",F.string_to_app.toStyledString().size());
 
-            printf("size=%d\n",A.size());
-            if ( chek=send(connfd,A.c_str(),A.size(),0) <0)
+
+  printf("%s\n",F.string_to_app.toStyledString().c_str());
+  cout<<F.faster_writer.write(F.string_to_app)<<endl;
+
+H=F.faster_writer.write(F.string_to_app);
+            printf("size=%d\n",F.string_to_app.size());
+            if ( chek=send(connfd,H.c_str(),H.size(),0) <0)
             {
                 printf("send msg error: %s(errno :%d)\n",strerror(errno),errno);
                 return 0;

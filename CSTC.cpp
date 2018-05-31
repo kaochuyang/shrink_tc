@@ -1295,31 +1295,7 @@ void * CSTC::_stc_thread_light_control_func( void * )
         ucEA00[0] = 0xEA;
         ucEA00[1] = 0x00;
 
-        /*
-          ucSayHelloToCardForDetSignalDriverUnit[0] = 0xAA;
-          ucSayHelloToCardForDetSignalDriverUnit[1] = 0xBB;
-          ucSayHelloToCardForDetSignalDriverUnit[2] = 0x13;
-          ucSayHelloToCardForDetSignalDriverUnit[3] = 0x00;
-          ucSayHelloToCardForDetSignalDriverUnit[4] = 0x00;
-          ucSayHelloToCardForDetSignalDriverUnit[5] = 0x00;
-          ucSayHelloToCardForDetSignalDriverUnit[6] = 0x00;
-          ucSayHelloToCardForDetSignalDriverUnit[7] = 0x00;
-          ucSayHelloToCardForDetSignalDriverUnit[8] = 0x00;
-          ucSayHelloToCardForDetSignalDriverUnit[9] = 0x00;
-          ucSayHelloToCardForDetSignalDriverUnit[10] = 0x00;
-          ucSayHelloToCardForDetSignalDriverUnit[11] = 0x00;
-          ucSayHelloToCardForDetSignalDriverUnit[12] = 0x00;
-          ucSayHelloToCardForDetSignalDriverUnit[13] = 0x12;
-          ucSayHelloToCardForDetSignalDriverUnit[14] = 0x00;
-          ucSayHelloToCardForDetSignalDriverUnit[15] = 0x00;
-          ucSayHelloToCardForDetSignalDriverUnit[16] = 0x00;
-          ucSayHelloToCardForDetSignalDriverUnit[17] = 0x00;
-          ucSayHelloToCardForDetSignalDriverUnit[18] = 0xAA;
-          ucSayHelloToCardForDetSignalDriverUnit[19] = 0xCC;
-          ucSayHelloToCardForDetSignalDriverUnit[20] = 0x00;
-          for (int i=0; i<20; i++)
-            ucSayHelloToCardForDetSignalDriverUnit[20]^=ucSayHelloToCardForDetSignalDriverUnit[i];
-        */
+
         MESSAGEOK _MsgOK;
         unsigned short int usiRedCount[5] = {0, 0, 0, 0, 0};                       //For RedCount
 
@@ -1349,51 +1325,6 @@ void * CSTC::_stc_thread_light_control_func( void * )
                 smem.vWriteMsgToDOM("Reset TC Signal By Console!");
                 break;
 
-                /*
-                        printf("\n\n  ****** SIGNAL_RECORD_TRAFFIC ******\n" );
-                        pthread_mutex_lock(&CSTC::_record_traffic_mutex);{
-                          if(!recording_traffic){
-                            FILE *filep=setmntent(MOUNTFILE,"r");
-                            struct mntent *mt;
-                            bool mount_dir_find=false;
-                            while(mt=getmntent(filep)) if(strcmp(mt->mnt_dir,MOUNTDIR)==0) mount_dir_find=true;
-                            if(mount_dir_find){
-                              printf("\n\n   ****** %s mounted!! ******\n\n",MOUNTDIR);
-                              printf("  ********       START       ********\n");
-                              printf("  ******** recording traffic ********\n\n");
-                              recording_traffic=true;
-
-                              now = time(NULL);
-                              currenttime = localtime(&now);
-                              char raw[34], refined[38], traffic[38], target[37];
-                                sprintf(raw,     "%s/_%#02d%#02d-%#02d%#02d_RAW.txt\0",MOUNTDIR, currenttime->tm_mon+1, currenttime->tm_mday, currenttime->tm_hour, currenttime->tm_min);
-                                sprintf(refined, "%s/_%#02d%#02d-%#02d%#02d_REFINED.txt\0",MOUNTDIR, currenttime->tm_mon+1, currenttime->tm_mday, currenttime->tm_hour, currenttime->tm_min);
-                                sprintf(traffic, "%s/_%#02d%#02d-%#02d%#02d_TRAFFIC.txt\0",MOUNTDIR, currenttime->tm_mon+1, currenttime->tm_mday, currenttime->tm_hour, currenttime->tm_min);
-                                sprintf(target,  "%s/_%#02d%#02d-%#02d%#02d_TARGET.txt\0",MOUNTDIR, currenttime->tm_mon+1, currenttime->tm_mday, currenttime->tm_hour, currenttime->tm_min);
-                              rawfile.open    ( raw );
-                              refinedfile.open( refined );
-                              trafficfile.open( traffic );
-                              targetfile.open ( target );
-
-                              inrecordno=0;
-                              inperiodno=0;
-                            }
-                            else printf("\n\n   ****** %s not mounted!! ******\n   Please mount check the MOUNTDIR in CSTC.h!!\n\n",MOUNTDIR);
-                            endmntent(filep);
-                          }
-                          else{
-                            printf( "  ********        STOP         ******\n" );
-                            printf( "  ******** recording traffic ********\n\n" );
-                            recording_traffic=false;
-                            rawfile.close();
-                            refinedfile.close();
-                            trafficfile.close();
-                            targetfile.close();
-                          }
-                        }
-                        pthread_mutex_unlock(&CSTC::_record_traffic_mutex);
-                        break;
-                */
             case( SIGNAL_TRAFFIC_CHANGED ):
 //==        printf( "THREAD_LIGHT_CONTROL: getting signal from detector.\n" );
                 break;
@@ -1422,12 +1353,6 @@ void * CSTC::_stc_thread_light_control_func( void * )
                         //cheat, reask keypad again.
                         SendRequestToKeypad();
 
-                        /*bug!?
-                        _current_strategy = STRATEGY_TOD;
-                        ReSetStep(false);
-                        ReSetExtendTimer();
-                        SetLightAfterExtendTimerReSet();
-                        */
                         break;
                     case(STRATEGY_MANUAL):
                         ReSetStep(true);
@@ -1443,14 +1368,10 @@ void * CSTC::_stc_thread_light_control_func( void * )
 
                         break;
                     case(STRATEGY_CADC):
-                        /*+++++++++++++++++*/
-//                 keypad.keypadPort.doDisplayLcdWorkByData_P3();
-                        /*-----------------*/
+
                         break;
                     case(STRATEGY_AUTO_CADC):
-                        /*+++++++++++++++++*/
-//                keypad.keypadPort.doDisplayLcdWorkByData_P3();
-                        /*-----------------*/
+
                         break;
                     }
                     break;
@@ -1467,14 +1388,10 @@ void * CSTC::_stc_thread_light_control_func( void * )
                         _current_strategy = _old_strategy; //could not be changed in these _old_strategy!!
                         break;
                     case(STRATEGY_CADC):
-                        /*+++++++++++++++++*/
-//                keypad.keypadPort.doDisplayLcdWorkByData_P3();
-                        /*-----------------*/
+
                         break;
                     case(STRATEGY_TOD):
-                        /*+++++++++++++++++*/
-//                keypad.keypadPort.doDisplayLcdWorkByData_P3();
-                        /*-----------------*/
+
                         break;
                     }
                     break;
@@ -1491,14 +1408,10 @@ void * CSTC::_stc_thread_light_control_func( void * )
                         _current_strategy = _old_strategy; //could not be changed in these _old_strategy!!
                         break;
                     case(STRATEGY_AUTO_CADC):
-                        /*+++++++++++++++++*/
-//                keypad.keypadPort.doDisplayLcdWorkByData_P3();
-                        /*-----------------*/
+
                         break;
                     case(STRATEGY_TOD):
-                        /*+++++++++++++++++*/
-//                keypad.keypadPort.doDisplayLcdWorkByData_P3();
-                        /*-----------------*/
+
                         break;
                     }
                     break;
@@ -1528,13 +1441,6 @@ void * CSTC::_stc_thread_light_control_func( void * )
                 case(STRATEGY_MANUAL):
                     if(_current_strategy==STRATEGY_MANUAL)      printf( "    strategy changed to: MANUAL.%s\n", ColorNormal);
                     //Check Current Phase is not 0xB0 (flash light)
-                    /*
-                    if(_exec_phase._phase_order != 0xB0) {
-                        ReSetStep(false);
-                    } else {
-                        ReSetStep(true);
-                    }
-                    */
 
                     //OT980406
                     if(_exec_phase._phase_order == 0xB0 || _exec_phase._phase_order == 0x80)
@@ -1556,7 +1462,6 @@ void * CSTC::_stc_thread_light_control_func( void * )
 
             case( SIGNAL_NEXT_STEP ):
 //==        printf( "THREAD_LIGHT_CONTROL: getting signal from main to next step.\n" );
-                /******** lock mutex ********/
 
                 uc5F10_ControlStrategy.DBit = smem.vGetUCData(TC92_ucControlStrategy);
 
@@ -1575,7 +1480,7 @@ void * CSTC::_stc_thread_light_control_func( void * )
                         stc.vReportGoToNextPhaseStep_5F0C();
                     }
                 }
-                /******** unlock mutex ********/
+
                 pthread_mutex_unlock(&CSTC::_stc_mutex);
 
                 //OT Debug Signal 951116
@@ -1589,7 +1494,7 @@ void * CSTC::_stc_thread_light_control_func( void * )
                 {
                 case( 1000 ):  //_timer_plan
 //==            printf( "TIMER: PLAN\n" );
-                    /******** lock mutex ********/
+
                     pthread_mutex_lock(&CSTC::_stc_mutex);
                     if(_current_strategy==STRATEGY_TOD||_current_strategy==STRATEGY_AUTO_CADC||_current_strategy==STRATEGY_CADC)
                     {
@@ -1601,7 +1506,7 @@ void * CSTC::_stc_thread_light_control_func( void * )
                             vCheckPhaseForTFDActuateExtendTime_5FCF();
                         }
                     }
-                    /******** unlock mutex ********/
+
                     pthread_mutex_unlock(&CSTC::_stc_mutex);
                     break;
 
@@ -1640,59 +1545,17 @@ void * CSTC::_stc_thread_light_control_func( void * )
 
                 case( 1002 ):  //_timer_panelcount
 //==            printf( "TIMER: LIGHT_TIMEOUT\n" );
-                    /*+++++++++++++++++*/
-//121212
-//KUSO             writeJob.WritePhysicalOut(ucSayHelloToCardForDetSignalDriverUnit, 21, DEVICETRAFFICLIGHT);  //OTCombo0713
-                    /*
-                                 usleep(1000);
-                                 //Debug 951128 for dongSignal driver unit
-                                 smem.vSetBOOLData(TC_SIGNAL_DRIVER_UNIT, false);
-                                 writeJob.WritePhysicalOut(ucSayHelloToCard, 21, DEVICETRAFFICLIGHT);  //OTCombo0713
-                    */
-                    /*-----------------*/
+
                     break;
 
                 case( 1003 ):  //_timer_reportcount
 //==            printf( "TIMER: REPORT_TIMEOUT\n" );
-                    /*+++++++++++++++++*/
-//            ReportCurrentStepStatus();
-//            ReportCurrentControlStrategy();  //called by REPORT_TIMEOUT
-//            ReportCurrentOperationMode();  //called by REPORT_TIMEOUT
-//            ReportCurrentHardwareStatus();  //called by REPORT_TIMEOUT
-                    /*-----------------*/
+
                     break;
 
                 case( 1004 ):  //_timer_record_traffic
 
-                    /*
-                      printf("\n\n  ****** TIMER: RECORD_TRAFFIC ******\n" );
-                      pthread_mutex_lock(&CSTC::_record_traffic_mutex);{
-                        if(recording_traffic){
-                          printf( "  *******       RESTART       *******\n" );
-                          printf( "  *******  recording traffic  *******\n\n" );
-                          rawfile.close();
-                          refinedfile.close();
-                          trafficfile.close();
-                          targetfile.close();
 
-                          now = time(NULL);
-                          currenttime = localtime(&now);
-                          char raw[34], refined[38], traffic[38], target[37];
-                            sprintf(raw,     "%s/_%#02d%#02d-%#02d%#02d_RAW.txt\0",MOUNTDIR, currenttime->tm_mon+1, currenttime->tm_mday, currenttime->tm_hour, currenttime->tm_min);
-                            sprintf(refined, "%s/_%#02d%#02d-%#02d%#02d_REFINED.txt\0",MOUNTDIR, currenttime->tm_mon+1, currenttime->tm_mday, currenttime->tm_hour, currenttime->tm_min);
-                            sprintf(traffic, "%s/_%#02d%#02d-%#02d%#02d_TRAFFIC.txt\0",MOUNTDIR, currenttime->tm_mon+1, currenttime->tm_mday, currenttime->tm_hour, currenttime->tm_min);
-                            sprintf(target,  "%s/_%#02d%#02d-%#02d%#02d_TARGET.txt\0",MOUNTDIR, currenttime->tm_mon+1, currenttime->tm_mday, currenttime->tm_hour, currenttime->tm_min);
-                          rawfile.open    ( raw );
-                          refinedfile.open( refined );
-                          trafficfile.open( traffic );
-                          targetfile.open ( target );
-
-                          inrecordno=0;
-                          inperiodno=0;
-                        }
-                      }
-                      pthread_mutex_unlock(&CSTC::_record_traffic_mutex);
-                    */
                     break;
 
                 case (1005):
@@ -1721,9 +1584,7 @@ void * CSTC::_stc_thread_light_control_func( void * )
                 traffic_analyzer.threshold_E = light_control_siginfo.si_int;
                 pthread_mutex_unlock(&CSTC::_stc_mutex);
                 printf("new threshold_E %d\n", traffic_analyzer.threshold_E);
-                /*+++++++++++++++++*/
-//        keypad.keypadPort.doChangeVInfoWork(6);
-                /*-----------------*/
+
                 break;
 
             case (SIGNAL_D_threshold):
@@ -1732,9 +1593,7 @@ void * CSTC::_stc_thread_light_control_func( void * )
                 traffic_analyzer.threshold_D = light_control_siginfo.si_int;
                 pthread_mutex_unlock(&CSTC::_stc_mutex);
                 printf("new threshold_D %d\n", traffic_analyzer.threshold_D);
-                /*+++++++++++++++++*/
-//                keypad.keypadPort.doChangeVInfoWork(6);
-                /*-----------------*/
+
                 break;
 
             case (SIGNAL_C_threshold):
@@ -1743,9 +1602,7 @@ void * CSTC::_stc_thread_light_control_func( void * )
                 traffic_analyzer.threshold_C = light_control_siginfo.si_int;
                 pthread_mutex_unlock(&CSTC::_stc_mutex);
                 printf("new threshold_C %d\n", traffic_analyzer.threshold_C);
-                /*+++++++++++++++++*/
-//                keypad.keypadPort.doChangeVInfoWork(6);
-                /*-----------------*/
+
                 break;
 
             case (SIGNAL_B_threshold):
@@ -1754,9 +1611,7 @@ void * CSTC::_stc_thread_light_control_func( void * )
                 traffic_analyzer.threshold_B = light_control_siginfo.si_int;
                 pthread_mutex_unlock(&CSTC::_stc_mutex);
                 printf("new threshold_B %d\n", traffic_analyzer.threshold_B);
-                /*+++++++++++++++++*/
-//                keypad.keypadPort.doChangeVInfoWork(6);
-                /*-----------------*/
+
                 break;
 
             case( RTSIGNAL_WDT_PLAN ):  //_timer_plan_WDT

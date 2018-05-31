@@ -1,6 +1,6 @@
 #ifndef TCPSERVER_H
 #define TCPSERVER_H
-
+#include "shirink_app.h"
 
 class TCPserver
 {
