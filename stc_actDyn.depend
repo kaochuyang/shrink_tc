@@ -37900,7 +37900,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1527754399 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/CSTC.cpp
+1527822267 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/CSTC.cpp
 	"CSTC.h"
 	"math.h"
 	"light.h"
@@ -39506,7 +39506,7 @@
 	<sys/perm.h>
 	<sys/io.h>
 
-1527759670 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/main.cpp
+1527822252 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/main.cpp
 	"var.h"
 	"SMEM.h"
 	"PARSETRAFFIC.h"
@@ -40268,12 +40268,12 @@
 	"WRITEJOB.h"
 	"var.h"
 
-1527761304 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/shirink_app.cpp
+1527823032 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/shirink_app.cpp
 	"shirink_app.h"
 	"SMEM.h"
 	"CSTC.h"
 
-1527761304 /home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/shirink_app.h
+1527822080 /home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/shirink_app.h
 	"var.h"
 	"CReverseTime.h"
 	"CSegmentInfo.h"
@@ -40304,7 +40304,7 @@
 	<netdb.h>
 	<pthread.h>
 
-1527759660 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/TCPserver.cpp
+1527823278 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/TCPserver.cpp
 	"TCPserver.h"
 	<iostream>
 	"json/json.h"

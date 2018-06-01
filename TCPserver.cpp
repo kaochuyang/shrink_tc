@@ -68,13 +68,24 @@ void* TCPserver::pthread_func(void *arg)
 
 shirink_app F;
 
-while(1)
-{
 
 
-F.send_execute_data();//send_tc_project_data();
-sleep(1);
-}
+//F.send_execute_data();
+F.send_ip();
+    F.send_manual_setting();//v
+    F.send_railchain_parama();//V
+    F.send_proxy_transfer();//V
+    F.send_signal_card_direction();//V
+    F.send_tc_stratage_send();//v
+    F.send_compensation();//v
+    F.send_learn_mode_group();//V
+    F.send_ped_control_send();//V
+//    F.send_chain_send_group();//V
+
+   // F.send_execute_data();//v
+F.send_tc_project_data();
+
+
 
    // printf("%s\n",A.c_str());
 
@@ -140,16 +151,16 @@ sleep(1);
   cout<<F.faster_writer.write(F.string_to_app)<<endl;
 
 H=F.faster_writer.write(F.string_to_app);
-            printf("size=%d\n",F.string_to_app.size());
+
             if ( chek=send(connfd,H.c_str(),H.size(),0) <0)
             {
                 printf("send msg error: %s(errno :%d)\n",strerror(errno),errno);
                 return 0;
             }
  printf("send=%d\n",chek);
-
+  printf("size=%d\n",H.size());
             sleep(1);
-              printf("%s\n",B.c_str());
+             /* printf("%s\n",B.c_str());
               if ( chek=send(connfd,B.c_str(),B.size(),0) <0)
             {
                 printf("send msg error: %s(errno :%d)\n",strerror(errno),errno);
@@ -164,7 +175,7 @@ H=F.faster_writer.write(F.string_to_app);
             }
             printf("send=%d\n",chek);
 
-
+*/
         }
         close(connfd);
     }

@@ -176,14 +176,15 @@ Json::FastWriter faster_writer;
     void set_execute_data();
  /***   "send series" send the tc's data with json form to shrink_app_pad  ***/
     void send_ip();
-    void send_manual_setting();
-    void send_proxy_transfer();
-    void send_signal_card_direction();
-    void send_tc_stratage_send();
-    void send_compensation();
-    void send_learn_mode_group();
-    void send_ped_control_send();
-    void send_chain_send_group();
+    void send_manual_setting();//v
+    void send_railchain_parama();//V
+    void send_proxy_transfer();//V
+    void send_signal_card_direction();//V
+    void send_tc_stratage_send();//v
+    void send_compensation();//v
+    void send_learn_mode_group();//V
+    void send_ped_control_send();//V
+    void send_chain_send_group();//V
     void send_tc_project_data();// v
     void send_execute_data();//v
 

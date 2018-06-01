@@ -1261,7 +1261,7 @@ int main(int argc, char* argv[])
         smem.vSetAdjcount(true);                                                    //開啟倒數異常防護 chou fix for NSP
         printf("Main 1 OK! \n");
 
-        _intervalTimer.ThreadsGenerate();                                           //起Interval Timer Thread
+//        _intervalTimer.ThreadsGenerate();                                           //起Interval Timer Thread
 //smem.vSaveShareMemoryDataToDOM();
 
         //pthread_t tidTimerHandle;                                                   //開另一個thread,控制timer

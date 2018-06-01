@@ -432,45 +432,7 @@ void shirink_app::set_tc_project_data()
 
     }
     catch(...) {}}
-void shirink_app::set_execute_data()
-{
-    try
-    {
 
-        /*   iCurrentPhaseID  = stc.vGetUSIData(CSTC_exec_plan_phase_order);
-        iCurrentPlanID   = stc.vGetUSIData(CSTC_exec_plan_plan_ID);
-
-        //  stc.Lock_to_Load_Segment_for_Panel(iCurrentSegNo);
-        stc.Lock_to_Load_Plan_for_Panel(iCurrentPlanID);
-        stc.Lock_to_Load_Phase_for_Panel(iCurrentPhaseID);
-
-        iCurrentSubphase = stc.vGetUSIData(CSTC_exec_phase_current_subphase);
-        iCurrentSubphaseTotal = stc._panel_phase._subphase_count;
-
-        iLastStep = iCurrentStep;
-        iCurrentStep     = stc.vGetUSIData(CSTC_exec_phase_current_subphase_step);
-        //  iCurrentStepTotal = stc._panel_phase._total_step_count;
-        if(stc._panel_phase._total_step_count > 1) {
-          iCurrentStepTotal = 5; //default set to 5
-        }
-
-        //Fuck Chen Ming Zu
-        //  iCurrentStep = iCurrentStep + ((iCurrentSubphase)*5);
-        iCurrentStepTotal = iCurrentStepTotal*iCurrentSubphaseTotal;
-
-        usiStepSec = stc.vGetStepTime();
-
-        ucTCControlStrategy = smem.vGetUCData(TC92_ucControlStrategy);
-
-        vCalActTuningStatus();
-        vDisplayActionChange();
-        vRefreshActuateTimes();
-        vRefreshActSwitch();
-
-          */
-
-    }
-    catch(...) {}}
 void shirink_app::send_tc_project_data()
 {
 
@@ -482,7 +444,7 @@ void shirink_app::send_tc_project_data()
         stc.Lock_to_Load_WeekDaySegment_for_Panel();
         for(int i=0; i<14; i++)
         {
-            segmentinfo["weekdaysegment"][i]=stc._panel_weekdayseg[i]._segment_type;
+            string_to_app["weekdaysegment"][i]=stc._panel_weekdayseg[i]._segment_type;
         }
         Json::Value specialdaycontext;
         for(int i=8; i<21; i++)
@@ -495,7 +457,7 @@ void shirink_app::send_tc_project_data()
             specialdaycontext["end_year"]=stc._panel_holidayseg._end_year;
             specialdaycontext["end_month"]=stc._panel_holidayseg._end_month;
             specialdaycontext["end_day"]=stc._panel_holidayseg._end_day;
-            string_to_app["specialday"][i-8]=specialdaycontext;
+            string_to_app["specialdaycontext"][i-8]=specialdaycontext;
         }
 
 
@@ -515,7 +477,7 @@ void shirink_app::send_tc_project_data()
             //segmentinfo["segcontext"]=segcontext;
         }
 
-        string_to_app["segement"]=segmentinfo;
+        string_to_app["segementinfo"]=segmentinfo;
 
         Json::Value plancontext;
         for(int j=0; j<32; j++)
@@ -540,7 +502,7 @@ void shirink_app::send_tc_project_data()
                 plancontext["subphase_pedred"][i]=stc._panel_plan._ptr_subplaninfo[i]._pedred;
 
             }
-            string_to_app["plan"][j]=plancontext;
+            string_to_app["plancontext"][j]=plancontext;
         }
         Json::Value step;
 
@@ -568,12 +530,12 @@ void shirink_app::send_tc_project_data()
                 }
             }
 
-            string_to_app["phaseID"][i]=step;
+            string_to_app["step"][i]=step;
         }
 
 
 
-        printf("%s\n",string_to_app.toStyledString().c_str());
+     //   printf("%s\n",string_to_app.toStyledString().c_str());
     }
     catch(...)
     {
@@ -593,9 +555,9 @@ void shirink_app::send_execute_data()
         unsigned short int iCurrentPlanID   = stc.vGetUSIData(CSTC_exec_plan_plan_ID);
         current_state["current_phaseID"]=iCurrentPhaseID;
         current_state["current_planID"]=iCurrentPlanID;
-/*        stc.Lock_to_Load_Plan_for_Panel(iCurrentPhaseID);
-        stc.Lock_to_Load_Phase_for_Panel(iCurrentPlanID);
-*/
+        /*        stc.Lock_to_Load_Plan_for_Panel(iCurrentPhaseID);
+                stc.Lock_to_Load_Phase_for_Panel(iCurrentPlanID);
+        */
         current_state["current_second"]=stc.vGetStepTime();
         int iCurrentSubphase = stc.vGetUSIData(CSTC_exec_phase_current_subphase);
 
@@ -605,7 +567,7 @@ void shirink_app::send_execute_data()
         int iCurrentStep     = stc.vGetUSIData(CSTC_exec_phase_current_subphase_step);
         int iCurrentStepTotal = stc._panel_phase._total_step_count;
         printf("current_total_subphase=%d,current_total_step=%d\n",iCurrentSubphaseTotal,iCurrentStepTotal);
-       current_state["current_step"]=iCurrentStep + ((iCurrentSubphase)*5)+1;
+        current_state["current_step"]=iCurrentStep + ((iCurrentSubphase)*5)+1;
         current_state["current_total_step"]=iCurrentStepTotal;
 
 
@@ -622,22 +584,114 @@ void shirink_app::send_ip()
 
 
 
-    }catch(...){}
+    }
+    catch(...) {}
 }
 void shirink_app::send_manual_setting()
 {
     try
     {
+        Json::Value manual_setting;
+        manual_setting["DbOperStat"]=smem.GetDbOperStat();
 
-    }catch(...){}
+ string_to_app["manual_setting"]=manual_setting;
+    }
+    catch(...) {}
 }
 
+void shirink_app::send_railchain_parama()
+{
+    try
+    {
+        Json::Value railchaininfo;
+        railchaininfo["TC_TrainChainEnable"]=smem.vGetUCData(TC_TrainChainEnable);
+        railchaininfo["TrainComingBanSubphase"]=smem.vGetUCData(TC_TrainComingBanSubphase);
+        railchaininfo["TrainComingForceJumpSubphase"]=smem.vGetUCData(TC_TrainComingForceJumpSubphase);
+
+        string_to_app["railchaininfo"]=railchaininfo;
+    }
+    catch(...) {}
+}
+
+void shirink_app::send_proxy_transfer()
+{
+    try
+    {
+        Json::Value proxy_transfer;
+        proxy_transfer["proxy_PassMode"]=smem.vGetPassMode();
+        proxy_transfer["proxy_LCN"]=smem.vGetPassServerLCN();
+
+        string_to_app["proxy_transfer"]=proxy_transfer;
+    }
+    catch(...) {}}
+void shirink_app::send_signal_card_direction()
+{
+    try
+    {
+
+        Json::Value signal_card_dir;
+        for(int i=0; i<8; i++)
+        {
+            signal_card_dir["signalMapMappingDir"][i]=smem.vGetSignamMapMappingDir(i);
+            if(i<6)
+                signal_card_dir["signalMappingLightBoard"][i]=smem.vGetSignamMapMappingLightBoard(i);
+
+        }
+
+ string_to_app["signal_car_dir"]=signal_card_dir;
+    }
+    catch(...) {}}
+void shirink_app::send_tc_stratage_send()
+{
+    try
+    {
+        Json::Value tc_stratage;
+        tc_stratage["ControlStratage"]=smem.vGetUCData(TC92_ucControlStrategy);
+        tc_stratage["LightStatus_5F05_report_period"]=smem.vGetINTData(TC92SignalLightStatus_5F0F_IntervalTime);
+        tc_stratage["StepStatus_report_period"]=smem.vGetINTData(TC92SignalStepStatus_5F03_IntervalTime);
+        tc_stratage["Redcount_version"]=smem.vGetINTData(TC92_RedCountVer);
+        tc_stratage["ActuateTypeFunction_enable_switch"]=smem.vGetBOOLData(TC_CCT_In_LongTanu_ActuateType_FunctionEnable);
+        tc_stratage["In_LongTanu_ActuateType_PlanID"]=smem.vGetUSIData(TC_CCT_In_LongTanu_ActuateType_Switch);
+        tc_stratage["ActuatePhaseExtend"]=smem.vGetActuatePhaseExtend();
+        tc_stratage["Actuateautoswitch"]=smem.vGetBOOLData(TC_Actuateautoswitch);
+ string_to_app["tc_stratage"]=tc_stratage;
 
 
+    }
+    catch(...) {}}
+void shirink_app::send_compensation()
+{
+    try
+    {
+        Json::Value compensation;
+        compensation["compensation_cycle"]=smem.GetCompensationcycle();
+    string_to_app["compensation"]=compensation;
+    }
+    catch(...) {}}
+void shirink_app::send_learn_mode_group()
+{
+    try
+    {
+
+        Json::Value learn_mode;
+        learn_mode["CarLearn"]=smem.GetCarLearnSwitch();
+        learn_mode["PedLearn"]=smem.GetPedLearnSwitch();
+        learn_mode["CarCountDownLearn"]=smem.GetCarCountdownProperty();
+        learn_mode["PedCountLearn"]=smem.GetPedCountdownProperty();
+ string_to_app["learn_mode"]=learn_mode;
+    }
+    catch(...) {}}
+void shirink_app::send_ped_control_send()
+{
+    try
+    {
+        Json::Value ped_control;
+        ped_control["SWDevCount"]=smem.cPedPushButton.GetDevCount();
 
 
-
-
+    string_to_app["ped_control"]=ped_control;
+    }
+    catch(...) {}}
 
 
 
