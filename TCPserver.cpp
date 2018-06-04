@@ -71,7 +71,7 @@ shirink_app F;
 
 
 //F.send_execute_data();
-F.send_ip();
+/*F.send_ip();
     F.send_manual_setting();//v
     F.send_railchain_parama();//V
     F.send_proxy_transfer();//V
@@ -79,7 +79,7 @@ F.send_ip();
     F.send_tc_stratage_send();//v
     F.send_compensation();//v
     F.send_learn_mode_group();//V
-    F.send_ped_control_send();//V
+    F.send_ped_control_send();//V*/
 //    F.send_chain_send_group();//V
 
    // F.send_execute_data();//v

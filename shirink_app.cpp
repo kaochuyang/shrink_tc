@@ -464,22 +464,29 @@ void shirink_app::send_tc_project_data()
         for(int i=0; i<21; i++)
         {
             stc.Lock_to_Load_Segment_for_Panel(i);
+
+
             // segmentinfo["segment_type"][i]=stc._panel_segment._segment_type;
             segmentinfo["segment_count"][i]=stc._panel_segment._segment_count;
-            for(int j=0; j<stc._panel_segment._segment_count; j++) //32
-            {
-                segcontext["hour"][j]=stc._panel_segment._ptr_seg_exec_time[j]._hour;
+             for(int j=0; j<32; j++) //32
+            {    segcontext["hour"][j]=0;
+                segcontext["minute"][j]=0;
+                segcontext["plan"][j]=0;
+                segcontext["actMode"][j]=0;
+                if(j<stc._panel_segment._segment_count)
+                {segcontext["hour"][j]=stc._panel_segment._ptr_seg_exec_time[j]._hour;
                 segcontext["minute"][j]=stc._panel_segment._ptr_seg_exec_time[j]._minute;
                 segcontext["plan"][j]=stc._panel_segment._ptr_seg_exec_time[j]._planid;
-                segcontext["actMode"][j]=stc._panel_segment._ptr_seg_exec_time[j]._actMode;
+                segcontext["actMode"][j]=stc._panel_segment._ptr_seg_exec_time[j]._actMode;}
             }
-            segmentinfo["segtype"][i]=segcontext;
+            segcontext["segment_count"]=stc._panel_segment._segment_count;
+            segmentinfo["segcontext"][i]=segcontext;
             //segmentinfo["segcontext"]=segcontext;
         }
 
-        string_to_app["segementinfo"]=segmentinfo;
+        string_to_app["segmentinfo"]=segmentinfo;
 
-        Json::Value plancontext;
+     /*   Json::Value plancontext;
         for(int j=0; j<32; j++)
         {
             stc.Lock_to_Load_Plan_for_Panel(j);
@@ -532,7 +539,7 @@ void shirink_app::send_tc_project_data()
 
             string_to_app["step"][i]=step;
         }
-
+*/
 
 
      //   printf("%s\n",string_to_app.toStyledString().c_str());
