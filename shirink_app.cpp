@@ -446,7 +446,7 @@ void shirink_app::send_tc_project_data()
         {
             string_to_app["weekdaysegment"][i]=stc._panel_weekdayseg[i]._segment_type;
         }
-        Json::Value specialdaycontext;
+  /*     Json::Value specialdaycontext;
         for(int i=8; i<21; i++)
         {
             stc.Lock_to_Load_HoliDaySegment_for_Panel(i);
@@ -486,8 +486,8 @@ void shirink_app::send_tc_project_data()
 
         string_to_app["segmentinfo"]=segmentinfo;
 
-     /*   Json::Value plancontext;
-        for(int j=0; j<32; j++)
+        Json::Value plancontext;
+        for(int j=0; j<49; j++)
         {
             stc.Lock_to_Load_Plan_for_Panel(j);
 
@@ -511,8 +511,11 @@ void shirink_app::send_tc_project_data()
             }
             string_to_app["plancontext"][j]=plancontext;
         }
-        Json::Value step;
 
+        Json::Value step;
+        Json::Value subphase;
+        Json::Value light;
+        Json::Value stepdetail;
         for(int i=0; i<256; i++)
 
         {
@@ -522,25 +525,27 @@ void shirink_app::send_tc_project_data()
             step["signal_map"]= stc._panel_phase._signal_map;
             step["signal_count"]= stc._panel_phase._signal_count;
             step["subphase_count"]= stc._panel_phase._subphase_count;
-            for(int j=0; j<8; j++)
+            for(int j=0; j<6; j++)
                 step["sub_stepcount"][j]= stc._panel_phase._ptr_subphase_step_count[j];
 
             for(int i = 0; i < stc._panel_phase._subphase_count; i++)
             {
-                for(int j = 0; j <  stc._panel_phase._ptr_subphase_step_count[j]; j++)
+                for(int j = 0; j <  stc._panel_phase._ptr_subphase_step_count[i]; j++)
                 {
                     for(int k = 0; k < stc._panel_phase._signal_count; k++)
                     {
-                        step["step_light"][i][j][k] = stc._panel_phase._ptr_subphase_step_signal_status[i][j][k];
+                        light["light"][k] = stc._panel_phase._ptr_subphase_step_signal_status[i][j][k];
 
                     }
+                    stepdetail["stepdetail"][j]=light;
                 }
+                subphase["subphase"][i]=stepdetail;
             }
-
+                step["stepcontext"]=subphase;
             string_to_app["step"][i]=step;
         }
-*/
 
+*/
 
      //   printf("%s\n",string_to_app.toStyledString().c_str());
     }
