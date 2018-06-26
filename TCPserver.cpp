@@ -148,32 +148,64 @@ void* TCPserver::pthread_func(void *arg)
             if(reader.parse(buff,r_test))
             {
                // if(r_test)
-                printf("STEP=%s\n",r_test["weekdaysegment"].toStyledString().c_str());
+               // printf("STEP=%s\n",r_test["weekdaysegment"].toStyledString().c_str());
+
+                printf("r_test=%s\n",r_test.toStyledString().c_str());
 
 
-                if(r_test["weekdaysegment"].isArray())
+                if(r_test.isObject()&&r_test.isMember("weekdaysegment"))
                 {
-                    printf("hello \n");
+                 printf("hello weekdaysegment\n");
+                 printf("%s\n",r_test["weekdaysegment"].toStyledString().c_str());
+                 F.set_weekdaysegment(r_test);
+                 printf("test\n");
                 }
-                else printf("novalue\n");
+                else if(r_test.isMember("specialdaycontext"))
+                {
+                    printf("%s\n",r_test["specialdaycontext"].toStyledString().c_str());
+                     F.set_specialdaycontext(r_test);
+                    printf("hello specialdaycontext\n");
+                }
+                else if(r_test.isMember("segmentinfo"))
+                {
+
+                     printf("%s\n",r_test["segmentinfo"].toStyledString().c_str());
+                       F.set_segment_info(r_test);
+                    printf("hello segmentinfo\n");
+                }
+               else if(r_test.isMember("plancontext"))
+                {
+                     printf("%s\n",r_test["plancontext"].toStyledString().c_str());
+
+                     F.set_plancontext_info(r_test);
+                    printf("hello plancontext\n");
+                }
+               else if(r_test.isMember("step"))
+                {
+
+                     printf("%s\n",r_test["step"].toStyledString().c_str());
+
+                    F.set_step_info(r_test);
 
 
-            }
-
-
-
-            //cout<<F.faster_writer.write(F.string_to_app)<<endl;
-            H=F.faster_writer.write(F.string_to_app);
+                    printf("hello step\n");
+                }
+                else {printf("no  value\n");
+                   //cout<<F.faster_writer.write(F.string_to_app)<<endl;
+                H=F.faster_writer.write(F.string_to_app);
             if ( chek=send(connfd,H.c_str(),H.size(),0) <0)
-//            if ( chek=send(connfd,A.c_str(),A.size(),0) <0)
             {
                 printf("send msg error: %s(errno :%d)\n",strerror(errno),errno);
                 return 0;
             }
-
             //       printf("send=%d string=%s\n",chek,H.c_str());
             printf("size=%d\n",H.size());
-            sleep(1);
+                };
+
+
+            }
+
+        sleep(1);
             // n=0;
 
         }

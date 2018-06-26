@@ -37900,7 +37900,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1527822267 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/CSTC.cpp
+1529921076 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/CSTC.cpp
 	"CSTC.h"
 	"math.h"
 	"light.h"
@@ -40268,13 +40268,15 @@
 	"WRITEJOB.h"
 	"var.h"
 
-1529658835 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/shirink_app.cpp
+1530017175 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/shirink_app.cpp
 	"shirink_app.h"
 	"SMEM.h"
 	"CSTC.h"
+	"screenLightEdit.h"
 
-1527822080 /home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/shirink_app.h
+1530014014 /home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/shirink_app.h
 	"var.h"
+	<string>
 	"CReverseTime.h"
 	"CSegmentInfo.h"
 	"CPhaseInfo.h"
@@ -40304,7 +40306,7 @@
 	<netdb.h>
 	<pthread.h>
 
-1529656756 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/TCPserver.cpp
+1530017241 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/TCPserver.cpp
 	"TCPserver.h"
 	<iostream>
 	"json/json.h"

@@ -1,6 +1,7 @@
 #ifndef SHIRINK_APP_H
 #define SHIRINK_APP_H
 #include "var.h"
+#include <string>
 #include "CReverseTime.h"
 #include "CSegmentInfo.h"
 #include "CPhaseInfo.h"
@@ -24,7 +25,7 @@ Json::Value current_state;
 Json::Value Holidaysegtype;
 Json::Value WeekdaySegtype;
 Json::FastWriter faster_writer;
-
+Json::Reader reader;
     shirink_app();
     virtual ~shirink_app();
 
@@ -54,15 +55,12 @@ Json::FastWriter faster_writer;
         int dbOperStat;
         BYTE HWCycleCodeIN;
         unsigned short int WayMappingRedCountIN[8];
-
-
     } ;
 
     typedef struct s_Proxy_transfer//0f8e 0f8f
     {
         BYTE PassMode_0F8E8FIN;
         unsigned short int proxy_LCN;
-
     } ;
 
     typedef struct s_Signal_card_direcion
@@ -81,8 +79,6 @@ Json::FastWriter faster_writer;
         unsigned short int TC_CCT_In_LongTanu_ActuateType_PlanID;
         BYTE ActuatePhaseExtendIN;
         bool ActuateautoswitchIN;
-
-
     };
 
     typedef struct s_Compensation_param
@@ -101,14 +97,12 @@ Json::FastWriter faster_writer;
         unsigned short int CarCountDownLearn;
         //bool enable_PedCount_learn;
         unsigned short int PedCountLearn;
-
     };
 
     typedef struct s_Ped_control_set
     {
       //  bool enable_SWCount;
         unsigned short int SWDevCount;
-
     };
 
     typedef struct s_Chain_set_group
@@ -135,8 +129,6 @@ Json::FastWriter faster_writer;
         CReverseTimeInfo    reversetime[AMOUNT_REVERSETIME];
         CWeekDayRevType weekdayrev[AMOUNT_WEEKDAY_REV]; //{0-6,7-13} according to {1-7,11-17}
         CHoliDayRevType holidayrev[AMOUNT_HOLIDAY_REV]; //{0-12} according to {4-16}
-
-
     };
     typedef struct Execute_data
     {
@@ -174,6 +166,11 @@ Json::FastWriter faster_writer;
     void set_chain_set_group();
     void set_tc_project_data();
     void set_execute_data();
+    void set_step_info(Json::Value object);
+    void set_plancontext_info(Json::Value object);
+    void set_segment_info(Json::Value object);
+    void set_weekdaysegment(Json::Value object);
+    void set_specialdaycontext(Json::Value object);
  /***   "send series" send the tc's data with json form to shrink_app_pad  ***/
     void send_ip();
     void send_manual_setting();//v
@@ -187,8 +184,6 @@ Json::FastWriter faster_writer;
     void send_chain_send_group();//V
     void send_tc_project_data();// v
     void send_execute_data();//v
-
-
 //protected:
 private:
     s_IP s_ip;
@@ -204,16 +199,11 @@ private:
     s_TC_project_data s_tc_project_data;
     Execute_data execute_data;
 
-
-
-
     long lastRestSect;
     unsigned int LCN;
     time_t last_get_5F15time;
     int Com2Type;
     BYTE MBType;
-
-
 };
 
 #endif // SHIRINK_APP_H

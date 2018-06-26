@@ -1,7 +1,7 @@
 #include "shirink_app.h"
 #include "SMEM.h"
 #include "CSTC.h"
-
+#include "screenLightEdit.h"
 shirink_app::shirink_app()
 {
     //ctor
@@ -442,11 +442,11 @@ void shirink_app::send_tc_project_data()
 
         Json::Value segcontext;
         stc.Lock_to_Load_WeekDaySegment_for_Panel();
-        for(int i=0; i<14; i++)
+ /*      for(int i=0; i<14; i++)
         {
             string_to_app["weekdaysegment"][i]=stc._panel_weekdayseg[i]._segment_type;
         }
-  /*     Json::Value specialdaycontext;
+       Json::Value specialdaycontext;
         for(int i=8; i<21; i++)
         {
             stc.Lock_to_Load_HoliDaySegment_for_Panel(i);
@@ -459,17 +459,18 @@ void shirink_app::send_tc_project_data()
             specialdaycontext["end_day"]=stc._panel_holidayseg._end_day;
             string_to_app["specialdaycontext"][i-8]=specialdaycontext;
         }
+*/
 
-
-        for(int i=0; i<21; i++)
+   /*     for(int i=0; i<21; i++)
         {
             stc.Lock_to_Load_Segment_for_Panel(i);
 
 
             // segmentinfo["segment_type"][i]=stc._panel_segment._segment_type;
-            segmentinfo["segment_count"][i]=stc._panel_segment._segment_count;
+            segcontext["segment_type"]=stc._panel_segment._segment_type;
              for(int j=0; j<32; j++) //32
-            {    segcontext["hour"][j]=0;
+            {
+                segcontext["hour"][j]=0;
                 segcontext["minute"][j]=0;
                 segcontext["plan"][j]=0;
                 segcontext["actMode"][j]=0;
@@ -484,7 +485,7 @@ void shirink_app::send_tc_project_data()
             //segmentinfo["segcontext"]=segcontext;
         }
 
-        string_to_app["segmentinfo"]=segmentinfo;
+        string_to_app["segmentinfo"]=segmentinfo;*/
 
         Json::Value plancontext;
         for(int j=0; j<49; j++)
@@ -511,14 +512,14 @@ void shirink_app::send_tc_project_data()
             }
             string_to_app["plancontext"][j]=plancontext;
         }
+    /*    Json::Value step;
 
-        Json::Value step;
-        Json::Value subphase;
-        Json::Value light;
-        Json::Value stepdetail;
         for(int i=0; i<256; i++)
-
         {
+            Json::Value subphase;//it can't be put out side the for() to avoid unexpected info
+        Json::Value light;//it can't be put out side the for() to avoid unexpected info
+        Json::Value stepdetail;//it can't be put out side the for() to avoid unexpected info
+
             stc.Lock_to_Load_Phase_for_Panel(i);
             step["phase_ID"]=i;
             step["phase_order"] = stc._panel_phase._phase_order;
@@ -535,17 +536,16 @@ void shirink_app::send_tc_project_data()
                     for(int k = 0; k < stc._panel_phase._signal_count; k++)
                     {
                         light["light"][k] = stc._panel_phase._ptr_subphase_step_signal_status[i][j][k];
-
                     }
                     stepdetail["stepdetail"][j]=light;
+
                 }
                 subphase["subphase"][i]=stepdetail;
             }
                 step["stepcontext"]=subphase;
             string_to_app["step"][i]=step;
-        }
-
-*/
+        }*/
+     printf("======================%s\n",string_to_app.toStyledString().c_str());
 
      //   printf("%s\n",string_to_app.toStyledString().c_str());
     }
@@ -706,17 +706,255 @@ void shirink_app::send_ped_control_send()
     catch(...) {}}
 
 
+void shirink_app::set_step_info(Json::Value object)
+{
+    try
+    {
+
+    unsigned short int usiLight[8][5][8];
+    unsigned char ucPhaseID;
+    //string ucPhaseID;
+    unsigned char ucSignalMap;
+     unsigned char ucSignalCount;
+      unsigned char ucSubphaseCount;
+      unsigned char ucStepCount[8];
+
+      printf("set_step_info***********\n");
+  printf("%s\n",object["step"].toStyledString().c_str());
+ucPhaseID=object["step"]["phase_ID"].asInt();
+ucSignalCount=object["step"]["signal_count"].asInt();
+ucSubphaseCount=object["step"]["subphase_count"].asInt();
+//printf("phase_ID by setting =%x\n",ucPhaseID);
+
+
+  bool bMollacOK;
+  int iTMP;
+  unsigned short int usiTmp;
+  bMollacOK = stc.Lock_to_Reset_Phase_for_Panel(ucPhaseID, ucSubphaseCount, ucSignalCount);
+  if (bMollacOK) {
+    printf("mollacOK ucPhaseID:%X ucSubphaseCount:%d ucSignalCount:%d\n", ucPhaseID, ucSubphaseCount, ucSignalCount);
+
+    stc._panel_phase._phase_order=ucPhaseID;
+    if(ucSignalCount == 2) { ucSignalMap = 0x11; }
+    if(ucSignalCount == 3) { ucSignalMap = 0x51; }
+    if(ucSignalCount == 4) { ucSignalMap = 0x55; }
+    if(ucSignalCount == 5) { ucSignalMap = 0x5D; }
+    if(ucSignalCount == 6) { ucSignalMap = 0x5F; }
+    stc._panel_phase._signal_map= ucSignalMap;
+    stc._panel_phase._signal_count=ucSignalCount;
+    stc._panel_phase._subphase_count=ucSubphaseCount;
+    stc._panel_phase._total_step_count = ucSubphaseCount * 5;  //¤­­Ó¨B¶¥
+
+
+
+printf("json subphase context=%s\n",object["step"]["stepcontext"]["subphase"][0]["stepdetail"][0].toStyledString().c_str());
+    for(int i = 0; i < ucSubphaseCount; i++) {
+      for(int j = 0; j < 5; j++) {
+        for(int k = 0; k < ucSignalCount; k++) {
+          printf("i:%d j:%d k:%d\n", i, j, k);
+            usiLight[i][j][k]=object["step"]["stepcontext"]["subphase"][i]["stepdetail"][j]["light"][k].asInt();
+
+            printf("test steplight=%x %d subphase=%d step=%d board=%d\n",usiLight[i][j][k],usiLight[i][j][k],i,j,k);
+          //OT20110429
+          usiTmp = usiLight[i][j][k];
+          usiTmp = usiTmp & 0x3000;  //find red? or yellow
+          if(usiTmp == 0x2000) {
+            //change light!!
+            usiLight[i][j][k] = usiLight[i][j][k] & 0xCFFF;  //clear old
+            usiLight[i][j][k] = usiLight[i][j][k] | 0x1000;
+          }
+
+          usiTmp = usiLight[i][j][k];
+          usiTmp = usiTmp & 0x000C;  //find red? or yellow
+          if(usiTmp == 0x0008) {
+            //change light!!
+            usiLight[i][j][k] = usiLight[i][j][k] & 0xFFF3;  //clear old
+            usiLight[i][j][k] = usiLight[i][j][k] | 0x0004;
+          }
+
+
+//          if(usiLight[i][j][k] ==  0x1004) { usiLight[i][j][k] = 0x2008; }
+//OT20110429          if(usiLight[i][j][k] ==  0x2008) { usiLight[i][j][k] = 0x1004; }
+          stc._panel_phase._ptr_subphase_step_signal_status[i][j][k] = usiLight[i][j][k];
+        }
+      }
+    }
+
+    smem.vWriteMsgToDOM("WritePhaseByApp");
+
+    stc.Lock_to_Save_Phase_from_Panel();             //Àx¦s¦^¥h
+    smem.vSetINTData(TC92_iUpdatePhaseData, 1);
+    smem.vSetTCPhasePlanSegTypeData(TC_Phase, ucPhaseID, true);
+
+  }
 
 
 
 
 
+    }
+    catch(...) {}}
 
 
+void shirink_app::set_plancontext_info(Json::Value object)
+{
 
 
+ unsigned short int phase_order= object["plancontext"]["phase_order"].asInt();
+ unsigned short int plan_id=object["plancontext"]["plan_id"].asInt();
+ unsigned short int subphase_count=object["plancontext"]["subphase_count"].asInt();
+ unsigned short int dir=object["plancontext"]["dir"].asInt();
+  unsigned short int offset=object["plancontext"]["offset"].asInt();
+   unsigned short int cycle_time=object["plancontext"]["cycle_time"].asInt();
+     //Read phase firest, i want subphasecount of phase
+  printf("printfMsg phase_order %x\n",phase_order);
+  printf("printfMsg _planid:%d\n", plan_id);
+  printf("printfMsg _subphase_count:%d\n",subphase_count);
+
+  if(stc.Lock_to_Load_Phase_for_Panel(phase_order)) {
+      if(stc._panel_phase._subphase_count == subphase_count &&
+         stc._panel_phase._phase_order == phase_order) {
+        printf("Data Right, writing\n");
+        stc.Lock_to_Reset_Plan_for_Panel(plan_id, subphase_count);
+        stc._panel_plan._planid = plan_id;
+        stc._panel_plan._dir = dir;
+        stc._panel_plan._phase_order = phase_order;
+        stc._panel_plan._subphase_count = subphase_count;
+        stc._panel_plan._cycle_time = cycle_time;
+        stc._panel_plan._offset = offset;
+        printf("savePlan _offset: %d\n", offset);
+
+        for (int i=0;i<subphase_count;i++) {
+             stc._panel_plan._ptr_subplaninfo[i]._green = object["plancontext"]["subphase_green"][i].asInt();
+             stc._panel_plan._ptr_subplaninfo[i]._min_green = object["plancontext"]["subphase_min_green"][i].asInt();
+             stc._panel_plan._ptr_subplaninfo[i]._max_green = object["plancontext"]["subphase_max_green"][i].asInt();
+             stc._panel_plan._ptr_subplaninfo[i]._yellow = object["plancontext"]["subphase_yellow"][i].asInt();
+             stc._panel_plan._ptr_subplaninfo[i]._allred = object["plancontext"]["subphase_allred"][i].asInt();
+             stc._panel_plan._ptr_subplaninfo[i]._pedgreen_flash = object["plancontext"]["subphase_pedgreen_flash"][i].asInt();
+             stc._panel_plan._ptr_subplaninfo[i]._pedred = object["plancontext"]["subphase_pedred"][i].asInt();
+        }
+          stc.Lock_to_Save_Plan_from_Panel();
+      } else if ( stc._panel_phase._phase_order == phase_order &&
+                  phase_order == 0xB0 &&
+                  smem.vGetUCData(TC_CCT_MachineLocation) == MACHINELOCATEATHSINCHU)
+      {
+        printf("Phase 0xB0, writing\n");
+        stc.Lock_to_Reset_Plan_for_Panel(plan_id, 1);
+        stc._panel_plan._planid = plan_id;
+        stc._panel_plan._dir = dir;
+        stc._panel_plan._phase_order = phase_order;
+
+        stc._panel_plan._subphase_count = 1;
+
+        if(object["plancontext"]["subphase_green"][0].asInt()> 10
+|| object["plancontext"]["subphase_green"][0].asInt()== 0) {
+          stc._panel_plan._ptr_subplaninfo[0]._green=10;
+        }
+        cycle_time = object["plancontext"]["subphase_green"][0].asInt();
+        stc._panel_plan._cycle_time = cycle_time;
+        stc._panel_plan._offset = offset;
+        stc._panel_plan._ptr_subplaninfo[0]._min_green = 0;
+        stc._panel_plan._ptr_subplaninfo[0]._max_green = 255;
+        stc._panel_plan._ptr_subplaninfo[0]._yellow = 0;
+        stc._panel_plan._ptr_subplaninfo[0]._allred = 0;
+        stc._panel_plan._ptr_subplaninfo[0]._pedgreen_flash = 0;
+        stc._panel_plan._ptr_subplaninfo[0]._pedred = 0;
+          stc.Lock_to_Save_Plan_from_Panel();
+
+      }
+  }
 
 
+}
+
+
+void shirink_app::set_segment_info(Json::Value object)
+{
+     printf("printfMsg goto vSaveSeg!\n");
+
+unsigned short int _segment_type=object["segmentinfo"]["segment_type"].asInt();
+unsigned short int _segment_count=object["segmentinfo"]["segment_count"].asInt();
+
+
+  stc.Lock_to_Reset_Segment_for_Panel(_segment_type,_segment_count);
+
+      stc._panel_segment._segment_type = _segment_type;
+      stc._panel_segment._segment_count = _segment_count;
+
+      for (int i=0; i<_segment_count; i++) {
+           stc._panel_segment._ptr_seg_exec_time[i]._hour = object["segmentinfo"]["hour"][i].asInt();
+           stc._panel_segment._ptr_seg_exec_time[i]._minute =object["segmentinfo"]["minute"][i].asInt();
+           stc._panel_segment._ptr_seg_exec_time[i]._planid = object["segmentinfo"]["plan"][i].asInt();
+           stc._panel_segment._ptr_seg_exec_time[i]._actMode = object["segmentinfo"]["actMode"][i].asInt();
+           printf("printfMsg hour:%d min:%d planid:%d actMode:%d\n",
+                   stc._panel_segment._ptr_seg_exec_time[i]._hour,
+                   stc._panel_segment._ptr_seg_exec_time[i]._minute,
+                   stc._panel_segment._ptr_seg_exec_time[i]._planid,
+                   stc._panel_segment._ptr_seg_exec_time[i]._actMode);
+      }
+
+        stc.Lock_to_Save_Segment_from_Panel();
+}
+
+
+void shirink_app::set_weekdaysegment(Json::Value object)
+{
+    try {
+    bool bCheckOK;
+    int tmp_segtype = 0;
+    bCheckOK = true;
+
+    for(int i = 0; i < 14; i++) {
+
+      if((object["weekdaysegment"][i].asInt() <= 0 )|| object["weekdaysegment"][i].asInt() > 7) {
+        bCheckOK = false;
+        printf("printfMsg tmp_segtype error: %d\n", object["weekdaysegment"][i].asInt());
+      }
+    }
+
+    if(bCheckOK) {
+      for (int i=0;i<14;i++) {
+        stc._panel_weekdayseg[i]._segment_type=object["weekdaysegment"][i].asInt();
+        if(i<7)stc._panel_weekdayseg[i]._weekday=i+1;
+        if(i>=7)stc._panel_weekdayseg[i]._weekday=i+4;
+        printf("weekday=%d segment=%d\n",
+               stc._panel_weekdayseg[i]._weekday
+               ,stc._panel_weekdayseg[i]._segment_type);
+      }
+        stc.Lock_to_Save_WeekDaySegment_from_Panel();
+
+    }
+
+  } catch (...) {}
+}
+
+void shirink_app::set_specialdaycontext(Json::Value object)
+{
+    try{
+        for(int i=8;i<21;i++)
+  {
+  stc._panel_holidayseg._segment_type = i;
+  stc._panel_holidayseg._start_year = object["specialdaycontext"][i-8]["start_year"].asInt();
+  stc._panel_holidayseg._end_year = object["specialdaycontext"][i-8]["end_year"].asInt();
+  stc._panel_holidayseg._start_month = object["specialdaycontext"][i-8]["start_month"].asInt();
+  stc._panel_holidayseg._end_month = object["specialdaycontext"][i-8]["end_month"].asInt();
+  stc._panel_holidayseg._start_day = object["specialdaycontext"][i-8]["start_day"].asInt();
+  stc._panel_holidayseg._end_day = object["specialdaycontext"][i-8]["end_day"].asInt();
+
+ printf("segment=%d start %d/%d/%d end %d/%d/%d\n "
+        ,stc._panel_holidayseg._segment_type
+        ,stc._panel_holidayseg._start_year
+        ,stc._panel_holidayseg._start_month
+        ,stc._panel_holidayseg._start_day
+        ,stc._panel_holidayseg._end_year
+        ,stc._panel_holidayseg._end_month
+        ,stc._panel_holidayseg._end_day);
+  stc.Lock_to_Save_HoliDaySegment_from_Panel();
+  }
+}catch(...){}
+
+
+}
 
 
 

@@ -9583,7 +9583,10 @@ bool CSTC::Lock_to_Load_Phase_for_Center(const unsigned short int &phase_order)
 }
 //OT 940622
 //----------------------------------------------------------
-bool CSTC::Lock_to_Reset_Phase(CPhaseInfo &lphase, const unsigned short int &phase_order, const unsigned short int &subphase_count, const unsigned short int &signal_count)
+bool CSTC::Lock_to_Reset_Phase(CPhaseInfo &lphase,
+                               const unsigned short int &phase_order,
+                               const unsigned short int &subphase_count,
+                               const unsigned short int &signal_count)
 {
     try
     {
