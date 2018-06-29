@@ -16,7 +16,8 @@ void temperatur_humidity_sensor::block_receive(MESSAGEOK mes)
     try
     {
         BYTE DATA_P1=mes.packet[3];//
-        BYTE DATA_P2=mes.packet[4];//
+        DATA_Bit DATA_P2;
+        DATA_P2.DBit=mes.packet[4];//
 
 
         bool box_switch_bit6=false;
@@ -42,18 +43,25 @@ void temperatur_humidity_sensor::block_receive(MESSAGEOK mes)
 
         */
 
-
-
         YMDHMS GPS;
         temperature tempermachine;
         Humidity humidity;
-        GPS.Hour=mes.packet[5];
-        GPS.Min=mes.packet[6];
-        GPS.Sec=mes.packet[7];
-        tempermachine.celsius=mes.packet[8];
-        tempermachine.point_celsius=mes.packet[9];
-        humidity.percent=mes.packet[10];
-        humidity.point_percent=mes.packet[11];
+        if(DATA_P2.switchBit.b1==0)//b1 is protocol's b0
+        {
+            smem.Set_temper_humi_state(true);
+            smem.SetTemperHumi(mes.packet[8],mes.packet[9],mes.packet[10],mes.packet[11]);
+        /*mes.packet[8];//data_P6
+        mes.packet[9];//data_P7
+        mes.packet[10];//data_P8
+        mes.packet[11];//data_P9
+*/
+
+
+        }else smem.Set_temper_humi_state(false);//sensor not found
+        GPS.Hour=mes.packet[5];//data_P3
+        GPS.Min=mes.packet[6];//data_P4
+        GPS.Sec=mes.packet[7];//data_P5
+
 
 
         printf("COM3 information!!!======");
@@ -323,23 +331,23 @@ void temperatur_humidity_sensor::parseblockA(MESSAGEOK *mes,int length)
             for(int i=0; i<length; i++)
             {
                 T_H.packet[record_length+i]=mes->packet[i];
-                printf("%x ",T_H.packet[record_length+i]);
+            //    printf("%x ",T_H.packet[record_length+i]);
             }
             // printf("\n phase 2.1\n");
             for(int i=0; i<record_length; i++)
             {
                 cks^=T_H.packet[i];
-                printf("CKS=%x\n",cks);
+             //   printf("CKS=%x\n",cks);
             }
 //  printf("phase 2.2\n");
             for(int i=0; i<length-1; i++)
             {
                 cks^=mes->packet[i];
-                printf("CKS=%x\n",cks);
+              //  printf("CKS=%x\n",cks);
             }
 //   printf("phase 2.3\n");
 //   printf("CKS=%x\n",cks);
-            printf("pack[%d]=%x\n",length-1,mes->packet[length-1]);
+         //   printf("pack[%d]=%x\n",length-1,mes->packet[length-1]);
 
             if(cks==mes->packet[length-1])
                 //    {printf("phase 3\n");
@@ -501,7 +509,7 @@ bool temperatur_humidity_sensor::DoWorkByMESSAGEIN(int *maxMessageIndex,MESSAGEO
                 {
                     if (messageIn[i].success==true)                                //³q¹LÀË¬d«Ê¥]¦X²z©Ê
                     {
-                        printf("cks=%d,suc=%d\n",messageIn[i].cksStatus,messageIn[i].success);
+              //          printf("cks=%d,suc=%d\n",messageIn[i].cksStatus,messageIn[i].success);
                         /*
                                          if ((messageIn[i].packet[0]==(const BYTE)0xAA) && (messageIn[i].packet[1]==(const BYTE)0xDD)) {
                                            printf("printfMsgAADD8 cksStatus:%d, success:%d, SEQ:%d\n",

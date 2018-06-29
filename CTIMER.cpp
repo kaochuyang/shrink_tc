@@ -1011,9 +1011,13 @@ void * intervalTimer::PTime(void *arg)
                     _MSG.InnerOrOutWard = cOutWard;
                     writeJob.WritePhysicalOut(_MSG.packet, _MSG.packetLength, DEVICECENTER92);
 
-                    stc.BRTGPSStatusReport();  //jacky20141203
+                //    stc.BRTGPSStatusReport();  //jacky20141203
 
                     smem.cPedPushButton.SendPedSWConnetState0F08(0);
+
+                      printf("%s[MESSAGE] \n\n ReportTemperHumi %s\n",
+                   ColorGreen, ColorNormal);
+                    smem.ReportTemperHumi();
                     break;
 
                 case( 100 ):

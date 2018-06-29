@@ -76,6 +76,12 @@ class SMEM
          UDP revAPP_socket;
         CPEDPUSHBUTTON cPedPushButton;
 
+
+        void SetTemperHumi(BYTE tem_1,BYTE tem_2,BYTE humi_1,BYTE humi_2);
+        void ReportTemperHumi();
+        void Set_temper_humi_state(bool state);
+
+
         int GetcFace(void);                                                     //得到目前LCD上是哪個畫面
         int GetLastFace(void);                                                  //得到上次LCD上是哪個畫面
         int GetAddress(void);                                                   //得到目前路口編號
@@ -984,6 +990,12 @@ class SMEM
         bool bDynSegStatus;
         bool bDynSegNextPlanIdSendToCCJ;//CCJ20150910 是否要傳下週期的計劃給CCJ動態程式
         unsigned short int usiDynSegRemainSec;
+
+
+        int temperature;
+        int humidity_record;
+        bool temper_humi_state;
+
 
 };
 //---------------------------------------------------------------------------

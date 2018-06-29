@@ -1,2 +1,2 @@
-cp stc_actDny shrink_temp
-cp shrink_temp ~ftp
+cp stc_actDny shrink_temp_20180629
+cp shrink_temp_20180629 ~ftp

@@ -1229,7 +1229,7 @@ void * CSTC::_stc_thread_light_control_func( void * )
         Lock_to_Set_Control_Strategy(STRATEGY_TOD);
         SetDefaultLCNPhaseOrder(1,0);
 
-/*        ConvertSegmentData(true);//Arwen add 110210
+        ConvertSegmentData(true);//Arwen add 110210
 
         TimersCreating();
         TimersSetting();
@@ -1692,7 +1692,7 @@ void * CSTC::_stc_thread_light_control_func( void * )
             CheckPed();
             //----------------------------------------------------------
             smem.vSetTimerMutexCSTC(0);
-        }*/
+        }
     }
     catch (...) {}
 }

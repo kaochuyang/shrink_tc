@@ -27,7 +27,8 @@ try {
     pthread_mutex_init(&mutexSmem,NULL);
 
     InitialSMem();
-
+temperature=0;
+temper_humi_state=false;
     bConnectWithCenter = true;
     bConnectWithCenterStatus = true;
     GPSStatus = false;   //jacky20140117 BRT
@@ -7279,3 +7280,64 @@ try{
     return temp;
  } catch (...) {}
 }
+void SMEM::SetTemperHumi(BYTE tem_1,BYTE tem_2,BYTE humi_1,BYTE humi_2)
+{
+try{
+
+    pthread_mutex_lock(&mutexSmem);
+    if(temperature==0)temperature=(tem_1*256+tem_2);
+    else temperature=((tem_1*256+tem_2)+temperature)/2;//If temperatur is 30.2 C,there will be 302;
+
+    if(humidity_record==0)humidity_record=humi_1*256+humi_2;
+    else humidity_record=((humi_1*256+humi_2)+humidity_record)/2;//hmidity is 100%.In general humi_1=0;
+    pthread_mutex_unlock(&mutexSmem);
+
+
+ } catch (...) {}
+}
+void SMEM::ReportTemperHumi()
+{
+
+
+        printf("xfxx temperhumi report\n");
+
+        unsigned char pack[5];
+        pack[0]=0xcf;
+        pack[1]=0x3;
+        if(temper_humi_state==true)
+        {
+
+        pack[2]=temperature/10;
+        pack[3]=temperature%10;
+        printf("temperature=%d %d %d\n",temperature,pack[2],pack[3]);
+        pack[4]=humidity_record;
+        }
+        else {pack[2]=pack[3]=pack[4]=0xff;
+        temperature=0;
+        humidity_record=0;
+
+        }
+        MESSAGEOK _MsgOK;
+        _MsgOK = oDataToMessageOK.vPackageINFOTo92Protocol(pack,5,true);
+        _MsgOK.InnerOrOutWard = cOutWard;
+
+        writeJob.WritePhysicalOut(_MsgOK.packet, _MsgOK.packetLength, DEVICECENTER92);
+
+
+}
+
+
+
+
+
+void SMEM::Set_temper_humi_state(bool state)
+{
+    try{
+
+    temper_humi_state=state;
+
+    }
+    catch(...){}
+
+}
+

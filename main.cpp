@@ -461,7 +461,7 @@ int main(int argc, char* argv[])
 
 
 ////-----------------------------------------------------------------------------------------------------//
-      //  system("ifconfig eth1 192.168.2.1");//for VSX-6156
+        //  system("ifconfig eth1 192.168.2.1");//for VSX-6156
         if ( smem.revAPP_socket.SetConnDevice(1000))
             if ((tempmax= smem.revAPP_socket.OpenUdpSocket("192.168.2.1",7002,"192.168.2.2",7002))>0)
             {
@@ -1261,7 +1261,7 @@ int main(int argc, char* argv[])
         smem.vSetAdjcount(true);                                                    //開啟倒數異常防護 chou fix for NSP
         printf("Main 1 OK! \n");
 
-//        _intervalTimer.ThreadsGenerate();                                           //起Interval Timer Thread
+        _intervalTimer.ThreadsGenerate();                                           //起Interval Timer Thread
 //smem.vSaveShareMemoryDataToDOM();
 
         //pthread_t tidTimerHandle;                                                   //開另一個thread,控制timer
@@ -1287,7 +1287,7 @@ int main(int argc, char* argv[])
         /*OTCombo0714*/
         stc.ThreadsGenerate();
         sleep(3);
-_tcpserver.tcp_thread_generate();        //OT Fix 950727   LCN0000
+        //_tcpserver.tcp_thread_generate();        //OT Fix 950727   LCN0000
         //for shrink_tc// SendRequestToKeypad();                                                      //問keypad目前面板設定
 
         printf("Main 2 OK! \n");
@@ -1488,13 +1488,15 @@ _tcpserver.tcp_thread_generate();        //OT Fix 950727   LCN0000
                 {
                     if (FD_ISSET(smem.shrink_port_com3.Getfd(),&readfs))
                     {
-    readSelectLength=smem.shrink_port_com3.Rs232Read();
- bzero(shrink_mes.packet, BUFFERSIZE);
-printf("\n\n call shrink_port!!!!\n");
-for(int i=0; i<readSelectLength; i++){printf("%x ",smem.shrink_port_com3.block[i]);
-if(readSelectLength<=15)shrink_mes.packet[i]=smem.shrink_port_com3.block[i];
+                        readSelectLength=smem.shrink_port_com3.Rs232Read();
+                        bzero(shrink_mes.packet, BUFFERSIZE);
+                        printf("\n\n call shrink_port!!!!\n");
+                        for(int i=0; i<readSelectLength; i++)
+                        {
+                      //      printf("%x ",smem.shrink_port_com3.block[i]);
+                            if(readSelectLength<=15)shrink_mes.packet[i]=smem.shrink_port_com3.block[i];
 
-}
+                        }
 //                        printf("\n\n");
 //                        printf("readlength =%d\n",readSelectLength);
 
@@ -1507,7 +1509,7 @@ if(readSelectLength<=15)shrink_mes.packet[i]=smem.shrink_port_com3.block[i];
 
 
 //printf("\n\n read block ~~~\n\n");
-T_H_senseor.parseblockA(&shrink_mes,readSelectLength);
+                            T_H_senseor.parseblockA(&shrink_mes,readSelectLength);
 
 //                                T_H_senseor.ParseBlock(readSelectLength
 //                                                       ,smem.shrink_port_com3.block,
