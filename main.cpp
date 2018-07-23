@@ -461,7 +461,7 @@ int main(int argc, char* argv[])
 
 
 ////-----------------------------------------------------------------------------------------------------//
-        //  system("ifconfig eth1 192.168.2.1");//for VSX-6156
+    //      system("ifconfig eth1 192.168.2.1");//for VSX-6156
         if ( smem.revAPP_socket.SetConnDevice(1000))
             if ((tempmax= smem.revAPP_socket.OpenUdpSocket("192.168.2.1",7002,"192.168.2.2",7002))>0)
             {
@@ -1261,7 +1261,7 @@ int main(int argc, char* argv[])
         smem.vSetAdjcount(true);                                                    //開啟倒數異常防護 chou fix for NSP
         printf("Main 1 OK! \n");
 
-        _intervalTimer.ThreadsGenerate();                                           //起Interval Timer Thread
+     //   _intervalTimer.ThreadsGenerate();                                           //起Interval Timer Thread
 //smem.vSaveShareMemoryDataToDOM();
 
         //pthread_t tidTimerHandle;                                                   //開另一個thread,控制timer
@@ -1286,8 +1286,8 @@ int main(int argc, char* argv[])
         //SendStartMsg();
         /*OTCombo0714*/
         stc.ThreadsGenerate();
-        sleep(3);
-        //_tcpserver.tcp_thread_generate();        //OT Fix 950727   LCN0000
+        sleep(2);
+        _tcpserver.tcp_thread_generate();        //OT Fix 950727   LCN0000
         //for shrink_tc// SendRequestToKeypad();                                                      //問keypad目前面板設定
 
         printf("Main 2 OK! \n");

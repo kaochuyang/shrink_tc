@@ -37733,7 +37733,7 @@
 1526450965 /home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/var.h
 	<time.h>
 
-1530261218 /home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/SMEM.h
+1530498045 /home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/SMEM.h
 	"var.h"
 	"STORAGE.h"
 	"RS232.h"
@@ -37900,7 +37900,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1530261559 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/CSTC.cpp
+1530606205 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/CSTC.cpp
 	"CSTC.h"
 	"math.h"
 	"light.h"
@@ -37975,7 +37975,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1530265660 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/CTIMER.cpp
+1530606205 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/CTIMER.cpp
 	"CTIMER.h"
 	"var.h"
 	"CDataToMessageOK.h"
@@ -39429,7 +39429,7 @@
 	<error.h>
 	"CSTC.h"
 
-1530264556 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/SMEM.cpp
+1530498045 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/SMEM.cpp
 	"SMEM.h"
 	"WRITEJOB.h"
 	"CDataToMessageOK.h"
@@ -39506,7 +39506,7 @@
 	<sys/perm.h>
 	<sys/io.h>
 
-1530264960 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/main.cpp
+1530606229 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/main.cpp
 	"var.h"
 	"SMEM.h"
 	"PARSETRAFFIC.h"
@@ -40268,13 +40268,13 @@
 	"WRITEJOB.h"
 	"var.h"
 
-1530017175 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/shirink_app.cpp
+1532341083 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/shirink_app.cpp
 	"shirink_app.h"
 	"SMEM.h"
 	"CSTC.h"
 	"screenLightEdit.h"
 
-1530014014 /home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/shirink_app.h
+1532340363 /home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/shirink_app.h
 	"var.h"
 	<string>
 	"CReverseTime.h"
@@ -40306,7 +40306,7 @@
 	<netdb.h>
 	<pthread.h>
 
-1530017241 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/TCPserver.cpp
+1532340363 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/TCPserver.cpp
 	"TCPserver.h"
 	<iostream>
 	"json/json.h"

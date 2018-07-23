@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
-	<ActiveTarget name="Release" />
+	<ActiveTarget name="Debug" />
 	<File name="CDataToMessageOK.cpp" open="0" top="0" tabpos="18">
-		<Cursor position="8877" topLine="299" />
+		<Cursor position="7271" topLine="254" />
 	</File>
 	<File name="CDataToMessageOK.h" open="0" top="0" tabpos="14">
 		<Cursor position="0" topLine="0" />
@@ -14,16 +14,16 @@
 		<Cursor position="359" topLine="0" />
 	</File>
 	<File name="CIOCom.cpp" open="0" top="0" tabpos="5">
-		<Cursor position="591" topLine="9" />
+		<Cursor position="1128" topLine="26" />
 	</File>
 	<File name="CIOCom.h" open="0" top="0" tabpos="82">
 		<Cursor position="102" topLine="0" />
 	</File>
-	<File name="CPEDPUSHBUTTON.cpp" open="1" top="0" tabpos="10">
-		<Cursor position="7627" topLine="231" />
+	<File name="CPEDPUSHBUTTON.cpp" open="0" top="0" tabpos="10">
+		<Cursor position="1005" topLine="59" />
 	</File>
-	<File name="CPEDPUSHBUTTON.h" open="0" top="0" tabpos="2">
-		<Cursor position="495" topLine="2" />
+	<File name="CPEDPUSHBUTTON.h" open="1" top="0" tabpos="23">
+		<Cursor position="937" topLine="20" />
 	</File>
 	<File name="CPacketCluster.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="180" topLine="0" />
@@ -31,20 +31,20 @@
 	<File name="CPacketCluster.h" open="0" top="0" tabpos="34">
 		<Cursor position="213" topLine="0" />
 	</File>
-	<File name="CPhaseInfo.cpp" open="0" top="0" tabpos="57">
+	<File name="CPhaseInfo.cpp" open="1" top="0" tabpos="11">
 		<Cursor position="1156" topLine="0" />
 	</File>
-	<File name="CPhaseInfo.h" open="1" top="0" tabpos="20">
-		<Cursor position="335" topLine="0" />
+	<File name="CPhaseInfo.h" open="0" top="0" tabpos="20">
+		<Cursor position="126" topLine="5" />
 	</File>
-	<File name="CPlanInfo.cpp" open="1" top="0" tabpos="21">
-		<Cursor position="1136" topLine="38" />
+	<File name="CPlanInfo.cpp" open="1" top="0" tabpos="12">
+		<Cursor position="1136" topLine="46" />
 	</File>
-	<File name="CPlanInfo.h" open="1" top="0" tabpos="22">
-		<Cursor position="4630" topLine="118" />
+	<File name="CPlanInfo.h" open="1" top="0" tabpos="13">
+		<Cursor position="5308" topLine="115" />
 	</File>
 	<File name="CREATEXML.cpp" open="0" top="0" tabpos="52">
-		<Cursor position="6095" topLine="94" />
+		<Cursor position="4692" topLine="78" />
 	</File>
 	<File name="CREATEXML.h" open="0" top="0" tabpos="0">
 		<Cursor position="77" topLine="0" />
@@ -59,7 +59,7 @@
 		<Cursor position="1776" topLine="0" />
 	</File>
 	<File name="CRTMSInformation.h" open="0" top="0" tabpos="18">
-		<Cursor position="1534" topLine="36" />
+		<Cursor position="354" topLine="1" />
 	</File>
 	<File name="CReverseTime.cpp" open="0" top="0" tabpos="40">
 		<Cursor position="991" topLine="8" />
@@ -67,11 +67,11 @@
 	<File name="CReverseTime.h" open="0" top="0" tabpos="0">
 		<Cursor position="1635" topLine="20" />
 	</File>
-	<File name="CSTC.cpp" open="1" top="0" tabpos="2">
-		<Cursor position="79208" topLine="1682" />
+	<File name="CSTC.cpp" open="1" top="0" tabpos="9">
+		<Cursor position="60225" topLine="1218" />
 	</File>
-	<File name="CSTC.h" open="1" top="0" tabpos="15">
-		<Cursor position="3459" topLine="118" />
+	<File name="CSTC.h" open="1" top="0" tabpos="18">
+		<Cursor position="12862" topLine="332" />
 	</File>
 	<File name="CSTORINI.cpp" open="0" top="0" tabpos="51">
 		<Cursor position="4761" topLine="195" />
@@ -83,12 +83,12 @@
 		<Cursor position="2102" topLine="20" />
 	</File>
 	<File name="CSegmentInfo.h" open="0" top="0" tabpos="0">
-		<Cursor position="1386" topLine="27" />
+		<Cursor position="122" topLine="0" />
 	</File>
-	<File name="CTIMER.cpp" open="1" top="0" tabpos="18">
-		<Cursor position="38278" topLine="966" />
+	<File name="CTIMER.cpp" open="1" top="1" tabpos="19">
+		<Cursor position="14630" topLine="426" />
 	</File>
-	<File name="CTIMER.h" open="1" top="0" tabpos="19">
+	<File name="CTIMER.h" open="0" top="0" tabpos="19">
 		<Cursor position="2297" topLine="32" />
 	</File>
 	<File name="CTarget.h" open="0" top="0" tabpos="0">
@@ -142,8 +142,8 @@
 	<File name="PARSESS.h" open="0" top="0" tabpos="30">
 		<Cursor position="374" topLine="0" />
 	</File>
-	<File name="PARSETRAFFIC.cpp" open="0" top="0" tabpos="10">
-		<Cursor position="638" topLine="54" />
+	<File name="PARSETRAFFIC.cpp" open="1" top="0" tabpos="21">
+		<Cursor position="56418" topLine="1200" />
 	</File>
 	<File name="PARSETRAFFIC.h" open="0" top="0" tabpos="0">
 		<Cursor position="514" topLine="0" />
@@ -160,11 +160,11 @@
 	<File name="PDEVICE.h" open="0" top="0" tabpos="0">
 		<Cursor position="289" topLine="0" />
 	</File>
-	<File name="PDEVICEKEYPAD.cpp" open="0" top="0" tabpos="37">
-		<Cursor position="2799" topLine="86" />
+	<File name="PDEVICEKEYPAD.cpp" open="1" top="0" tabpos="10">
+		<Cursor position="53898" topLine="1503" />
 	</File>
 	<File name="PDEVICEKEYPAD.h" open="0" top="0" tabpos="21">
-		<Cursor position="328" topLine="0" />
+		<Cursor position="1855" topLine="1" />
 	</File>
 	<File name="PDEVICEPEDPUSHBUTTON.cpp" open="0" top="0" tabpos="20">
 		<Cursor position="5622" topLine="147" />
@@ -187,8 +187,8 @@
 	<File name="PDEVICESS.h" open="0" top="0" tabpos="22">
 		<Cursor position="615" topLine="0" />
 	</File>
-	<File name="PDEVICETRAFFICLIGHT.cpp" open="0" top="0" tabpos="38">
-		<Cursor position="651" topLine="138" />
+	<File name="PDEVICETRAFFICLIGHT.cpp" open="1" top="0" tabpos="22">
+		<Cursor position="2842" topLine="63" />
 	</File>
 	<File name="PDEVICETRAFFICLIGHT.h" open="0" top="0" tabpos="21">
 		<Cursor position="981" topLine="15" />
@@ -244,8 +244,8 @@
 	<File name="PTRAFFIC92CMS.h" open="0" top="0" tabpos="64">
 		<Cursor position="334" topLine="0" />
 	</File>
-	<File name="PTRAFFIC92COMM.cpp" open="0" top="0" tabpos="3">
-		<Cursor position="56921" topLine="1633" />
+	<File name="PTRAFFIC92COMM.cpp" open="1" top="0" tabpos="24">
+		<Cursor position="32004" topLine="938" />
 	</File>
 	<File name="PTRAFFIC92COMM.h" open="0" top="0" tabpos="2">
 		<Cursor position="3105" topLine="37" />
@@ -274,8 +274,8 @@
 	<File name="PTRAFFICAMEGIDS.cpp" open="0" top="0" tabpos="18">
 		<Cursor position="34229" topLine="929" />
 	</File>
-	<File name="PTRAFFICCCJ.cpp" open="0" top="0" tabpos="22">
-		<Cursor position="67814" topLine="1889" />
+	<File name="PTRAFFICCCJ.cpp" open="1" top="0" tabpos="20">
+		<Cursor position="24447" topLine="705" />
 	</File>
 	<File name="PTRAFFICCCJ.h" open="0" top="0" tabpos="42">
 		<Cursor position="353" topLine="0" />
@@ -301,8 +301,8 @@
 	<File name="SCREEN.cpp" open="0" top="0" tabpos="26">
 		<Cursor position="657" topLine="15" />
 	</File>
-	<File name="SCREEN.h" open="0" top="0" tabpos="0">
-		<Cursor position="212" topLine="0" />
+	<File name="SCREEN.h" open="1" top="0" tabpos="5">
+		<Cursor position="212" topLine="18" />
 	</File>
 	<File name="SCREENABOErr.cpp" open="0" top="0" tabpos="11">
 		<Cursor position="1423" topLine="35" />
@@ -559,14 +559,14 @@
 	<File name="SCREENWarning.h" open="0" top="0" tabpos="0">
 		<Cursor position="47" topLine="0" />
 	</File>
-	<File name="SMEM.cpp" open="1" top="0" tabpos="6">
-		<Cursor position="101572" topLine="3251" />
+	<File name="SMEM.cpp" open="1" top="0" tabpos="17">
+		<Cursor position="217221" topLine="7303" />
 	</File>
 	<File name="SMEM.h" open="0" top="0" tabpos="3">
-		<Cursor position="2986" topLine="58" />
+		<Cursor position="3180" topLine="69" />
 	</File>
-	<File name="STORAGE.cpp" open="1" top="0" tabpos="8">
-		<Cursor position="13591" topLine="359" />
+	<File name="STORAGE.cpp" open="0" top="0" tabpos="8">
+		<Cursor position="9599" topLine="277" />
 	</File>
 	<File name="STORAGE.h" open="0" top="0" tabpos="4">
 		<Cursor position="2630" topLine="39" />
@@ -583,26 +583,26 @@
 	<File name="ScreenActuateArwenMenu.h" open="0" top="0" tabpos="0">
 		<Cursor position="156" topLine="0" />
 	</File>
-	<File name="TCP.cpp" open="1" top="0" tabpos="14">
+	<File name="TCP.cpp" open="0" top="0" tabpos="14">
 		<Cursor position="145" topLine="0" />
 	</File>
-	<File name="TCP.h" open="1" top="0" tabpos="13">
+	<File name="TCP.h" open="0" top="0" tabpos="13">
 		<Cursor position="1197" topLine="3" />
 	</File>
-	<File name="TCPserver.cpp" open="1" top="0" tabpos="17">
-		<Cursor position="4370" topLine="119" />
+	<File name="TCPserver.cpp" open="1" top="0" tabpos="8">
+		<Cursor position="454" topLine="187" />
 	</File>
-	<File name="TCPserver.h" open="1" top="0" tabpos="16">
-		<Cursor position="116" topLine="0" />
+	<File name="TCPserver.h" open="1" top="0" tabpos="1">
+		<Cursor position="116" topLine="7" />
 	</File>
-	<File name="UDP.cpp" open="1" top="0" tabpos="12">
-		<Cursor position="99" topLine="0" />
+	<File name="UDP.cpp" open="0" top="0" tabpos="12">
+		<Cursor position="6417" topLine="210" />
 	</File>
-	<File name="UDP.h" open="1" top="0" tabpos="11">
+	<File name="UDP.h" open="0" top="0" tabpos="11">
 		<Cursor position="105" topLine="0" />
 	</File>
-	<File name="WRITEJOB.cpp" open="0" top="0" tabpos="4">
-		<Cursor position="10610" topLine="302" />
+	<File name="WRITEJOB.cpp" open="1" top="0" tabpos="25">
+		<Cursor position="15999" topLine="422" />
 	</File>
 	<File name="WRITEJOB.h" open="0" top="0" tabpos="0">
 		<Cursor position="1946" topLine="5" />
@@ -613,11 +613,14 @@
 	<File name="inifile.h" open="0" top="0" tabpos="0">
 		<Cursor position="11049" topLine="289" />
 	</File>
-	<File name="json/json_writer.cpp" open="1" top="0" tabpos="5">
+	<File name="json/json_value.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="29938" topLine="1241" />
+	</File>
+	<File name="json/json_writer.cpp" open="0" top="0" tabpos="5">
 		<Cursor position="5161" topLine="198" />
 	</File>
-	<File name="json/writer.h" open="1" top="0" tabpos="7">
-		<Cursor position="1303" topLine="40" />
+	<File name="json/writer.h" open="0" top="0" tabpos="7">
+		<Cursor position="341" topLine="3" />
 	</File>
 	<File name="light.cpp" open="0" top="0" tabpos="10">
 		<Cursor position="1958" topLine="26" />
@@ -625,8 +628,8 @@
 	<File name="light.h" open="0" top="0" tabpos="0">
 		<Cursor position="725" topLine="0" />
 	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="4">
-		<Cursor position="70990" topLine="1280" />
+	<File name="main.cpp" open="1" top="0" tabpos="16">
+		<Cursor position="69935" topLine="1253" />
 	</File>
 	<File name="main.h" open="0" top="0" tabpos="24">
 		<Cursor position="0" topLine="0" />
@@ -742,11 +745,14 @@
 	<File name="screenFlashMode.h" open="0" top="0" tabpos="0">
 		<Cursor position="72" topLine="0" />
 	</File>
-	<File name="screenLightEdit.cpp" open="0" top="0" tabpos="20">
-		<Cursor position="20908" topLine="575" />
+	<File name="screenLightEdit.cpp" open="1" top="0" tabpos="3">
+		<Cursor position="27446" topLine="783" />
 	</File>
-	<File name="screenLightPreview.cpp" open="0" top="0" tabpos="16">
-		<Cursor position="1156" topLine="28" />
+	<File name="screenLightEdit.h" open="1" top="0" tabpos="4">
+		<Cursor position="1142" topLine="27" />
+	</File>
+	<File name="screenLightPreview.cpp" open="1" top="0" tabpos="6">
+		<Cursor position="4226" topLine="142" />
 	</File>
 	<File name="screenLightPreview.h" open="0" top="0" tabpos="0">
 		<Cursor position="134" topLine="0" />
@@ -776,13 +782,13 @@
 		<Cursor position="118" topLine="0" />
 	</File>
 	<File name="screenPlanEditF2.cpp" open="0" top="0" tabpos="18">
-		<Cursor position="165" topLine="909" />
+		<Cursor position="12191" topLine="293" />
 	</File>
 	<File name="screenPlanEditF2.h" open="0" top="0" tabpos="19">
-		<Cursor position="130" topLine="0" />
+		<Cursor position="789" topLine="0" />
 	</File>
 	<File name="screenPlanPreview.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="22405" topLine="522" />
+		<Cursor position="4621" topLine="124" />
 	</File>
 	<File name="screenPlanPreview.h" open="0" top="0" tabpos="0">
 		<Cursor position="132" topLine="0" />
@@ -872,10 +878,10 @@
 		<Cursor position="1941" topLine="30" />
 	</File>
 	<File name="screenSegtypeEditF2.cpp" open="0" top="0" tabpos="13">
-		<Cursor position="60840" topLine="1161" />
+		<Cursor position="65281" topLine="1269" />
 	</File>
 	<File name="screenSegtypeEditF2.h" open="0" top="0" tabpos="6">
-		<Cursor position="2005" topLine="37" />
+		<Cursor position="295" topLine="0" />
 	</File>
 	<File name="screenSegtypeMenu.cpp" open="0" top="0" tabpos="14">
 		<Cursor position="3773" topLine="148" />
@@ -893,7 +899,7 @@
 		<Cursor position="1188" topLine="15" />
 	</File>
 	<File name="screenSpecialDayEditF2.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="19782" topLine="477" />
+		<Cursor position="21293" topLine="499" />
 	</File>
 	<File name="screenSpecialDayEditF2.h" open="0" top="0" tabpos="0">
 		<Cursor position="1250" topLine="0" />
@@ -914,33 +920,33 @@
 		<Cursor position="306" topLine="0" />
 	</File>
 	<File name="screenWeekDay.cpp" open="0" top="0" tabpos="15">
-		<Cursor position="11105" topLine="333" />
+		<Cursor position="5393" topLine="121" />
 	</File>
 	<File name="screenWeekDay.h" open="0" top="0" tabpos="0">
 		<Cursor position="1359" topLine="24" />
 	</File>
 	<File name="screenWeekDayEditF2.cpp" open="0" top="0" tabpos="12">
-		<Cursor position="16160" topLine="444" />
+		<Cursor position="7951" topLine="195" />
 	</File>
 	<File name="screenWeekDayEditF2.h" open="0" top="0" tabpos="0">
-		<Cursor position="1519" topLine="24" />
+		<Cursor position="1146" topLine="13" />
 	</File>
-	<File name="shirink_app.cpp" open="1" top="1" tabpos="3">
-		<Cursor position="11828" topLine="539" />
+	<File name="shirink_app.cpp" open="1" top="0" tabpos="7">
+		<Cursor position="14214" topLine="483" />
 	</File>
-	<File name="shirink_app.h" open="1" top="0" tabpos="1">
-		<Cursor position="5546" topLine="159" />
+	<File name="shirink_app.h" open="1" top="0" tabpos="2">
+		<Cursor position="5318" topLine="115" />
 	</File>
-	<File name="temperatur_humidity_sensor.cpp" open="0" top="0" tabpos="9">
-		<Cursor position="283" topLine="0" />
+	<File name="temperatur_humidity_sensor.cpp" open="1" top="0" tabpos="14">
+		<Cursor position="5593" topLine="159" />
 	</File>
-	<File name="temperatur_humidity_sensor.h" open="0" top="0" tabpos="8">
-		<Cursor position="682" topLine="0" />
+	<File name="temperatur_humidity_sensor.h" open="1" top="0" tabpos="15">
+		<Cursor position="682" topLine="4" />
 	</File>
 	<File name="tstdlibs.h" open="0" top="0" tabpos="0">
 		<Cursor position="0" topLine="102" />
 	</File>
-	<File name="var.h" open="1" top="0" tabpos="9">
-		<Cursor position="4936" topLine="96" />
+	<File name="var.h" open="0" top="0" tabpos="9">
+		<Cursor position="33506" topLine="786" />
 	</File>
 </CodeBlocks_layout_file>

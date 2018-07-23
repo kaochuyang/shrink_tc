@@ -78,7 +78,7 @@ class SMEM
 
 
         void SetTemperHumi(BYTE tem_1,BYTE tem_2,BYTE humi_1,BYTE humi_2);
-        void ReportTemperHumi();
+        void ReportTemperHumi_0F09();
         void Set_temper_humi_state(bool state);
 
 

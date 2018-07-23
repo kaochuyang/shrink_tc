@@ -184,6 +184,8 @@ Json::Reader reader;
     void send_chain_send_group();//V
     void send_tc_project_data();// v
     void send_execute_data();//v
+    void send_hardwareVersion();
+    void send_LastShutDownTime();
 //protected:
 private:
     s_IP s_ip;

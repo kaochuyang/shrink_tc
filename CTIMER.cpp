@@ -442,6 +442,7 @@ void * intervalTimer::PTime(void *arg)
                 switch (VDrid)
                 {
                 case( 10 ):
+       //         printf("Ctimer 10\n\n");
                     //WatchDog
                     //OT20110526
                     currentTime = time(NULL);
@@ -561,12 +562,12 @@ void * intervalTimer::PTime(void *arg)
                     iTransmitCycle5F03_Count++;
 //---------------------------------------------------------
 
-                    /* chain detect */
+
                     _intervalTimer.vChildChain();
 
 //MOveTo600                                  _intervalTimer.vSendHeartBeatToLCX405();
 
-                    /*For CCJ DongDa XiBin */
+
                     if(smem.vGetBOOLData(CCJ_SendStepToCCJ))
                     {
                         stc.ReportCurrentStepStatus5F03toCCJ();
@@ -882,6 +883,8 @@ void * intervalTimer::PTime(void *arg)
 
                     break;
                 case( 11 ):
+
+             //   printf("Ctimer 11\n\n");
 //Remove  _intervalTimer.vCheckAndReSendSS_S0_Status();
                     smem.vCheckConnectStatus();
 
@@ -968,6 +971,7 @@ void * intervalTimer::PTime(void *arg)
 
                     break;
                 case( 12 ):
+          //      printf("Ctimer 12\n\n");
 //Remove                                   _intervalTimer.vCheckAndReSendSS_SK_Status();
                     _intervalTimer.vCheckScreenAndDoSomething();
 
@@ -990,14 +994,18 @@ void * intervalTimer::PTime(void *arg)
                     SendRequestToKeypad();
 
                     break;
-                case( 13 ):                                                           //VD SIM
+                case( 13 ):
+       //         printf("Ctimer 13\n\n");                                                 //VD SIM
 //                                   _MSG = oDataToMessageOK.vPackageINFOTo92Protocol(uc6F00, 2,false);
 //                                   _MSG.InnerOrOutWard = cInner;
 //                                   writeJob.WriteWorkByMESSAGEOUT(_MSG);
+
+
                     smem.cPedPushButton.vCheckQueueMsgForWriteOut();
 
                     break;
                 case( 14 ):
+           //     printf("Ctimer 14\n\n");
 //                                     _intervalTimer.vSendHeartBeatToLCX405();
 //                                   _intervalTimer.vSSInit(SSInitCount);
 //                                   SSInitCount++;
@@ -1005,6 +1013,7 @@ void * intervalTimer::PTime(void *arg)
 
 
                 case( 15 ):  //0F04, HwStatus AutoReport
+         //       printf("Ctimer 15\n\n");
                     uc0F04[2] = smem.vGetHardwareStatus(3);
                     uc0F04[3] = smem.vGetHardwareStatus(4);
                     _MSG = oDataToMessageOK.vPackageINFOTo92Protocol(uc0F04, 4, true);
@@ -1014,20 +1023,21 @@ void * intervalTimer::PTime(void *arg)
                 //    stc.BRTGPSStatusReport();  //jacky20141203
 
                     smem.cPedPushButton.SendPedSWConnetState0F08(0);
-
-                      printf("%s[MESSAGE] \n\n ReportTemperHumi %s\n",
+     printf("%s[MESSAGE] \n\n ReportTemperHumi %s\n",
                    ColorGreen, ColorNormal);
-                    smem.ReportTemperHumi();
+
+                    smem.ReportTemperHumi_0F09();
                     break;
 
                 case( 100 ):
-
+            //printf("Ctimer 100\n\n");
                     _intervalTimer.vCommuncationReset(iCommuncationResetCount);                        //default not start
                     iCommuncationResetCount++;
                     if(iCommuncationResetCount >= 3) iCommuncationResetCount = 0;
                     break;
 
                 case( 101 ):
+              //  printf("Ctimer 101\n\n");
                     _intervalTimer.vDBLockRequest(iDBLockCount);                        //default not start
                     iDBLockCount++;
                     if(iDBLockCount >= 6)                        //TimeOut
@@ -1042,137 +1052,11 @@ void * intervalTimer::PTime(void *arg)
                     }
                     break;
 
-                    /*
-                                                  case( 500 ):                                      //\uFFFD��\uFFFD\uFFFD\uFFFD\uFFFDTOD
 
-                                                       memset(msg,0,sizeof(msg));
-
-                                                       usiCurrentSubphaseStep = stc.vGetUSIData(CSTC_exec_phase_current_subphase_step);
-                                                       printf("printfMsg [In Dyn] currentStep:%d %d\n", usiCurrentSubphaseStep, Protocal5F1CStopStep);
-                                                       sprintf(msg,"printfMsg [In Dyn] currentStep:%d %d", usiCurrentSubphaseStep, Protocal5F1CStopStep);
-
-                                                       //smem.vWriteMsgToDOM(msg);
-                                                       memset(msg,0,sizeof(msg));
-
-                                                       if((usiCurrentSubphaseStep == 0 || usiCurrentSubphaseStep == 2) && usiCurrentSubphaseStep == Protocal5F1CStopStep){
-                                                         if( stc.Lock_to_LoadControlStrategy() == STRATEGY_ALLDYNAMIC ) {
-                                                        // bereplace stc.Lock_to_Set_Next_Step();
-                                                         stc.vSetNextStepNotUseSignal();
-                                                           usleep(100);
-
-                                                           printf("Lock_to_Set_Control_Strategy by Timer!!!\n");
-
-                                                           stc.Lock_to_Set_Control_Strategy(STRATEGY_TOD);
-
-                                                           sprintf(msg,"[Debug] Change to TOD at CTIMER.cpp, currentStep:%d", usiCurrentSubphaseStep);
-                                                           smem.vWriteMsgToDOM(msg);
-                                                           memset(msg,0,sizeof(msg));
-
-                                                           _ControlStrategy.DBit = smem.vGetUCData(TC92_ucControlStrategy);
-                                                           _ControlStrategy.switchBit.b1 = true;
-                                                           _ControlStrategy.switchBit.b5 = false;
-                                                           _ControlStrategy.switchBit.b6 = false;
-
-                                                           smem.vSetUCData(TC92_ucControlStrategy, _ControlStrategy.DBit);
-                                                           smem.vSetINTData(TC92_iEffectTime, 0);
-                                                         }//if( stc.Lock_to_LoadControlStrategy() == STRATEGY_ALLDYNAMIC )
-                                                       }//if((usiCurrentSubphaseStep == 0 || usiCurrentSubphaseStep == 2) && usiCurrentSubphaseStep == Protocal5F1CStopStep)
-                                                       else {
-
-                                                                smem.vSetBOOLData(TC_SIGNAL_NEXT_STEP_OK, false);
-                                                         // bereplace stc.Lock_to_Set_Next_Step();
-                                                         stc.vSetNextStepNotUseSignal();
-
-                                                         //usleep(1000);
-                                                         //usleep(50);
-                                                         printf("--------------------------------------------------------\n");
-
-                    //                                     for(int ii = 0; ii < 2000; ii++) {
-                    //                                              if(smem.vGetBOOLData(TC_SIGNAL_NEXT_STEP_OK) == true){
-                    //                                                smem.vSetBOOLData(TC_SIGNAL_NEXT_STEP_OK, false);
-                    //                                                printf("OK finish CSTC NEXT_STEP\n");
-                    //                                                //ii = 100;//100,000
-                    //                                                ii=2000;
-                    //                                                break;
-                    //                                              }//if(smem.vGetBOOLData(TC_SIGNAL_NEXT_STEP_OK) == true)
-                    //                                                     printf("\nCTIMER ii = %d\n\n", ii);
-                    //                                                      //usleep(1000);
-                    //                                                      usleep(50);
-                    //                                             }//for(int ii = 0; ii < 100; ii++)
-
-                                                         usiCurrentSubphaseStepN = stc.vGetUSIData(CSTC_exec_phase_current_subphase_step);
-                                                         printf("\nusiCurrentSubphaseStep %d usiCurrentSubphaseStepN %d\n",usiCurrentSubphaseStep, usiCurrentSubphaseStepN);
-
-                                                         if(usiCurrentSubphaseStepN == 0) {
-                                                           if(Protocal5F1CStopStep == usiCurrentSubphaseStepN) {
-                                                                  iTmp = smem.vGetINTData(TC92_iEffectTime);
-                                                                   printf("CTIMER usiCurrentSubphaseStepN = 0 effectime t=%d\n", iTmp);
-                                                                   sprintf(msg,"CTIMER usiCurrentSubphaseStepN = 0 effectime t=%d", iTmp);
-                                                                   if(iTmp > 10) _intervalTimer.vAllDynamicToTODCount(iTmp);
-                                                                   else _intervalTimer.vAllDynamicToTODCount(120);  //error happened
-                                                           }//if(Protocal5F1CStopStep == usiCurrentSubphaseStepN)
-                                                           else {
-                                                             //OT20111020 fix
-                                                                   iTmp = stc.vGetUSIData(CSTC_exec_plan_green_time);
-                                                                   printf("CTIMER usiCurrentSubphaseStepN = 0 TOD t= %d\n",iTmp);
-                                                                   sprintf(msg,"CTIMER usiCurrentSubphaseStepN = 0 TOD t= %d",iTmp);
-                                                                   if(iTmp > 0) _intervalTimer.vAllDynamicToTODCount(iTmp);
-                                                                   else _intervalTimer.vAllDynamicToTODCount(1);
-                                                           }//if(Protocal5F1CStopStep == usiCurrentSubphaseStepN)
-                                                         }//if(usiCurrentSubphaseStepN == 0)
-                                                         else if(usiCurrentSubphaseStepN == 1) {
-                                                                  iTmp = stc.vGetUSIData(CSTC_exec_plan_pedgreenflash_time);
-                                                                  printf("CTIMER usiCurrentSubphaseStepN = 1 t=%d\n", iTmp);
-                                                                  sprintf(msg,"CTIMER usiCurrentSubphaseStepN = 1 t=%d", iTmp);
-                                                                  if(iTmp > 0) _intervalTimer.vAllDynamicToTODCount(iTmp);
-                                                                  else _intervalTimer.vAllDynamicToTODCount(1);
-                                                         }//if(usiCurrentSubphaseStepN == 1)
-                                                         else if(usiCurrentSubphaseStepN == 2) {
-                                                           if(Protocal5F1CStopStep == usiCurrentSubphaseStepN) {
-                                                                   iTmp = smem.vGetINTData(TC92_iEffectTime);
-                                                                   printf("CTIMER usiCurrentSubphaseStepN = 2 t=%d\n", iTmp);
-                                                                   sprintf(msg,"CTIMER usiCurrentSubphaseStepN = 2 t=%d", iTmp);
-                                                                   if(iTmp > 10) _intervalTimer.vAllDynamicToTODCount(iTmp);
-                                                                   else _intervalTimer.vAllDynamicToTODCount(120);
-                                                           }//if(Protocal5F1CStopStep == usiCurrentSubphaseStepN)
-                                                           else {
-                                                                   iTmp = stc.vGetUSIData(CSTC_exec_plan_pedred_time);
-                                                                   printf("CTIMER usiCurrentSubphaseStepN = 2 t=%d\n", iTmp);
-                                                                   sprintf(msg,"CTIMER usiCurrentSubphaseStepN = 2 t=%d", iTmp);
-                                                             if(iTmp > 0) _intervalTimer.vAllDynamicToTODCount(iTmp);
-                                                             else _intervalTimer.vAllDynamicToTODCount(1);
-                                                           }//if(Protocal5F1CStopStep == usiCurrentSubphaseStepN)
-                                                         }//if(usiCurrentSubphaseStepN == 2)
-                                                         else if(usiCurrentSubphaseStepN == 3) {
-                                                           iTmp = stc.vGetUSIData(CSTC_exec_plan_yellow_time);
-                                                           printf("CTIMER usiCurrentSubphaseStepN = 3 t=%d\n", iTmp);
-                                                           sprintf(msg,"CTIMER usiCurrentSubphaseStepN = 3 t=%d",iTmp);
-                                                           if(iTmp > 0) _intervalTimer.vAllDynamicToTODCount(iTmp);
-                                                           else _intervalTimer.vAllDynamicToTODCount(3);
-                                                         }//else if(usiCurrentSubphaseStepN == 3)
-                                                         else if(usiCurrentSubphaseStepN == 4) {
-                                                           iTmp = stc.vGetUSIData(CSTC_exec_plan_allred_time);
-                                                           printf("CTIMER usiCurrentSubphaseStepN = 4 t=%d\n", iTmp);
-                                                           sprintf(msg,"CTIMER usiCurrentSubphaseStepN = 4 t=%d", iTmp);
-                                                           if(iTmp > 0) _intervalTimer.vAllDynamicToTODCount(iTmp);
-                                                           else _intervalTimer.vAllDynamicToTODCount(3);
-                                                         }//else if(usiCurrentSubphaseStepN == 4)
-                                                         else{
-                                                           printf("CTIMER usiCurrentSubphaseStepN != [0-4] t=1\n");
-                                                           sprintf(msg,"CTIMER usiCurrentSubphaseStepN != [0-4] t=1");
-                                                           _intervalTimer.vAllDynamicToTODCount(1);
-                                                         }//else (usiCurrentSubphaseStepN != [0-4])
-                                                         printf("--------------------------------------------------------\n");
-                                                         //BT9512260001 START
-                                                         //smem.vWriteMsgToDOM(msg);
-                                                         //BT9512260001 END
-                                                       }
-                                                  break;
-                    */
 
                 case( 500 ):                                      //\uFFFDï¿½ï¿½\uFFFD\uFFFD\uFFFD\uFFFDTOD,
                     //vAllDynamicToTODCount()
-
+printf("Ctimer 500\n\n");
                     memset(msg,0,sizeof(msg));
 
                     usiCurrentSubphaseStep = stc.vGetUSIData(CSTC_exec_phase_current_subphase_step);
@@ -1213,6 +1097,7 @@ void * intervalTimer::PTime(void *arg)
 
 //OTSS
                 case( 501 ):
+                printf("Ctimer 501\n\n");
                     sprintf(msg, "Ask W77E58 Version, booting version year is :%d", smem.vGetW77E58FWVer(0));
                     smem.vWriteMsgToDOM(msg);
                     memset(msg,0,sizeof(msg));
@@ -1227,26 +1112,16 @@ void * intervalTimer::PTime(void *arg)
                     break;
 
                 case( 600 ):
+                printf("Ctimer 600\n\n");
                     _intervalTimer.vSendHeartBeatToLCX405();
-                    /* OT20111026
-                    writeJob.WriteAskW77E58FWVer();                 //ask W77e58 Fw, OT20110825
-                    */
+
                     break;
                 case( 601 ):
+                printf("Ctimer 601\n\n");
                     smem.cPedPushButton.QueryPEDState();//add Arwen
                     break;
 
-                    /*   case(602):
-                             if(ucCSTCControlStrategy == 70)
-                                 stc.Lock_to_Set_Next_Step();
 
-                             printf("\n------- TEST -------\n");
-                             printf("\n------- TEST -------\n");
-                             printf("\n------- TEST -------\n");
-                             printf("\n------- TEST -------\n");
-                             printf("\n------- TEST -------\n");
-                       break;
-                     */
                 default:
                     perror("CSTC TIMERID: error!!");
                     //OTMARKPRINTF  printf("VDrid: \n", VDrid);

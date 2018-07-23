@@ -7295,15 +7295,15 @@ try{
 
  } catch (...) {}
 }
-void SMEM::ReportTemperHumi()
+void SMEM::ReportTemperHumi_0F09()
 {
 
 
         printf("xfxx temperhumi report\n");
 
         unsigned char pack[5];
-        pack[0]=0xcf;
-        pack[1]=0x3;
+        pack[0]=0x0f;
+        pack[1]=0x9;
         if(temper_humi_state==true)
         {
 

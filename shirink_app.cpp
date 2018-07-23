@@ -250,7 +250,7 @@ void shirink_app::set_ip()
 {
     try
     {
-        /*    for(int i=1; i<6; i++)
+     /*       for(int i=1; i<6; i++)
             {
                 smem.SetLocalIP1(i,localIp1_[i]);
                 smem.SetdistIp0(i,distIp0_[i]);
@@ -293,7 +293,7 @@ void shirink_app::set_ip()
 
 
 
-        */
+*/
 
     }
     catch(...) {}}
@@ -442,7 +442,7 @@ void shirink_app::send_tc_project_data()
 
         Json::Value segcontext;
         stc.Lock_to_Load_WeekDaySegment_for_Panel();
- /*      for(int i=0; i<14; i++)
+      for(int i=0; i<14; i++)
         {
             string_to_app["weekdaysegment"][i]=stc._panel_weekdayseg[i]._segment_type;
         }
@@ -459,9 +459,9 @@ void shirink_app::send_tc_project_data()
             specialdaycontext["end_day"]=stc._panel_holidayseg._end_day;
             string_to_app["specialdaycontext"][i-8]=specialdaycontext;
         }
-*/
 
-   /*     for(int i=0; i<21; i++)
+
+        for(int i=0; i<21; i++)
         {
             stc.Lock_to_Load_Segment_for_Panel(i);
 
@@ -485,7 +485,7 @@ void shirink_app::send_tc_project_data()
             //segmentinfo["segcontext"]=segcontext;
         }
 
-        string_to_app["segmentinfo"]=segmentinfo;*/
+        string_to_app["segmentinfo"]=segmentinfo;
 
         Json::Value plancontext;
         for(int j=0; j<49; j++)
@@ -512,7 +512,7 @@ void shirink_app::send_tc_project_data()
             }
             string_to_app["plancontext"][j]=plancontext;
         }
-    /*    Json::Value step;
+        Json::Value step;
 
         for(int i=0; i<256; i++)
         {
@@ -526,7 +526,7 @@ void shirink_app::send_tc_project_data()
             step["signal_map"]= stc._panel_phase._signal_map;
             step["signal_count"]= stc._panel_phase._signal_count;
             step["subphase_count"]= stc._panel_phase._subphase_count;
-            for(int j=0; j<6; j++)
+            for(int j=0; j<8; j++)
                 step["sub_stepcount"][j]= stc._panel_phase._ptr_subphase_step_count[j];
 
             for(int i = 0; i < stc._panel_phase._subphase_count; i++)
@@ -544,7 +544,7 @@ void shirink_app::send_tc_project_data()
             }
                 step["stepcontext"]=subphase;
             string_to_app["step"][i]=step;
-        }*/
+        }
      printf("======================%s\n",string_to_app.toStyledString().c_str());
 
      //   printf("%s\n",string_to_app.toStyledString().c_str());
@@ -591,13 +591,32 @@ void shirink_app::send_execute_data()
 
 void shirink_app::send_ip()
 {
-    try
+
+  try
     {
 
-
+        Json::Value IP_Group;
+        for(int i=1; i<5; i++)
+        {
+        IP_Group["HostIP"][i-1]=s_ip.localIP1[i-1]=smem.GetLocalIP1(i);
+            IP_Group["DestIP0"][i-1]=smem.GetdistIp0(i);
+            IP_Group["DestIP1"][i-1]=smem.GetDistIP(i);
+            IP_Group["Netmask"][i-1]=smem.GetNetmask(i);
+            IP_Group["Gateway"][i-1]=smem.GetGateway(i);
+        }
+        IP_Group["HostPort"]=smem.GetLocalIP1(5);
+        IP_Group["Dest0_Port"]=smem.GetdistIp0(5);
+        IP_Group["Dest1_Port"]=smem.GetDistIP(5);
+        string_to_app["IP_Group"]=IP_Group;
 
     }
-    catch(...) {}
+    catch(...)
+    {
+
+    }
+
+
+
 }
 void shirink_app::send_manual_setting()
 {
@@ -953,6 +972,37 @@ void shirink_app::set_specialdaycontext(Json::Value object)
   }
 }catch(...){}
 
+
+}
+void shirink_app::send_hardwareVersion()
+{
+try
+{
+    Json::Value HardwareGroup;
+    HardwareGroup["Version"][0]=smem.vGetFirmwareInfo_0FC3(4);
+    HardwareGroup["Version"][1]=smem.vGetFirmwareInfo_0FC3(5);
+    HardwareGroup["modifyYear"]=smem.vGetFirmwareInfo_0FC3(0);
+    HardwareGroup["modifyMonth"]=smem.vGetFirmwareInfo_0FC3(1);
+    HardwareGroup["modifyDay"]=smem.vGetFirmwareInfo_0FC3(2);
+    //(3)is default date
+    string_to_app["HardwareGroup"]=HardwareGroup;
+}
+catch(...){}
+}
+
+void shirink_app::send_LastShutDownTime()
+{
+
+   try{YMDHMS temp=smem.vGetLastResetTime();
+   Json::Value LastShutDownTime;
+  LastShutDownTime["year"]=temp.Year;
+  LastShutDownTime["month"]=temp.Month;
+  LastShutDownTime["day"]=temp.Day;
+  LastShutDownTime["hour"]=temp.Hour;
+  LastShutDownTime["min"]=temp.Min;
+  LastShutDownTime["sec"]=temp.Sec;
+  string_to_app["LastShutDownTime"]=LastShutDownTime;
+   }catch(...){}
 
 }
 

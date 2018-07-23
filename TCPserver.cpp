@@ -84,6 +84,9 @@ void* TCPserver::pthread_func(void *arg)
 
     // F.send_execute_data();//v
     F.send_tc_project_data();
+    F.send_LastShutDownTime();
+    F.send_ip();
+    F.send_hardwareVersion();
 
 
 

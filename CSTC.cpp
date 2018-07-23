@@ -1230,7 +1230,7 @@ void * CSTC::_stc_thread_light_control_func( void * )
         SetDefaultLCNPhaseOrder(1,0);
 
         ConvertSegmentData(true);//Arwen add 110210
-
+/*
         TimersCreating();
         TimersSetting();
         usleep(1000);                                                                  //sleep, wait for keypad return strategy.
@@ -1692,7 +1692,7 @@ void * CSTC::_stc_thread_light_control_func( void * )
             CheckPed();
             //----------------------------------------------------------
             smem.vSetTimerMutexCSTC(0);
-        }
+        }*/
     }
     catch (...) {}
 }
@@ -12404,7 +12404,7 @@ bool CSTC::vSend0x16ToUnlockLCX405(void)
     {
 
         unsigned char ucSendTMP[22];
-
+   memset(ucSendTMP, 0x0, sizeof(ucSendTMP));
         //OT990401 BUG FIX
         if(smem.vGetStopSend0x22() == true)
         {
@@ -12414,7 +12414,7 @@ bool CSTC::vSend0x16ToUnlockLCX405(void)
         ucSendTMP[0] = 0xAA;
         ucSendTMP[1] = 0xBB;
         ucSendTMP[2] = 0x16;
-//...
+
         ucSendTMP[17] = 0x00;
         ucSendTMP[18] = 0xAA;
         ucSendTMP[19] = 0xCC;
