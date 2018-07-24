@@ -545,7 +545,7 @@ void shirink_app::send_tc_project_data()
                 step["stepcontext"]=subphase;
             string_to_app["step"][i]=step;
         }
-     printf("======================%s\n",string_to_app.toStyledString().c_str());
+    // printf("======================%s\n",string_to_app.toStyledString().c_str());
 
      //   printf("%s\n",string_to_app.toStyledString().c_str());
     }
@@ -607,8 +607,9 @@ void shirink_app::send_ip()
         IP_Group["HostPort"]=smem.GetLocalIP1(5);
         IP_Group["Dest0_Port"]=smem.GetdistIp0(5);
         IP_Group["Dest1_Port"]=smem.GetDistIP(5);
+        IP_Group["LCN"]=smem.GetAddress();
         string_to_app["IP_Group"]=IP_Group;
-
+  printf("%s\n",IP_Group.toStyledString().c_str());
     }
     catch(...)
     {
