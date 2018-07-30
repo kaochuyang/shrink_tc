@@ -24,6 +24,7 @@ Json::Value segmentinfo;
 Json::Value current_state;
 Json::Value Holidaysegtype;
 Json::Value WeekdaySegtype;
+Json::Value RealTime_info;
 Json::FastWriter faster_writer;
 Json::Reader reader;
     shirink_app();
@@ -172,7 +173,7 @@ Json::Reader reader;
     void set_weekdaysegment(Json::Value object);
     void set_specialdaycontext(Json::Value object);
  /***   "send series" send the tc's data with json form to shrink_app_pad  ***/
-    void send_ip();
+    void send_ip();//v
     void send_manual_setting();//v
     void send_railchain_parama();//V
     void send_proxy_transfer();//V
@@ -184,8 +185,9 @@ Json::Reader reader;
     void send_chain_send_group();//V
     void send_tc_project_data();// v
     void send_execute_data();//v
-    void send_hardwareVersion();
-    void send_LastShutDownTime();
+    void send_hardwareVersion();//v
+    void send_LastShutDownTime();//v
+    void send_TC_RealTime_info();
 //protected:
 private:
     s_IP s_ip;
