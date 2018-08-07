@@ -11,43 +11,8 @@ shirink_app::~shirink_app()
 {
     //dtor
 }
-/*shirink_app::
-{
-
-    try
-    {
-
-    }catch(...)
-    {
-
-    }
 
 
-
-}*/
-void shirink_app::refresh_ip()
-{
-
-    try
-    {
-        for(int i=1; i<5; i++)
-        {
-            s_ip.localIP1[i-1]=smem.GetLocalIP1(i);
-            s_ip.distIP0[i-1]=smem.GetdistIp0(i);
-            s_ip.distIP1[i-1]=smem.GetDistIP(i);
-            s_ip.netmask[i-1]=smem.GetNetmask(i);
-            s_ip.gateway[i-1]=smem.GetGateway(i);
-        }
-        s_ip.localIP1_port=smem.GetLocalIP1(5);
-        s_ip.distIP0_port=smem.GetdistIp0(5);
-        s_ip.distIP1_port=smem.GetDistIP(5);
-
-    }
-    catch(...)
-    {
-
-    }
-}
 
 void shirink_app::refresh_railchain_parama()
 {
@@ -1093,7 +1058,7 @@ void shirink_app::send_TC_RealTime_info()
         current_state["current_planID"]=iCurrentPlanID;
 
 
-           //current_state["current_second"]=stc.vGetStepTime();
+        current_state["current_remaining_sec"]=stc.vGetStepTime();
         int iCurrentSubphase = stc.vGetUSIData(CSTC_exec_phase_current_subphase);
 
         int iCurrentSubphaseTotal = stc._panel_phase._subphase_count;
@@ -1102,8 +1067,10 @@ void shirink_app::send_TC_RealTime_info()
         int iCurrentStep     = stc.vGetUSIData(CSTC_exec_phase_current_subphase_step);
         int iCurrentStepTotal = stc._panel_phase._total_step_count;
         printf("current_total_subphase=%d,current_total_step=%d\n",iCurrentSubphaseTotal,iCurrentStepTotal);
-        current_state["current_step"]=iCurrentStep + ((iCurrentSubphase)*5)+1;
+        current_state["current_step"]=iCurrentStep+1;// + ((iCurrentSubphase)*5)+1;
         current_state["current_total_step"]=iCurrentStepTotal;
+        current_state["current_segmenttype"]=stc.vGetUSIData(CSTC_exec_segment_type);
+        //current_state["current_subphasecount"]=;
 
 
 
@@ -1118,8 +1085,191 @@ void shirink_app::send_TC_RealTime_info()
     }
     catch(...) {}
 }
+void shirink_app::send_TC_RealTime_info_udp()
+{
+    try
+    {
+
+//enum ControlStrategy
+//{
+//    STRATEGY_TOD       =10,
+//    STRATEGY_AUTO_CADC =40,  //STRATEGY_AUTO_CADC is triggered from TOD
+//    STRATEGY_CADC      =50,  //STRATEGY_CADC is triggered from outter
+//    STRATEGY_MANUAL    =70,
+//    STRATEGY_FLASH     =80,
+//    STRATEGY_ALLRED    =90,
+//    STRATEGY_ALLDYNAMIC =95,
+//    STRATEGY_TODDYN    =96
+//};
+
+        BYTE RealTimeInfo[50];
+        RealTimeInfo[0]=0xaa;
+        RealTimeInfo[1]=0xbb;
+        RealTimeInfo[2]=0x00;
+
+        RealTimeInfo[3]=stc.Lock_to_LoadControlStrategy();//=RealTime_info["ControlStratege"]
+
+        if(smem.vLoadCenterConnectStatus())
+            RealTimeInfo[4]=1;//RealTime_info["LinkStateWithCenter"]=
+        else RealTimeInfo[4]=2;//RealTime_info["LinkStateWithCenter"]=
+
+        Json::Value SystemTime;
+        time_t currentTime=time(NULL);
+        struct tm *now=localtime(&currentTime);
+
+        RealTimeInfo[5]=now->tm_year;//=SystemTime["year"]
+        RealTimeInfo[6]=now->tm_mon+1;//SystemTime["month"]=
+        RealTimeInfo[7]=now->tm_mday;//=SystemTime["day"]
+        RealTimeInfo[8]=now->tm_hour;//=SystemTime["hour"]
+        RealTimeInfo[9]=now->tm_min;//=SystemTime["min"]
+        RealTimeInfo[10]=now->tm_sec;//=SystemTime["sec"]
+        //RealTime_info["SystemTime"]=SystemTime;
 
 
+
+        unsigned short int iCurrentPhaseID  = stc.vGetUSIData(CSTC_exec_plan_phase_order);
+        unsigned short int iCurrentPlanID   = stc.vGetUSIData(CSTC_exec_plan_plan_ID);
+
+        stc.Lock_to_Load_Plan_for_Panel(iCurrentPhaseID);
+        stc.Lock_to_Load_Phase_for_Panel(iCurrentPlanID);
+        RealTimeInfo[11]=iCurrentPhaseID;//=current_state["current_phaseID"]
+        RealTimeInfo[12]=iCurrentPlanID;//=current_state["current_planID"]
+
+
+        RealTimeInfo[13]=stc.vGetStepTime();//=current_state["current_remaining_sec"]
+        int iCurrentSubphase = stc.vGetUSIData(CSTC_exec_phase_current_subphase);
+
+        int iCurrentSubphaseTotal = stc._panel_phase._subphase_count;
+        RealTimeInfo[14]= iCurrentSubphase+1;//=current_state["current_subphase"]
+        RealTimeInfo[15]= iCurrentSubphaseTotal;//=current_state["current_total_subphase"]
+        int iCurrentStep     = stc.vGetUSIData(CSTC_exec_phase_current_subphase_step);
+        int iCurrentStepTotal = stc._panel_phase._total_step_count;
+        printf("current_total_subphase=%d,current_total_step=%d\n",iCurrentSubphaseTotal,iCurrentStepTotal);
+        RealTimeInfo[16]=iCurrentStep+1;// =current_state["current_step"]
+        RealTimeInfo[17]=iCurrentStepTotal;//=current_state["current_total_step"]
+        RealTimeInfo[18]=stc.vGetUSIData(CSTC_exec_segment_type);//=current_state["current_segmenttype"]
+        //current_state["current_subphasecount"]=;
+
+        RealTimeInfo[19]=0xaa;
+        RealTimeInfo[20]=0xcc;
+        RealTimeInfo[21]=0;
+        for(int i=0; i<21; i++)
+            RealTimeInfo[22]^=RealTimeInfo[i];
+
+        send_TC_RealTime_info();
+
+        //RealTime_info["current_state"]=current_state;
+
+        //string_to_app["RealTime_info"]=RealTime_info;
+
+        //printf("string=%s\n",RealTime_info.toStyledString().c_str());
+        writeJob.WritePhysicalOut(RealTimeInfo,22,revAPP);
+
+
+    }
+    catch(...) {}
+}
+void shirink_app::send_PasswordCheck()
+{
+    try
+    {
+        smem.vWriteMsgToDOM("login_check_by_shrink_APP");
+        char cTmpPassword[6];
+        unsigned char data[8];
+        int i;
+        Json::Value Password;
+        char *_TmpPasswdPtr = smem.GetPassword();
+        for(i =0; i < 6; i++)
+        {
+            cTmpPassword[i] = _TmpPasswdPtr[i];
+            Password["Password"][i]=cTmpPassword[i];
+        }
+        string_to_app["Passwd"]=Password;
+//smem.SetPassword(666666)
+    }
+    catch(...) {}
+
+}
+void shirink_app::set_password(Json::Value object)
+{
+    try
+    {
+        char passwd[6];
+        for(int i=0; i<6; i++)
+        {
+            passwd[i]=object["Password"][i].asInt();
+        }
+        smem.SetPassword(passwd[0],passwd[1],passwd[2],passwd[3],passwd[4],passwd[5]);
+        smem.vWriteMsgToDOM("change_login_password_by_shrink_APP");
+    }
+    catch(...) {}
+}
+void shirink_app::send_reportcycle()
+{
+//    try
+//    {
+//     Json::Value ReportCycle;
+//     ReportCycle["LightTransferCycle"];
+//     ReportCycle["StepChangeTranferCycle"];
+//
+//
+//
+//       if (smem.GetDbOperStat()==0 || smem.vLoadCenterConnectStatus()==false) {
+//        if (smem.vGet0FCommandSet()==0 && (cSelect==1 || cSelect==2 || cSelect==3 || cSelect==4)) {
+//            smem.SetLastFace(cHWCYCLE);
+//            screenABOErr.DisplayABOErr();
+//        } else {
+//
+//            if (cSelect<6) {
+//
+//                BYTE data[3];
+//
+//                data[0]  = 0x0F;
+//                data[1]  = 0x14;
+//                data[2]  = cSelect;
+//
+//                MESSAGEOK _MsgOK;
+//
+//                _MsgOK = oDataToMessageOK.vPackageINFOTo92Protocol(data, 3,false);
+//                _MsgOK.InnerOrOutWard = cComingFromScreen;
+//                writeJob.WriteWorkByMESSAGEOUT(_MsgOK);
+//
+//                if (cSelect==0)  smem.vWriteMsgToDOM("Set Hardware Cycle To Stop Hardware Cycle");
+//                else if (cSelect==1)  smem.vWriteMsgToDOM("Set Hardware Cycle To 1 Second");
+//                else if (cSelect==2)  smem.vWriteMsgToDOM("Set Hardware Cycle To 2 Seconds");
+//                else if (cSelect==3)  smem.vWriteMsgToDOM("Set Hardware Cycle To 5 Seconds");
+//                else if (cSelect==4)  smem.vWriteMsgToDOM("Set Hardware Cycle To 1 Minute");
+//                else if (cSelect==5)  smem.vWriteMsgToDOM("Set Hardware Cycle To 5 Minutes");
+//
+////arwen modify                screenCtlSetup.DisplayCtlSetup();
+//                screenV3Related.DisplayV3Related();
+//            }
+//        }
+//    } else {
+//        smem.SetLastFace(cHWCYCLE);
+//        screenLockdb.DisplayLockdb();
+//    }
+//
+//    }
+//    catch(...){}
+}
+
+
+void shirink_app::RebootTC()
+{
+
+    try
+    {
+
+        smem.vSetBOOLData(IFGetResetTCSignal, true);
+        smem.vWriteMsgToDOM("Reset TC Signal By shrink_app!");
+        system("sync");
+        system("sync");
+        system("reboot");
+    }
+    catch(...) {}
+
+}
 
 
 

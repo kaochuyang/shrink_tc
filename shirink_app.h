@@ -142,7 +142,7 @@ Json::Reader reader;
         ControlStrategy _old_strategy;
     };
 /***    refresh_series catch tc data to shrink_app class       ****/
-    void refresh_ip();
+
     void refresh_railchain_parama();
     void refresh_manual_setting();
     void refresh_proxy_transfer();
@@ -172,6 +172,8 @@ Json::Reader reader;
     void set_segment_info(Json::Value object);
     void set_weekdaysegment(Json::Value object);
     void set_specialdaycontext(Json::Value object);
+    void set_password(Json::Value object);
+    void RebootTC();
  /***   "send series" send the tc's data with json form to shrink_app_pad  ***/
     void send_ip();//v
     void send_manual_setting();//v
@@ -188,6 +190,9 @@ Json::Reader reader;
     void send_hardwareVersion();//v
     void send_LastShutDownTime();//v
     void send_TC_RealTime_info();
+    void send_TC_RealTime_info_udp();
+    void send_PasswordCheck();
+    void send_reportcycle();
 //protected:
 private:
     s_IP s_ip;

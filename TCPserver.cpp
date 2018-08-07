@@ -11,6 +11,7 @@
 #include <netinet/in.h>
 #include <unistd.h>
 #include <climits>
+#include <arpa/inet.h>
 #define MAXLINE 4096
 using namespace std;
 TCPserver _tcpserver;
@@ -38,6 +39,7 @@ void TCPserver::tcp_thread_generate()
 
 }
 
+
 void* TCPserver::pthread_func(void *arg)
 {
     string H;
@@ -54,7 +56,7 @@ void* TCPserver::pthread_func(void *arg)
 //string tail="]";
 
 //"["{   "REGION_ID" : "600901",   "REGION_ID10" : "6009",   "REGION_ID5" : "700901",   "REGION_ID8" : "6009055"}"]";
-    string A="{\"Data\":{\"Name\":\"MichaelChan\",\"Email\":\"XXXX@XXX.com\",\"Phone\":[1234567,0911123456]}}\n";
+/*    string A="{\"Data\":{\"Name\":\"MichaelChan\",\"Email\":\"XXXX@XXX.com\",\"Phone\":[1234567,0911123456]}}\n";
     string B="{\"Data2\":{\"Name2\":\"MichChan\",\"Email2\":\"XXXX@YYY.com\",\"Phone2\":[1299967,0988823456]}}\n";
     string C="{\"Data3\":{\"Name3\":\"MichAAAn\",\"Email3\":\"XXXX@ZZZ.com\",\"Phone3\":[12998767,0788823456]}}\n";
     //="{[\"{ 123456 }"\";
@@ -64,7 +66,7 @@ void* TCPserver::pthread_func(void *arg)
     cout<<"\""<<endl;
     cout<<"\\\""<<endl;
 
-    cout<<A.find("\"")<<endl;
+    cout<<A.find("\"")<<endl;*/
 
     shirink_app F;
 
@@ -110,7 +112,8 @@ void* TCPserver::pthread_func(void *arg)
     //¥ý§â¦a§}²MªÅ¡A??¥ô·NIP
     memset(&servaddr,0,sizeof(servaddr));
     servaddr.sin_family = AF_INET;
-    servaddr.sin_addr.s_addr = htonl(INADDR_ANY);
+ //   servaddr.sin_addr.s_addr = htonl(INADDR_ANY);
+   servaddr.sin_addr.s_addr = inet_addr("192.168.2.1");
     servaddr.sin_port = htons(5000);
 
 
@@ -141,6 +144,7 @@ void* TCPserver::pthread_func(void *arg)
         Json::Value r_test;
         Json::Reader reader;
         int chek=0;
+
         while((n=recv(connfd,buff,MAXLINE,0))>0)
         {
             buff[n] = '\0';
@@ -155,7 +159,13 @@ void* TCPserver::pthread_func(void *arg)
                 // printf("STEP=%s\n",r_test["weekdaysegment"].toStyledString().c_str());
 
                 printf("r_test=%s\n",r_test.toStyledString().c_str());
-
+                if(r_test.isObject()&&r_test.isMember("Password"))
+                {
+                    printf("hello Password\n");
+                    printf("%s\n",r_test["Password"].toStyledString().c_str());
+                    F.set_password(r_test);
+                    printf("test\n");
+                }
 
                 if(r_test.isObject()&&r_test.isMember("weekdaysegment"))
                 {
@@ -194,20 +204,20 @@ void* TCPserver::pthread_func(void *arg)
 
                     printf("hello step\n");
                 }
-                else if (r_test.isMember("RealTimeInfo"))
-                {
-                    printf("realtimeinfo\n");
-                     F.send_TC_RealTime_info();
-                      H=F.faster_writer.write(F.RealTime_info);
-                    if ( chek=send(connfd,H.c_str(),H.size(),0) <0)
-                    {
-                        printf("send msg error: %s(errno :%d)\n",strerror(errno),errno);
-                        return 0;
-                    }
-                    //       printf("send=%d string=%s\n",chek,H.c_str());
-                    printf("size=%d\n",H.size());
-
-                }
+//                else if (r_test.isMember("RealTimeInfo"))
+//                {
+//                    printf("realtimeinfo\n");
+//                    F.send_TC_RealTime_info();
+//                    H=F.faster_writer.write(F.RealTime_info);
+//                    if ( chek=send(connfd,H.c_str(),H.size(),0) <0)
+//                    {
+//                        printf("send msg error: %s(errno :%d)\n",strerror(errno),errno);
+//                        return 0;
+//                    }
+//                    //       printf("send=%d string=%s\n",chek,H.c_str());
+//                    printf("size=%d\n",H.size());
+//
+//                }
 
                 else
                 {
@@ -231,11 +241,16 @@ void* TCPserver::pthread_func(void *arg)
 
         }
         close(connfd);
+        cout<<"TCP THREAD DEAD !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"<<endl;
+        cout<<"TCP THREAD DEAD !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"<<endl;
+        cout<<"TCP THREAD DEAD !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"<<endl;
     }
 
     close(listenfd);
+cout<<"TCP THREAD DEAD !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"<<endl;
+cout<<"TCP THREAD DEAD !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"<<endl;
+cout<<"TCP THREAD DEAD !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"<<endl;
 
-
-    cout << fast_writer.write(root)<< endl;
+  //  cout << fast_writer.write(root)<< endl;
     return 0;
 }

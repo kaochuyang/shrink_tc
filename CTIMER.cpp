@@ -4,7 +4,7 @@
 #include "WRITEJOB.h"
 #include "SMEM.h"
 #include "DIGITALIO.h"
-
+#include "shirink_app.h"
 #include "SCREENMain.h"
 #include "SCREENCtlSetup.h"
 #include "SCREENModifyDT.h"
@@ -30,7 +30,7 @@
 #include <sys/types.h>
 #include <unistd.h>
 #include <stdlib.h>
-
+#include <string.h>
 #include <pthread.h>
 #include <signal.h>
 #include <time.h>
@@ -420,7 +420,9 @@ void * intervalTimer::PTime(void *arg)
         time_t currentTime;
         struct tm *now;
         time_t tmpTime;
-
+        shirink_app ShrinkObject;
+        string ShrinkString;
+        unsigned char ShrinkByte[1024];
         while(1)
         {
             while(smem.vGetTimerMutexRESET() == 1)
@@ -442,7 +444,7 @@ void * intervalTimer::PTime(void *arg)
                 switch (VDrid)
                 {
                 case( 10 ):
-       //         printf("Ctimer 10\n\n");
+                    //         printf("Ctimer 10\n\n");
                     //WatchDog
                     //OT20110526
                     currentTime = time(NULL);
@@ -462,7 +464,17 @@ void * intervalTimer::PTime(void *arg)
                     _intervalTimer.vCheckSMEM();
 
                     tempFace=smem.GetcFace();
+                    /*****************************************************************************/
+//                    memset(ShrinkByte,'0',1024);
+//                    ShrinkObject.send_TC_RealTime_info();
+//                    ShrinkString=ShrinkObject.faster_writer.write(ShrinkObject.RealTime_info);
+//                    strncpy((char*)ShrinkByte,ShrinkString.c_str(),ShrinkString.length());
+//                   // strcpy(ShrinkByte,ShrinkString.c_str());
+//                    writeJob.WritePhysicalOut(ShrinkByte,ShrinkString.length(),revAPP);
+//                    printf("size=%d\n",ShrinkString.length());
+ShrinkObject.send_TC_RealTime_info_udp();
 
+                    /***********************************************************************/
 //                                  stc.BRTImmediateReport();  //jacky20140326  BRT Report
 
                     if (tempFace==cMAIN) screenMain.DisplayDateTime();
@@ -884,7 +896,7 @@ void * intervalTimer::PTime(void *arg)
                     break;
                 case( 11 ):
 
-             //   printf("Ctimer 11\n\n");
+                    //   printf("Ctimer 11\n\n");
 //Remove  _intervalTimer.vCheckAndReSendSS_S0_Status();
                     smem.vCheckConnectStatus();
 
@@ -971,7 +983,7 @@ void * intervalTimer::PTime(void *arg)
 
                     break;
                 case( 12 ):
-          //      printf("Ctimer 12\n\n");
+                    //      printf("Ctimer 12\n\n");
 //Remove                                   _intervalTimer.vCheckAndReSendSS_SK_Status();
                     _intervalTimer.vCheckScreenAndDoSomething();
 
@@ -995,7 +1007,7 @@ void * intervalTimer::PTime(void *arg)
 
                     break;
                 case( 13 ):
-       //         printf("Ctimer 13\n\n");                                                 //VD SIM
+                    //         printf("Ctimer 13\n\n");                                                 //VD SIM
 //                                   _MSG = oDataToMessageOK.vPackageINFOTo92Protocol(uc6F00, 2,false);
 //                                   _MSG.InnerOrOutWard = cInner;
 //                                   writeJob.WriteWorkByMESSAGEOUT(_MSG);
@@ -1005,7 +1017,7 @@ void * intervalTimer::PTime(void *arg)
 
                     break;
                 case( 14 ):
-           //     printf("Ctimer 14\n\n");
+                    //     printf("Ctimer 14\n\n");
 //                                     _intervalTimer.vSendHeartBeatToLCX405();
 //                                   _intervalTimer.vSSInit(SSInitCount);
 //                                   SSInitCount++;
@@ -1013,31 +1025,31 @@ void * intervalTimer::PTime(void *arg)
 
 
                 case( 15 ):  //0F04, HwStatus AutoReport
-         //       printf("Ctimer 15\n\n");
+                    //       printf("Ctimer 15\n\n");
                     uc0F04[2] = smem.vGetHardwareStatus(3);
                     uc0F04[3] = smem.vGetHardwareStatus(4);
                     _MSG = oDataToMessageOK.vPackageINFOTo92Protocol(uc0F04, 4, true);
                     _MSG.InnerOrOutWard = cOutWard;
                     writeJob.WritePhysicalOut(_MSG.packet, _MSG.packetLength, DEVICECENTER92);
 
-                //    stc.BRTGPSStatusReport();  //jacky20141203
+                    //    stc.BRTGPSStatusReport();  //jacky20141203
 
                     smem.cPedPushButton.SendPedSWConnetState0F08(0);
-     printf("%s[MESSAGE] \n\n ReportTemperHumi %s\n",
-                   ColorGreen, ColorNormal);
+                    printf("%s[MESSAGE] \n\n ReportTemperHumi %s\n",
+                           ColorGreen, ColorNormal);
 
                     smem.ReportTemperHumi_0F09();
                     break;
 
                 case( 100 ):
-            //printf("Ctimer 100\n\n");
+                    //printf("Ctimer 100\n\n");
                     _intervalTimer.vCommuncationReset(iCommuncationResetCount);                        //default not start
                     iCommuncationResetCount++;
                     if(iCommuncationResetCount >= 3) iCommuncationResetCount = 0;
                     break;
 
                 case( 101 ):
-              //  printf("Ctimer 101\n\n");
+                    //  printf("Ctimer 101\n\n");
                     _intervalTimer.vDBLockRequest(iDBLockCount);                        //default not start
                     iDBLockCount++;
                     if(iDBLockCount >= 6)                        //TimeOut
@@ -1056,7 +1068,7 @@ void * intervalTimer::PTime(void *arg)
 
                 case( 500 ):                                      //\uFFFDï¿½ï¿½\uFFFD\uFFFD\uFFFD\uFFFDTOD,
                     //vAllDynamicToTODCount()
-printf("Ctimer 500\n\n");
+                    printf("Ctimer 500\n\n");
                     memset(msg,0,sizeof(msg));
 
                     usiCurrentSubphaseStep = stc.vGetUSIData(CSTC_exec_phase_current_subphase_step);
@@ -1097,7 +1109,7 @@ printf("Ctimer 500\n\n");
 
 //OTSS
                 case( 501 ):
-                printf("Ctimer 501\n\n");
+                    printf("Ctimer 501\n\n");
                     sprintf(msg, "Ask W77E58 Version, booting version year is :%d", smem.vGetW77E58FWVer(0));
                     smem.vWriteMsgToDOM(msg);
                     memset(msg,0,sizeof(msg));
@@ -1112,12 +1124,12 @@ printf("Ctimer 500\n\n");
                     break;
 
                 case( 600 ):
-                printf("Ctimer 600\n\n");
+                    printf("Ctimer 600\n\n");
                     _intervalTimer.vSendHeartBeatToLCX405();
 
                     break;
                 case( 601 ):
-                printf("Ctimer 601\n\n");
+                    printf("Ctimer 601\n\n");
                     smem.cPedPushButton.QueryPEDState();//add Arwen
                     break;
 

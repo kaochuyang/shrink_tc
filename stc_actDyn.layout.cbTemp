@@ -589,8 +589,8 @@
 	<File name="TCP.h" open="0" top="0" tabpos="13">
 		<Cursor position="1197" topLine="3" />
 	</File>
-	<File name="TCPserver.cpp" open="1" top="1" tabpos="4">
-		<Cursor position="2830" topLine="93" />
+	<File name="TCPserver.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="5891" topLine="187" />
 	</File>
 	<File name="TCPserver.h" open="1" top="0" tabpos="1">
 		<Cursor position="116" topLine="0" />
@@ -934,8 +934,8 @@
 	<File name="screenWeekDayEditF2.h" open="0" top="0" tabpos="0">
 		<Cursor position="1146" topLine="13" />
 	</File>
-	<File name="shirink_app.cpp" open="1" top="0" tabpos="3">
-		<Cursor position="34988" topLine="1026" />
+	<File name="shirink_app.cpp" open="1" top="1" tabpos="3">
+		<Cursor position="34121" topLine="1026" />
 	</File>
 	<File name="shirink_app.h" open="1" top="0" tabpos="2">
 		<Cursor position="5952" topLine="170" />
