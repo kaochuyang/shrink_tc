@@ -46,50 +46,29 @@ void* TCPserver::pthread_func(void *arg)
 
     Json::Value root;
     Json::FastWriter fast_writer;
-    root["REGION_ID"]="600901";
 
-    root["REGION_ID5"]="901";
-    root["REGION_ID6"]="5901";
-    root["REGION_ID7"]="5501";
-
-//string head="[";
-//string tail="]";
-
-//"["{   "REGION_ID" : "600901",   "REGION_ID10" : "6009",   "REGION_ID5" : "700901",   "REGION_ID8" : "6009055"}"]";
-/*    string A="{\"Data\":{\"Name\":\"MichaelChan\",\"Email\":\"XXXX@XXX.com\",\"Phone\":[1234567,0911123456]}}\n";
-    string B="{\"Data2\":{\"Name2\":\"MichChan\",\"Email2\":\"XXXX@YYY.com\",\"Phone2\":[1299967,0988823456]}}\n";
-    string C="{\"Data3\":{\"Name3\":\"MichAAAn\",\"Email3\":\"XXXX@ZZZ.com\",\"Phone3\":[12998767,0788823456]}}\n";
-    //="{[\"{ 123456 }"\";
-    // root.toStyledString();
-//
-
-    cout<<"\""<<endl;
-    cout<<"\\\""<<endl;
-
-    cout<<A.find("\"")<<endl;*/
 
     shirink_app F;
 
 
 
 //F.send_execute_data();
-    /*F.send_ip();
-        F.send_manual_setting();//v
-        F.send_railchain_parama();//V
-        F.send_proxy_transfer();//V
-        F.send_signal_card_direction();//V
-        F.send_tc_stratage_send();//v
-        F.send_compensation();//v
-        F.send_learn_mode_group();//V
-        F.send_ped_control_send();//V*/
+    /*
+           F.send_manual_setting();//v
+           F.send_railchain_parama();//V
+           F.send_proxy_transfer();//V
+           F.send_signal_card_direction();//V
+           F.send_tc_stratage_send();//v
+           F.send_compensation();//v
+           F.send_learn_mode_group();//V
+           F.send_ped_control_send();//V*/
 //    F.send_chain_send_group();//V
-
-    // F.send_execute_data();//v
     F.send_tc_project_data();
     F.send_LastShutDownTime();
     F.send_ip();
     F.send_hardwareVersion();
-
+    F.send_reportcycle();
+    F.send_manual_setting();
 
 
 
@@ -112,8 +91,8 @@ void* TCPserver::pthread_func(void *arg)
     //¥ý§â¦a§}²MªÅ¡A??¥ô·NIP
     memset(&servaddr,0,sizeof(servaddr));
     servaddr.sin_family = AF_INET;
- //   servaddr.sin_addr.s_addr = htonl(INADDR_ANY);
-   servaddr.sin_addr.s_addr = inet_addr("192.168.2.1");
+//   servaddr.sin_addr.s_addr = htonl(INADDR_ANY);
+    servaddr.sin_addr.s_addr = inet_addr("192.168.2.1");
     servaddr.sin_port = htons(5000);
 
 
@@ -204,6 +183,37 @@ void* TCPserver::pthread_func(void *arg)
 
                     printf("hello step\n");
                 }
+                  else if(r_test.isMember("ReportCycle"))
+                {
+                    printf("%s\n",r_test["ReportCycle"].toStyledString().c_str());
+                    F.setReportCycle(r_test);
+                }
+                  else if(r_test.isMember("manual_setting"))
+                {
+                    printf("%s\n",r_test["manual_setting"].toStyledString().c_str());
+                    F.set_manual_setting(r_test);
+                }
+                else if(r_test.isMember("reboot"))
+                {
+                    int check=r_test["reboot"].asInt();
+
+                    if(check==1)
+                    {
+                        smem.vWriteMsgToDOM("shrink reboot tc\n");
+                        F.RebootTC();
+                    }
+                    else printf("reboot command error\n");
+
+                }
+                else if(r_test.isMember("IP_Group"))
+                {
+                    printf("%s\n",r_test["IP_Group"].toStyledString().c_str());
+
+                    F.set_ip(r_test["IP_Group"]);
+
+
+
+                }
 //                else if (r_test.isMember("RealTimeInfo"))
 //                {
 //                    printf("realtimeinfo\n");
@@ -247,10 +257,10 @@ void* TCPserver::pthread_func(void *arg)
     }
 
     close(listenfd);
-cout<<"TCP THREAD DEAD !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"<<endl;
-cout<<"TCP THREAD DEAD !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"<<endl;
-cout<<"TCP THREAD DEAD !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"<<endl;
+    cout<<"TCP THREAD DEAD !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"<<endl;
+    cout<<"TCP THREAD DEAD !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"<<endl;
+    cout<<"TCP THREAD DEAD !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"<<endl;
 
-  //  cout << fast_writer.write(root)<< endl;
+    //  cout << fast_writer.write(root)<< endl;
     return 0;
 }

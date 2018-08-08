@@ -7341,3 +7341,33 @@ void SMEM::Set_temper_humi_state(bool state)
 
 }
 
+void SMEM::WriteLCNby_shrinkAPP(int LCN)
+{
+    try
+    {
+
+        unsigned int uiRetLCN = 0;
+
+        FILE *_rfile=NULL;
+        char filename[36];
+
+        sprintf( filename,"/cct/Data/SETTING/LCN.txt\0" );
+        _rfile = fopen(filename , "w"); //fopen return NULL if file not exist
+        pthread_mutex_lock(&mutexSmem);
+        if(_rfile)
+        {
+            fwrite( &LCN, sizeof(int), 1, _rfile);
+            printf("%d\n",LCN);
+        }
+        else printf("write LCN error\n");
+        fclose( _rfile );
+        pthread_mutex_unlock(&mutexSmem);
+
+    }
+
+
+
+    catch(...) {}
+
+
+}

@@ -37733,7 +37733,7 @@
 1526450965 /home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/var.h
 	<time.h>
 
-1530498045 /home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/SMEM.h
+1533702675 /home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/SMEM.h
 	"var.h"
 	"STORAGE.h"
 	"RS232.h"
@@ -37900,7 +37900,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1533540218 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/CSTC.cpp
+1533703464 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/CSTC.cpp
 	"CSTC.h"
 	"math.h"
 	"light.h"
@@ -39431,7 +39431,7 @@
 	<error.h>
 	"CSTC.h"
 
-1530498045 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/SMEM.cpp
+1533702989 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/SMEM.cpp
 	"SMEM.h"
 	"WRITEJOB.h"
 	"CDataToMessageOK.h"
@@ -39508,7 +39508,7 @@
 	<sys/perm.h>
 	<sys/io.h>
 
-1533540219 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/main.cpp
+1533703464 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/main.cpp
 	"var.h"
 	"SMEM.h"
 	"PARSETRAFFIC.h"
@@ -40270,13 +40270,13 @@
 	"WRITEJOB.h"
 	"var.h"
 
-1533549814 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/shirink_app.cpp
+1533721168 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/shirink_app.cpp
 	"shirink_app.h"
 	"SMEM.h"
 	"CSTC.h"
 	"screenLightEdit.h"
 
-1533543726 /home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/shirink_app.h
+1533721226 /home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/shirink_app.h
 	"var.h"
 	<string>
 	"CReverseTime.h"
@@ -40308,7 +40308,7 @@
 	<netdb.h>
 	<pthread.h>
 
-1533540219 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/TCPserver.cpp
+1533721168 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/TCPserver.cpp
 	"TCPserver.h"
 	<iostream>
 	"json/json.h"

@@ -211,54 +211,95 @@ void shirink_app::refresh_execute_data()
 
 
 /***-------SET SERIRES----------------------****/
-void shirink_app::set_ip()
+void shirink_app::set_ip(Json::Value object )
 {
     try
     {
-        /*       for(int i=1; i<6; i++)
-               {
-                   smem.SetLocalIP1(i,localIp1_[i]);
-                   smem.SetdistIp0(i,distIp0_[i]);
-                   smem.SetDistIP(i,distIp1_[i]);
-               }
-               for(int i=1; i<5; i++)
-               {
-                   smem.SetNetmask(i,netmask[i]);
-                   smem.SetGateway(i,gateway[i]);
-               }
+//Json::Value object;
+//
+//printf("set IP\n");
+//
+//object=object1["IP_Group"];
+        printf("obj\n");
+        printf("%s\n",object.toStyledString().c_str());
+
+//       printf("obj1\n");
+        //printf("%s\n",object1.toStyledString().c_str());
+        char cRunString[256];
+        int localIp1_[6];//localIp[5]=localport
+        int distIp0_[6];//distIp0_[5]=distIp0_port
+        int distIp1_[6];//distIp1_[5]=distIp1_port
+        int netmask[5];
+        int gateway[5];
+        for(int i=1; i<6; i++)
+        {
+            if(i<5)
+            {
+                localIp1_[i]=object["HostIP"][i-1].asInt();
+                distIp0_[i]=object["DestIP0"][i-1].asInt();
+                distIp1_[i]=object["DestIP1"][i-1].asInt();
+            }
+            if(i==5)
+            {
+                localIp1_[i]=object["HostPort"].asInt();
+                distIp0_[i]=object["Dest0_Port"].asInt();
+                distIp1_[i]=object["Dest1_Port"].asInt();
+            }
+            smem.SetLocalIP1(i,localIp1_[i]);
+            smem.SetdistIp0(i,distIp0_[i]);
+            smem.SetDistIP(i,distIp1_[i]);
+        }
+        for(int i=1; i<5; i++)
+        {
+            netmask[i]=object["Netmask"][i-1].asInt();
+            gateway[i]=object["Gateway"][i-1].asInt();
+            smem.SetNetmask(i,netmask[i]);
+            smem.SetGateway(i,gateway[i]);
+        }
+        smem.WriteLCNby_shrinkAPP(object["LCN"].asInt());
+        printf("****receive network setting is =***\n");
+        for(int i=1; i<6; i++)
+            printf("%d ",localIp1_[i]);
+        printf("\n");
+        for(int i=1; i<6; i++)
+            printf("%d ",distIp0_[i]);
+
+        printf("\n");
+        for(int i=1; i<6; i++)
+            printf("%d ",distIp0_[i]);
+        printf("\n");
+        for(int i=1; i<5; i++)
+            printf("%d ",netmask[i]);
+        printf("\n");
+        for(int i=1; i<5; i++)
+            printf("%d ",gateway[i]);
+        printf("\n");
+        printf("LCN=%d\n",object["LCN"].asInt());
+
+        system("rm -rf /bin/quickNetwork2");
+        system("rm -rf /cct/quickNetwork2");
+        bzero(cRunString, sizeof(cRunString));
+        sprintf(cRunString, "cp /bin/spaceSH /bin/quickNetwork2");
+        sprintf(cRunString, "cp /bin/spaceSH /cct/quickNetwork2");
+        system(cRunString);
+        bzero(cRunString, sizeof(cRunString));
+        sprintf(cRunString, "echo /sbin/ifconfig eth0:3 %d.%d.%d.%d netmask %d.%d.%d.%d >> /bin/quickNetwork2", localIp1_[1], localIp1_[2], localIp1_[3], localIp1_[4], netmask[1], netmask[2], netmask[3], netmask[4]);
+        system(cRunString);
+        bzero(cRunString, sizeof(cRunString));
+        sprintf(cRunString, "echo /sbin/route add default gw %d.%d.%d.%d >> /bin/quickNetwork2", gateway[1], gateway[2], gateway[3], gateway[4]);
+        system(cRunString);
+        bzero(cRunString, sizeof(cRunString));
+        sprintf(cRunString, "chmod +x /bin/quickNetwork2");
+        system(cRunString);
 
 
-            char cRunString[256];
-               int localIp1_[6];//localIp[5]=localport
-               int distIp0_[6];//distIp0_[5]=distIp0_port
-               int distIp1_[6];//distIp1_[5]=distIp1_port
-               int netmask[5];
-               int gateway[5];
-
-              system("rm -rf /bin/quickNetwork2");
-               system("rm -rf /cct/quickNetwork2");
-               bzero(cRunString, sizeof(cRunString));
-               sprintf(cRunString, "cp /bin/spaceSH /bin/quickNetwork2");
-               sprintf(cRunString, "cp /bin/spaceSH /cct/quickNetwork2");
-               system(cRunString);
-               bzero(cRunString, sizeof(cRunString));
-               sprintf(cRunString, "echo /sbin/ifconfig eth0:3 %d.%d.%d.%d netmask %d.%d.%d.%d >> /bin/quickNetwork2", localIp1_[1], localIp1_[2], localIp1_[3], localIp1_[4], netmask[1], netmask[2], netmask[3], netmask[4]);
-               system(cRunString);
-               bzero(cRunString, sizeof(cRunString));
-               sprintf(cRunString, "echo /sbin/route add default gw %d.%d.%d.%d >> /bin/quickNetwork2", gateway[1], gateway[2], gateway[3], gateway[4]);
-               system(cRunString);
-               bzero(cRunString, sizeof(cRunString));
-               sprintf(cRunString, "chmod +x /bin/quickNetwork2");
-               system(cRunString);
-
-
-               system("sync");
-               system("sync");
-               //  system("reboot");
+        system("sync");
+        system("sync");
+//          system("reboot");
 
 
 
-        */
+
 
     }
     catch(...) {}}
@@ -274,21 +315,7 @@ void shirink_app::set_railchain_parama()
     }
     catch(...) {}
 }
-void shirink_app::set_manual_setting()
-{
-    try
-    {
 
-        /*
-
-
-        smem.setDbOperastat();
-        smem.vSetWayMappingRedCount(1,2);
-
-
-        */
-    }
-    catch(...) {}}
 void shirink_app::set_proxy_transfer()
 {
     try
@@ -586,6 +613,21 @@ void shirink_app::send_ip()
 
 
 }
+void shirink_app::set_manual_setting(Json::Value object1)
+{
+    try
+    {
+        Json::Value object;
+        object=object1["manual_setting"];
+        if(object.isMember("DbOperStat"))
+         {
+             smem.SetDbOperStat(object["DbOperStat"].asInt());
+             printf("change db control");
+         }
+
+    }
+    catch(...) {}}
+
 void shirink_app::send_manual_setting()
 {
     try
@@ -1206,34 +1248,13 @@ void shirink_app::set_password(Json::Value object)
 }
 void shirink_app::send_reportcycle()
 {
-//    try
-//    {
-//     Json::Value ReportCycle;
-//     ReportCycle["LightTransferCycle"];
-//     ReportCycle["StepChangeTranferCycle"];
-//
-//
-//
-//       if (smem.GetDbOperStat()==0 || smem.vLoadCenterConnectStatus()==false) {
-//        if (smem.vGet0FCommandSet()==0 && (cSelect==1 || cSelect==2 || cSelect==3 || cSelect==4)) {
-//            smem.SetLastFace(cHWCYCLE);
-//            screenABOErr.DisplayABOErr();
-//        } else {
-//
-//            if (cSelect<6) {
-//
-//                BYTE data[3];
-//
-//                data[0]  = 0x0F;
-//                data[1]  = 0x14;
-//                data[2]  = cSelect;
-//
-//                MESSAGEOK _MsgOK;
-//
-//                _MsgOK = oDataToMessageOK.vPackageINFOTo92Protocol(data, 3,false);
-//                _MsgOK.InnerOrOutWard = cComingFromScreen;
-//                writeJob.WriteWorkByMESSAGEOUT(_MsgOK);
-//
+    try
+    {
+        Json::Value ReportCycle;
+        ReportCycle["LightReportCycle"]=smem.vGetINTData(TC92SignalStepStatus_5F03_IntervalTime);
+        ReportCycle["StepReportCycle"]=smem.vGetINTData(TC92SignalLightStatus_5F0F_IntervalTime);//StepChangeTranferCycle
+        ReportCycle["HWReportCycle"]=smem.vGetHWCycleCodeFor_0F14_0FC4();
+
 //                if (cSelect==0)  smem.vWriteMsgToDOM("Set Hardware Cycle To Stop Hardware Cycle");
 //                else if (cSelect==1)  smem.vWriteMsgToDOM("Set Hardware Cycle To 1 Second");
 //                else if (cSelect==2)  smem.vWriteMsgToDOM("Set Hardware Cycle To 2 Seconds");
@@ -1241,17 +1262,42 @@ void shirink_app::send_reportcycle()
 //                else if (cSelect==4)  smem.vWriteMsgToDOM("Set Hardware Cycle To 1 Minute");
 //                else if (cSelect==5)  smem.vWriteMsgToDOM("Set Hardware Cycle To 5 Minutes");
 //
-////arwen modify                screenCtlSetup.DisplayCtlSetup();
-//                screenV3Related.DisplayV3Related();
 //            }
-//        }
-//    } else {
-//        smem.SetLastFace(cHWCYCLE);
-//        screenLockdb.DisplayLockdb();
-//    }
 //
-//    }
-//    catch(...){}
+
+        string_to_app["ReportCycle"]=ReportCycle;
+    }
+    catch(...) {}
+}
+
+void shirink_app::setReportCycle(Json::Value object1)
+{
+    try
+    {
+        Json::Value object;
+        object=object1["ReportCycle"];
+
+        if(object.isMember("LightReportCycle"))
+        {
+            smem.vSetINTData(TC92SignalStepStatus_5F03_IntervalTime,object["LightReportCycle"].asInt());
+            printf("change LightReportCycle=%d\n",object["LightReportCycle"].asInt());
+            smem.vWriteMsgToDOM("lightReportCycle by shrinkAPP");
+        }
+        if(object.isMember("StepReportCycle"))
+        {
+            smem.vSetINTData(TC92SignalLightStatus_5F0F_IntervalTime,object["StepReportCycle"].asInt());
+            printf("change StepReportCycle=%d\n",object["StepReportCycle"].asInt());
+            smem.vWriteMsgToDOM("StepReportCycle by shrinkAPP");
+        }
+        if(object.isMember("HWReportCycle"))
+        {
+            smem.vSetHWCycleCodeFor_0F14_0FC4(object["HWReportCycle"].asInt());
+            printf("change HWReportCycle=%d\n",object["HWReportCycle"].asInt());
+            smem.vWriteMsgToDOM("HWReportCycle by shrinkAPP");
+        }
+
+    }
+    catch(...) {}
 }
 
 

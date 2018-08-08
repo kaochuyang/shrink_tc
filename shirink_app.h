@@ -155,9 +155,9 @@ Json::Reader reader;
     void refresh_tc_project_data();
     void refresh_execute_data();
 /***     "set series" receive shrink_app_pad'data than set in tc, then use refresh_series update shrink_app's object    ***/
-    void set_ip();
+    void set_ip(Json::Value object);
     void set_railchain_parama();
-    void set_manual_setting();
+    void set_manual_setting(Json::Value object);
     void set_proxy_transfer();
     void set_signal_card_direction();
     void set_tc_stratage_set();
@@ -174,6 +174,7 @@ Json::Reader reader;
     void set_specialdaycontext(Json::Value object);
     void set_password(Json::Value object);
     void RebootTC();
+    void setReportCycle(Json::Value object1);
  /***   "send series" send the tc's data with json form to shrink_app_pad  ***/
     void send_ip();//v
     void send_manual_setting();//v
@@ -193,6 +194,7 @@ Json::Reader reader;
     void send_TC_RealTime_info_udp();
     void send_PasswordCheck();
     void send_reportcycle();
+
 //protected:
 private:
     s_IP s_ip;
