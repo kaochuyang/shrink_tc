@@ -1231,7 +1231,7 @@ void * CSTC::_stc_thread_light_control_func( void * )
         SetDefaultLCNPhaseOrder(1,0);
 
         ConvertSegmentData(true);//Arwen add 110210
-/*
+
         TimersCreating();
         TimersSetting();
         usleep(1000);                                                                  //sleep, wait for keypad return strategy.
@@ -1693,7 +1693,7 @@ void * CSTC::_stc_thread_light_control_func( void * )
             CheckPed();
             //----------------------------------------------------------
             smem.vSetTimerMutexCSTC(0);
-        }*/
+        }
     }
     catch (...) {}
 }

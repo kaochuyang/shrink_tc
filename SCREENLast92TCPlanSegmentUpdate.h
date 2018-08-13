@@ -14,8 +14,8 @@ class SCREENLast92TCPlanSegmentUpdate:public SCREEN
       void DoKeyWork(BYTE);                                                     //根據KEY的值作事
       void DisplayPlanUpdate(void);
       void DisplaySegmentUpdate(void);
-
-
+unsigned char GetUpdateSegmentQ();
+unsigned char GetUpdatePlanQ();
     private:
 
       DISP_WORD DLastTime[12];                                                    //此頁的空白處,定義座標

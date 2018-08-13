@@ -1,6 +1,6 @@
 //---------------------------------------------------------------------------
 #include "PTRAFFICCCJ.h"
-
+#include "shirink_app.h"
 #include "CDataToMessageOK.h"
 #include "WRITEJOB.h"
 #include "CTIMER.h"
@@ -1164,7 +1164,7 @@ try{
     vReturnToCenterACK(0x5F, 0x14);
   }
     screenLast92TCPlanSegmentUpdate.DisplayPlanUpdate();
-
+shrinkAPP.send_DBupdateInfo();
 /*
 PlanID(時制計劃):[9]
 SubPhaseCount(分相數):[10]
@@ -1370,7 +1370,7 @@ try{
       vReturnToCenterACK(0x5F, 0x15);
 //      smem.vSaveLast92TC_5F15Time();
       screenLast92TCPlanSegmentUpdate.DisplayPlanUpdate();
-
+shrinkAPP.send_DBupdateInfo();
     //OTMARKPRINTF  printf("SAVE Plan:%d OK!\n",DataMessageIn.packet[9]);
 
   }

@@ -1,6 +1,7 @@
 #include "temperatur_humidity_sensor.h"
+#include "CTIMER.h"
 #include "SMEM.h"
-
+#include "CSTC.h"
 temperatur_humidity_sensor::temperatur_humidity_sensor()
 {
     //ctor
@@ -50,20 +51,27 @@ void temperatur_humidity_sensor::block_receive(MESSAGEOK mes)
         {
             smem.Set_temper_humi_state(true);
             smem.SetTemperHumi(mes.packet[8],mes.packet[9],mes.packet[10],mes.packet[11]);
-        /*mes.packet[8];//data_P6
+        /*
+        mes.packet[8];//data_P6
         mes.packet[9];//data_P7
         mes.packet[10];//data_P8
         mes.packet[11];//data_P9
-*/
-
+        */
 
         }else smem.Set_temper_humi_state(false);//sensor not found
-        GPS.Hour=mes.packet[5];//data_P3
-        GPS.Min=mes.packet[6];//data_P4
-        GPS.Sec=mes.packet[7];//data_P5
 
+                       if(DATA_P2.switchBit.b2==0)
+        {
+            GPS.Hour=mes.packet[5];//data_P3
+            GPS.Min=mes.packet[6];//data_P4
+            GPS.Sec=mes.packet[7];//data_P5
 
+        /*GPS.Year=mes.packet[12];
+        GPS.Month=mes.packet[13];
+        GPS.Day=mes.packet[14];*/
+        //vAdjTimeByGPS(GPS);
 
+        }
         printf("COM3 information!!!======");
         for(int i=0; i<mes.packetLength; i++)printf("%x ",mes.packet[i]);
         printf("\n\n");
@@ -71,6 +79,89 @@ void temperatur_humidity_sensor::block_receive(MESSAGEOK mes)
     }
     catch(...) {}
 
+}
+//---------------------------------------------------------------------------
+void temperatur_humidity_sensor::vAdjTimeByGPS(YMDHMS GPS)
+{
+    try
+    {
+//smem.vSetBOOLData(GPS_SYNC, true);
+        bool bEnableUpdate;
+
+        unsigned char ucTimeLocation = 0;
+        unsigned char ucDataLocation = 0;
+        unsigned char ucStatusLocation = 0;
+        unsigned char ucGetSpace = 0;
+
+        char cTmp[3] = { 0 };
+        int siY;
+        int siM;
+        int siD;
+        int siHour;
+        int siMin;
+        int siSec;
+
+        struct tm time_str;
+        struct tm *TSP = &time_str;
+        time_t RunSec;
+
+
+                            time_str.tm_year = siY + 100;
+                            time_str.tm_mon = siM - 1;
+                            time_str.tm_mday = siD;
+
+                            time_str.tm_isdst = -1;
+                            RunSec = mktime(&time_str);
+
+                            RunSec = RunSec + 28800;                                         // now RunSec is GPS time
+
+
+                            TSP = localtime(&RunSec);
+
+                            char date[22] = {0},time[17] = {0};
+
+
+                            if(TSP->tm_year > 105 &&
+                                    ( (smem.vGetBOOLData(GPS_SYNC) == true ) ||
+                                      (TSP->tm_min == 6 && TSP->tm_sec == 0) || (TSP->tm_min == 36 && TSP->tm_sec == 0)
+                                    )
+                              )
+                            {
+                                bEnableUpdate = smem.vGetBOOLData(EnableUpdateRTC);
+                                if(bEnableUpdate == true)
+                                {
+                                    stc.TimersRead_BeforeResetCMOSTime();  //OTBUG =1
+                                    _intervalTimer.TimersRead_BeforeResetCMOSTime();
+                                    smem.vSetTimerMutexRESET(1);
+                                    while(smem.vGetTimerMutexCTIMER() == 0 || smem.vGetTimerMutexCSTC() == 0)
+                                    {
+                                        usleep(100);
+                                    }
+                                    if(smem.sGPSGetTimeSwitch() == 1)
+                                    {
+                                        smem.vSetSystemClockTime(TSP->tm_year+1900, TSP->tm_mon+1, TSP->tm_mday, TSP->tm_hour, TSP->tm_min, TSP->tm_sec);
+                                        //smem.SetSegmentChange(true);
+                                    }
+                                    _intervalTimer.TimersReset_AfterResetCMOSTime();  //OTBUG =1
+                                    stc.TimersReset_AfterResetCMOSTime();
+                                    smem.vSetTimerMutexRESET(0);
+                                    smem.vSetAdjcount(0);
+                                    smem.vSendTimerUpdateToCCJ_5F9E();
+
+                                    system("hwclock -w");
+                                }
+
+                                smem.vSetBOOLData(GPS_SYNC, false);
+
+                            }
+
+                        smem.vSaveGPSStatus(true);
+
+
+                }
+
+
+    catch(...) {}
 }
 
 //
@@ -418,18 +509,7 @@ bool temperatur_humidity_sensor::CheckSum(int *maxMessageIndex,MESSAGEOK *messag
             for (int i=0; i<=*maxMessageIndex; i++)       //ÀË¬d¨C¤@­ÓmessageIn[i]
             {
 
-                /*Debug Code
-                        if ((messageIn[i].packet[0]==(const BYTE)0xAA) && (messageIn[i].packet[1]==(const BYTE)0xDD)) {
-                          printf("printfMsgAADD1 cksStatus:%d, success:%d, SEQ:%d\n",
-                          messageIn[i].cksStatus, messageIn[i].success, messageIn[i].packet[2]);
-                        }
-                */
 
-
-//    if(messageIn[i].packet[7] == (const BYTE)0x6F) printf("printfMsg  this is 6f!\n");
-//    for(int ii = 0; ii < 12; ii++)
-//      printf("%x ",messageIn[i].packet[ii]);
-//    printf("\n");
 
                 int j=0;                                 //­pºâmessageIn[].packet[j];
                 BYTE tempcks=0;                          //¼È¦s­n¤ñ¹ïªºcheckSum;
@@ -509,20 +589,6 @@ bool temperatur_humidity_sensor::DoWorkByMESSAGEIN(int *maxMessageIndex,MESSAGEO
                 {
                     if (messageIn[i].success==true)                                //³q¹LÀË¬d«Ê¥]¦X²z©Ê
                     {
-              //          printf("cks=%d,suc=%d\n",messageIn[i].cksStatus,messageIn[i].success);
-                        /*
-                                         if ((messageIn[i].packet[0]==(const BYTE)0xAA) && (messageIn[i].packet[1]==(const BYTE)0xDD)) {
-                                           printf("printfMsgAADD8 cksStatus:%d, success:%d, SEQ:%d\n",
-                                           messageIn[i].cksStatus, messageIn[i].success, messageIn[i].packet[2]);
-                                         }
-                        */
-
-                        /*
-                                         if(messageIn[i].packet[7] == (const BYTE)0x6F) printf("printfMsg DoWorkByMESSAGEIN this is 6f!\n");
-                                         for(int ii = 0; ii < 12; ii++)
-                                           printf("%x ",messageIn[i].packet[ii]);
-                                         printf("\n");
-                        */
 
                         block_receive(messageIn[i]);
 //                     printf("[OTMsg] Go readJob. S:OK C:OK\n");
@@ -536,42 +602,5 @@ bool temperatur_humidity_sensor::DoWorkByMESSAGEIN(int *maxMessageIndex,MESSAGEO
     }
     catch(...) {}
 }
-//
-//bool temperatur_humidity_sensor::MoveLastData(int *maxMessageIndex,int *lastPacketIndex,MESSAGEOK *messageIn)
-//{
-//    try
-//    {
-//
-//
-//        printf("move last data T_H\n");
-//        printf("move last data T_H\n");
-//        printf("move last data T_H\n");
-//
-//        if(messageIn[*maxMessageIndex].cksStatus == true)
-//        {
-//            for(int j = 0; j <= *maxMessageIndex; j++)
-//            {
-////            printf("messageIn[%d].cks:%d\n", *maxMessageIndex, messageIn[*maxMessageIndex].cksStatus);
-//                vClearMsg(messageIn, j);
-//            }
-//            *maxMessageIndex = 0;
-//            *lastPacketIndex = 0;
-//        }
-//        else if(*maxMessageIndex > 0)
-//        {
-//
-//            messageIn[0] = messageIn[*maxMessageIndex];
-//
-//            for(int j = 1; j <= *maxMessageIndex; j++)
-//            {
-//                vClearMsg(messageIn, j);
-//            }
-//            *maxMessageIndex = 0;
-////        printf("messageIn[%d].cks:%d\n", 0, messageIn[0].cksStatus);
-//        }
-//
-//        return true;
-//
-//    }
-//    catch(...) {}
-//}
+
+

@@ -2,6 +2,8 @@
 #include "SMEM.h"
 #include "CSTC.h"
 #include "screenLightEdit.h"
+#include "SCREENLast92TCPlanSegmentUpdate.h"
+shirink_app shrinkAPP;
 shirink_app::shirink_app()
 {
     //ctor
@@ -1146,7 +1148,7 @@ void shirink_app::send_TC_RealTime_info_udp()
 
         BYTE RealTimeInfo[50];
         RealTimeInfo[0]=0xaa;
-        RealTimeInfo[1]=0xbb;
+        RealTimeInfo[1]=0xee;
         RealTimeInfo[2]=0x00;
 
         RealTimeInfo[3]=stc.Lock_to_LoadControlStrategy();//=RealTime_info["ControlStratege"]
@@ -1317,7 +1319,59 @@ void shirink_app::RebootTC()
 
 }
 
+void shirink_app::UpdateDB(Json::Value object )
+{
+try {
+    unsigned char data[5];
+
+    data[0]  = 0x5F;
+    data[1]  = 0x0B;
+    data[2]  = 0x0F;   //­n¨D¥þ³¡
+
+    MESSAGEOK _MsgOK;
+
+    _MsgOK = oDataToMessageOK.vPackageINFOTo92Protocol(data, 3,true);
+    _MsgOK.InnerOrOutWard = cComingFromScreen;
+
+    writeJob.WritePhysicalOut(_MsgOK.packet, _MsgOK.packetLength, DEVICECENTER92);
+
+    smem.vWriteMsgToDOM("Request Traffic Center To Update My Database by shrinkAPP");
 
 
+    screenLast92TCPlanSegmentUpdate.DisplayLastUpdate();
 
+  } catch (...) {}
+
+}
+
+void shirink_app::send_DBupdateInfo()
+{
+    try
+    {
+        YMDHMS lastUpDateDBtime=smem.vGetLast92TC_5F15Time();
+        BYTE UpdateINFO[50];
+        UpdateINFO[0]=0xaa;
+        UpdateINFO[1]=0xbb;
+        UpdateINFO[2]=0x01;
+        UpdateINFO[3]=lastUpDateDBtime.Year;
+        UpdateINFO[4]=lastUpDateDBtime.Month;
+        UpdateINFO[5]=lastUpDateDBtime.Day;
+        UpdateINFO[6]=lastUpDateDBtime.Hour;
+        UpdateINFO[7]=lastUpDateDBtime.Min;
+        UpdateINFO[8]=lastUpDateDBtime.Sec;
+        UpdateINFO[9]=screenLast92TCPlanSegmentUpdate.GetUpdatePlanQ();
+        UpdateINFO[10]=screenLast92TCPlanSegmentUpdate.GetUpdateSegmentQ();
+
+
+        UpdateINFO[11]=0xaa;
+        UpdateINFO[12]=0xcc;
+        UpdateINFO[13]=0;
+        for(int i=0; i<13; i++)
+            UpdateINFO[13]^=UpdateINFO[i];
+
+        writeJob.WritePhysicalOut(UpdateINFO,14,revAPP);
+    }
+    catch(...){}
+
+    }
 

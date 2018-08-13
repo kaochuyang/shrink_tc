@@ -175,6 +175,7 @@ Json::Reader reader;
     void set_password(Json::Value object);
     void RebootTC();
     void setReportCycle(Json::Value object1);
+    void UpdateDB(Json::Value object );
  /***   "send series" send the tc's data with json form to shrink_app_pad  ***/
     void send_ip();//v
     void send_manual_setting();//v
@@ -194,6 +195,7 @@ Json::Reader reader;
     void send_TC_RealTime_info_udp();
     void send_PasswordCheck();
     void send_reportcycle();
+    void send_DBupdateInfo();//DBupdate  5F0B
 
 //protected:
 private:
@@ -216,5 +218,5 @@ private:
     int Com2Type;
     BYTE MBType;
 };
-
+extern shirink_app shrinkAPP;
 #endif // SHIRINK_APP_H

@@ -3,6 +3,7 @@
 #include "WRITEJOB.h"
 #include "CSTC.h"
 #include "SCREENLast92TCPlanSegmentUpdate.h"
+#include "shirink_app.h"
 //--------------------------------------------------------------
 PTRAFFIC92WEB::PTRAFFIC92WEB(void)
 {
@@ -132,7 +133,7 @@ bool PTRAFFIC92WEB::vWriteSegment5F16(MESSAGEOK DataMessageIn)
   //stc.Lock_to_Save_WeekDaySegment_from_Web();
   smem.vSetTCPhasePlanSegTypeData(TC_SegType, DataMessageIn.packet[9], true);
   screenLast92TCPlanSegmentUpdate.DisplaySegmentUpdate();
-
+shrinkAPP.send_DBupdateInfo();
 
   return true;
 }

@@ -65,6 +65,7 @@ void ScreenCurrentCommPacket::vRefreshCurrentScreenPacket(BYTE *writeMessage,int
 {
 try {
 
+
   if(smem.GetcFace() == cCURRENTCOMMPACKET)
   {
     BYTE test[128]={0};
@@ -144,6 +145,10 @@ try {
     iLinePtr++;
     if(iLinePtr >= 6)
       iLinePtr = 0;
+
+
+
+      writeJob.WritePhysicalOut(writeMessage,length,revAPP);
   }
 
 } catch(...){}

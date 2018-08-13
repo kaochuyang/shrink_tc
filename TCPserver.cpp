@@ -214,6 +214,15 @@ void* TCPserver::pthread_func(void *arg)
 
 
                 }
+                      else if(r_test.isMember("UpdateDB"))
+                {
+                    printf("%s\n",r_test["UpdateDB"].toStyledString().c_str());
+
+                    F.UpdateDB(r_test["UpdateDB"]);
+
+
+
+                }
 //                else if (r_test.isMember("RealTimeInfo"))
 //                {
 //                    printf("realtimeinfo\n");

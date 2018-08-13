@@ -6,7 +6,7 @@
 
 //---------------------------------------------------------------------------
 #include "PTRAFFIC92TC.h"
-
+#include "shirink_app.h"
 #include "CDataToMessageOK.h"
 #include "WRITEJOB.h"
 #include "CTIMER.h"
@@ -14,7 +14,7 @@
 #include "CHexToInt.h"
 #include "CSTC.h"
 #include "CTools.h"
-
+#include "shirink_app.h"
 #include "SCREENLast92TCPlanSegmentUpdate.h"
 
 #include <unistd.h>
@@ -1366,7 +1366,7 @@ bool PTRAFFIC92TC::vWritePlan5F14(MESSAGEOK DataMessageIn)
             vReturnToCenterACK(0x5F, 0x14);
         }
         screenLast92TCPlanSegmentUpdate.DisplayPlanUpdate();
-
+shrinkAPP.send_DBupdateInfo();
         /*
         PlanID(®É¨î­p¹º):[9]
         SubPhaseCount(¤À¬Û¼Æ):[10]
@@ -1629,7 +1629,7 @@ bool PTRAFFIC92TC::vWritePlanDBMS5F15(MESSAGEOK DataMessageIn)
             vReturnToCenterACK(0x5F, 0x15);
 //      smem.vSaveLast92TC_5F15Time();
             screenLast92TCPlanSegmentUpdate.DisplayPlanUpdate();
-
+shrinkAPP.send_DBupdateInfo();
             printf("SAVE Plan:%d OK!\n",DataMessageIn.packet[9]);
 
         }
@@ -1865,7 +1865,7 @@ bool PTRAFFIC92TC::vWriteSegment5F16(MESSAGEOK DataMessageIn)
         stc.Lock_to_Save_WeekDaySegment_from_Center();
         smem.vSetTCPhasePlanSegTypeData(TC_SegType, DataMessageIn.packet[9], true);
         screenLast92TCPlanSegmentUpdate.DisplaySegmentUpdate();
-
+shrinkAPP.send_DBupdateInfo();
         return true;
 
     }
@@ -2118,7 +2118,7 @@ bool PTRAFFIC92TC::vWriteSpecialSegment5F17(MESSAGEOK DataMessageIn)
         stc.Lock_to_Save_HoliDaySegment_from_Center();       //save
         smem.vSetTCPhasePlanSegTypeData(TC_SegType, DataMessageIn.packet[9], true);
         screenLast92TCPlanSegmentUpdate.DisplaySegmentUpdate();
-
+shrinkAPP.send_DBupdateInfo();
         return true;
 
     }
@@ -2757,6 +2757,7 @@ bool PTRAFFIC92TC::vSetActuatedSegment_5F1A(MESSAGEOK DataMessageIn)
 //	  stc.Lock_to_Save_WeekDaySegment_from_Center(); //jantai
         smem.vSetTCPhasePlanSegTypeData(TC_SegType, DataMessageIn.packet[9], true);
         screenLast92TCPlanSegmentUpdate.DisplaySegmentUpdate();
+        shrinkAPP.send_DBupdateInfo();
         return true;
     }
     catch(...)
@@ -3023,6 +3024,7 @@ bool PTRAFFIC92TC::vSetActuatedHolidaySegment_5F1B(MESSAGEOK DataMessageIn)
         //stc.Lock_to_Save_HoliDaySegment_from_Center();       //save //jantai
         smem.vSetTCPhasePlanSegTypeData(TC_SegType, DataMessageIn.packet[9], true);
         screenLast92TCPlanSegmentUpdate.DisplaySegmentUpdate();
+        shrinkAPP.send_DBupdateInfo();
         return true;
     }
     catch(...)

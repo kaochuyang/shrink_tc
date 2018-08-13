@@ -38586,7 +38586,7 @@
 1437555507 /home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/screenPlanPreview.h
 	"SCREEN.h"
 
-1437555519 /home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/SCREENLast92TCPlanSegmentUpdate.h
+1534147406 /home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/SCREENLast92TCPlanSegmentUpdate.h
 	"SCREEN.h"
 
 1437555507 /home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/screenChainMenu.h
@@ -38822,8 +38822,9 @@
 	<stdlib.h>
 	<error.h>
 
-1469165963 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/PTRAFFIC92TC.cpp
+1534148464 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/PTRAFFIC92TC.cpp
 	"PTRAFFIC92TC.h"
+	"shirink_app.h"
 	"CDataToMessageOK.h"
 	"WRITEJOB.h"
 	"CTIMER.h"
@@ -38831,6 +38832,7 @@
 	"CHexToInt.h"
 	"CSTC.h"
 	"CTools.h"
+	"shirink_app.h"
 	"SCREENLast92TCPlanSegmentUpdate.h"
 	<unistd.h>
 	<stdio.h>
@@ -38854,15 +38856,17 @@
 	<error.h>
 	"screenActuateArwenVDInfo.h"
 
-1437555507 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/PTRAFFIC92WEB.cpp
+1534148353 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/PTRAFFIC92WEB.cpp
 	"PTRAFFIC92WEB.h"
 	"CDataToMessageOK.h"
 	"WRITEJOB.h"
 	"CSTC.h"
 	"SCREENLast92TCPlanSegmentUpdate.h"
+	"shirink_app.h"
 
-1437555764 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/PTRAFFICAMEGIDS.cpp
+1534148434 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/PTRAFFICAMEGIDS.cpp
 	"PTRAFFICAMEGIDS.h"
+	"shirink_app.h"
 	"CDataToMessageOK.h"
 	"WRITEJOB.h"
 	"CTIMER.h"
@@ -38878,8 +38882,9 @@
 	<string.h>
 	"CTIMER.h"
 
-1441864877 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/PTRAFFICCCJ.cpp
+1534148442 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/PTRAFFICCCJ.cpp
 	"PTRAFFICCCJ.h"
+	"shirink_app.h"
 	"CDataToMessageOK.h"
 	"WRITEJOB.h"
 	"CTIMER.h"
@@ -39100,7 +39105,7 @@
 	"LCD240x128.h"
 	"SMEM.h"
 
-1437555519 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/SCREENLast92TCPlanSegmentUpdate.cpp
+1534147406 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/SCREENLast92TCPlanSegmentUpdate.cpp
 	"SCREENLast92TCPlanSegmentUpdate.h"
 	"SCREENMain.h"
 	"SCREENCtlSetup.h"
@@ -39431,7 +39436,7 @@
 	<error.h>
 	"CSTC.h"
 
-1533702989 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/SMEM.cpp
+1534147406 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/SMEM.cpp
 	"SMEM.h"
 	"WRITEJOB.h"
 	"CDataToMessageOK.h"
@@ -39698,7 +39703,7 @@
 	"SMEM.h"
 	<stdio.h>
 
-1437555508 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/screenCurrentCommPacket.cpp
+1534152718 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/screenCurrentCommPacket.cpp
 	"screenCurrentCommPacket.h"
 	"LCD240x128.h"
 	"SCREENMain.h"
@@ -40251,11 +40256,13 @@
 	<stdlib.h>
 	<error.h>
 
-1530265295 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/temperatur_humidity_sensor.cpp
+1534147908 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/temperatur_humidity_sensor.cpp
 	"temperatur_humidity_sensor.h"
+	"CTIMER.h"
 	"SMEM.h"
+	"CSTC.h"
 
-1526530025 /home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/temperatur_humidity_sensor.h
+1534147406 /home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/temperatur_humidity_sensor.h
 	"RS232.h"
 	<stdlib.h>
 	<stdio.h>
@@ -40270,13 +40277,14 @@
 	"WRITEJOB.h"
 	"var.h"
 
-1533721168 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/shirink_app.cpp
+1534156346 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/shirink_app.cpp
 	"shirink_app.h"
 	"SMEM.h"
 	"CSTC.h"
 	"screenLightEdit.h"
+	"SCREENLast92TCPlanSegmentUpdate.h"
 
-1533721226 /home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/shirink_app.h
+1534148327 /home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/shirink_app.h
 	"var.h"
 	<string>
 	"CReverseTime.h"
@@ -40308,7 +40316,7 @@
 	<netdb.h>
 	<pthread.h>
 
-1533721168 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/TCPserver.cpp
+1534152718 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/TCPserver.cpp
 	"TCPserver.h"
 	<iostream>
 	"json/json.h"

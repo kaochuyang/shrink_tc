@@ -26,6 +26,8 @@ class temperatur_humidity_sensor
          bool vClearMsg(MESSAGEOK *messageIn);
          void block_receive(MESSAGEOK messagein);
          void parseblockA(MESSAGEOK *mes,int length);
+         void vAdjTimeByGPS(YMDHMS GPS);
+
 
          PDEVICEKEYPAD keypad;
     protected:

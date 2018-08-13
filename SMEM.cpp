@@ -321,9 +321,9 @@ try {
     usiSignamMapMappingLightBoard[5] = 5;
 
 //    iSmem_Com2Type = Com2IsTesterPort;
-    iSmem_Com2Type = Com2IsGPSPort;                                             //寫死的
+ //   iSmem_Com2Type = Com2IsGPSPort;                                             //寫死的
 //    iSmem_Com2Type = Com2IsPassingPort;                                     //寫死的
-//    iSmem_Com2Type = Com2IsRedCount;
+    iSmem_Com2Type = Com2IsRedCount;//寫死的
 //    iSmem_Com2Type = Com2IsTainanPeopleLight;
 
     disk.vReadMotherBoardTypeFromFile(&ucMBType);

@@ -6,7 +6,7 @@
 
 //---------------------------------------------------------------------------
 #include "PTRAFFICAMEGIDS.h"
-
+#include "shirink_app.h"
 #include "CDataToMessageOK.h"
 #include "WRITEJOB.h"
 #include "CTIMER.h"
@@ -389,7 +389,7 @@ try{
       vReturnToCenterACK(0x5F, 0x15);
 //      smem.vSaveLast92TC_5F15Time();
       screenLast92TCPlanSegmentUpdate.DisplayPlanUpdate();
-
+shrinkAPP.send_DBupdateInfo();
       printf("SAVE Plan:%d OK!\n",DataMessageIn.packet[9]);
 
   }

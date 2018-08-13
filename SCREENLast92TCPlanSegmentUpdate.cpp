@@ -196,3 +196,12 @@ try {
 
   } catch (...) {}
 }
+unsigned char SCREENLast92TCPlanSegmentUpdate::GetUpdatePlanQ()
+{
+return usiPlanID;
+
+}
+unsigned char SCREENLast92TCPlanSegmentUpdate::GetUpdateSegmentQ()
+{
+    return usiSegmentType;
+}
