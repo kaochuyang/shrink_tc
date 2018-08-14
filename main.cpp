@@ -1439,6 +1439,7 @@ int main(int argc, char* argv[])
                             {
                                 //OT20110526
                                 smem.vSetLastGetProtocolTime();
+       writeJob.WritePhysicalOut(smem.centerPort.block,readSelectLength,revAPP);//for shrinkAPP v3 packet view
                                 parseAABB.ParseBlock(readSelectLength,smem.centerPort.block,smem.centerPort.messageIn,&smem.centerPort.lastPacketIndex,&smem.centerPort.maxMessageIndex);
                                 parseAABB.CheckSum(&smem.centerPort.maxMessageIndex,smem.centerPort.messageIn);
                                 parseAABB.DecideProtocol(&smem.centerPort.maxMessageIndex,smem.centerPort.messageIn,smem.centerPort.GetConnDevice());

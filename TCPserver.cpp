@@ -69,7 +69,7 @@ void* TCPserver::pthread_func(void *arg)
     F.send_hardwareVersion();
     F.send_reportcycle();
     F.send_manual_setting();
-
+    F.send_lastUpdateDBdate();
 
 
     // printf("%s\n",A.c_str());

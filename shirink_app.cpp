@@ -1154,15 +1154,15 @@ void shirink_app::send_TC_RealTime_info_udp()
         RealTimeInfo[3]=stc.Lock_to_LoadControlStrategy();//=RealTime_info["ControlStratege"]
 
         if(smem.vLoadCenterConnectStatus())
-            RealTimeInfo[4]=1;//RealTime_info["LinkStateWithCenter"]=
-        else RealTimeInfo[4]=2;//RealTime_info["LinkStateWithCenter"]=
+            RealTimeInfo[4]=1;//RealTime_info["LinkStateWithCenter"]=link
+        else RealTimeInfo[4]=2;//RealTime_info["LinkStateWithCenter"]=disconnect
 
         Json::Value SystemTime;
         time_t currentTime=time(NULL);
         struct tm *now=localtime(&currentTime);
 
         RealTimeInfo[5]=now->tm_year;//=SystemTime["year"]
-        RealTimeInfo[6]=now->tm_mon+1;//SystemTime["month"]=
+        RealTimeInfo[6]=now->tm_mon+1;//SystemTime["month"]
         RealTimeInfo[7]=now->tm_mday;//=SystemTime["day"]
         RealTimeInfo[8]=now->tm_hour;//=SystemTime["hour"]
         RealTimeInfo[9]=now->tm_min;//=SystemTime["min"]
@@ -1343,7 +1343,21 @@ try {
   } catch (...) {}
 
 }
+void shirink_app::send_lastUpdateDBdate()
+{
+try{
+YMDHMS lastUpDateDBtime=smem.vGetLast92TC_5F15Time();
+Json::Value UpdateDB;
+UpdateDB["lastUpdateYear"]=lastUpDateDBtime.Year;
+UpdateDB["lastUpdateMonth"]=lastUpDateDBtime.Month;
+UpdateDB["lastUpdateDay"]=lastUpDateDBtime.Day;
+UpdateDB["lastUpdateHour"]=lastUpDateDBtime.Hour;
+UpdateDB["lastUpdateMin"]=lastUpDateDBtime.Min;
+UpdateDB["lastUpdateSec"]=lastUpDateDBtime.Sec;
+string_to_app["LastUpdateDBTime"]=UpdateDB;
+}catch(...){}
 
+}
 void shirink_app::send_DBupdateInfo()
 {
     try
@@ -1351,7 +1365,7 @@ void shirink_app::send_DBupdateInfo()
         YMDHMS lastUpDateDBtime=smem.vGetLast92TC_5F15Time();
         BYTE UpdateINFO[50];
         UpdateINFO[0]=0xaa;
-        UpdateINFO[1]=0xbb;
+        UpdateINFO[1]=0xee;
         UpdateINFO[2]=0x01;
         UpdateINFO[3]=lastUpDateDBtime.Year;
         UpdateINFO[4]=lastUpDateDBtime.Month;

@@ -188,6 +188,9 @@ bool READJOB::DoWorkByMESSAGEIN(int *maxMessageIndex,MESSAGEOK *messageIn)
 {
 try {
     if (*maxMessageIndex >= 0) {
+
+
+
         for (int i=0;i<=*maxMessageIndex;i++) {                                 //檢查每一個messageIn[i]
            //printf("[OTMsg] Go readJob. C:%d S:%d, P:%d \n", messageIn[i].cksStatus, messageIn[i].success, messageIn[i].protocol);
              if (messageIn[i].cksStatus==true) {                                //通過CheckSum檢測

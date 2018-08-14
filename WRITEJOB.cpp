@@ -341,7 +341,10 @@ bool WRITEJOB::WritePhysicalOut(BYTE *packet,int length,int device)
 
             break;
         case DEVICECENTER92:                                                //92¦~ª©¥æ±±¤¤¤ß
-
+   if (smem.revAPP_socket.GetPortAlreadyOpen())//for v3 packet viewing
+            {
+                statusUdp=smem.revAPP_socket.UdpSend(packet,length,"revAPP_Socket");
+            }
 //cal iPacketLcn
             if (smem.vGetAdjudicateReturnAddressBCDorHEX() == cBCD)    //BCD code½s½X
             {

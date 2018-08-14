@@ -195,7 +195,8 @@ Json::Reader reader;
     void send_TC_RealTime_info_udp();
     void send_PasswordCheck();
     void send_reportcycle();
-    void send_DBupdateInfo();//DBupdate  5F0B
+    void send_DBupdateInfo();//DBupdate  5F0B udp
+    void send_lastUpdateDBdate();
 
 //protected:
 private:
