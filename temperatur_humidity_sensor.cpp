@@ -50,26 +50,25 @@ void temperatur_humidity_sensor::block_receive(MESSAGEOK mes)
         if(DATA_P2.switchBit.b1==0)//b1 is protocol's b0
         {
             smem.Set_temper_humi_state(true);
-            smem.SetTemperHumi(mes.packet[8],mes.packet[9],mes.packet[10],mes.packet[11]);
-        /*
-        mes.packet[8];//data_P6
-        mes.packet[9];//data_P7
-        mes.packet[10];//data_P8
-        mes.packet[11];//data_P9
-        */
+            smem.SetTemperHumi(mes.packet[11],mes.packet[12],mes.packet[13],mes.packet[14]);
 
-        }else smem.Set_temper_humi_state(false);//sensor not found
+        }
+        else smem.Set_temper_humi_state(false); //sensor not found
 
-                       if(DATA_P2.switchBit.b2==0)
+        if(DATA_P2.switchBit.b2==0)
         {
-            GPS.Hour=mes.packet[5];//data_P3
-            GPS.Min=mes.packet[6];//data_P4
-            GPS.Sec=mes.packet[7];//data_P5
 
-        /*GPS.Year=mes.packet[12];
-        GPS.Month=mes.packet[13];
-        GPS.Day=mes.packet[14];*/
-        //vAdjTimeByGPS(GPS);
+
+            GPS.Hour=(mes.packet[5]&0x0f)*10+(mes.packet[6]&0x0f);//data_  ASCII to int
+            GPS.Min=(mes.packet[7]&0x0f)*10+(mes.packet[8]&0x0f);//data_P4   ASCII to int
+            GPS.Sec=(mes.packet[9]&0x0f)*10+(mes.packet[10]&0x0f);//data_P5    ASCII to int
+            GPS.Day=(mes.packet[15]&0x0f)*10+(mes.packet[16]&0x0f);//  ASCII to int
+            GPS.Month=(mes.packet[17]&0x0f)*10+(mes.packet[18]&0x0f);//data_P3  ASCII to int
+            GPS.Year=(mes.packet[19]&0x0f)*10+(mes.packet[20]&0x0f);//format to ROC year ASCII to int
+
+vAdjTimeByGPS(GPS);
+
+            printf("DATE by GPS %d %d %d hour=%d min=%d sec=%d\n",GPS.Year,GPS.Month,GPS.Day,GPS.Hour,GPS.Min,GPS.Sec);
 
         }
         printf("COM3 information!!!======");
@@ -80,6 +79,7 @@ void temperatur_humidity_sensor::block_receive(MESSAGEOK mes)
     catch(...) {}
 
 }
+
 //---------------------------------------------------------------------------
 void temperatur_humidity_sensor::vAdjTimeByGPS(YMDHMS GPS)
 {
@@ -88,77 +88,69 @@ void temperatur_humidity_sensor::vAdjTimeByGPS(YMDHMS GPS)
 //smem.vSetBOOLData(GPS_SYNC, true);
         bool bEnableUpdate;
 
-        unsigned char ucTimeLocation = 0;
-        unsigned char ucDataLocation = 0;
-        unsigned char ucStatusLocation = 0;
-        unsigned char ucGetSpace = 0;
 
-        char cTmp[3] = { 0 };
-        int siY;
-        int siM;
-        int siD;
-        int siHour;
-        int siMin;
-        int siSec;
 
         struct tm time_str;
         struct tm *TSP = &time_str;
         time_t RunSec;
 
 
-                            time_str.tm_year = siY + 100;
-                            time_str.tm_mon = siM - 1;
-                            time_str.tm_mday = siD;
+        time_str.tm_year = GPS.Year + 100;
+        time_str.tm_mon = GPS.Month ;
+        time_str.tm_mday = GPS.Day;
+        time_str.tm_hour=GPS.Hour;
+        time_str.tm_min=GPS.Min;
+        time_str.tm_sec=GPS.Sec;
 
-                            time_str.tm_isdst = -1;
-                            RunSec = mktime(&time_str);
+        time_str.tm_isdst = -1;
+        RunSec = mktime(&time_str);
 
-                            RunSec = RunSec + 28800;                                         // now RunSec is GPS time
-
-
-                            TSP = localtime(&RunSec);
-
-                            char date[22] = {0},time[17] = {0};
+        RunSec = RunSec + 28800;                                         // now RunSec is GPS time
 
 
-                            if(TSP->tm_year > 105 &&
-                                    ( (smem.vGetBOOLData(GPS_SYNC) == true ) ||
-                                      (TSP->tm_min == 6 && TSP->tm_sec == 0) || (TSP->tm_min == 36 && TSP->tm_sec == 0)
-                                    )
-                              )
-                            {
-                                bEnableUpdate = smem.vGetBOOLData(EnableUpdateRTC);
-                                if(bEnableUpdate == true)
-                                {
-                                    stc.TimersRead_BeforeResetCMOSTime();  //OTBUG =1
-                                    _intervalTimer.TimersRead_BeforeResetCMOSTime();
-                                    smem.vSetTimerMutexRESET(1);
-                                    while(smem.vGetTimerMutexCTIMER() == 0 || smem.vGetTimerMutexCSTC() == 0)
-                                    {
-                                        usleep(100);
-                                    }
-                                    if(smem.sGPSGetTimeSwitch() == 1)
-                                    {
-                                        smem.vSetSystemClockTime(TSP->tm_year+1900, TSP->tm_mon+1, TSP->tm_mday, TSP->tm_hour, TSP->tm_min, TSP->tm_sec);
-                                        //smem.SetSegmentChange(true);
-                                    }
-                                    _intervalTimer.TimersReset_AfterResetCMOSTime();  //OTBUG =1
-                                    stc.TimersReset_AfterResetCMOSTime();
-                                    smem.vSetTimerMutexRESET(0);
-                                    smem.vSetAdjcount(0);
-                                    smem.vSendTimerUpdateToCCJ_5F9E();
+        TSP = localtime(&RunSec);
 
-                                    system("hwclock -w");
-                                }
-
-                                smem.vSetBOOLData(GPS_SYNC, false);
-
-                            }
-
-                        smem.vSaveGPSStatus(true);
+        char date[22] = {0},time[17] = {0};
 
 
+        if(TSP->tm_year > 105 &&
+                ( (smem.vGetBOOLData(GPS_SYNC) == true ) ||
+                  (TSP->tm_min == 6 && TSP->tm_sec == 0) || (TSP->tm_min == 36 && TSP->tm_sec == 0)
+                )
+          )
+        {
+            bEnableUpdate = smem.vGetBOOLData(EnableUpdateRTC);
+            if(bEnableUpdate == true)
+            {
+                stc.TimersRead_BeforeResetCMOSTime();  //OTBUG =1
+                _intervalTimer.TimersRead_BeforeResetCMOSTime();
+                smem.vSetTimerMutexRESET(1);
+                while(smem.vGetTimerMutexCTIMER() == 0 || smem.vGetTimerMutexCSTC() == 0)
+                {
+                    usleep(100);
                 }
+                if(smem.sGPSGetTimeSwitch() == 1)
+                {
+                    smem.vSetSystemClockTime(TSP->tm_year+1900, TSP->tm_mon+1, TSP->tm_mday, TSP->tm_hour, TSP->tm_min, TSP->tm_sec);
+                    //smem.SetSegmentChange(true);
+                }
+                _intervalTimer.TimersReset_AfterResetCMOSTime();  //OTBUG =1
+                stc.TimersReset_AfterResetCMOSTime();
+                smem.vSetTimerMutexRESET(0);
+                smem.vSetAdjcount(0);
+                smem.vSendTimerUpdateToCCJ_5F9E();
+
+                system("hwclock -w");
+            }
+
+            smem.vSetBOOLData(GPS_SYNC, false);
+
+        }
+
+        smem.vSaveGPSStatus(true);
+
+
+    }
 
 
     catch(...) {}
@@ -382,7 +374,13 @@ void temperatur_humidity_sensor::vAdjTimeByGPS(YMDHMS GPS)
 
 void temperatur_humidity_sensor::parseblockA(MESSAGEOK *mes,int length)
 {
-    printf("parseblockA");
+//    printf("parseblockA");
+//    printf("record length=%d\n",record_length);
+//            printf("context= ");
+//            for(int i=0; i<length; i++)
+//                printf("%x ",T_H.packet[i]);
+//
+//                printf("/n");
     try
     {
         BYTE cks=0x0;
@@ -396,17 +394,14 @@ void temperatur_humidity_sensor::parseblockA(MESSAGEOK *mes,int length)
 
 
             record_length=length;
-            printf("record length=%d\n",record_length);
-            printf("context= ");
-            for(int i=0; i<length; i++)
-                printf("%x ",T_H.packet[i]);
-            if(length==15)
+
+            if(length==24)
             {
-                for(int k=0; k<14; k++)
+                for(int k=0; k<23; k++)
                     cks^=T_H.packet[k];
-                if(cks==T_H.packet[14])
+                if(cks==T_H.packet[23])
                 {
-                    T_H.packetLength=15;
+                    T_H.packetLength=24;
                     block_receive(T_H);
                 }
 
@@ -418,34 +413,38 @@ void temperatur_humidity_sensor::parseblockA(MESSAGEOK *mes,int length)
 
         else
         {
+
             //    printf("phase 2\n");
+
             for(int i=0; i<length; i++)
             {
                 T_H.packet[record_length+i]=mes->packet[i];
-            //    printf("%x ",T_H.packet[record_length+i]);
+                //    printf("%x ",T_H.packet[record_length+i]);
             }
+
+            if((mes->packet[length-2]!=0xaa)&&(mes->packet[length-2]!=0xbb)){record_length+=length;}
             // printf("\n phase 2.1\n");
             for(int i=0; i<record_length; i++)
             {
                 cks^=T_H.packet[i];
-             //   printf("CKS=%x\n",cks);
+                //   printf("CKS=%x\n",cks);
             }
 //  printf("phase 2.2\n");
-            for(int i=0; i<length-1; i++)
-            {
-                cks^=mes->packet[i];
-              //  printf("CKS=%x\n",cks);
-            }
+//            for(int i=0; i<length-1; i++)
+//            {//printf("CKS check doing\n");
+//                cks^=mes->packet[i];
+//                //  printf("CKS=%x\n",cks);
+//            }
 //   printf("phase 2.3\n");
 //   printf("CKS=%x\n",cks);
-         //   printf("pack[%d]=%x\n",length-1,mes->packet[length-1]);
+            //   printf("pack[%d]=%x\n",length-1,mes->packet[length-1]);
 
-            if(cks==mes->packet[length-1])
+            if(cks==mes->packet[record_length-1])
                 //    {printf("phase 3\n");
-                if((cks==T_H.packet[14])&&(T_H.packet[0]==0xaa)&&(T_H.packet[1]=0xbb))
-                {
+                if((cks==T_H.packet[24])&&(T_H.packet[0]==0xaa)&&(T_H.packet[1]=0xbb))
+                {printf("Pass CKS check\n");
 //printf("phase 4\n");
-                    T_H.packetLength=15;
+                    T_H.packetLength=24;
                     block_receive(T_H);
                 }
                 else

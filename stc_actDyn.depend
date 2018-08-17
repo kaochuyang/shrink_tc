@@ -37733,7 +37733,7 @@
 1526450965 /home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/var.h
 	<time.h>
 
-1533702675 /home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/SMEM.h
+1534503544 /home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/SMEM.h
 	"var.h"
 	"STORAGE.h"
 	"RS232.h"
@@ -39436,7 +39436,7 @@
 	<error.h>
 	"CSTC.h"
 
-1534147406 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/SMEM.cpp
+1534498332 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/SMEM.cpp
 	"SMEM.h"
 	"WRITEJOB.h"
 	"CDataToMessageOK.h"
@@ -39513,7 +39513,7 @@
 	<sys/perm.h>
 	<sys/io.h>
 
-1534212183 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/main.cpp
+1534493461 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/main.cpp
 	"var.h"
 	"SMEM.h"
 	"PARSETRAFFIC.h"
@@ -40256,13 +40256,13 @@
 	<stdlib.h>
 	<error.h>
 
-1534147908 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/temperatur_humidity_sensor.cpp
+1534498419 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/temperatur_humidity_sensor.cpp
 	"temperatur_humidity_sensor.h"
 	"CTIMER.h"
 	"SMEM.h"
 	"CSTC.h"
 
-1534147406 /home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/temperatur_humidity_sensor.h
+1534493257 /home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/temperatur_humidity_sensor.h
 	"RS232.h"
 	<stdlib.h>
 	<stdio.h>
@@ -40277,7 +40277,7 @@
 	"WRITEJOB.h"
 	"var.h"
 
-1534156346 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/shirink_app.cpp
+1534503650 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/shirink_app.cpp
 	"shirink_app.h"
 	"SMEM.h"
 	"CSTC.h"

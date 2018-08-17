@@ -1146,6 +1146,7 @@ void shirink_app::send_TC_RealTime_info_udp()
 //    STRATEGY_TODDYN    =96
 //};
 
+send_TC_RealTime_info();
         BYTE RealTimeInfo[50];
         RealTimeInfo[0]=0xaa;
         RealTimeInfo[1]=0xee;
@@ -1175,6 +1176,7 @@ void shirink_app::send_TC_RealTime_info_udp()
         unsigned short int iCurrentPlanID   = stc.vGetUSIData(CSTC_exec_plan_plan_ID);
 
         stc.Lock_to_Load_Plan_for_Panel(iCurrentPhaseID);
+        int iCurrentSubphaseTotal = stc._panel_phase._subphase_count;
         stc.Lock_to_Load_Phase_for_Panel(iCurrentPlanID);
         RealTimeInfo[11]=iCurrentPhaseID;//=current_state["current_phaseID"]
         RealTimeInfo[12]=iCurrentPlanID;//=current_state["current_planID"]
@@ -1183,9 +1185,11 @@ void shirink_app::send_TC_RealTime_info_udp()
         RealTimeInfo[13]=stc.vGetStepTime();//=current_state["current_remaining_sec"]
         int iCurrentSubphase = stc.vGetUSIData(CSTC_exec_phase_current_subphase);
 
-        int iCurrentSubphaseTotal = stc._panel_phase._subphase_count;
+
         RealTimeInfo[14]= iCurrentSubphase+1;//=current_state["current_subphase"]
+
         RealTimeInfo[15]= iCurrentSubphaseTotal;//=current_state["current_total_subphase"]
+
         int iCurrentStep     = stc.vGetUSIData(CSTC_exec_phase_current_subphase_step);
         int iCurrentStepTotal = stc._panel_phase._total_step_count;
         printf("current_total_subphase=%d,current_total_step=%d\n",iCurrentSubphaseTotal,iCurrentStepTotal);
@@ -1194,20 +1198,30 @@ void shirink_app::send_TC_RealTime_info_udp()
         RealTimeInfo[18]=stc.vGetUSIData(CSTC_exec_segment_type);//=current_state["current_segmenttype"]
         //current_state["current_subphasecount"]=;
 
-        RealTimeInfo[19]=0xaa;
-        RealTimeInfo[20]=0xcc;
-        RealTimeInfo[21]=0;
-        for(int i=0; i<21; i++)
-            RealTimeInfo[22]^=RealTimeInfo[i];
+//printf("TESTTESTTEST tempera=%d humidity=%d\n",smem.getTemperature(),smem.getHumidity());
 
-        send_TC_RealTime_info();
+
+
+
+RealTimeInfo[19]=(smem.getTemperature()/10);
+RealTimeInfo[20]=(smem.getTemperature()%10);
+RealTimeInfo[21]=smem.getHumidity();
+
+
+        RealTimeInfo[22]=0xaa;
+        RealTimeInfo[23]=0xcc;
+        RealTimeInfo[24]=0;
+        for(int i=0; i<24; i++)
+            RealTimeInfo[24]^=RealTimeInfo[i];
+
+     //   send_TC_RealTime_info();
 
         //RealTime_info["current_state"]=current_state;
 
         //string_to_app["RealTime_info"]=RealTime_info;
 
         //printf("string=%s\n",RealTime_info.toStyledString().c_str());
-        writeJob.WritePhysicalOut(RealTimeInfo,22,revAPP);
+        writeJob.WritePhysicalOut(RealTimeInfo,25,revAPP);
 
 
     }

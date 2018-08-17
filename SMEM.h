@@ -81,6 +81,8 @@ class SMEM
         void ReportTemperHumi_0F09();
         void Set_temper_humi_state(bool state);
         void WriteLCNby_shrinkAPP(int LCN);
+        int getTemperature();
+        int getHumidity();
 
 
         int GetcFace(void);                                                     //得到目前LCD上是哪個畫面
@@ -993,10 +995,10 @@ class SMEM
         unsigned short int usiDynSegRemainSec;
 
 
-        int temperature;
-        int humidity_record;
-        bool temper_humi_state;
 
+        bool temper_humi_state;
+int temperature;
+        int humidity_record;
 
 };
 //---------------------------------------------------------------------------

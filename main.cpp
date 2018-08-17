@@ -1287,7 +1287,7 @@ int main(int argc, char* argv[])
         /*OTCombo0714*/
         stc.ThreadsGenerate();
         sleep(2);
-        _tcpserver.tcp_thread_generate();        //OT Fix 950727   LCN0000
+        //_tcpserver.tcp_thread_generate();        //OT Fix 950727   LCN0000
         //for shrink_tc// SendRequestToKeypad();                                                      //問keypad目前面板設定
 
         printf("Main 2 OK! \n");
@@ -1495,7 +1495,8 @@ int main(int argc, char* argv[])
                         for(int i=0; i<readSelectLength; i++)
                         {
                       //      printf("%x ",smem.shrink_port_com3.block[i]);
-                            if(readSelectLength<=15)shrink_mes.packet[i]=smem.shrink_port_com3.block[i];
+                            if(readSelectLength<=24)
+                            shrink_mes.packet[i]=smem.shrink_port_com3.block[i];
 
                         }
 //                        printf("\n\n");
@@ -1503,13 +1504,21 @@ int main(int argc, char* argv[])
 
 
 
-                        if (readSelectLength<16)
+                        if (readSelectLength<25)
                         {
 //                             printf("after ~\n");
 //                              printf("readlength =%d\n",readSelectLength);
 
 
 //printf("\n\n read block ~~~\n\n");
+
+    printf("parseblockA");
+    printf("record length=%d\n",readSelectLength);
+            printf("context= ");
+            for(int i=0; i<readSelectLength; i++)
+                printf("%x ",smem.shrink_port_com3.block[i]);
+
+                printf("\n");
                             T_H_senseor.parseblockA(&shrink_mes,readSelectLength);
 
 //                                T_H_senseor.ParseBlock(readSelectLength
@@ -2039,6 +2048,12 @@ int main(int argc, char* argv[])
                                 {
                                     switch(revAPP_messagein.packet[1])
                                     {
+                                        case (0xda):
+
+
+     _tcpserver.tcp_thread_generate();        //OT Fix 950727   LCN0000
+                                        break;
+
                                     case (0x10):
                                         oRev_protocol_0F.vRebootIPC_0F10_revAPP(revAPP_messagein);
                                         break;
