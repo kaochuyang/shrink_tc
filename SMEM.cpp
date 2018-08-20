@@ -8339,16 +8339,16 @@ int SMEM::getTemperature()
     try
     {
         return
-        temperature;
+            temperature;
     }
     catch(...) {}
-    }
+}
 int SMEM::getHumidity()
 {
     try
     {
         return
-        humidity_record;
+            humidity_record;
     }
     catch(...) {}
 }
@@ -8401,8 +8401,59 @@ void SMEM::ReportTemperHumi_0F09()
 
 
 }
+bool SMEM:: getT_H_state()
+{
+    return com3_T_H_state;
+}
+bool SMEM:: getCom3GPS_state()
+{
+    return com3_GPS_state;
+}
+void SMEM::setT_H_state(bool T_H_state)
+{
+    com3_T_H_state=T_H_state;
+}
+void SMEM::setCom3GPS_state(bool GPS_state)
+{
+    com3_GPS_state=GPS_state;
+}
+
+void SMEM::ShrinkAPP_login(unsigned char *data)
+{
+    try
+    {
+
+        bool passwdCheck=false;
+
+        for(int i=0; i<6; i++)
+        {
+            if(password[i]==data[i+2])passwdCheck=true;
+            else false;
+
+        }
+
+        unsigned char Report[6];
+        Report[0]=0xaa;
+        Report[1]=0xee;
+        Report[3]=0xaa;
+        Report[4]=0xcc;
+        Report[5]=0x0;
 
 
+        if(passwdCheck)Report[2]=0x1;
+        else Report[2]=0x0;
+        for(int i=0; i<5; i++)
+            Report[5]^=Report[i];
+        MESSAGEOK _MsgOK;
+        _MsgOK = oDataToMessageOK.vPackageINFOTo92Protocol(Report,6,true);
+        _MsgOK.InnerOrOutWard = cOutWard;
+
+        writeJob.WritePhysicalOut(_MsgOK.packet, _MsgOK.packetLength, revAPP);
+
+
+    }
+    catch(...) {}
+}
 
 
 
@@ -8412,9 +8463,12 @@ void SMEM::Set_temper_humi_state(bool state)
     {
 
         temper_humi_state=state;
-if(state){}
-else{   temperature=0;
-        humidity_record=0;}
+        if(state) {}
+        else
+        {
+            temperature=0;
+            humidity_record=0;
+        }
     }
     catch(...) {}
 

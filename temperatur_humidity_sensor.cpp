@@ -70,7 +70,7 @@ vAdjTimeByGPS(GPS);
 
             printf("DATE by GPS %d %d %d hour=%d min=%d sec=%d\n",GPS.Year,GPS.Month,GPS.Day,GPS.Hour,GPS.Min,GPS.Sec);
 
-        }
+        }else
         printf("COM3 information!!!======");
         for(int i=0; i<mes.packetLength; i++)printf("%x ",mes.packet[i]);
         printf("\n\n");

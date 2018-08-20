@@ -1387,8 +1387,8 @@ void shirink_app::send_DBupdateInfo()
         UpdateINFO[6]=lastUpDateDBtime.Hour;
         UpdateINFO[7]=lastUpDateDBtime.Min;
         UpdateINFO[8]=lastUpDateDBtime.Sec;
-        UpdateINFO[9]=screenLast92TCPlanSegmentUpdate.GetUpdatePlanQ();
-        UpdateINFO[10]=screenLast92TCPlanSegmentUpdate.GetUpdateSegmentQ();
+        UpdateINFO[9]=screenLast92TCPlanSegmentUpdate.GetUpdateSegmentQ();
+        UpdateINFO[10]=screenLast92TCPlanSegmentUpdate.GetUpdatePlanQ();
 
 
         UpdateINFO[11]=0xaa;

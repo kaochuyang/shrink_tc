@@ -2053,6 +2053,10 @@ int main(int argc, char* argv[])
 
      _tcpserver.tcp_thread_generate();        //OT Fix 950727   LCN0000
                                         break;
+                                        case (0xdb):
+
+                                        smem.ShrinkAPP_login(revAPP_messagein.packet);
+                                        break;
 
                                     case (0x10):
                                         oRev_protocol_0F.vRebootIPC_0F10_revAPP(revAPP_messagein);

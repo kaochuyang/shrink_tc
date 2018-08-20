@@ -223,21 +223,6 @@ void* TCPserver::pthread_func(void *arg)
 
 
                 }
-//                else if (r_test.isMember("RealTimeInfo"))
-//                {
-//                    printf("realtimeinfo\n");
-//                    F.send_TC_RealTime_info();
-//                    H=F.faster_writer.write(F.RealTime_info);
-//                    if ( chek=send(connfd,H.c_str(),H.size(),0) <0)
-//                    {
-//                        printf("send msg error: %s(errno :%d)\n",strerror(errno),errno);
-//                        return 0;
-//                    }
-//                    //       printf("send=%d string=%s\n",chek,H.c_str());
-//                    printf("size=%d\n",H.size());
-//
-//                }
-
                 else
                 {
                     printf("no  value\n");
