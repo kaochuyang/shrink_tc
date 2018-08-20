@@ -57,7 +57,7 @@ void temperatur_humidity_sensor::block_receive(MESSAGEOK mes)
 
         if(DATA_P2.switchBit.b2==0)
         {
-
+            smem.setCom3GPS_state(true);
 
             GPS.Hour=(mes.packet[5]&0x0f)*10+(mes.packet[6]&0x0f);//data_  ASCII to int
             GPS.Min=(mes.packet[7]&0x0f)*10+(mes.packet[8]&0x0f);//data_P4   ASCII to int
@@ -71,7 +71,7 @@ vAdjTimeByGPS(GPS);
             printf("DATE by GPS %d %d %d hour=%d min=%d sec=%d\n",GPS.Year,GPS.Month,GPS.Day,GPS.Hour,GPS.Min,GPS.Sec);
 
         }else
-        printf("COM3 information!!!======");
+        {printf("COM3 no GPS information!!!======");smem.setCom3GPS_state(false);}
         for(int i=0; i<mes.packetLength; i++)printf("%x ",mes.packet[i]);
         printf("\n\n");
 

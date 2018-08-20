@@ -8403,16 +8403,13 @@ void SMEM::ReportTemperHumi_0F09()
 }
 bool SMEM:: getT_H_state()
 {
-    return com3_T_H_state;
+    return temper_humi_state;
 }
 bool SMEM:: getCom3GPS_state()
 {
     return com3_GPS_state;
 }
-void SMEM::setT_H_state(bool T_H_state)
-{
-    com3_T_H_state=T_H_state;
-}
+
 void SMEM::setCom3GPS_state(bool GPS_state)
 {
     com3_GPS_state=GPS_state;
@@ -8463,6 +8460,7 @@ void SMEM::Set_temper_humi_state(bool state)
     {
 
         temper_humi_state=state;
+
         if(state) {}
         else
         {

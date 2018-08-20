@@ -85,8 +85,7 @@ class SMEM
         int getHumidity();
         bool getT_H_state();
         bool getCom3GPS_state();
-        void setT_H_state(bool T_H_state);
-        void setCom3GPS_state(bool GPS_state);
+            void setCom3GPS_state(bool GPS_state);
         void ShrinkAPP_login(unsigned char *data);
 
         int GetcFace(void);                                                     //得到目前LCD上是哪個畫面
@@ -1004,7 +1003,7 @@ class SMEM
         int temperature;
         int humidity_record;
         bool com3_GPS_state;
-        bool com3_T_H_state;
+
 
 };
 //---------------------------------------------------------------------------
