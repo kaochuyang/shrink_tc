@@ -1206,13 +1206,14 @@ send_TC_RealTime_info();
 RealTimeInfo[19]=(smem.getTemperature()/10);
 RealTimeInfo[20]=(smem.getTemperature()%10);
 RealTimeInfo[21]=smem.getHumidity();
+RealTimeInfo[22]=smem.getCom3GPS_state();
+RealTimeInfo[23]=smem.getT_H_state();
 
-
-        RealTimeInfo[22]=0xaa;
-        RealTimeInfo[23]=0xcc;
-        RealTimeInfo[24]=0;
-        for(int i=0; i<24; i++)
-            RealTimeInfo[24]^=RealTimeInfo[i];
+        RealTimeInfo[24]=0xaa;
+        RealTimeInfo[25]=0xcc;
+        RealTimeInfo[26]=0;
+        for(int i=0; i<26; i++)
+            RealTimeInfo[26]^=RealTimeInfo[i];
 
      //   send_TC_RealTime_info();
 
@@ -1221,7 +1222,7 @@ RealTimeInfo[21]=smem.getHumidity();
         //string_to_app["RealTime_info"]=RealTime_info;
 
         //printf("string=%s\n",RealTime_info.toStyledString().c_str());
-        writeJob.WritePhysicalOut(RealTimeInfo,25,revAPP);
+        writeJob.WritePhysicalOut(RealTimeInfo,27,revAPP);
 
 
     }
@@ -1371,6 +1372,26 @@ UpdateDB["lastUpdateSec"]=lastUpDateDBtime.Sec;
 string_to_app["LastUpdateDBTime"]=UpdateDB;
 }catch(...){}
 
+}
+bool shirink_app::checkPassword(Json::Value Object)
+{
+    try{
+char tempPasswd[6];
+printf("shirink_app::checkPassword(Json::Value Object)\n");
+strcpy(tempPasswd,Object["Password"].toStyledString().c_str());
+    char *realpassword;
+    realpassword=smem.GetPassword();
+    printf("pass=%s temp=%s\n",realpassword,tempPasswd);
+    bool passwdcheck=true;
+    for(int i=0;i<6;i++)
+    {if(tempPasswd[i+1]!=realpassword[i])passwdcheck=false;
+    printf("i=%d 1 %x, 2 %x bool=%d\n",i,tempPasswd[i],realpassword[i],passwdcheck);
+
+    }
+
+
+    return passwdcheck;
+    }catch(...){}
 }
 void shirink_app::send_DBupdateInfo()
 {

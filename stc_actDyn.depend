@@ -39436,7 +39436,7 @@
 	<error.h>
 	"CSTC.h"
 
-1534760408 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/SMEM.cpp
+1534760895 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/SMEM.cpp
 	"SMEM.h"
 	"WRITEJOB.h"
 	"CDataToMessageOK.h"
@@ -40256,7 +40256,7 @@
 	<stdlib.h>
 	<error.h>
 
-1534498419 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/temperatur_humidity_sensor.cpp
+1534760848 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/temperatur_humidity_sensor.cpp
 	"temperatur_humidity_sensor.h"
 	"CTIMER.h"
 	"SMEM.h"
@@ -40277,14 +40277,14 @@
 	"WRITEJOB.h"
 	"var.h"
 
-1534760330 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/shirink_app.cpp
+1534845276 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/shirink_app.cpp
 	"shirink_app.h"
 	"SMEM.h"
 	"CSTC.h"
 	"screenLightEdit.h"
 	"SCREENLast92TCPlanSegmentUpdate.h"
 
-1534240597 /home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/shirink_app.h
+1534834685 /home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/shirink_app.h
 	"var.h"
 	<string>
 	"CReverseTime.h"
@@ -40316,7 +40316,7 @@
 	<netdb.h>
 	<pthread.h>
 
-1534760329 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/TCPserver.cpp
+1534843750 source:/home/cct/Desktop/Untitled4/shrink_app_server_tc/tc/TCPserver.cpp
 	"TCPserver.h"
 	<iostream>
 	"json/json.h"

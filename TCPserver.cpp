@@ -138,10 +138,10 @@ void* TCPserver::pthread_func(void *arg)
                 // printf("STEP=%s\n",r_test["weekdaysegment"].toStyledString().c_str());
 
                 printf("r_test=%s\n",r_test.toStyledString().c_str());
-                if(r_test.isObject()&&r_test.isMember("Password"))
+                if(r_test.isObject()&&r_test.isMember("setPassword"))
                 {
-                    printf("hello Password\n");
-                    printf("%s\n",r_test["Password"].toStyledString().c_str());
+                    printf("hello setPassword\n");
+                    printf("%s\n",r_test["setPassword"].toStyledString().c_str());
                     F.set_password(r_test);
                     printf("test\n");
                 }
@@ -152,12 +152,16 @@ void* TCPserver::pthread_func(void *arg)
                     printf("%s\n",r_test["weekdaysegment"].toStyledString().c_str());
                     F.set_weekdaysegment(r_test);
                     printf("test\n");
+                    F.send_tc_project_data();
+
                 }
                 else if(r_test.isMember("specialdaycontext"))
                 {
                     printf("%s\n",r_test["specialdaycontext"].toStyledString().c_str());
                     F.set_specialdaycontext(r_test);
                     printf("hello specialdaycontext\n");
+                    F.send_tc_project_data();
+
                 }
                 else if(r_test.isMember("segmentinfo"))
                 {
@@ -165,6 +169,9 @@ void* TCPserver::pthread_func(void *arg)
                     printf("%s\n",r_test["segmentinfo"].toStyledString().c_str());
                     F.set_segment_info(r_test);
                     printf("hello segmentinfo\n");
+                    F.send_tc_project_data();
+
+
                 }
                 else if(r_test.isMember("plancontext"))
                 {
@@ -172,6 +179,8 @@ void* TCPserver::pthread_func(void *arg)
 
                     F.set_plancontext_info(r_test);
                     printf("hello plancontext\n");
+                    F.send_tc_project_data();
+
                 }
                 else if(r_test.isMember("step"))
                 {
@@ -182,16 +191,24 @@ void* TCPserver::pthread_func(void *arg)
 
 
                     printf("hello step\n");
+                    F.send_tc_project_data();
+
                 }
-                  else if(r_test.isMember("ReportCycle"))
+                else if(r_test.isMember("ReportCycle"))
                 {
                     printf("%s\n",r_test["ReportCycle"].toStyledString().c_str());
                     F.setReportCycle(r_test);
+
+                    F.send_reportcycle();
+
                 }
-                  else if(r_test.isMember("manual_setting"))
+                else if(r_test.isMember("manual_setting"))
                 {
                     printf("%s\n",r_test["manual_setting"].toStyledString().c_str());
                     F.set_manual_setting(r_test);
+
+                    F.send_manual_setting();
+
                 }
                 else if(r_test.isMember("reboot"))
                 {
@@ -212,9 +229,11 @@ void* TCPserver::pthread_func(void *arg)
                     F.set_ip(r_test["IP_Group"]);
 
 
+                    F.send_ip();
+
 
                 }
-                      else if(r_test.isMember("UpdateDB"))
+                else if(r_test.isMember("UpdateDB"))
                 {
                     printf("%s\n",r_test["UpdateDB"].toStyledString().c_str());
 
@@ -223,10 +242,36 @@ void* TCPserver::pthread_func(void *arg)
 
 
                 }
-                else
+                else if(r_test.isMember("Password"))
                 {
-                    printf("no  value\n");
-                    //cout<<F.faster_writer.write(F.string_to_app)<<endl;
+
+
+ string check;
+                    printf("passcheck %s\n",r_test["Password"].toStyledString().c_str());
+                    Json::Value object_c;
+                    if(F.checkPassword(r_test))
+                    {
+                        object_c["Password"]=1;
+                        printf("passwd success\n");
+                    }
+                    else
+                    {
+                        object_c["Password"]=0;
+                        printf("passwd false\n");
+                    }
+                    check=F.faster_writer.write(object_c);
+                    if ( chek=send(connfd,check.c_str(),check.size(),0) <0)
+                    {
+                        printf("send msg error: %s(errno :%d)\n",strerror(errno),errno);
+                        return 0;
+                    }
+
+                }
+                else if(r_test.isMember("test"))
+                {
+                    printf("read value\n");
+
+                    F.send_lastUpdateDBdate();
                     H=F.faster_writer.write(F.string_to_app);
                     if ( chek=send(connfd,H.c_str(),H.size(),0) <0)
                     {

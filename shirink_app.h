@@ -197,7 +197,7 @@ Json::Reader reader;
     void send_reportcycle();
     void send_DBupdateInfo();//DBupdate  5F0B udp
     void send_lastUpdateDBdate();
-
+    bool checkPassword(Json::Value Object);
 //protected:
 private:
     s_IP s_ip;
