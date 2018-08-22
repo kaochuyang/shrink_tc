@@ -751,6 +751,10 @@ void shirink_app::set_step_info(Json::Value object)
         unsigned char ucStepCount[8];
 
         printf("set_step_info***********\n");
+        printf("set_step_info***********\n");
+        printf("set_step_info***********\n");
+        printf("set_step_info***********\n");
+        printf("set_step_info***********\n");
         printf("%s\n",object["step"].toStyledString().c_str());
         ucPhaseID=object["step"]["phase_ID"].asInt();
         ucSignalCount=object["step"]["signal_count"].asInt();
