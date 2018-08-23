@@ -433,13 +433,37 @@ void shirink_app::send_tc_project_data()
     try
     {
         refresh_tc_project_data();
+        Packed_Tod_info();
+        Packed_Spd_info();
+        Packed_segmentinfo();
+        Packed_plancontext_info();
+        Packed_step_info();
+        // printf("======================%s\n",string_to_app.toStyledString().c_str());
 
-        Json::Value segcontext;
+        //   printf("%s\n",string_to_app.toStyledString().c_str());
+    }
+    catch(...)
+    {
+
+    }
+}
+void shirink_app::Packed_Tod_info()
+{
+    try
+    {
         stc.Lock_to_Load_WeekDaySegment_for_Panel();
         for(int i=0; i<14; i++)
         {
             string_to_app["weekdaysegment"][i]=stc._panel_weekdayseg[i]._segment_type;
         }
+    }
+    catch(...) {}
+}
+void shirink_app::Packed_Spd_info()
+{
+    try
+    {
+
         Json::Value specialdaycontext;
         for(int i=8; i<21; i++)
         {
@@ -454,7 +478,14 @@ void shirink_app::send_tc_project_data()
             string_to_app["specialdaycontext"][i-8]=specialdaycontext;
         }
 
-
+    }
+    catch(...) {}
+}
+void shirink_app::Packed_segmentinfo()
+{
+    try
+    {
+        Json::Value segcontext;
         for(int i=0; i<21; i++)
         {
             stc.Lock_to_Load_Segment_for_Panel(i);
@@ -482,7 +513,13 @@ void shirink_app::send_tc_project_data()
         }
 
         string_to_app["segmentinfo"]=segmentinfo;
-
+    }
+    catch(...) {}
+}
+void shirink_app::Packed_plancontext_info()
+{
+    try
+    {
         Json::Value plancontext;
         for(int j=0; j<49; j++)
         {
@@ -508,6 +545,14 @@ void shirink_app::send_tc_project_data()
             }
             string_to_app["plancontext"][j]=plancontext;
         }
+    }
+    catch(...) {}
+}
+
+void shirink_app::Packed_step_info()
+{
+    try
+    {
         Json::Value step;
 
         for(int i=0; i<256; i++)
@@ -541,18 +586,9 @@ void shirink_app::send_tc_project_data()
             step["stepcontext"]=subphase;
             string_to_app["step"][i]=step;
         }
-        // printf("======================%s\n",string_to_app.toStyledString().c_str());
-
-        //   printf("%s\n",string_to_app.toStyledString().c_str());
     }
-    catch(...)
-    {
-
-    }
-
-
+    catch(...) {}
 }
-
 
 void shirink_app::send_execute_data()
 {
@@ -622,10 +658,10 @@ void shirink_app::set_manual_setting(Json::Value object1)
         Json::Value object;
         object=object1["manual_setting"];
         if(object.isMember("DbOperStat"))
-         {
-             smem.SetDbOperStat(object["DbOperStat"].asInt());
-             printf("change db control");
-         }
+        {
+            smem.SetDbOperStat(object["DbOperStat"].asInt());
+            printf("change db control");
+        }
 
     }
     catch(...) {}}
@@ -739,117 +775,135 @@ void shirink_app::send_ped_control_send()
 
 void shirink_app::set_step_info(Json::Value object)
 {
+
+
     try
     {
 
-        unsigned short int usiLight[8][5][8];
-        unsigned char ucPhaseID;
-        //string ucPhaseID;
-        unsigned char ucSignalMap;
-        unsigned char ucSignalCount;
-        unsigned char ucSubphaseCount;
-        unsigned char ucStepCount[8];
 
-        printf("set_step_info***********\n");
-        printf("set_step_info***********\n");
-        printf("set_step_info***********\n");
-        printf("set_step_info***********\n");
-        printf("set_step_info***********\n");
-        printf("%s\n",object["step"].toStyledString().c_str());
-        ucPhaseID=object["step"]["phase_ID"].asInt();
-        ucSignalCount=object["step"]["signal_count"].asInt();
-        ucSubphaseCount=object["step"]["subphase_count"].asInt();
-//printf("phase_ID by setting =%x\n",ucPhaseID);
-
-
-        bool bMollacOK;
-        int iTMP;
-        unsigned short int usiTmp;
-        bMollacOK = stc.Lock_to_Reset_Phase_for_Panel(ucPhaseID, ucSubphaseCount, ucSignalCount);
-        if (bMollacOK)
+        if(object.isMember("step"))
         {
-            printf("mollacOK ucPhaseID:%X ucSubphaseCount:%d ucSignalCount:%d\n", ucPhaseID, ucSubphaseCount, ucSignalCount);
-
-            stc._panel_phase._phase_order=ucPhaseID;
-            if(ucSignalCount == 2)
-            {
-                ucSignalMap = 0x11;
-            }
-            if(ucSignalCount == 3)
-            {
-                ucSignalMap = 0x51;
-            }
-            if(ucSignalCount == 4)
-            {
-                ucSignalMap = 0x55;
-            }
-            if(ucSignalCount == 5)
-            {
-                ucSignalMap = 0x5D;
-            }
-            if(ucSignalCount == 6)
-            {
-                ucSignalMap = 0x5F;
-            }
-            stc._panel_phase._signal_map= ucSignalMap;
-            stc._panel_phase._signal_count=ucSignalCount;
-            stc._panel_phase._subphase_count=ucSubphaseCount;
-            stc._panel_phase._total_step_count = ucSubphaseCount * 5;  //¤­­Ó¨B¶¥
 
 
+            unsigned short int usiLight[8][5][8];
+            unsigned char ucPhaseID;
+            //string ucPhaseID;
+            unsigned char ucSignalMap;
+            unsigned char ucSignalCount;
+            unsigned char ucSubphaseCount;
+            unsigned char ucStepCount[8];
 
-            printf("json subphase context=%s\n",object["step"]["stepcontext"]["subphase"][0]["stepdetail"][0].toStyledString().c_str());
-            for(int i = 0; i < ucSubphaseCount; i++)
+            printf("set_step_info***********\n");
+            printf("set_step_info***********\n");
+            printf("set_step_info***********\n");
+            printf("set_step_info***********\n");
+            printf("set_step_info***********\n");
+            printf("%s\n",object.toStyledString().c_str());
+            ucPhaseID=object["step"]["phase_ID"].asInt();
+            ucSignalCount=object["step"]["signal_count"].asInt();
+            ucSubphaseCount=object["step"]["subphase_count"].asInt();
+            printf("phase_ID by setting =%x  sigmancount=%d subphasecount=%d\n",ucPhaseID,ucSignalCount,ucSubphaseCount);
+
+
+            bool bMollacOK;
+            int iTMP;
+            unsigned short int usiTmp;
+            bMollacOK = stc.Lock_to_Reset_Phase_for_Panel(ucPhaseID, ucSubphaseCount, ucSignalCount);
+            if (bMollacOK)
             {
-                for(int j = 0; j < 5; j++)
+                printf("mollacOK ucPhaseID:%X ucSubphaseCount:%d ucSignalCount:%d\n", ucPhaseID, ucSubphaseCount, ucSignalCount);
+
+                stc._panel_phase._phase_order=ucPhaseID;
+                if(ucSignalCount == 2)
                 {
-                    for(int k = 0; k < ucSignalCount; k++)
+                    // printf("ucSignalCount=%d\n",ucSignalCount);
+                    ucSignalMap = 0x11;
+                }
+                if(ucSignalCount == 3)
+                {
+                    ucSignalMap = 0x51;
+                }
+                if(ucSignalCount == 4)
+                {
+                    ucSignalMap = 0x55;
+                }
+                if(ucSignalCount == 5)
+                {
+                    ucSignalMap = 0x5D;
+                }
+                if(ucSignalCount == 6)
+                {
+                    ucSignalMap = 0x5F;
+                }
+                stc._panel_phase._signal_map= ucSignalMap;
+                stc._panel_phase._signal_count=ucSignalCount;
+                stc._panel_phase._subphase_count=ucSubphaseCount;
+                stc._panel_phase._total_step_count = ucSubphaseCount * 5;  //¤­­Ó¨B¶¥
+
+
+
+                printf("json subphase context=%s\n",object["step"]["stepcontext"]["subphase"][0]["stepdetail"][0].toStyledString().c_str());
+
+                for(int i = 0; i < ucSubphaseCount; i++)
+                {
+                    for(int j = 0; j < 5; j++)
                     {
-                        printf("i:%d j:%d k:%d\n", i, j, k);
-                        usiLight[i][j][k]=object["step"]["stepcontext"]["subphase"][i]["stepdetail"][j]["light"][k].asInt();
-
-                        printf("test steplight=%x %d subphase=%d step=%d board=%d\n",usiLight[i][j][k],usiLight[i][j][k],i,j,k);
-                        //OT20110429
-                        usiTmp = usiLight[i][j][k];
-                        usiTmp = usiTmp & 0x3000;  //find red? or yellow
-                        if(usiTmp == 0x2000)
+                        for(int k = 0; k < ucSignalCount; k++)
                         {
-                            //change light!!
-                            usiLight[i][j][k] = usiLight[i][j][k] & 0xCFFF;  //clear old
-                            usiLight[i][j][k] = usiLight[i][j][k] | 0x1000;
-                        }
+                            printf("Subphasecount:%d StepCount:%d LightboardCount:%d\n", i, j, k);
+                            usiLight[i][j][k]=object["step"]["stepcontext"]["subphase"][i]["stepdetail"][j]["light"][k].asInt();
 
-                        usiTmp = usiLight[i][j][k];
-                        usiTmp = usiTmp & 0x000C;  //find red? or yellow
-                        if(usiTmp == 0x0008)
-                        {
-                            //change light!!
-                            usiLight[i][j][k] = usiLight[i][j][k] & 0xFFF3;  //clear old
-                            usiLight[i][j][k] = usiLight[i][j][k] | 0x0004;
-                        }
+                            printf("test steplight=%x %d subphase=%d step=%d board=%d\n",usiLight[i][j][k],usiLight[i][j][k],i,j,k);
+                            //OT20110429
+                            usiTmp = usiLight[i][j][k];
+                            usiTmp = usiTmp & 0x3000;  //find red? or yellow
+                            if(usiTmp == 0x2000)
+                            {
+                                //change light!!
+                                usiLight[i][j][k] = usiLight[i][j][k] & 0xCFFF;  //clear old
+                                usiLight[i][j][k] = usiLight[i][j][k] | 0x1000;
+                            }
+
+                            usiTmp = usiLight[i][j][k];
+                            usiTmp = usiTmp & 0x000C;  //find red? or yellow
+                            if(usiTmp == 0x0008)
+                            {
+                                //change light!!
+                                usiLight[i][j][k] = usiLight[i][j][k] & 0xFFF3;  //clear old
+                                usiLight[i][j][k] = usiLight[i][j][k] | 0x0004;
+                            }
 
 
-//          if(usiLight[i][j][k] ==  0x1004) { usiLight[i][j][k] = 0x2008; }
+                            if(usiLight[i][j][k] ==  0x1004)
+                            {
+                                usiLight[i][j][k] = 0x2008;
+                            }
 //OT20110429          if(usiLight[i][j][k] ==  0x2008) { usiLight[i][j][k] = 0x1004; }
-                        stc._panel_phase._ptr_subphase_step_signal_status[i][j][k] = usiLight[i][j][k];
+                            stc._panel_phase._ptr_subphase_step_signal_status[i][j][k] = usiLight[i][j][k];
+                        }
                     }
                 }
+
+                smem.vWriteMsgToDOM("WritePhaseByApp");
+
+                stc.Lock_to_Save_Phase_from_Panel();             //Àx¦s¦^¥h
+                smem.vSetINTData(TC92_iUpdatePhaseData, 1);
+                smem.vSetTCPhasePlanSegTypeData(TC_Phase, ucPhaseID, true);
+
             }
 
-            smem.vWriteMsgToDOM("WritePhaseByApp");
 
-            stc.Lock_to_Save_Phase_from_Panel();             //Àx¦s¦^¥h
-            smem.vSetINTData(TC92_iUpdatePhaseData, 1);
-            smem.vSetTCPhasePlanSegTypeData(TC_Phase, ucPhaseID, true);
+
 
         }
 
-
-
-
-
+        else printf("step setting no step_object by json\n");
     }
-    catch(...) {}}
+    catch(...) {}
+
+
+
+}
 
 
 void shirink_app::set_plancontext_info(Json::Value object)
@@ -1150,7 +1204,7 @@ void shirink_app::send_TC_RealTime_info_udp()
 //    STRATEGY_TODDYN    =96
 //};
 
-send_TC_RealTime_info();
+        send_TC_RealTime_info();
         BYTE RealTimeInfo[50];
         RealTimeInfo[0]=0xaa;
         RealTimeInfo[1]=0xee;
@@ -1207,11 +1261,11 @@ send_TC_RealTime_info();
 
 
 
-RealTimeInfo[19]=(smem.getTemperature()/10);
-RealTimeInfo[20]=(smem.getTemperature()%10);
-RealTimeInfo[21]=smem.getHumidity();
-RealTimeInfo[22]=smem.getCom3GPS_state();
-RealTimeInfo[23]=smem.getT_H_state();
+        RealTimeInfo[19]=(smem.getTemperature()/10);
+        RealTimeInfo[20]=(smem.getTemperature()%10);
+        RealTimeInfo[21]=smem.getHumidity();
+        RealTimeInfo[22]=smem.getCom3GPS_state();
+        RealTimeInfo[23]=smem.getT_H_state();
 
         RealTimeInfo[24]=0xaa;
         RealTimeInfo[25]=0xcc;
@@ -1219,7 +1273,7 @@ RealTimeInfo[23]=smem.getT_H_state();
         for(int i=0; i<26; i++)
             RealTimeInfo[26]^=RealTimeInfo[i];
 
-     //   send_TC_RealTime_info();
+        //   send_TC_RealTime_info();
 
         //RealTime_info["current_state"]=current_state;
 
@@ -1340,62 +1394,69 @@ void shirink_app::RebootTC()
 
 void shirink_app::UpdateDB(Json::Value object )
 {
-try {
-    unsigned char data[5];
+    try
+    {
+        unsigned char data[5];
 
-    data[0]  = 0x5F;
-    data[1]  = 0x0B;
-    data[2]  = 0x0F;   //­n¨D¥þ³¡
+        data[0]  = 0x5F;
+        data[1]  = 0x0B;
+        data[2]  = 0x0F;   //­n¨D¥þ³¡
 
-    MESSAGEOK _MsgOK;
+        MESSAGEOK _MsgOK;
 
-    _MsgOK = oDataToMessageOK.vPackageINFOTo92Protocol(data, 3,true);
-    _MsgOK.InnerOrOutWard = cComingFromScreen;
+        _MsgOK = oDataToMessageOK.vPackageINFOTo92Protocol(data, 3,true);
+        _MsgOK.InnerOrOutWard = cComingFromScreen;
 
-    writeJob.WritePhysicalOut(_MsgOK.packet, _MsgOK.packetLength, DEVICECENTER92);
+        writeJob.WritePhysicalOut(_MsgOK.packet, _MsgOK.packetLength, DEVICECENTER92);
 
-    smem.vWriteMsgToDOM("Request Traffic Center To Update My Database by shrinkAPP");
+        smem.vWriteMsgToDOM("Request Traffic Center To Update My Database by shrinkAPP");
 
 
-    screenLast92TCPlanSegmentUpdate.DisplayLastUpdate();
+        screenLast92TCPlanSegmentUpdate.DisplayLastUpdate();
 
-  } catch (...) {}
+    }
+    catch (...) {}
 
 }
 void shirink_app::send_lastUpdateDBdate()
 {
-try{
-YMDHMS lastUpDateDBtime=smem.vGetLast92TC_5F15Time();
-Json::Value UpdateDB;
-UpdateDB["lastUpdateYear"]=lastUpDateDBtime.Year;
-UpdateDB["lastUpdateMonth"]=lastUpDateDBtime.Month;
-UpdateDB["lastUpdateDay"]=lastUpDateDBtime.Day;
-UpdateDB["lastUpdateHour"]=lastUpDateDBtime.Hour;
-UpdateDB["lastUpdateMin"]=lastUpDateDBtime.Min;
-UpdateDB["lastUpdateSec"]=lastUpDateDBtime.Sec;
-string_to_app["LastUpdateDBTime"]=UpdateDB;
-}catch(...){}
+    try
+    {
+        YMDHMS lastUpDateDBtime=smem.vGetLast92TC_5F15Time();
+        Json::Value UpdateDB;
+        UpdateDB["lastUpdateYear"]=lastUpDateDBtime.Year;
+        UpdateDB["lastUpdateMonth"]=lastUpDateDBtime.Month;
+        UpdateDB["lastUpdateDay"]=lastUpDateDBtime.Day;
+        UpdateDB["lastUpdateHour"]=lastUpDateDBtime.Hour;
+        UpdateDB["lastUpdateMin"]=lastUpDateDBtime.Min;
+        UpdateDB["lastUpdateSec"]=lastUpDateDBtime.Sec;
+        string_to_app["LastUpdateDBTime"]=UpdateDB;
+    }
+    catch(...) {}
 
 }
 bool shirink_app::checkPassword(Json::Value Object)
 {
-    try{
-char tempPasswd[6];
-printf("shirink_app::checkPassword(Json::Value Object)\n");
-strcpy(tempPasswd,Object["Password"].toStyledString().c_str());
-    char *realpassword;
-    realpassword=smem.GetPassword();
-    printf("pass=%s temp=%s\n",realpassword,tempPasswd);
-    bool passwdcheck=true;
-    for(int i=0;i<6;i++)
-    {if(tempPasswd[i+1]!=realpassword[i])passwdcheck=false;
-    printf("i=%d 1 %x, 2 %x bool=%d\n",i,tempPasswd[i],realpassword[i],passwdcheck);
+    try
+    {
+        char tempPasswd[6];
+        printf("shirink_app::checkPassword(Json::Value Object)\n");
+        strcpy(tempPasswd,Object["Password"].toStyledString().c_str());
+        char *realpassword;
+        realpassword=smem.GetPassword();
+        printf("pass=%s temp=%s\n",realpassword,tempPasswd);
+        bool passwdcheck=true;
+        for(int i=0; i<6; i++)
+        {
+            if(tempPasswd[i+1]!=realpassword[i])passwdcheck=false;
+            printf("i=%d 1 %x, 2 %x bool=%d\n",i,tempPasswd[i],realpassword[i],passwdcheck);
 
+        }
+
+
+        return passwdcheck;
     }
-
-
-    return passwdcheck;
-    }catch(...){}
+    catch(...) {}
 }
 void shirink_app::send_DBupdateInfo()
 {
@@ -1424,7 +1485,7 @@ void shirink_app::send_DBupdateInfo()
 
         writeJob.WritePhysicalOut(UpdateINFO,14,revAPP);
     }
-    catch(...){}
+    catch(...) {}
 
-    }
+}
 

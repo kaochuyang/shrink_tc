@@ -152,7 +152,8 @@ void* TCPserver::pthread_func(void *arg)
                     printf("%s\n",r_test["weekdaysegment"].toStyledString().c_str());
                     F.set_weekdaysegment(r_test);
                     printf("test\n");
-                    F.send_tc_project_data();
+                    F.refresh_tc_project_data();
+                    F.Packed_Tod_info();
 
                 }
                 else if(r_test.isMember("specialdaycontext"))
@@ -160,7 +161,8 @@ void* TCPserver::pthread_func(void *arg)
                     printf("%s\n",r_test["specialdaycontext"].toStyledString().c_str());
                     F.set_specialdaycontext(r_test);
                     printf("hello specialdaycontext\n");
-                    F.send_tc_project_data();
+                    F.refresh_tc_project_data();
+                    F.Packed_Spd_info();
 
                 }
                 else if(r_test.isMember("segmentinfo"))
@@ -169,7 +171,8 @@ void* TCPserver::pthread_func(void *arg)
                     printf("%s\n",r_test["segmentinfo"].toStyledString().c_str());
                     F.set_segment_info(r_test);
                     printf("hello segmentinfo\n");
-                    F.send_tc_project_data();
+                    F.refresh_tc_project_data();
+                    F.Packed_segmentinfo();
 
 
                 }
@@ -179,7 +182,8 @@ void* TCPserver::pthread_func(void *arg)
 
                     F.set_plancontext_info(r_test);
                     printf("hello plancontext\n");
-                    F.send_tc_project_data();
+                    F.refresh_tc_project_data();
+                    F.Packed_plancontext_info();
 
                 }
                 else if(r_test.isMember("step"))
@@ -191,7 +195,8 @@ void* TCPserver::pthread_func(void *arg)
 
 
                     printf("hello step\n");
-                    F.send_tc_project_data();
+                    F.refresh_tc_project_data();
+                    F.Packed_step_info();
 
                 }
                 else if(r_test.isMember("ReportCycle"))
@@ -246,7 +251,7 @@ void* TCPserver::pthread_func(void *arg)
                 {
 
 
- string check;
+                    string check;
                     printf("passcheck %s\n",r_test["Password"].toStyledString().c_str());
                     Json::Value object_c;
                     if(F.checkPassword(r_test))
@@ -267,7 +272,7 @@ void* TCPserver::pthread_func(void *arg)
                     }
 
                 }
-                else if(r_test.isMember("test"))
+                else if(r_test.isMember("test"))//for pad refresh info about tc
                 {
                     printf("read value\n");
 

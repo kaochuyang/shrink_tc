@@ -188,6 +188,11 @@ Json::Reader reader;
     void send_ped_control_send();//V
     void send_chain_send_group();//V
     void send_tc_project_data();// v
+    void Packed_step_info();
+    void Packed_plancontext_info();
+    void Packed_segmentinfo();
+void Packed_Tod_info();//tod = time of day,spd =special day
+void Packed_Spd_info();
     void send_execute_data();//v
     void send_hardwareVersion();//v
     void send_LastShutDownTime();//v
