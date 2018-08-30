@@ -16,9 +16,11 @@ void temperatur_humidity_sensor::block_receive(MESSAGEOK mes)
 
     try
     {
-        BYTE DATA_P1=mes.packet[3];//
+        DATA_Bit DATA_P1;
+        DATA_P1.DBit=mes.packet[3];//
         DATA_Bit DATA_P2;
         DATA_P2.DBit=mes.packet[4];//
+
 
 
         bool box_switch_bit6=false;
@@ -47,6 +49,7 @@ void temperatur_humidity_sensor::block_receive(MESSAGEOK mes)
         YMDHMS GPS;
         temperature tempermachine;
         Humidity humidity;
+
         if(DATA_P2.switchBit.b1==0)//b1 is protocol's b0
         {
             smem.Set_temper_humi_state(true);
@@ -55,23 +58,37 @@ void temperatur_humidity_sensor::block_receive(MESSAGEOK mes)
         }
         else smem.Set_temper_humi_state(false); //sensor not found
 
+//8=manual 7=ped 6=flash 5=allred 4=manaul 3=railroad
+
         if(DATA_P2.switchBit.b2==0)
         {
             smem.setCom3GPS_state(true);
+   GPS.Hour=(mes.packet[5]&0x0f)*10+(mes.packet[6]&0x0f);//data_  ASCII to int
+                GPS.Min=(mes.packet[7]&0x0f)*10+(mes.packet[8]&0x0f);//data_P4   ASCII to int
+                GPS.Sec=(mes.packet[9]&0x0f)*10+(mes.packet[10]&0x0f);//data_P5    ASCII to int
+                GPS.Day=(mes.packet[15]&0x0f)*10+(mes.packet[16]&0x0f);//  ASCII to int
+                GPS.Month=(mes.packet[17]&0x0f)*10+(mes.packet[18]&0x0f);//data_P3  ASCII to int
+                GPS.Year=(mes.packet[19]&0x0f)*10+(mes.packet[20]&0x0f);//format to ROC year ASCII to int
 
-            GPS.Hour=(mes.packet[5]&0x0f)*10+(mes.packet[6]&0x0f);//data_  ASCII to int
-            GPS.Min=(mes.packet[7]&0x0f)*10+(mes.packet[8]&0x0f);//data_P4   ASCII to int
-            GPS.Sec=(mes.packet[9]&0x0f)*10+(mes.packet[10]&0x0f);//data_P5    ASCII to int
-            GPS.Day=(mes.packet[15]&0x0f)*10+(mes.packet[16]&0x0f);//  ASCII to int
-            GPS.Month=(mes.packet[17]&0x0f)*10+(mes.packet[18]&0x0f);//data_P3  ASCII to int
-            GPS.Year=(mes.packet[19]&0x0f)*10+(mes.packet[20]&0x0f);//format to ROC year ASCII to int
 
-vAdjTimeByGPS(GPS);
+//            if((DATA_P1.switchBit.b8==0)&&(DATA_P1.switchBit.b7==0)&&(DATA_P1.switchBit.b6==1)
+//                    &&(DATA_P1.switchBit.b5==1)&&(DATA_P1.switchBit.b4==1)&&(DATA_P1.switchBit.b3==1)
+//              )
+//            if(
+//               (DATA_P1.switchBit.b4==1)
+//              )
 
-            printf("DATE by GPS %d %d %d hour=%d min=%d sec=%d\n",GPS.Year,GPS.Month,GPS.Day,GPS.Hour,GPS.Min,GPS.Sec);
 
-        }else
-        {printf("COM3 no GPS information!!!======");smem.setCom3GPS_state(false);}
+            //{
+                vAdjTimeByGPS(GPS);
+                printf("DATE by GPS %d %d %d hour=%d min=%d sec=%d\n",GPS.Year,GPS.Month,GPS.Day,GPS.Hour,GPS.Min,GPS.Sec);
+            //}else printf("GPS boot but priority was low,DATE by GPS %d %d %d hour=%d min=%d sec=%d\n",GPS.Year,GPS.Month,GPS.Day,GPS.Hour,GPS.Min,GPS.Sec);
+        }
+        else
+        {
+            printf("COM3 no GPS information!!!======");
+            smem.setCom3GPS_state(false);
+        }
         for(int i=0; i<mes.packetLength; i++)printf("%x ",mes.packet[i]);
         printf("\n\n");
 
@@ -422,7 +439,10 @@ void temperatur_humidity_sensor::parseblockA(MESSAGEOK *mes,int length)
                 //    printf("%x ",T_H.packet[record_length+i]);
             }
 
-            if((mes->packet[length-2]!=0xaa)&&(mes->packet[length-2]!=0xbb)){record_length+=length;}
+            if((mes->packet[length-2]!=0xaa)&&(mes->packet[length-2]!=0xbb))
+            {
+                record_length+=length;
+            }
             // printf("\n phase 2.1\n");
             for(int i=0; i<record_length; i++)
             {
@@ -442,7 +462,8 @@ void temperatur_humidity_sensor::parseblockA(MESSAGEOK *mes,int length)
             if(cks==mes->packet[record_length-1])
                 //    {printf("phase 3\n");
                 if((cks==T_H.packet[24])&&(T_H.packet[0]==0xaa)&&(T_H.packet[1]=0xbb))
-                {printf("Pass CKS check\n");
+                {
+                    printf("Pass CKS check\n");
 //printf("phase 4\n");
                     T_H.packetLength=24;
                     block_receive(T_H);

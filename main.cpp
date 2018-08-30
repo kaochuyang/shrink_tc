@@ -1286,7 +1286,7 @@ int main(int argc, char* argv[])
         //SendStartMsg();
         /*OTCombo0714*/
         stc.ThreadsGenerate();
-        sleep(2);
+       sleep(2);
         _tcpserver.tcp_thread_generate();        //OT Fix 950727   LCN0000
         //for shrink_tc// SendRequestToKeypad();                                                      //問keypad目前面板設定
 

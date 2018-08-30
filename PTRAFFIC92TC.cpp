@@ -3789,6 +3789,53 @@ bool PTRAFFIC92TC::vTransmitCycleSetting_5F3F(MESSAGEOK DataMessageIn)
     }
     catch (...) {}
 }
+void PTRAFFIC92TC::shrinkAPP_vTransmitCycleSetting_5F3F(int select,int select_sec)
+{
+    try
+    {
+
+        printf("printfMsg go to 5F3F.\n");
+
+        short int TT, TC;
+TT=select;//only 1 or2
+TC=select_sec;//
+
+        int iReturnCommandSet = smem.vGet0FCommandSet();
+
+
+        //OTMARKPRINTF  printf("Go to Function\n\n");
+
+        if(TC == 3)
+            TC = 5;  //Sec
+        else if(TC == 4)
+            TC = 60;
+        else if(TC == 5)
+            TC = 300;
+        else if(TC == 0)        // send change
+            TC = 0;
+        else if(TC == 1)
+            TC = 1;
+        else if(TC == 2)
+            TC = 2;
+        else if(TC == 6)     // stop send
+            TC = 0xFF;
+
+
+
+
+        if(TT == 1)
+        {
+            smem.vSetINTData(TC92SignalLightStatus_5F0F_IntervalTime, TC);                            //±N¬ö¿ý¶¡¹j³]¨ìsmem¸Ì
+        }
+        if(TT == 2)
+        {
+            smem.vSetINTData(TC92SignalStepStatus_5F03_IntervalTime, TC);                            //±N¬ö¿ý¶¡¹j³]¨ìsmem¸Ì
+        }
+
+
+    }
+    catch (...) {}
+}
 
 //-------------------------------------------------------------------
 bool PTRAFFIC92TC::vTransmitCycleQuery_5F6F(MESSAGEOK DataMessageIn)

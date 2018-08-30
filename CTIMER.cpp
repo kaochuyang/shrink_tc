@@ -1,4 +1,5 @@
 #include "CTIMER.h"
+#include "TCPserver.h"
 #include "var.h"
 #include "CDataToMessageOK.h"
 #include "WRITEJOB.h"
@@ -1005,6 +1006,16 @@ ShrinkObject.send_TC_RealTime_info_udp();
 //                                    if (smem.GetKeypadReturn()==false)  SendRequestToKeypad();
                     SendRequestToKeypad();
 
+
+//                    _tcpserver.setTcpLivecount(8);
+//if(_tcpserver.getTcpLivecount()>60){
+//    printf("end tcp thread\n");
+//    printf("end tcp thread\n");
+//    printf("end tcp thread\n");
+//    printf("end tcp thread\n");
+//    printf("end tcp thread\n");
+//    printf("end tcp thread\n");
+//    _tcpserver.endthread();}
                     break;
                 case( 13 ):
                     //         printf("Ctimer 13\n\n");                                                 //VD SIM

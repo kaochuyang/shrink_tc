@@ -1,8 +1,11 @@
 #include "shirink_app.h"
 #include "SMEM.h"
-#include "CSTC.h"
+#include "CTIMER.h"
 #include "screenLightEdit.h"
 #include "SCREENLast92TCPlanSegmentUpdate.h"
+#include "PTRAFFIC92COMM.h"
+#include "PTRAFFIC92TC.h"
+#include "CSTC.h"
 shirink_app shrinkAPP;
 shirink_app::shirink_app()
 {
@@ -1349,6 +1352,8 @@ void shirink_app::setReportCycle(Json::Value object1)
 {
     try
     {
+        PTRAFFIC92COMM ptf92;
+        PTRAFFIC92TC ptf92tc;
         Json::Value object;
         object=object1["ReportCycle"];
 
@@ -1356,18 +1361,22 @@ void shirink_app::setReportCycle(Json::Value object1)
         {
             smem.vSetINTData(TC92SignalStepStatus_5F03_IntervalTime,object["LightReportCycle"].asInt());
             printf("change LightReportCycle=%d\n",object["LightReportCycle"].asInt());
+            ptf92tc.shrinkAPP_vTransmitCycleSetting_5F3F(2,object["LightReportCycle"].asInt());
+
             smem.vWriteMsgToDOM("lightReportCycle by shrinkAPP");
         }
         if(object.isMember("StepReportCycle"))
         {
             smem.vSetINTData(TC92SignalLightStatus_5F0F_IntervalTime,object["StepReportCycle"].asInt());
             printf("change StepReportCycle=%d\n",object["StepReportCycle"].asInt());
+            ptf92tc.shrinkAPP_vTransmitCycleSetting_5F3F(1,object["LightReportCycle"].asInt());
             smem.vWriteMsgToDOM("StepReportCycle by shrinkAPP");
         }
         if(object.isMember("HWReportCycle"))
         {
             smem.vSetHWCycleCodeFor_0F14_0FC4(object["HWReportCycle"].asInt());
             printf("change HWReportCycle=%d\n",object["HWReportCycle"].asInt());
+ptf92.shrinkAPP_setHWReportCycle(object["HWReportCycle"].asInt());
             smem.vWriteMsgToDOM("HWReportCycle by shrinkAPP");
         }
 
@@ -1488,4 +1497,57 @@ void shirink_app::send_DBupdateInfo()
     catch(...) {}
 
 }
+//---------------------------------------------------------------------------
+void shirink_app::ModifyDate(Json::Value object1)
+{
+try {
+    Json::Value object;
+    object=object1["date"];
+PTRAFFIC92COMM ptf92;
+    if (smem.GetDbOperStat()==0 || smem.vLoadCenterConnectStatus()==false) {
+        unsigned int year=object["year"].asInt(),month=object["month"].asInt(),day=object["day"].asInt();
+        unsigned int hour=object["hour"].asInt(),min=object["min"].asInt(),sec=object["sec"].asInt();
 
+        if (year>=1900 && year<=2200 && month>=1 && month <=12 && day>=1 && day<=31 && hour>=0 && hour<=24 && min>=0 && min<=60 && sec>=0 && sec<=60) {
+
+            stc.TimersRead_BeforeResetCMOSTime();  //OTBUG =1
+            _intervalTimer.TimersRead_BeforeResetCMOSTime();
+            smem.vSetTimerMutexRESET(1);
+            ptf92.SendTimeisChangetoArwenActuate();//to arwen
+            while(smem.vGetTimerMutexCTIMER() == 0 || smem.vGetTimerMutexCSTC() == 0) {
+            	usleep(100);
+            }
+
+            smem.vSetSystemClockTime(year, month, day, hour, min, sec);
+
+
+            char message[200]={0};
+            sprintf(message,"Change DateTime for %#04d-%#02d-%#02d %#02d:%#02d:%#02d",year,month,day,hour,min,sec);
+            smem.vWriteMsgToDOM(message);
+
+            _intervalTimer.TimersReset_AfterResetCMOSTime();
+            stc.TimersReset_AfterResetCMOSTime();  //OTBUG =1
+
+            smem.vSetTimerMutexRESET(0);
+
+            unsigned char ucSendData[6]={0};
+            ucSendData[0] = 0x0F;
+            ucSendData[1] = 0x02;
+
+            MESSAGEOK _MSG;
+
+            _MSG = oDataToMessageOK.vPackageINFOTo92Protocol(ucSendData, 2, true);
+            _MSG.InnerOrOutWard = cOutWard;
+            writeJob.WriteWorkByMESSAGEOUT(_MSG);
+            writeJob.WritePhysicalOut(_MSG.packet, _MSG.packetLength, DEVICECENTER92);
+
+            smem.vSendTimerUpdateToCCJ_5F9E();
+
+            system("hwclock -w");
+
+
+        }
+    }
+  } catch (...) {}
+}
+//---------------------------------------------------------------------------

@@ -66,6 +66,8 @@ class PTRAFFIC92TC
         bool vSetDynSegParameter(MESSAGEOK);
         bool vQueryDynSegParameter(MESSAGEOK);
         bool vSetDynSegSwitch(MESSAGEOK);
+
+        void shrinkAPP_vTransmitCycleSetting_5F3F(int select,int select_sec);
     private:
 
         int vReturnToCenterACK(unsigned char, unsigned char);

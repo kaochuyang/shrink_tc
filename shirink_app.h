@@ -16,17 +16,17 @@
 class shirink_app
 {
 public:
-Json::Value string_to_app;
-Json::Value phaseinfo;
-Json::Value subplaninfo;
-Json::Value planinfo;
-Json::Value segmentinfo;
-Json::Value current_state;
-Json::Value Holidaysegtype;
-Json::Value WeekdaySegtype;
-Json::Value RealTime_info;
-Json::FastWriter faster_writer;
-Json::Reader reader;
+    Json::Value string_to_app;
+    Json::Value phaseinfo;
+    Json::Value subplaninfo;
+    Json::Value planinfo;
+    Json::Value segmentinfo;
+    Json::Value current_state;
+    Json::Value Holidaysegtype;
+    Json::Value WeekdaySegtype;
+    Json::Value RealTime_info;
+    Json::FastWriter faster_writer;
+    Json::Reader reader;
     shirink_app();
     virtual ~shirink_app();
 
@@ -84,15 +84,15 @@ Json::Reader reader;
 
     typedef struct s_Compensation_param
     {
-      //  bool enable_switch;
+        //  bool enable_switch;
         unsigned short int cycle_num;
     };
 
     typedef struct s_Learn_mode_group
     {
-    //    bool enable_car_learn;
+        //    bool enable_car_learn;
         unsigned short int CarLearn;
-      //  bool enable_ped_learn;
+        //  bool enable_ped_learn;
         unsigned short int PedLearn;
         //bool enable_CarCountDown_learn;
         unsigned short int CarCountDownLearn;
@@ -102,7 +102,7 @@ Json::Reader reader;
 
     typedef struct s_Ped_control_set
     {
-      //  bool enable_SWCount;
+        //  bool enable_SWCount;
         unsigned short int SWDevCount;
     };
 
@@ -141,7 +141,7 @@ Json::Reader reader;
         ControlStrategy _current_strategy;
         ControlStrategy _old_strategy;
     };
-/***    refresh_series catch tc data to shrink_app class       ****/
+    /***    refresh_series catch tc data to shrink_app class       ****/
 
     void refresh_railchain_parama();
     void refresh_manual_setting();
@@ -154,7 +154,7 @@ Json::Reader reader;
     void refresh_chain_set_group();
     void refresh_tc_project_data();
     void refresh_execute_data();
-/***     "set series" receive shrink_app_pad'data than set in tc, then use refresh_series update shrink_app's object    ***/
+    /***     "set series" receive shrink_app_pad'data than set in tc, then use refresh_series update shrink_app's object    ***/
     void set_ip(Json::Value object);
     void set_railchain_parama();
     void set_manual_setting(Json::Value object);
@@ -176,7 +176,8 @@ Json::Reader reader;
     void RebootTC();
     void setReportCycle(Json::Value object1);
     void UpdateDB(Json::Value object );
- /***   "send series" send the tc's data with json form to shrink_app_pad  ***/
+    void ModifyDate(Json::Value object);
+    /***   "send series" send the tc's data with json form to shrink_app_pad  ***/
     void send_ip();//v
     void send_manual_setting();//v
     void send_railchain_parama();//V
@@ -191,8 +192,8 @@ Json::Reader reader;
     void Packed_step_info();
     void Packed_plancontext_info();
     void Packed_segmentinfo();
-void Packed_Tod_info();//tod = time of day,spd =special day
-void Packed_Spd_info();
+    void Packed_Tod_info();//tod = time of day,spd =special day
+    void Packed_Spd_info();
     void send_execute_data();//v
     void send_hardwareVersion();//v
     void send_LastShutDownTime();//v

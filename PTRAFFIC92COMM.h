@@ -69,6 +69,7 @@ class PTRAFFIC92COMM
         bool vReportIPCTime_0FC2_revAPP();
         bool check_link_revAPP();
   MESSAGEOK revAPP_packet(int readSelectLength,BYTE block[1024]);
+void shrinkAPP_setHWReportCycle(int cycle);
 
 
 

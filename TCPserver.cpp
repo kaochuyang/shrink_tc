@@ -1,6 +1,6 @@
 #include "TCPserver.h"
 #include <iostream>
-#include "json/json.h"
+
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -15,6 +15,10 @@
 #define MAXLINE 4096
 using namespace std;
 TCPserver _tcpserver;
+//int TCPserver::tcplivecount;
+//int TCPserver::connfd_record;
+//bool TCPserver::socketboot;
+//unsigned long int TCPserver::pthread_record;
 TCPserver::TCPserver()
 {
     //ctor
@@ -24,9 +28,42 @@ TCPserver::~TCPserver()
 {
     //dtor
 }
+void TCPserver::setTcpLivecount(int sec)
+{
+//    try
+//    {
+//        tcplivecount+=sec;
+//    }
+//    catch(...) {}
+};
+void TCPserver::ReportInfoOK(char* ok_info)
+{
+
+
+}
+
+void TCPserver::endthread()
+{
+    try
+    {
+//        if(socketboot)
+//        {
+//            //close(connfd_record);
+//            //pthread_cancel(pthread_record);
+////            pthread_exit((void*)pthread_record);
+////            socketboot=false;
+//        }
+    }
+    catch(...) {}
+}
+int TCPserver::getTcpLivecount()
+{
+//    return tcplivecount;
+return 0;
+}
 void TCPserver::tcp_thread_generate()
 {
-    pthread_t tid;
+pthread_t tid;
     printf("TCP thread Starting!\n");
     printf("\nMAIN:                 pid=%d\n",getpid());
     pthread_attr_t attr;
@@ -34,7 +71,7 @@ void TCPserver::tcp_thread_generate()
     pthread_attr_setdetachstate( & attr, PTHREAD_CREATE_DETACHED );
 //  pthread_create( & ( CSTC::_stc_thread_detector_info ), & attr, & ( CSTC::_stc_thread_detector_info_func ), NULL );
     pthread_create( & ( tid ), & attr, & ( TCPserver::pthread_func), NULL );
-
+//pthread_record=tid;
     pthread_attr_destroy( & attr );
 
 }
@@ -43,14 +80,18 @@ void TCPserver::tcp_thread_generate()
 void* TCPserver::pthread_func(void *arg)
 {
     string H;
-
+//    tcplivecount=0;
     Json::Value root;
     Json::FastWriter fast_writer;
 
 
     shirink_app F;
 
-
+    BYTE dataReprt[3];
+    dataReprt[0]=0xaa;
+    dataReprt[1]=0xee;
+    dataReprt[2]=0x2;
+    writeJob.WritePhysicalOut(dataReprt,3,revAPP);//told to APP tcpthread has been boot;
 
 //F.send_execute_data();
     /*
@@ -102,6 +143,12 @@ void* TCPserver::pthread_func(void *arg)
         printf(" bind socket error: %s (errno :%d)\n",strerror(errno),errno);
         return 0;
     }
+    BYTE dataReprt1[3];
+    dataReprt1[0]=0xaa;
+    dataReprt1[1]=0xee;
+    dataReprt1[2]=0x3;
+    sleep(1);
+    writeJob.WritePhysicalOut(dataReprt1,3,revAPP);
     while(1)
     {
 
@@ -120,9 +167,14 @@ void* TCPserver::pthread_func(void *arg)
             printf(" accpt socket error: %s (errno :%d)\n",strerror(errno),errno);
             return 0;
         }
+//        else
+//         {socketboot=true;}
         Json::Value r_test;
         Json::Reader reader;
         int chek=0;
+        string check;
+        Json::Value object_c;
+
 
         while((n=recv(connfd,buff,MAXLINE,0))>0)
         {
@@ -155,6 +207,14 @@ void* TCPserver::pthread_func(void *arg)
                     F.refresh_tc_project_data();
                     F.Packed_Tod_info();
 
+                    object_c["Report"]="todspdinfo_ok";
+                    check=F.faster_writer.write(object_c);
+                    if ( chek=send(connfd,check.c_str(),check.size(),0) <0)
+                    {
+                        printf("send msg error: %s(errno :%d)\n",strerror(errno),errno);
+                        return 0;
+                    }
+
                 }
                 else if(r_test.isMember("specialdaycontext"))
                 {
@@ -164,6 +224,13 @@ void* TCPserver::pthread_func(void *arg)
                     F.refresh_tc_project_data();
                     F.Packed_Spd_info();
 
+                    object_c["Report"]="todspdinfo_ok";
+                    check=F.faster_writer.write(object_c);
+                    if ( chek=send(connfd,check.c_str(),check.size(),0) <0)
+                    {
+                        printf("send msg error: %s(errno :%d)\n",strerror(errno),errno);
+                        return 0;
+                    }
                 }
                 else if(r_test.isMember("segmentinfo"))
                 {
@@ -173,7 +240,13 @@ void* TCPserver::pthread_func(void *arg)
                     printf("hello segmentinfo\n");
                     F.refresh_tc_project_data();
                     F.Packed_segmentinfo();
-
+                    object_c["Report"]="segmentinfo_ok";
+                    check=F.faster_writer.write(object_c);
+                    if ( chek=send(connfd,check.c_str(),check.size(),0) <0)
+                    {
+                        printf("send msg error: %s(errno :%d)\n",strerror(errno),errno);
+                        return 0;
+                    }
 
                 }
                 else if(r_test.isMember("plancontext"))
@@ -184,7 +257,13 @@ void* TCPserver::pthread_func(void *arg)
                     printf("hello plancontext\n");
                     F.refresh_tc_project_data();
                     F.Packed_plancontext_info();
-
+                    object_c["Report"]="planinfo_ok";
+                    check=F.faster_writer.write(object_c);
+                    if ( chek=send(connfd,check.c_str(),check.size(),0) <0)
+                    {
+                        printf("send msg error: %s(errno :%d)\n",strerror(errno),errno);
+                        return 0;
+                    }
                 }
                 else if(r_test.isMember("step"))
                 {
@@ -197,7 +276,13 @@ void* TCPserver::pthread_func(void *arg)
                     printf("hello step\n");
                     F.refresh_tc_project_data();
                     F.Packed_step_info();
-
+                    object_c["Report"]="stepinfo_ok";
+                    check=F.faster_writer.write(object_c);
+                    if ( chek=send(connfd,check.c_str(),check.size(),0) <0)
+                    {
+                        printf("send msg error: %s(errno :%d)\n",strerror(errno),errno);
+                        return 0;
+                    }
                 }
                 else if(r_test.isMember("ReportCycle"))
                 {
@@ -205,7 +290,14 @@ void* TCPserver::pthread_func(void *arg)
                     F.setReportCycle(r_test);
 
                     F.send_reportcycle();
-
+                    object_c["Report"]="cycleinfo_ok";
+                    check=F.faster_writer.write(object_c);
+                    if ( chek=send(connfd,check.c_str(),check.size(),0) <0)
+                    {
+                        printf("send msg error: %s(errno :%d)\n",strerror(errno),errno);
+                        return 0;
+                    }
+                    F.send_reportcycle();
                 }
                 else if(r_test.isMember("manual_setting"))
                 {
@@ -213,6 +305,20 @@ void* TCPserver::pthread_func(void *arg)
                     F.set_manual_setting(r_test);
 
                     F.send_manual_setting();
+
+                }
+                else if(r_test.isMember("date"))
+                {
+                    printf("%s\n",r_test["date"].toStyledString().c_str());
+                    F.ModifyDate(r_test);
+                    object_c["Report"]="dateinfo_ok";
+                    check=F.faster_writer.write(object_c);
+                    if ( chek=send(connfd,check.c_str(),check.size(),0) <0)
+                    {
+                        printf("send msg error: %s(errno :%d)\n",strerror(errno),errno);
+                        return 0;
+                    }
+
 
                 }
                 else if(r_test.isMember("reboot"))
@@ -272,6 +378,11 @@ void* TCPserver::pthread_func(void *arg)
                     }
 
                 }
+                else if(r_test.isMember("handshaking"))
+                {
+                    printf("handshaking\n");
+//                    tcplivecount=0;
+                }
                 else if(r_test.isMember("test"))//for pad refresh info about tc
                 {
                     printf("read value\n");
@@ -298,6 +409,7 @@ void* TCPserver::pthread_func(void *arg)
         cout<<"TCP THREAD DEAD !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"<<endl;
         cout<<"TCP THREAD DEAD !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"<<endl;
         cout<<"TCP THREAD DEAD !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"<<endl;
+
     }
 
     close(listenfd);
@@ -308,3 +420,4 @@ void* TCPserver::pthread_func(void *arg)
     //  cout << fast_writer.write(root)<< endl;
     return 0;
 }
+

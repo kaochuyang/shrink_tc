@@ -1169,6 +1169,11 @@ try{
 
 }catch(...){}
 }
+void PTRAFFIC92COMM::shrinkAPP_setHWReportCycle(int cycle)
+{
+    vSetHardWareReportCycleTransTo_itimer(cycle);                                        //¸ÑÄ¶®É¶¡
+    smem.vSet0FHardwareCycle(_itimer_HardwareCycle);
+}
 //------------------------------------------------------------------------
 bool PTRAFFIC92COMM::vSetHardWareReportCycleTransTo_itimer(unsigned short int usiHWCycle)
 {
