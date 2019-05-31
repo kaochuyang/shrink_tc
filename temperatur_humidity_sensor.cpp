@@ -43,7 +43,6 @@ void temperatur_humidity_sensor::block_receive(MESSAGEOK mes)
          if(!(DATA_P1&0x1))manual_step_button_bit0=true;
          if(!(DATA_P2&0x2))temperature_humidity_state_bit1=true;
          if(!(DATA_P1&0x1))GPS_state_bit0=true;
-
         */
 
         YMDHMS GPS;

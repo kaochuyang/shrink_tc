@@ -461,7 +461,7 @@ int main(int argc, char* argv[])
 
 
 ////-----------------------------------------------------------------------------------------------------//
-          system("ifconfig eth1 192.168.2.1");//for VSX-6156
+          system("ifconfig eth0 192.168.2.1");//for VSX-6156
         if ( smem.revAPP_socket.SetConnDevice(1000))
             if ((tempmax= smem.revAPP_socket.OpenUdpSocket("192.168.2.1",7002,"192.168.2.2",7002))>0)
             {
@@ -2051,7 +2051,7 @@ int main(int argc, char* argv[])
                                         case (0xda):
 
 
-     _tcpserver.tcp_thread_generate();        //OT Fix 950727   LCN0000
+_tcpserver.tcp_thread_generate();        //OT Fix 950727   LCN0000
                                         break;
                                         case (0xdb):
 

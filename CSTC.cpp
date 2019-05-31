@@ -5050,7 +5050,7 @@ unsigned short int CSTC::CalculateCompensationBase_twocycle(void)
         if(remainder < 0)  return 0;   // no compensation
 
         printf("    compensation_base_hour remainder=%d\n", remainder);
-        remainder = remainder % _exec_plan.calculated_cycle_time();
+       // remainder = remainder % _exec_plan.calculated_cycle_time();
 
         // printf("\n\n----------------------------**************----------------------------------------\n\n");
         printf("    Base Time:    %2d:%2d:%2d  cycle_time:%3d  remainder:%3d\n"
