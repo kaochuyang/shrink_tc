@@ -6097,7 +6097,36 @@ time_t SMEM::vGetLastGetProtocolTime(void)
     }
     catch(...) {}
 }
+//---------------------------------------------------------------------------
+void SMEM::setCliSock(int SerialNum,int CliNum )
+{
+    try
+    {
 
+    if(SerialNum>(103)||SerialNum<0)
+
+        pthread_mutex_lock(&mutexSmem);
+        cliSock[SerialNum]=CliNum;
+        pthread_mutex_unlock(&mutexSmem);
+
+    }
+    catch (...) {}
+}
+int SMEM::getCliSock(int SerialNum)
+{
+    try
+    {
+
+
+//        pthread_mutex_lock(&mutexSmem);
+    return cliSock[SerialNum];
+//        pthread_mutex_unlock(&mutexSmem);
+
+    }
+    catch (...) {}
+
+
+}
 //---------------------------------------------------------------------------
 bool SMEM::vSetSystemTime(time_t _tmp)
 {
