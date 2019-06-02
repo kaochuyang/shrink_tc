@@ -461,7 +461,7 @@ int main(int argc, char* argv[])
 
 
 ////-----------------------------------------------------------------------------------------------------//
-          system("ifconfig eth0 192.168.2.1");//for VSX-6156
+        system("ifconfig eth0 192.168.2.1");//for VSX-6156
         if ( smem.revAPP_socket.SetConnDevice(1000))
             if ((tempmax= smem.revAPP_socket.OpenUdpSocket("192.168.2.1",7002,"192.168.2.2",7002))>0)
             {
@@ -1286,7 +1286,7 @@ int main(int argc, char* argv[])
         //SendStartMsg();
         /*OTCombo0714*/
         stc.ThreadsGenerate();
-       sleep(2);
+
         _tcpserver.tcp_thread_generate();        //OT Fix 950727   LCN0000
         //for shrink_tc// SendRequestToKeypad();                                                      //問keypad目前面板設定
 
@@ -1439,7 +1439,7 @@ int main(int argc, char* argv[])
                             {
                                 //OT20110526
                                 smem.vSetLastGetProtocolTime();
-       writeJob.WritePhysicalOut(smem.centerPort.block,readSelectLength,revAPP);//for shrinkAPP v3 packet view
+                                writeJob.WritePhysicalOut(smem.centerPort.block,readSelectLength,revAPP);//for shrinkAPP v3 packet view
                                 parseAABB.ParseBlock(readSelectLength,smem.centerPort.block,smem.centerPort.messageIn,&smem.centerPort.lastPacketIndex,&smem.centerPort.maxMessageIndex);
                                 parseAABB.CheckSum(&smem.centerPort.maxMessageIndex,smem.centerPort.messageIn);
                                 parseAABB.DecideProtocol(&smem.centerPort.maxMessageIndex,smem.centerPort.messageIn,smem.centerPort.GetConnDevice());
@@ -1494,9 +1494,9 @@ int main(int argc, char* argv[])
                         printf("\n\n call shrink_port!!!!\n");
                         for(int i=0; i<readSelectLength; i++)
                         {
-                      //      printf("%x ",smem.shrink_port_com3.block[i]);
+                            //      printf("%x ",smem.shrink_port_com3.block[i]);
                             if(readSelectLength<=24)
-                            shrink_mes.packet[i]=smem.shrink_port_com3.block[i];
+                                shrink_mes.packet[i]=smem.shrink_port_com3.block[i];
 
                         }
 //                        printf("\n\n");
@@ -1512,23 +1512,14 @@ int main(int argc, char* argv[])
 
 //printf("\n\n read block ~~~\n\n");
 
-    printf("parseblockA");
-    printf("record length=%d\n",readSelectLength);
-            printf("context= ");
-            for(int i=0; i<readSelectLength; i++)
-                printf("%x ",smem.shrink_port_com3.block[i]);
+                            printf("parseblockA");
+                            printf("record length=%d\n",readSelectLength);
+                            printf("context= ");
+                            for(int i=0; i<readSelectLength; i++)
+                                printf("%x ",smem.shrink_port_com3.block[i]);
 
-                printf("\n");
+                            printf("\n");
                             T_H_senseor.parseblockA(&shrink_mes,readSelectLength);
-
-//                                T_H_senseor.ParseBlock(readSelectLength
-//                                                       ,smem.shrink_port_com3.block,
-//                                                       smem.shrink_port_com3.messageIn,
-//                                                       &smem.shrink_port_com3.lastPacketIndex,
-//                                                       &smem.shrink_port_com3.maxMessageIndex);
-//                                T_H_senseor.CheckSum(&smem.shrink_port_com3.maxMessageIndex,smem.shrink_port_com3.messageIn);
-//                                T_H_senseor.DoWorkByMESSAGEIN(&smem.shrink_port_com3.maxMessageIndex,smem.shrink_port_com3.messageIn);
-//                                T_H_senseor.MoveLastData(&smem.shrink_port_com3.maxMessageIndex,&smem.shrink_port_com3.lastPacketIndex,smem.shrink_port_com3.messageIn);
 
                         }
                     }
@@ -2048,12 +2039,12 @@ int main(int argc, char* argv[])
                                 {
                                     switch(revAPP_messagein.packet[1])
                                     {
-                                        case (0xda):
+                                    case (0xda):
 
 
-_tcpserver.tcp_thread_generate();        //OT Fix 950727   LCN0000
+//_tcpserver.tcp_thread_generate();        //OT Fix 950727   LCN0000
                                         break;
-                                        case (0xdb):
+                                    case (0xdb):
 
                                         smem.ShrinkAPP_login(revAPP_messagein.packet);
                                         break;

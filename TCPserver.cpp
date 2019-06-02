@@ -109,7 +109,7 @@ void* TCPserver::pthread_func(void *arg)
     // Initialize the client socket pool
     for( i = 0 ; i < MAXCLIENT ; i++ )
     {
-  //     cliSock[i] = -1;
+        //     cliSock[i] = -1;
         smem.setCliSock(i,-1);
     }
 
@@ -506,7 +506,7 @@ bool TCPserver::parsTCP_JsonV3Content(char buff[4096],int connfd)
     }
     catch(exception e)
     {
-     printf("%s\n",e);
+        printf("%s\n",e);
     }
 
 }
