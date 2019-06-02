@@ -5449,3 +5449,2733 @@
 	<unistd.h>
 	"screenCurrentCommPacket.h"
 
+1526524414 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/CDataToMessageOK.cpp
+	"CDataToMessageOK.h"
+	"SMEM.h"
+	"CHexToInt.h"
+	<stdio.h>
+	<time.h>
+	<string.h>
+
+1437555519 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/CDataToMessageOK.h
+	"var.h"
+
+1526450965 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/var.h
+	<time.h>
+
+1559479458 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SMEM.h
+	"var.h"
+	"STORAGE.h"
+	"RS232.h"
+	"UDP.h"
+	"temperatur_humidity_sensor.h"
+	"CPEDPUSHBUTTON.h"
+	"CPlanInfo.h"
+	<pthread.h>
+
+1526377466 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/STORAGE.h
+	"var.h"
+	"IODEVICE.h"
+	<pthread.h>
+	<stdio.h>
+
+1437555520 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/IODEVICE.h
+	"var.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/RS232.h
+	"var.h"
+	"IODEVICE.h"
+	<pthread.h>
+
+1437555508 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/UDP.h
+	"var.h"
+	"IODEVICE.h"
+	<sys/socket.h>
+	<netinet/in.h>
+	<netdb.h>
+	<pthread.h>
+
+1535014567 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/temperatur_humidity_sensor.h
+	"RS232.h"
+	<stdlib.h>
+	<stdio.h>
+	<unistd.h>
+	<string.h>
+	<iostream>
+	<time.h>
+	<signal.h>
+	<pthread.h>
+	"PDEVICEKEYPAD.h"
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+	"var.h"
+
+1526460737 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PDEVICEKEYPAD.h
+	"var.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/WRITEJOB.h
+	"var.h"
+	"JOB.h"
+
+1437555520 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/JOB.h
+	"var.h"
+
+1473403198 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/CPEDPUSHBUTTON.h
+	"var.h"
+	<pthread.h>
+	<stack>
+	<queue>
+	<deque>
+
+1471405368 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/CPlanInfo.h
+	<pthread.h>
+
+1437555519 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/CHexToInt.h
+
+1437555519 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/CHexToInt.cpp
+	"CHexToInt.h"
+	<ctype.h>
+	<stdio.h>
+	"var.h"
+
+1437555519 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/CIOCom.cpp
+	"CIOCom.h"
+	<stdio.h>
+	<sys/types.h>
+	<sys/stat.h>
+	<fcntl.h>
+	<unistd.h>
+	<stdlib.h>
+	<strings.h>
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/CIOCom.h
+	<termios.h>
+
+1473403198 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/CPEDPUSHBUTTON.cpp
+	"CPEDPUSHBUTTON.h"
+	"SMEM.h"
+	"var.h"
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+	"CSTC.h"
+	"CPlanInfo.h"
+	"CPhaseInfo.h"
+	"CSegmentInfo.h"
+	<sys/time.h>
+
+1527254269 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/CSTC.h
+	<fstream>
+	"CReverseTime.h"
+	"CSegmentInfo.h"
+	"CPhaseInfo.h"
+	"CPlanInfo.h"
+	"CIOCom.h"
+	"CPacketCluster.h"
+	"CRTMSDecoder.h"
+	"CRTMSInformation.h"
+	"CTrafficAnalyzer.h"
+	"PTRAFFIC92COMM.h"
+
+1437555519 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/CReverseTime.h
+	<pthread.h>
+
+1437555508 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/CSegmentInfo.h
+	<pthread.h>
+
+1471341974 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/CPhaseInfo.h
+	<pthread.h>
+
+1437555520 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/CPacketCluster.h
+
+1437555518 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/CRTMSDecoder.h
+	"CRTMSInformation.h"
+	"CPacketCluster.h"
+
+1437555519 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/CRTMSInformation.h
+	"CTarget.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/CTarget.h
+
+1437555519 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/CTrafficAnalyzer.h
+	"CTarget.h"
+
+1535103188 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PTRAFFIC92COMM.h
+	"var.h"
+	"SMEM.h"
+
+1437555519 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/CPacketCluster.cpp
+	"CPacketCluster.h"
+
+1437555519 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/CPhaseInfo.cpp
+	"CPhaseInfo.h"
+	<stdio.h>
+	<stdlib.h>
+
+1471401236 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/CPlanInfo.cpp
+	"CPlanInfo.h"
+	<stdio.h>
+	<stdlib.h>
+
+1437555508 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/CREATEXML.cpp
+	"CREATEXML.h"
+	"CSTC.h"
+	"CSTORINI.h"
+	"SMEM.h"
+
+1437555518 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/CREATEXML.h
+	"var.h"
+
+1437555519 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/CSTORINI.h
+	"inifile.h"
+
+1437555520 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/inifile.h
+	<map>
+	<string>
+	<string.h>
+	<wchar.h>
+
+1437555519 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/CRTMSDecoder.cpp
+	"CRTMSDecoder.h"
+	<string.h>
+	<stdio.h>
+
+1437555520 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/CRTMSInformation.cpp
+	"CRTMSInformation.h"
+	<stdio.h>
+
+1437555520 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/CReverseTime.cpp
+	"CReverseTime.h"
+	<stdio.h>
+	<stdlib.h>
+
+1559479458 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/CSTC.cpp
+	"CSTC.h"
+	"math.h"
+	"light.h"
+	"CTools.h"
+	"SMEM.h"
+	"WRITEJOB.h"
+	"CDataToMessageOK.h"
+	"var.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<unistd.h>
+	<pthread.h>
+	<signal.h>
+	<time.h>
+	<mntent.h>
+	<sstream>
+	<iomanip>
+	"screenCurrentLightStatus.h"
+	"screenStrategy.h"
+	"screenPriority.h"
+	"screenPriorityExtendsec.h"
+	"CTIMER.h"
+	"SCREENHWReset.h"
+	"screenRedCountHWCheckSel.h"
+	"CSTORINI.h"
+	"CREATEXML.h"
+	<vector>
+	"PTRAFFIC92COMM.h"
+	<iostream>
+
+1437555519 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/light.h
+
+1437555518 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/CTools.h
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenCurrentLightStatus.h
+	"SCREEN.h"
+
+1437555508 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREEN.h
+	"var.h"
+
+1437555508 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenStrategy.h
+	"SCREEN.h"
+
+1437555519 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenPriority.h
+	"SCREEN.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenPriorityExtendsec.h
+	"SCREEN.h"
+
+1437617656 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/CTIMER.h
+	<pthread.h>
+
+1437555508 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENHWReset.h
+	"SCREEN.h"
+	"var.h"
+
+1437555518 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenRedCountHWCheckSel.h
+	"SCREEN.h"
+
+1437555508 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/CSTORINI.cpp
+	"CSTORINI.h"
+	<iostream>
+	<string>
+	<sstream>
+	<ctype.h>
+	<stdio.h>
+	"var.h"
+
+1437555520 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/CSegmentInfo.cpp
+	"CSegmentInfo.h"
+	<stdio.h>
+	<stdlib.h>
+
+1535533809 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/CTIMER.cpp
+	"CTIMER.h"
+	"TCPserver.h"
+	"var.h"
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+	"SMEM.h"
+	"DIGITALIO.h"
+	"shirink_app.h"
+	"SCREENMain.h"
+	"SCREENCtlSetup.h"
+	"SCREENModifyDT.h"
+	"SCREENNone.h"
+	"SCREENOnline.h"
+	"SCREENCommStat.h"
+	"SCREENTotalRun.h"
+	"screenCurrentLightStatus.h"
+	"screenChainStatus.h"
+	"SCREENOperStat.h"
+	"screenActuateArwenStatus.h"
+	"screenActuateArwenManyStatus.h"
+	"screenActuateArwenManyStatus2.h"
+	"screenReverseMenu.h"
+	"SCREENControlStrategyMenu.h"
+	"ScreenActuateArwenFlashManyStatus.h"
+	"SCREENPedSwitchStatus.h"
+	"screenActuateArwenVDInfo.h"
+	"screenPriority.h"
+	"screenPriorityExtendsec.h"
+	"screenCommunication.h"
+	<stdio.h>
+	<sys/types.h>
+	<unistd.h>
+	<stdlib.h>
+	<string.h>
+	<pthread.h>
+	<signal.h>
+	<time.h>
+	<string.h>
+	"CSTC.h"
+
+1559479458 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/TCPserver.h
+	"shirink_app.h"
+	"json/json.h"
+	<stdio.h>
+	<sys/socket.h>
+	<arpa/inet.h>
+	<stdlib.h>
+	<string.h>
+	<unistd.h>
+	<sys/time.h>
+	<fcntl.h>
+	<pthread.h>
+	<sys/epoll.h>
+
+1535107840 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/shirink_app.h
+	"var.h"
+	<string>
+	"CReverseTime.h"
+	"CSegmentInfo.h"
+	"CPhaseInfo.h"
+	"CPlanInfo.h"
+	"CIOCom.h"
+	"CPacketCluster.h"
+	"json/json.h"
+	"CRTMSDecoder.h"
+	"CRTMSInformation.h"
+	"CTrafficAnalyzer.h"
+	"CSTC.h"
+
+1304372844 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/json/json.h
+	"autolink.h"
+	"value.h"
+	"reader.h"
+	"writer.h"
+	"features.h"
+
+1304372844 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/json/autolink.h
+	"config.h"
+	<cpptl/cpptl_autolink.h>
+	"autolink.h"
+
+1304372844 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/json/config.h
+	<cpptl/config.h>
+
+1525702458 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/json/value.h
+	"forwards.h"
+	<string>
+	<vector>
+	<map>
+	<cpptl/smallmap.h>
+	<cpptl/forwards.h>
+	"jsoncpp_to_java.h"
+
+1304372844 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/json/forwards.h
+	"config.h"
+
+1525703757 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/json/jsoncpp_to_java.h
+	<string>
+	<unistd.h>
+
+1304372844 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/json/reader.h
+	"features.h"
+	"value.h"
+	<deque>
+	<stack>
+	<string>
+	<iostream>
+
+1304372818 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/json/features.h
+	"forwards.h"
+
+1304372844 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/json/writer.h
+	"value.h"
+	<vector>
+	<string>
+	<iostream>
+
+1437555519 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/DIGITALIO.h
+	"var.h"
+	"pthread.h"
+
+1437555518 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENMain.h
+	"SCREEN.h"
+
+1437555518 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENCtlSetup.h
+	"SCREEN.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENModifyDT.h
+	"SCREEN.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENNone.h
+	"SCREEN.h"
+	"var.h"
+
+1437555520 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENOnline.h
+	"SCREEN.h"
+	"var.h"
+
+1437555508 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENCommStat.h
+	"SCREEN.h"
+
+1437555519 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENTotalRun.h
+	"SCREEN.h"
+
+1437555518 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenChainStatus.h
+	"SCREEN.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENOperStat.h
+	"SCREEN.h"
+
+1456448588 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenActuateArwenStatus.h
+	"SCREEN.h"
+
+1437555518 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenActuateArwenManyStatus.h
+	"SCREEN.h"
+
+1437555518 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenActuateArwenManyStatus2.h
+	"SCREEN.h"
+
+1437555520 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenReverseMenu.h
+	"SCREEN.h"
+	"CReverseTime.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENControlStrategyMenu.h
+	"SCREEN.h"
+	"var.h"
+
+1437555518 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/ScreenActuateArwenFlashManyStatus.h
+	"SCREEN.h"
+
+1456215636 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENPedSwitchStatus.h
+	"SCREEN.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenActuateArwenVDInfo.h
+	"SCREEN.h"
+
+1437555518 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenCommunication.h
+	"SCREEN.h"
+
+1437555508 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/CTools.cpp
+	<stdio.h>
+	"CTools.h"
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/CTrafficAnalyzer.cpp
+	"CTrafficAnalyzer.h"
+	<stdio.h>
+
+1437555520 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/ConfigFile.cpp
+	"ConfigFile.h"
+
+1437555519 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/ConfigFile.h
+	<string>
+	<map>
+	<iostream>
+	<fstream>
+	<sstream>
+	<deque>
+
+1437555520 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/DIGITALIO.cpp
+	"DIGITALIO.h"
+	"SMEM.h"
+	<stdio.h>
+	<sys/perm.h>
+	<sys/io.h>
+	<stdio.h>
+
+1437555518 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/DYNCTLJOB.cpp
+	"DYNCTLJOB.h"
+	"PROTOCOL.h"
+	"SMEM.h"
+	"WRITEJOB.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/DYNCTLJOB.h
+	"var.h"
+	"JOB.h"
+
+1437555508 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PROTOCOL.h
+	"var.h"
+	"PTRAFFIC.h"
+	"PDEVICE.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PTRAFFIC.h
+	"var.h"
+	"PTRAFFIC77.h"
+	"PTRAFFIC87.h"
+	"PTRAFFIC92.h"
+	"PTRAFFICNTCIP.h"
+	"PTRAFFICCCJ.h"
+	"PTRAFFIC92BRT.h"
+	"PTRAFFIC92COUNTDOWN.h"
+	"PTRAFFICREVSYNC.h"
+	"PTRAFFICAMEGIDS.h"
+	"PTRAFFIC92VD.h"
+	"PTRAFFIC92WEB.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PTRAFFIC77.h
+	"var.h"
+
+1437555508 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PTRAFFIC87.h
+	"var.h"
+	"PTRAFFIC87COMM.h"
+	"PTRAFFIC87TC.h"
+	"PTRAFFIC87CMS.h"
+	"PTRAFFIC87VD.h"
+
+1437555519 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PTRAFFIC87COMM.h
+	"var.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PTRAFFIC87TC.h
+	"var.h"
+
+1437555518 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PTRAFFIC87CMS.h
+	"var.h"
+
+1437555519 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PTRAFFIC87VD.h
+	"var.h"
+
+1437555520 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PTRAFFIC92.h
+	"var.h"
+	"PTRAFFIC92COMM.h"
+	"PTRAFFIC92TC.h"
+	"PTRAFFIC92CMS.h"
+	"PTRAFFIC92VD.h"
+	"PTRAFFIC92BRT.h"
+	"PTRAFFIC92COUNTDOWN.h"
+	"PTRAFFIC92OTHER.h"
+
+1535103188 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PTRAFFIC92TC.h
+	"var.h"
+	"SMEM.h"
+
+1437555508 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PTRAFFIC92CMS.h
+	"var.h"
+	"SMEM.h"
+
+1437555519 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PTRAFFIC92VD.h
+	"var.h"
+	"SMEM.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PTRAFFIC92BRT.h
+	"var.h"
+	"SMEM.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PTRAFFIC92COUNTDOWN.h
+	"var.h"
+	"SMEM.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PTRAFFIC92OTHER.h
+	"var.h"
+	"SMEM.h"
+
+1437555520 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PTRAFFICNTCIP.h
+	"var.h"
+
+1473407781 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PTRAFFICCCJ.h
+	"var.h"
+	"SMEM.h"
+
+1437555518 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PTRAFFICREVSYNC.h
+	"var.h"
+
+1437555518 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PTRAFFICAMEGIDS.h
+	"var.h"
+	"SMEM.h"
+
+1437555519 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PTRAFFIC92WEB.h
+	"var.h"
+	"SMEM.h"
+
+1437555508 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PDEVICE.h
+	"var.h"
+	"PDEVICESS.h"
+	"PDEVICERTMS.h"
+	"PDEVICEKEYPAD.h"
+	"PDEVICETRAFFICLIGHT.h"
+	"PDEVICEREVMANUALPAD.h"
+	"PDEVICEPEDPUSHBUTTON.h"
+
+1437555508 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PDEVICESS.h
+	"var.h"
+
+1437555520 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PDEVICERTMS.h
+	"var.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PDEVICETRAFFICLIGHT.h
+	"var.h"
+
+1437555519 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PDEVICEREVMANUALPAD.h
+	"var.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PDEVICEPEDPUSHBUTTON.h
+	"var.h"
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/IODEVICE.cpp
+	"IODEVICE.h"
+
+1437555518 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/JOB.cpp
+	"JOB.h"
+
+1418356218 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/LCD240x128.cpp
+	"LCD240x128.h"
+	<stdio.h>
+	<sys/perm.h>
+	<sys/io.h>
+	"SMEM.h"
+
+1405331148 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/LCD240x128.h
+	"pthread.h"
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PARSE.cpp
+	"PARSE.h"
+
+1437555508 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PARSE.h
+	"var.h"
+
+1473403198 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PARSENMEA.cpp
+	"PARSENMEA.h"
+	"SMEM.h"
+	"CTIMER.h"
+	"CSTC.h"
+	"SCREENOperStat.h"
+	"CHexToInt.h"
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<unistd.h>
+
+1437555520 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PARSENMEA.h
+	"var.h"
+	"PARSE.h"
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PARSERTMS.cpp
+	"PARSERTMS.h"
+
+1437555519 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PARSERTMS.h
+	"var.h"
+	"PARSE.h"
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PARSESS.cpp
+	"PARSESS.h"
+	<stdio.h>
+	<string.h>
+
+1437555519 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PARSESS.h
+	"var.h"
+	"CHexToInt.h"
+
+1469152121 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PARSETRAFFIC.cpp
+	"PARSETRAFFIC.h"
+	"SMEM.h"
+	<stdio.h>
+	<string.h>
+	"screenCurrentCommPacket.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PARSETRAFFIC.h
+	"var.h"
+	"PARSE.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenCurrentCommPacket.h
+	"SCREEN.h"
+
+1469152317 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PARSEV3.cpp
+	"PARSEV3.h"
+	"SMEM.h"
+	"WRITEJOB.h"
+	<stdio.h>
+	<string.h>
+
+1437555508 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PARSEV3.h
+	"var.h"
+	"PARSE.h"
+
+1470822368 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PDEVICE.cpp
+	"PDEVICE.h"
+	<stdio.h>
+
+1526540071 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PDEVICEKEYPAD.cpp
+	"PDEVICEKEYPAD.h"
+	"SMEM.h"
+	"WRITEJOB.h"
+	"SCREENNone.h"
+	"SCREENLogo.h"
+	"SCREENLogin.h"
+	"SCREENLoginErr.h"
+	"SCREENMain.h"
+	"SCREENCtlSetup.h"
+	"SCREENCtlNo.h"
+	"SCREENLastDown.h"
+	"SCREENModifyDT.h"
+	"SCREENFWVerDT.h"
+	"SCREENHWCycle.h"
+	"SCREENModifyPWD.h"
+	"SCREENDBSetup.h"
+	"SCREENOperStat.h"
+	"SCREENOperMode.h"
+	"SCREENCommStat.h"
+	"SCREENSendCycle.h"
+	"SCREENUpdateDB.h"
+	"SCREENOnline.h"
+	"SCREENOffline.h"
+	"SCREENLockdb.h"
+	"SCREENTotalRun.h"
+	"SCREENABOErr.h"
+	"SCREENCmdSet.h"
+	"SCREENHWReset.h"
+	"SCREENLcnEncode.h"
+	"screenPlan.h"
+	"screenWeekDay.h"
+	"screenSegtype.h"
+	"screenSegtypeMenu.h"
+	"screenSpecialDay.h"
+	"screenSegtypeSel.h"
+	"screenRunTableList.h"
+	"screenStrategy.h"
+	"screenRTMSInfo.h"
+	"screenCurrentLightStatus.h"
+	"screenCurrentCommPacket.h"
+	"screenRedCountHWCheck.h"
+	"screenRedCountHWCheckSel.h"
+	"screenRedCountMenu.h"
+	"screenRedCountHWVerMenu.h"
+	"SCREENRedCountMap.h"
+	"screenReverseMenu.h"
+	"screenReverse.h"
+	"screenRevWeekDay.h"
+	"screenRevSpecialDay.h"
+	"screenActuateEdit.h"
+	"screenActuateBUSEdit.h"
+	"screenPassModeSet.h"
+	"SCREENDirMap.h"
+	"screenDirLightBoardMappingMenu.h"
+	"SCREENLightBoardMap.h"
+	"screenPlanEditF2.h"
+	"screenSegtypeEditF2.h"
+	"screenWeekDayEditF2.h"
+	"screenSpecialDayView.h"
+	"screenSpecialDayEditF2.h"
+	"screenPhasePreview.h"
+	"screenSegtypePreview.h"
+	"screenPlanPreview.h"
+	"SCREENLast92TCPlanSegmentUpdate.h"
+	"screenChainMenu.h"
+	"screenMotherChainSet.h"
+	"screenChildChainSet.h"
+	"screenChainStatus.h"
+	"screenLightPreview.h"
+	"screenLightEdit.h"
+	"SCREENNetworkSetConfirm.h"
+	"SCREENNetworkSet.h"
+	"SCREENNetmaskSet.h"
+	"SCREENMBSelect.h"
+	"SCREENUart2.h"
+	"SCREENWarning.h"
+	"SCREENTFDStatus.h"
+	"screenRedCountHWCheckDevID.h"
+	"screenRedCountHWCheckCycleNum.h"
+	"screenRedCountHWCheckNum88.h"
+	"screenRailwayChainSet.h"
+	"screenActuateArwenStatus.h"
+	"SCREENControlStrategyMenu.h"
+	"SCREENSystemInfoMenu.h"
+	"SCREENV3Related.h"
+	"screenActuateArwenManyStatus.h"
+	"screenActuateArwenManyStatus2.h"
+	"screenVDPhaseMapTable.h"
+	"screenVDPhaseMapTableEdit.h"
+	"SCREENActuateStrategyMenu.h"
+	"screenVDActPhaseEdit.h"
+	"screenFlashMode.h"
+	"ScreenActuateArwenMenu.h"
+	"ScreenActuateArwenFlashManyStatus.h"
+	"SCREENPedSignalMenu.h"
+	"SCREENPedSignalHWSet.h"
+	"SCREENPedSwitchStatus.h"
+	"screenActuateArwenVDInfo.h"
+	"screenActuatePlaySwitch.h"
+	"screenSegmentVDPhaseMapTableEdit.h"
+	"screenPriority.h"
+	"screenCompensationset.h"
+	"screenPriorityExtendsec.h"
+	"screenCommunication.h"
+	"screenPrioritymenu.h"
+	"screenCarLearn.h"
+	"screenPedLearn.h"
+	"screenCountdownProperty.h"
+	"screenCarCountdownProperty.h"
+	"screenPedCountdownProperty.h"
+	"CDataToMessageOK.h"
+	"CSTC.h"
+	"unistd.h"
+	<stdio.h>
+
+1437555508 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENLogo.h
+	"SCREEN.h"
+	"var.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENLogin.h
+	"SCREEN.h"
+
+1437555520 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENLoginErr.h
+	"SCREEN.h"
+
+1437555518 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENCtlNo.h
+	"SCREEN.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENLastDown.h
+	"SCREEN.h"
+
+1437555508 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENFWVerDT.h
+	"SCREEN.h"
+	"var.h"
+
+1437555518 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENHWCycle.h
+	"SCREEN.h"
+
+1437555508 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENModifyPWD.h
+	"SCREEN.h"
+
+1437555508 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENDBSetup.h
+	"SCREEN.h"
+
+1437555518 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENOperMode.h
+	"SCREEN.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENSendCycle.h
+	"SCREEN.h"
+
+1437555508 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENUpdateDB.h
+	"SCREEN.h"
+
+1437555518 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENOffline.h
+	"SCREEN.h"
+	"var.h"
+
+1437555508 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENLockdb.h
+	"SCREEN.h"
+	"var.h"
+
+1437555508 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENABOErr.h
+	"SCREEN.h"
+	"var.h"
+
+1437555508 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENCmdSet.h
+	"SCREEN.h"
+	"var.h"
+
+1437555519 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENLcnEncode.h
+	"SCREEN.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenPlan.h
+	"SCREEN.h"
+
+1437555518 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenWeekDay.h
+	"SCREEN.h"
+	"CSegmentInfo.h"
+
+1437555519 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenSegtype.h
+	"SCREEN.h"
+
+1437555520 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenSegtypeMenu.h
+	"SCREEN.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenSpecialDay.h
+	"SCREEN.h"
+	"CSegmentInfo.h"
+
+1437555508 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenSegtypeSel.h
+	"SCREEN.h"
+
+1437555520 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenRunTableList.h
+	"SCREEN.h"
+
+1437555518 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenRTMSInfo.h
+	"SCREEN.h"
+
+1437555520 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenRedCountHWCheck.h
+	"SCREEN.h"
+
+1437555519 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenRedCountMenu.h
+	"SCREEN.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenRedCountHWVerMenu.h
+	"SCREEN.h"
+
+1437555520 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENRedCountMap.h
+	"SCREEN.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenReverse.h
+	"SCREEN.h"
+	"CReverseTime.h"
+
+1437555519 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenRevWeekDay.h
+	"SCREEN.h"
+	"CReverseTime.h"
+
+1437555519 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenRevSpecialDay.h
+	"SCREEN.h"
+	"CReverseTime.h"
+
+1437555518 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenActuateEdit.h
+	"SCREEN.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenActuateBUSEdit.h
+	"SCREEN.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenPassModeSet.h
+	"SCREEN.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENDirMap.h
+	"SCREEN.h"
+
+1437555518 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenDirLightBoardMappingMenu.h
+	"SCREEN.h"
+
+1437555520 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENLightBoardMap.h
+	"SCREEN.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenPlanEditF2.h
+	"SCREEN.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenSegtypeEditF2.h
+	"SCREEN.h"
+
+1437555518 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenWeekDayEditF2.h
+	"SCREEN.h"
+	"CSegmentInfo.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenSpecialDayView.h
+	"SCREEN.h"
+	"CSegmentInfo.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenSpecialDayEditF2.h
+	"SCREEN.h"
+	"CSegmentInfo.h"
+
+1437555519 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenPhasePreview.h
+	"SCREEN.h"
+	"CSegmentInfo.h"
+
+1437555518 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenSegtypePreview.h
+	"SCREEN.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenPlanPreview.h
+	"SCREEN.h"
+
+1534147406 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENLast92TCPlanSegmentUpdate.h
+	"SCREEN.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenChainMenu.h
+	"SCREEN.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenMotherChainSet.h
+	"SCREEN.h"
+
+1437555508 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenChildChainSet.h
+	"SCREEN.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenLightPreview.h
+	"SCREEN.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenLightEdit.h
+	"SCREEN.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENNetworkSetConfirm.h
+	"SCREEN.h"
+	"var.h"
+
+1437555519 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENNetworkSet.h
+	"SCREEN.h"
+
+1437555520 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENNetmaskSet.h
+	"SCREEN.h"
+
+1437555518 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENMBSelect.h
+	"SCREEN.h"
+
+1437555508 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENUart2.h
+	"SCREEN.h"
+
+1437555519 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENWarning.h
+	"SCREEN.h"
+
+1437555508 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENTFDStatus.h
+	"SCREEN.h"
+	"var.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenRedCountHWCheckDevID.h
+	"SCREEN.h"
+
+1437555518 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenRedCountHWCheckCycleNum.h
+	"SCREEN.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenRedCountHWCheckNum88.h
+	"SCREEN.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenRailwayChainSet.h
+	"SCREEN.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENSystemInfoMenu.h
+	"SCREEN.h"
+	"var.h"
+
+1437555519 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENV3Related.h
+	"SCREEN.h"
+	"var.h"
+
+1437555520 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenVDPhaseMapTable.h
+	"SCREEN.h"
+	"CSegmentInfo.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenVDPhaseMapTableEdit.h
+	"SCREEN.h"
+	"CSegmentInfo.h"
+
+1437555519 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENActuateStrategyMenu.h
+	"SCREEN.h"
+	"var.h"
+
+1437555518 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenVDActPhaseEdit.h
+	"SCREEN.h"
+
+1437555520 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenFlashMode.h
+	"SCREEN.h"
+	<stdio.h>
+	<string.h>
+	"ConfigFile.h"
+
+1437555518 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/ScreenActuateArwenMenu.h
+	"SCREEN.h"
+
+1437555518 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENPedSignalMenu.h
+	"var.h"
+	"SCREEN.h"
+
+1437555519 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENPedSignalHWSet.h
+	"SCREEN.h"
+	"var.h"
+
+1437555519 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenActuatePlaySwitch.h
+	"SCREEN.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenSegmentVDPhaseMapTableEdit.h
+	"SCREEN.h"
+	"CSegmentInfo.h"
+
+1437555508 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenCompensationset.h
+	"SCREEN.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenPrioritymenu.h
+	"SCREEN.h"
+
+1437555519 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenCarLearn.h
+	"SCREEN.h"
+
+1437555507 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenPedLearn.h
+	"SCREEN.h"
+
+1437555519 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenCountdownProperty.h
+	"SCREEN.h"
+
+1437555518 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenCarCountdownProperty.h
+	"SCREEN.h"
+
+1437555520 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenPedCountdownProperty.h
+	"SCREEN.h"
+
+1472437961 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PDEVICEPEDPUSHBUTTON.cpp
+	"PDEVICEPEDPUSHBUTTON.h"
+	<stdio.h>
+	"SMEM.h"
+	"ConfigFile.h"
+	"CDataToMessageOK.h"
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PDEVICEREVMANUALPAD.cpp
+	"PDEVICEREVMANUALPAD.h"
+	"SMEM.h"
+	"WRITEJOB.h"
+	"CDataToMessageOK.h"
+	"CSTC.h"
+	"unistd.h"
+	<stdio.h>
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PDEVICERTMS.cpp
+	"PDEVICERTMS.h"
+
+1437555508 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PDEVICESS.cpp
+	"PDEVICESS.h"
+	"CHexToInt.h"
+	"CDataToMessageOK.h"
+	"SMEM.h"
+	"WRITEJOB.h"
+	<string.h>
+
+1453367883 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PDEVICETRAFFICLIGHT.cpp
+	"PDEVICETRAFFICLIGHT.h"
+	"SMEM.h"
+	"WRITEJOB.h"
+	"CDataToMessageOK.h"
+	"CSTC.h"
+	"CSTORINI.h"
+	<stdio.h>
+
+1473307248 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PROTOCOL.cpp
+	"PROTOCOL.h"
+
+1437555508 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PTRAFFIC.cpp
+	"PTRAFFIC.h"
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PTRAFFIC77.cpp
+	"PTRAFFIC77.h"
+
+1437555508 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PTRAFFIC87.cpp
+	"PTRAFFIC87.h"
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PTRAFFIC87CMS.cpp
+	"PTRAFFIC87CMS.h"
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PTRAFFIC87COMM.cpp
+	"PTRAFFIC87COMM.h"
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PTRAFFIC87TC.cpp
+	"PTRAFFIC87TC.h"
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PTRAFFIC87VD.cpp
+	"PTRAFFIC87VD.h"
+
+1437555518 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PTRAFFIC92.cpp
+	"PTRAFFIC92.h"
+	"WRITEJOB.h"
+	"SMEM.h"
+
+1437555519 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PTRAFFIC92BRT.cpp
+	"PTRAFFIC92BRT.h"
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+	"CTIMER.h"
+	<stdio.h>
+	<stdlib.h>
+	<error.h>
+	<math.h>
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+	"CTIMER.h"
+	"DIGITALIO.h"
+	"CHexToInt.h"
+	"CSTC.h"
+	"CTools.h"
+	"SMEM.h"
+	"time.h"
+
+1437555508 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PTRAFFIC92CMS.cpp
+	"PTRAFFIC92CMS.h"
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+	"CTIMER.h"
+	<stdio.h>
+	<stdlib.h>
+	<error.h>
+
+1535101496 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PTRAFFIC92COMM.cpp
+	"PTRAFFIC92COMM.h"
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+	"CTIMER.h"
+	"DIGITALIO.h"
+	"SCREENOnline.h"
+	"SCREENHWReset.h"
+	"CHexToInt.h"
+	"CSTC.h"
+	"READJOB.h"
+	<unistd.h>
+	<stdio.h>
+	<stdlib.h>
+	<error.h>
+
+1437555519 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/READJOB.h
+	"var.h"
+	"JOB.h"
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PTRAFFIC92COUNTDOWN.cpp
+	"PTRAFFIC92COUNTDOWN.h"
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+	"CTIMER.h"
+	<stdio.h>
+	<stdlib.h>
+	<error.h>
+	"DIGITALIO.h"
+	"CSTC.h"
+	"CTools.h"
+	"SMEM.h"
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PTRAFFIC92OTHER.cpp
+	"PTRAFFIC92OTHER.h"
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+	"CTIMER.h"
+	<stdio.h>
+	<stdlib.h>
+	<error.h>
+
+1535103351 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PTRAFFIC92TC.cpp
+	"PTRAFFIC92TC.h"
+	"shirink_app.h"
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+	"CTIMER.h"
+	"DIGITALIO.h"
+	"CHexToInt.h"
+	"CSTC.h"
+	"CTools.h"
+	"shirink_app.h"
+	"SCREENLast92TCPlanSegmentUpdate.h"
+	<unistd.h>
+	<stdio.h>
+	<stdlib.h>
+	<error.h>
+	<string.h>
+	<strings.h>
+	"SMEM.h"
+	"CTIMER.h"
+	"screenActuateBUSEdit.h"
+	"screenActuateArwenManyStatus2.h"
+	"screenActuateArwenManyStatus.h"
+
+1437555519 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PTRAFFIC92VD.cpp
+	"PTRAFFIC92VD.h"
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+	"CTIMER.h"
+	<stdio.h>
+	<stdlib.h>
+	<error.h>
+	"screenActuateArwenVDInfo.h"
+
+1534148353 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PTRAFFIC92WEB.cpp
+	"PTRAFFIC92WEB.h"
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+	"CSTC.h"
+	"SCREENLast92TCPlanSegmentUpdate.h"
+	"shirink_app.h"
+
+1534148434 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PTRAFFICAMEGIDS.cpp
+	"PTRAFFICAMEGIDS.h"
+	"shirink_app.h"
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+	"CTIMER.h"
+	"DIGITALIO.h"
+	"CHexToInt.h"
+	"CSTC.h"
+	"CTools.h"
+	"SCREENLast92TCPlanSegmentUpdate.h"
+	<unistd.h>
+	<stdio.h>
+	<stdlib.h>
+	<error.h>
+	<string.h>
+	"CTIMER.h"
+
+1534148442 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PTRAFFICCCJ.cpp
+	"PTRAFFICCCJ.h"
+	"shirink_app.h"
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+	"CTIMER.h"
+	"DIGITALIO.h"
+	"CHexToInt.h"
+	"CSTC.h"
+	"CTools.h"
+	"SCREENTFDStatus.h"
+	<unistd.h>
+	<stdio.h>
+	<stdlib.h>
+	<error.h>
+	<string.h>
+	"SCREENLast92TCPlanSegmentUpdate.h"
+	"screenActuateArwenStatus.h"
+	"SCREENMain.h"
+	"SCREENCtlSetup.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"CTIMER.h"
+	"CPlanInfo.h"
+	"CPhaseInfo.h"
+	"CSegmentInfo.h"
+
+1437555519 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PTRAFFICNTCIP.cpp
+	"PTRAFFICNTCIP.h"
+
+1437555817 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/PTRAFFICREVSYNC.cpp
+	"PTRAFFICREVSYNC.h"
+	"SMEM.h"
+	"WRITEJOB.h"
+	"CDataToMessageOK.h"
+	"CSTC.h"
+	"unistd.h"
+	<stdio.h>
+	<math.h>
+	<stdlib.h>
+
+1534212101 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/READJOB.cpp
+	"READJOB.h"
+	"PROTOCOL.h"
+	"SMEM.h"
+	"WRITEJOB.h"
+	"screenRedCountHWCheck.h"
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/RS232.cpp
+	"RS232.h"
+	<stdio.h>
+	<fcntl.h>
+	<termios.h>
+	<unistd.h>
+	<string.h>
+
+1437555519 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREEN.cpp
+	"SCREEN.h"
+	"LCD240x128.h"
+	<stdio.h>
+	<string.h>
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENABOErr.cpp
+	"SCREENABOErr.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"SCREENModifyDT.h"
+	"SCREENHWCycle.h"
+	"SCREENModifyPWD.h"
+	"SCREENDBSetup.h"
+	"SCREENSendCycle.h"
+	"SCREENMain.h"
+	"SCREENCtlSetup.h"
+	<stdio.h>
+
+1437555519 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENActuateArwenLongGreenStatus.cpp
+	"SCREENActuateArwenLongGreenStatus.h"
+
+1437555508 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENActuateArwenLongGreenStatus.h
+	"SCREEN.h"
+
+1437555837 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENActuateStrategyMenu.cpp
+	"SCREENActuateStrategyMenu.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"screenRunTableList.h"
+	"screenSegtypeMenu.h"
+	"screenVDPhaseMapTable.h"
+	"screenVDActPhaseEdit.h"
+	"screenFlashMode.h"
+	"screenPlan.h"
+	"SCREENControlStrategyMenu.h"
+	"CSTC.h"
+	<stdio.h>
+	"SMEM.h"
+	<time.h>
+	"ConfigFile.h"
+	<stdlib.h>
+
+1437555519 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENCmdSet.cpp
+	"SCREENCmdSet.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"SCREENMain.h"
+	"SCREENCtlSetup.h"
+	"SCREENFWVerDT.h"
+	"SCREENLockdb.h"
+	<stdio.h>
+
+1437555519 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENCommStat.cpp
+	"SCREENCommStat.h"
+	"SCREENMain.h"
+	"SCREENSystemInfoMenu.h"
+	"SCREENHWReset.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"DIGITALIO.h"
+	<unistd.h>
+	<stdio.h>
+	<stdlib.h>
+	<error.h>
+	"CSTC.h"
+	"WRITEJOB.h"
+
+1437555519 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENControlStrategyMenu.cpp
+	"SCREENControlStrategyMenu.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"screenRunTableList.h"
+	"screenSegtypeMenu.h"
+	"SCREENActuateStrategyMenu.h"
+	"screenPlan.h"
+	"CSTC.h"
+	<stdio.h>
+	"SMEM.h"
+	<time.h>
+
+1449640350 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENCtlNo.cpp
+	"SCREENCtlNo.h"
+	"SCREENMain.h"
+	"SCREENCtlSetup.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"SCREENABOErr.h"
+	"SCREENLcnEncode.h"
+	"SCREENHWReset.h"
+	"SCREENV3Related.h"
+	<stdlib.h>
+
+1437555508 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENCtlSetup.cpp
+	"SCREENCtlSetup.h"
+	"SCREENMain.h"
+	"SCREENLastDown.h"
+	"SCREENModifyDT.h"
+	"SCREENFWVerDT.h"
+	"SCREENHWCycle.h"
+	"SCREENModifyPWD.h"
+	"SCREENDBSetup.h"
+	"SCREENOperStat.h"
+	"SCREENOperMode.h"
+	"SCREENCommStat.h"
+	"SCREENTotalRun.h"
+	"screenCompensationset.h"
+	"screenRedCountMenu.h"
+	"screenActuateEdit.h"
+	"screenActuateBUSEdit.h"
+	"screenDirLightBoardMappingMenu.h"
+	"SCREENUpdateDB.h"
+	"screenCurrentCommPacket.h"
+	"screenPassModeSet.h"
+	"screenCountdownProperty.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	<time.h>
+
+1437555518 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENDBSetup.cpp
+	"SCREENDBSetup.h"
+	"SCREENMain.h"
+	"SCREENLockdb.h"
+	"SCREENABOErr.h"
+	"SCREENV3Related.h"
+	"LCD240x128.h"
+	"SMEM.h"
+
+1437555520 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENDirMap.cpp
+	"SCREENDirMap.h"
+	"SCREENMain.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+	"screenDirLightBoardMappingMenu.h"
+	"SCREENCtlSetup.h"
+
+1437555520 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENFWVerDT.cpp
+	"SCREENFWVerDT.h"
+	"SCREENMain.h"
+	"SCREENSystemInfoMenu.h"
+	"SCREENCmdSet.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"stdlib.h"
+
+1437555519 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENHWCycle.cpp
+	"SCREENHWCycle.h"
+	"SCREENMain.h"
+	"SCREENV3Related.h"
+	"SCREENLockdb.h"
+	"SCREENABOErr.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENHWReset.cpp
+	"SCREENHWReset.h"
+	"LCD240x128.h"
+	"SMEM.h"
+
+1534147406 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENLast92TCPlanSegmentUpdate.cpp
+	"SCREENLast92TCPlanSegmentUpdate.h"
+	"SCREENMain.h"
+	"SCREENCtlSetup.h"
+	"LCD240x128.h"
+	"SMEM.h"
+
+1437555520 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENLastDown.cpp
+	"SCREENLastDown.h"
+	"SCREENMain.h"
+	"SCREENSystemInfoMenu.h"
+	"LCD240x128.h"
+	"SMEM.h"
+
+1437555508 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENLcnEncode.cpp
+	"SCREENLcnEncode.h"
+	"SCREENMain.h"
+	"SCREENCtlSetup.h"
+	"SCREENCtlNo.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"SCREENLockdb.h"
+
+1437555520 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENLightBoardMap.cpp
+	"SCREENLightBoardMap.h"
+	"screenDirLightBoardMappingMenu.h"
+	"SCREENMain.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+	"SCREENCtlSetup.h"
+
+1437555518 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENLockdb.cpp
+	"SCREENLockdb.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"SCREENModifyDT.h"
+	"SCREENHWCycle.h"
+	"SCREENModifyPWD.h"
+	"SCREENDBSetup.h"
+	"SCREENSendCycle.h"
+	"SCREENCmdSet.h"
+	"SCREENLcnEncode.h"
+	"SCREENMain.h"
+	<stdio.h>
+
+1437555518 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENLogin.cpp
+	<string.h>
+	<stdlib.h>
+	"SCREENLogin.h"
+	"SCREENLoginErr.h"
+	"SCREENLogo.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"SCREENMain.h"
+
+1437555518 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENLoginErr.cpp
+	"SCREENLoginErr.h"
+	"SCREENLogo.h"
+	"SCREENLogin.h"
+	"LCD240x128.h"
+	"SMEM.h"
+
+1437555519 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENLogo.cpp
+	"SCREENLogo.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"SCREENLogin.h"
+	<stdio.h>
+	<stdlib.h>
+
+1437555519 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENMBSelect.cpp
+	"SCREENMBSelect.h"
+	"SCREENMain.h"
+	"SCREENOperStat.h"
+	"SCREENLockdb.h"
+	"SCREENWarning.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+
+1437555508 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENMain.cpp
+	"SCREENMain.h"
+	"SCREENLogo.h"
+	"SCREENCtlSetup.h"
+	"SCREENUpdateDB.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"screenSegtypeMenu.h"
+	"screenSegtype.h"
+	"screenPlan.h"
+	"screenRunTableList.h"
+	"screenRTMSInfo.h"
+	"screenReverseMenu.h"
+	"screenActuateEdit.h"
+	"SCREENDirMap.h"
+	"screenDirLightBoardMappingMenu.h"
+	"SCREENLast92TCPlanSegmentUpdate.h"
+	"screenChainMenu.h"
+	"SCREENControlStrategyMenu.h"
+	"SCREENNetworkSet.h"
+	"SCREENV3Related.h"
+	<time.h>
+
+1437555518 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENModifyDT.cpp
+	"SCREENModifyDT.h"
+	"SCREENMain.h"
+	"SCREENCtlSetup.h"
+	"SCREENLockdb.h"
+	"SMEM.h"
+	"LCD240x128.h"
+	"CTIMER.h"
+	"CSTC.h"
+	<stdio.h>
+	<stdlib.h>
+	<unistd.h>
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+	"var.h"
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENModifyPWD.cpp
+	"SCREENModifyPWD.h"
+	"SCREENMain.h"
+	"SCREENCtlSetup.h"
+	"SCREENLockdb.h"
+	"SCREENV3Related.h"
+	"LCD240x128.h"
+	"SMEM.h"
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENNetmaskSet.cpp
+	"SCREENNetworkSet.h"
+	"SCREENNetmaskSet.h"
+	"SCREENNetworkSetConfirm.h"
+	"SCREENMain.h"
+	"SCREENCtlSetup.h"
+	"LCD240x128.h"
+	"SMEM.h"
+
+1437555519 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENNetworkSet.cpp
+	"SCREENNetworkSet.h"
+	"SCREENNetmaskSet.h"
+	"SCREENNetworkSetConfirm.h"
+	"SCREENMain.h"
+	"SCREENSystemInfoMenu.h"
+	"LCD240x128.h"
+	"SMEM.h"
+
+1437555886 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENNetworkSetConfirm.cpp
+	"SCREENNetworkSetConfirm.h"
+	"SCREENNetworkSet.h"
+	"SCREENHWReset.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"DIGITALIO.h"
+	"CSTC.h"
+	"WRITEJOB.h"
+	<unistd.h>
+	<stdio.h>
+	<stdlib.h>
+	<error.h>
+	<strings.h>
+
+1437555508 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENNone.cpp
+	"SCREENNone.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"SCREENLogo.h"
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENOffline.cpp
+	"SCREENOffline.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"SMEM.h"
+	"SCREENLogo.h"
+
+1437555520 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENOnline.cpp
+	"SCREENOnline.h"
+	"SCREENLogo.h"
+	"SCREENMain.h"
+	"LCD240x128.h"
+	"SMEM.h"
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENOperMode.cpp
+	"SCREENOperMode.h"
+	"SCREENMain.h"
+	"SCREENCtlSetup.h"
+	"LCD240x128.h"
+	"SMEM.h"
+
+1437555518 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENOperStat.cpp
+	"SCREENOperStat.h"
+	"SCREENMain.h"
+	"SCREENCtlSetup.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"SCREENMBSelect.h"
+	"SCREENUart2.h"
+	<string.h>
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENPedSignalHWSet.cpp
+	"SCREENPedSignalHWSet.h"
+	"LCD240x128.h"
+	<stdio.h>
+	"SMEM.h"
+	"SCREENMain.h"
+	"SCREENPedSignalMenu.h"
+	"CSTORINI.h"
+
+1437555508 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENPedSignalMenu.cpp
+	"SCREENPedSignalMenu.h"
+	"LCD240x128.h"
+	<stdio.h>
+	"SMEM.h"
+	"screenActuateEdit.h"
+	"SCREENMain.h"
+	"SCREENCtlSetup.h"
+	"SCREENPedSignalHWSet.h"
+
+1456308568 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENPedSwitchStatus.cpp
+	"SCREENPedSwitchStatus.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"ScreenActuateArwenMenu.h"
+	"SMEM.h"
+	"SCREENHWReset.h"
+	<stdio.h>
+
+1437555518 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENRedCountMap.cpp
+	"SCREENRedCountMap.h"
+	"SCREENMain.h"
+	"screenRedCountMenu.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+
+1437555518 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENSendCycle.cpp
+	"SCREENSendCycle.h"
+	"SCREENMain.h"
+	"SCREENLockdb.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"SCREENABOErr.h"
+	"SCREENV3Related.h"
+	"SCREENCtlSetup.h"
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENSystemInfoMenu.cpp
+	"SCREENSystemInfoMenu.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"screenPlan.h"
+	"SCREENFWVerDT.h"
+	"SCREENCommStat.h"
+	"screenCurrentCommPacket.h"
+	"SCREENLastDown.h"
+	"CSTC.h"
+	<stdio.h>
+	"SMEM.h"
+
+1437555520 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENTFDStatus.cpp
+	"screenRunTableList.h"
+	"SCREENTFDStatus.h"
+	"SCREENLogo.h"
+	"SCREENMain.h"
+	"LCD240x128.h"
+	"SMEM.h"
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENTotalRun.cpp
+	"SCREENTotalRun.h"
+	"SCREENMain.h"
+	"SCREENCtlSetup.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	<time.h>
+	<stdio.h>
+	<stdlib.h>
+
+1449805164 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENUart2.cpp
+	"SCREENUart2.h"
+	"SCREENMain.h"
+	"SCREENOperStat.h"
+	"SCREENLockdb.h"
+	"SCREENWarning.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+
+1437555519 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENUpdateDB.cpp
+	"SCREENUpdateDB.h"
+	"SCREENMain.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+	"SCREENLast92TCPlanSegmentUpdate.h"
+
+1437555508 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENV3Related.cpp
+	"SCREENV3Related.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"SCREENCtlSetup.h"
+	"screenPlan.h"
+	"SCREENHWCycle.h"
+	"SCREENModifyPWD.h"
+	"SCREENDBSetup.h"
+	"SCREENCtlNo.h"
+	"SCREENSendCycle.h"
+	"CSTC.h"
+	<stdio.h>
+	"SMEM.h"
+
+1437555519 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SCREENWarning.cpp
+	"SCREENWarning.h"
+	"SCREENMain.h"
+	"SCREENMBSelect.h"
+	"SCREENUart2.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"SCREENHWReset.h"
+	"WRITEJOB.h"
+	<unistd.h>
+	<stdio.h>
+	<stdlib.h>
+	<error.h>
+	"CSTC.h"
+
+1559479458 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/SMEM.cpp
+	"SMEM.h"
+	"WRITEJOB.h"
+	"CDataToMessageOK.h"
+	"CTIMER.h"
+	"CSTC.h"
+	"DIGITALIO.h"
+	"CSTORINI.h"
+	"ConfigFile.h"
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<unistd.h>
+
+1526378101 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/STORAGE.cpp
+	"STORAGE.h"
+	<time.h>
+	<string.h>
+	<stdlib.h>
+	"WRITEJOB.h"
+	"SMEM.h"
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/ScreenActuateArwenFlashManyStatus.cpp
+	"ScreenActuateArwenFlashManyStatus.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"ScreenActuateArwenMenu.h"
+	"CSTC.h"
+	<stdio.h>
+	"WRITEJOB.h"
+	"CDataToMessageOK.h"
+	"SMEM.h"
+	"CPlanInfo.h"
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/ScreenActuateArwenMenu.cpp
+	"ScreenActuateArwenMenu.h"
+	"screenRunTableList.h"
+	"SCREENMain.h"
+	"screenActuateArwenManyStatus.h"
+	"screenActuateArwenManyStatus2.h"
+	"ScreenActuateArwenFlashManyStatus.h"
+	"SCREENPedSwitchStatus.h"
+	"screenActuateArwenVDInfo.h"
+	"screenActuateArwenStatus.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	<stdio.h>
+	<stdlib.h>
+
+1527499641 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/TCP.cpp
+	"TCP.h"
+	<stdio.h>
+	<sys/types.h>
+	<arpa/inet.h>
+	<unistd.h>
+	<string.h>
+	<errno.h>
+
+1527499615 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/TCP.h
+	"var.h"
+	"IODEVICE.h"
+	<sys/socket.h>
+	<netinet/in.h>
+	<netdb.h>
+	<pthread.h>
+
+1559480867 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/TCPserver.cpp
+	"TCPserver.h"
+	<iostream>
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<errno.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<unistd.h>
+	<climits>
+	<arpa/inet.h>
+
+1437555519 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/UDP.cpp
+	"UDP.h"
+	<stdio.h>
+	<sys/types.h>
+	<arpa/inet.h>
+	<unistd.h>
+	<string.h>
+
+1534212038 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/WRITEJOB.cpp
+	"WRITEJOB.h"
+	"SMEM.h"
+	"PROTOCOL.h"
+	"CHexToInt.h"
+	<unistd.h>
+	"screenCurrentCommPacket.h"
+
+1456283023 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/inifile.cpp
+	"inifile.h"
+	<algorithm>
+	<iostream>
+	<fstream>
+
+1525261501 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/json/json_reader.cpp
+	"reader.h"
+	"value.h"
+	"json_tool.h"
+	<utility>
+	<cstdio>
+	<cassert>
+	<cstring>
+	<iostream>
+	<stdexcept>
+
+1293471924 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/json/json_tool.h
+
+1525696948 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/json/json_value.cpp
+	"value.h"
+	"writer.h"
+	"json_batchallocator.h"
+	<iostream>
+	<utility>
+	<stdexcept>
+	<cstring>
+	<cassert>
+	<cpptl/conststring.h>
+	<cstddef>
+	"json_internalarray.inl"
+	"json_internalmap.inl"
+	"json_valueiterator.inl"
+
+1304372844 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/json/json_batchallocator.h
+	<stdlib.h>
+	<assert.h>
+
+1304372844 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/json/json_internalarray.inl
+
+1304372844 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/json/json_internalmap.inl
+
+1304372844 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/json/json_valueiterator.inl
+
+1525705586 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/json/json_writer.cpp
+	"writer.h"
+	"json_tool.h"
+	<utility>
+	<assert.h>
+	<stdio.h>
+	<string.h>
+	<iostream>
+	<sstream>
+	<iomanip>
+
+1525703807 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/json/jsoncpp_to_java.cpp
+	"jsoncpp_to_java.h"
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/light.cpp
+	"light.h"
+	<unistd.h>
+	<sys/perm.h>
+	<sys/io.h>
+
+1559482991 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/main.cpp
+	"var.h"
+	"SMEM.h"
+	"PARSETRAFFIC.h"
+	"PARSERTMS.h"
+	"PARSENMEA.h"
+	"PARSESS.h"
+	"READJOB.h"
+	"WRITEJOB.h"
+	"LCD240x128.h"
+	"DIGITALIO.h"
+	"CTIMER.h"
+	"CDataToMessageOK.h"
+	"temperatur_humidity_sensor.h"
+	"SCREENLogo.h"
+	"STORAGE.h"
+	<stdio.h>
+	<string.h>
+	<unistd.h>
+	<pthread.h>
+	<stdlib.h>
+	"CSTC.h"
+	"CSTORINI.h"
+	"CREATEXML.h"
+	<iostream>
+	"json/json.h"
+	<string.h>
+	<errno.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<climits>
+	"TCPserver.h"
+
+1437555508 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenActuateArwenManyStatus.cpp
+	"screenActuateArwenManyStatus.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"ScreenActuateArwenMenu.h"
+	"screenActuateArwenStatus.h"
+	"CSTC.h"
+	<stdio.h>
+	"WRITEJOB.h"
+	"CDataToMessageOK.h"
+	"SMEM.h"
+
+1437555519 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenActuateArwenManyStatus2.cpp
+	"screenActuateArwenManyStatus2.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"ScreenActuateArwenMenu.h"
+	"screenActuateArwenStatus.h"
+	"CSTC.h"
+	<stdio.h>
+	"WRITEJOB.h"
+	"CDataToMessageOK.h"
+	"SMEM.h"
+
+1456448588 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenActuateArwenStatus.cpp
+	"screenActuateArwenStatus.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"screenRunTableList.h"
+	"CSTC.h"
+	<stdio.h>
+	"WRITEJOB.h"
+	"CDataToMessageOK.h"
+	"SMEM.h"
+
+1437555518 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenActuateArwenVDInfo.cpp
+	"screenActuateArwenVDInfo.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"screenRunTableList.h"
+	"CSTC.h"
+	"ScreenActuateArwenMenu.h"
+	<stdio.h>
+	"SMEM.h"
+
+1437555518 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenActuateBUSEdit.cpp
+	"screenActuateBUSEdit.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"SCREENCtlSetup.h"
+	<stdio.h>
+	"SMEM.h"
+	<string.h>
+
+1437555518 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenActuateEdit.cpp
+	"screenActuateEdit.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"SCREENCtlSetup.h"
+	<stdio.h>
+	"SMEM.h"
+	<string.h>
+
+1437976061 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenActuatePlaySwitch.cpp
+	"screenActuatePlaySwitch.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"screenSegtype.h"
+	"SMEM.h"
+	"CSTC.h"
+	<stdio.h>
+	"ConfigFile.h"
+	"screenSegmentVDPhaseMapTableEdit.h"
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenCarCountdownProperty.cpp
+	"screenCarCountdownProperty.h"
+	"screenCountdownProperty.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"CSTC.h"
+	"SMEM.h"
+	<stdio.h>
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenCarLearn.cpp
+	"screenCarLearn.h"
+	"screenCountdownProperty.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"CSTC.h"
+	"SMEM.h"
+	<stdio.h>
+
+1437555508 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenChainMenu.cpp
+	"screenChainMenu.h"
+	"screenMotherChainSet.h"
+	"screenChildChainSet.h"
+	"screenRailwayChainSet.h"
+	<stdio.h>
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"SMEM.h"
+
+1437555519 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenChainStatus.cpp
+	"screenChainStatus.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"screenRunTableList.h"
+	"CSTC.h"
+	<stdio.h>
+	"SMEM.h"
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenChildChainSet.cpp
+	"screenChildChainSet.h"
+	"SCREENMain.h"
+	"screenChainMenu.h"
+	"SMEM.h"
+	"LCD240x128.h"
+	"CTIMER.h"
+	"CSTC.h"
+	<stdio.h>
+	<stdlib.h>
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+
+1437555519 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenCommunication.cpp
+	"screenCommunication.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"screenPrioritymenu.h"
+	"CSTC.h"
+	"SMEM.h"
+	<stdio.h>
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenCompensationset.cpp
+	"screenCompensationset.h"
+	"SCREENCtlSetup.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"screenRunTableList.h"
+	"CSTC.h"
+	"SMEM.h"
+	<stdio.h>
+
+1437555519 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenCountdownProperty.cpp
+	"screenCountdownProperty.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"SCREENCtlSetup.h"
+	"screenCarCountdownProperty.h"
+	"screenPedCountdownProperty.h"
+	"screenCarLearn.h"
+	"screenPedLearn.h"
+	"CSTC.h"
+	"SMEM.h"
+	<stdio.h>
+
+1534152718 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenCurrentCommPacket.cpp
+	"screenCurrentCommPacket.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"SCREENSystemInfoMenu.h"
+	"CSTC.h"
+	"SCREENNetworkSet.h"
+	<stdio.h>
+	<string.h>
+	"SMEM.h"
+
+1437555508 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenCurrentLightStatus.cpp
+	"screenCurrentLightStatus.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"screenRunTableList.h"
+	"CSTC.h"
+	<stdio.h>
+	"SMEM.h"
+
+1437555519 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenDirLightBoardMappingMenu.cpp
+	"screenDirLightBoardMappingMenu.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	<stdio.h>
+	"SMEM.h"
+	"SCREENDirMap.h"
+	"SCREENLightBoardMap.h"
+	"SCREENCtlSetup.h"
+
+1437555971 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenFlashMode.cpp
+	"screenFlashMode.h"
+	"SCREENControlStrategyMenu.h"
+	"screenVDPhaseMapTableEdit.h"
+	"var.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"SCREENCtlSetup.h"
+	<stdio.h>
+	"SMEM.h"
+	<string.h>
+	"CSTORINI.h"
+	"ConfigFile.h"
+	"SCREENActuateStrategyMenu.h"
+	"CPlanInfo.h"
+	"CPhaseInfo.h"
+	"CSTC.h"
+	<stdlib.h>
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenLightEdit.cpp
+	"screenLightEdit.h"
+	"screenSegtype.h"
+	"screenSegtypeEditF2.h"
+	"screenRunTableList.h"
+	"SCREENMain.h"
+	"screenWeekDay.h"
+	"LCD240x128.h"
+	"CSTC.h"
+	"screenPlan.h"
+	"screenLightPreview.h"
+	<stdio.h>
+	"SMEM.h"
+
+1437555518 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenLightPreview.cpp
+	"screenLightPreview.h"
+	"screenSegtype.h"
+	"screenSegtypeEditF2.h"
+	"screenRunTableList.h"
+	"SCREENMain.h"
+	"screenWeekDay.h"
+	"LCD240x128.h"
+	"CSTC.h"
+	"screenPlan.h"
+	"screenLightEdit.h"
+	<stdio.h>
+	"SMEM.h"
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenMotherChainSet.cpp
+	"screenMotherChainSet.h"
+	"SCREENMain.h"
+	"screenChainMenu.h"
+	"SMEM.h"
+	"LCD240x128.h"
+	"CTIMER.h"
+	"CSTC.h"
+	<stdio.h>
+	<stdlib.h>
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+
+1437555508 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenPassModeSet.cpp
+	"screenPassModeSet.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	<stdio.h>
+	"SMEM.h"
+	<string.h>
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenPedCountdownProperty.cpp
+	"screenPedCountdownProperty.h"
+	"screenCountdownProperty.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"CSTC.h"
+	"SMEM.h"
+	<stdio.h>
+
+1437555519 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenPedLearn.cpp
+	"screenPedLearn.h"
+	"screenCountdownProperty.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"CSTC.h"
+	"SMEM.h"
+	<stdio.h>
+
+1437555518 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenPhasePreview.cpp
+	"screenPhasePreview.h"
+	"SCREENMain.h"
+	"LCD240x128.h"
+	"screenPlanEditF2.h"
+	"screenPlan.h"
+	"CSTC.h"
+	"var.h"
+	<stdio.h>
+	"SMEM.h"
+
+1437555519 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenPlan.cpp
+	"screenPlan.h"
+	"screenSegtype.h"
+	"screenRunTableList.h"
+	"SCREENMain.h"
+	"screenWeekDay.h"
+	"LCD240x128.h"
+	"CSTC.h"
+	"screenPlanEditF2.h"
+	"screenPhasePreview.h"
+	"screenLightPreview.h"
+	<stdio.h>
+	"SMEM.h"
+
+1437555518 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenPlanEdit0523.cpp
+	"screenPlanEdit0523.h"
+	"screenRunTableList.h"
+	"SCREENMain.h"
+	"screenWeekDay.h"
+	"LCD240x128.h"
+	"CSTC.h"
+	<stdio.h>
+	"SMEM.h"
+
+1437555520 /home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenPlanEdit0523.h
+	"SCREEN.h"
+
+1437555519 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenPlanEditF2.cpp
+	"screenPlanEditF2.h"
+	"screenPlan.h"
+	"SCREENMain.h"
+	"LCD240x128.h"
+	"CSTC.h"
+	"screenPhasePreview.h"
+	<stdio.h>
+	"SMEM.h"
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenPlanPreview.cpp
+	"screenPlanPreview.h"
+	"screenSegtype.h"
+	"screenSegtypeEditF2.h"
+	"screenRunTableList.h"
+	"SCREENMain.h"
+	"screenWeekDay.h"
+	"LCD240x128.h"
+	"CSTC.h"
+	<stdio.h>
+	"SMEM.h"
+
+1437555508 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenPriority.cpp
+	"screenPriority.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"screenPrioritymenu.h"
+	"CSTC.h"
+	"SMEM.h"
+	<stdio.h>
+
+1437556003 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenPriorityExtendsec.cpp
+	"screenPriorityExtendsec.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"screenPrioritymenu.h"
+	"CSTC.h"
+	"SMEM.h"
+	<stdio.h>
+	<string.h>
+
+1437555508 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenPrioritymenu.cpp
+	"screenPrioritymenu.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"screenPriority.h"
+	"screenPriorityExtendsec.h"
+	"screenCommunication.h"
+	"screenRunTableList.h"
+	"CSTC.h"
+	"SMEM.h"
+	<stdio.h>
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenRTMSInfo.cpp
+	"screenRTMSInfo.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	<stdio.h>
+	"SMEM.h"
+
+1437555508 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenRailwayChainSet.cpp
+	"screenRailwayChainSet.h"
+	"SCREENMain.h"
+	"screenChainMenu.h"
+	"SMEM.h"
+	"LCD240x128.h"
+	"CTIMER.h"
+	"CSTC.h"
+	<stdio.h>
+	<stdlib.h>
+	"CDataToMessageOK.h"
+	"WRITEJOB.h"
+
+1437555508 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenRedCountHWCheck.cpp
+	"screenRedCountHWCheck.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"screenRunTableList.h"
+	"CSTC.h"
+	"WRITEJOB.h"
+	"CDataToMessageOK.h"
+	"screenRedCountMenu.h"
+	"screenRedCountHWCheckSel.h"
+	<stdio.h>
+	"SMEM.h"
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenRedCountHWCheckCycleNum.cpp
+	"screenRedCountHWCheckCycleNum.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"screenRedCountMenu.h"
+	"WRITEJOB.h"
+	"CDataToMessageOK.h"
+	<stdio.h>
+	"SMEM.h"
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenRedCountHWCheckDevID.cpp
+	"screenRedCountHWCheckDevID.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"screenRedCountMenu.h"
+	"WRITEJOB.h"
+	"CDataToMessageOK.h"
+	<stdio.h>
+	"SMEM.h"
+
+1437555508 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenRedCountHWCheckNum88.cpp
+	"screenRedCountHWCheckNum88.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"screenRedCountMenu.h"
+	"WRITEJOB.h"
+	"CDataToMessageOK.h"
+	<stdio.h>
+	"SMEM.h"
+
+1471590548 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenRedCountHWCheckSel.cpp
+	"screenRedCountHWCheckSel.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"screenRedCountHWCheck.h"
+	"screenRedCountMenu.h"
+	<stdio.h>
+	"SMEM.h"
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenRedCountHWVerMenu.cpp
+	"screenRedCountHWVerMenu.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	<stdio.h>
+	<stdlib.h>
+	"CSTC.h"
+	"WRITEJOB.h"
+	"SMEM.h"
+	"screenRedCountMenu.h"
+	"SCREENHWReset.h"
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenRedCountMenu.cpp
+	"screenRedCountMenu.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	<stdio.h>
+	"CSTC.h"
+	"SMEM.h"
+	"screenRedCountHWCheckSel.h"
+	"screenRedCountHWVerMenu.h"
+	"SCREENRedCountMap.h"
+	"screenRedCountHWCheckDevID.h"
+	"screenRedCountHWCheckNum88.h"
+	"screenRedCountHWCheckCycleNum.h"
+	"SCREENCtlSetup.h"
+
+1437555518 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenRevSpecialDay.cpp
+	"screenRevSpecialDay.h"
+	"screenReverse.h"
+	"screenReverseMenu.h"
+	"SCREENMain.h"
+	"LCD240x128.h"
+	"CSTC.h"
+	"var.h"
+	<stdio.h>
+	"SMEM.h"
+
+1437555519 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenRevWeekDay.cpp
+	"screenRevWeekDay.h"
+	"SCREENMain.h"
+	"screenReverse.h"
+	"screenReverseMenu.h"
+	"LCD240x128.h"
+	"CSTC.h"
+	<stdio.h>
+	"SMEM.h"
+
+1455761724 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenReverse.cpp
+	"screenReverse.h"
+	"screenReverseMenu.h"
+	"SCREENMain.h"
+	"LCD240x128.h"
+	"CSTC.h"
+	"var.h"
+	<stdio.h>
+	"SMEM.h"
+
+1437555508 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenReverseMenu.cpp
+	"screenReverseMenu.h"
+	<stdio.h>
+	"screenRevWeekDay.h"
+	"screenRevSpecialDay.h"
+	"CSTC.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"SMEM.h"
+
+1437555508 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenRunTableList.cpp
+	"screenRunTableList.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"screenStrategy.h"
+	"screenSegtype.h"
+	"screenCurrentLightStatus.h"
+	"screenPlan.h"
+	"CSTC.h"
+	"SCREENTFDStatus.h"
+	"screenChainStatus.h"
+	"ScreenActuateArwenMenu.h"
+	"SCREENSystemInfoMenu.h"
+	"screenPrioritymenu.h"
+	<stdio.h>
+	"SMEM.h"
+
+1437555518 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenSegmentVDPhaseMapTableEdit.cpp
+	"screenSegmentVDPhaseMapTableEdit.h"
+	"screenVDPhaseMapTable.h"
+	"SCREENMain.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"CSTORINI.h"
+	"SCREENActuateStrategyMenu.h"
+	"screenActuatePlaySwitch.h"
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenSegtype.cpp
+	"screenSegtype.h"
+	"screenSegtypeMenu.h"
+	"screenSegtypeEditF2.h"
+	"screenWeekDay.h"
+	"screenSpecialDay.h"
+	"screenSegtypeSel.h"
+	"screenRunTableList.h"
+	"screenActuatePlaySwitch.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"SMEM.h"
+	"screenPlan.h"
+	"CSTC.h"
+	<stdio.h>
+
+1437555518 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenSegtypeEditF2.cpp
+	"screenSegtypeEditF2.h"
+	"screenSegtype.h"
+	"screenSegtypeMenu.h"
+	"screenPlanPreview.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"SMEM.h"
+	"screenPlan.h"
+	"CSTC.h"
+	<stdio.h>
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenSegtypeMenu.cpp
+	"screenSegtypeMenu.h"
+	"screenWeekDay.h"
+	"screenSpecialDay.h"
+	"screenSegtypeSel.h"
+	<stdio.h>
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"SCREENControlStrategyMenu.h"
+	"SMEM.h"
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenSegtypePreview.cpp
+	"screenSegtypePreview.h"
+	"screenSegtype.h"
+	"screenWeekDayEditF2.h"
+	"screenWeekDay.h"
+	"screenSpecialDay.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"SMEM.h"
+	"screenPlan.h"
+	"CSTC.h"
+	<stdio.h>
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenSegtypeSel.cpp
+	"screenSegtypeSel.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"screenSegtypeMenu.h"
+	"screenSegtype.h"
+	<stdio.h>
+	"SMEM.h"
+
+1437555508 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenSpecialDay.cpp
+	"screenSpecialDay.h"
+	"screenSpecialDayView.h"
+	"SCREENMain.h"
+	"screenSegtype.h"
+	"screenSegtypeMenu.h"
+	"LCD240x128.h"
+	"CSTC.h"
+	<stdio.h>
+	"SMEM.h"
+
+1437555520 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenSpecialDayEditF2.cpp
+	"screenSpecialDayEditF2.h"
+	"screenSpecialDayView.h"
+	"screenSpecialDay.h"
+	"screenSegtype.h"
+	"screenSegtypeMenu.h"
+	"SCREENMain.h"
+	"LCD240x128.h"
+	"CSTC.h"
+	"var.h"
+	<stdio.h>
+	"SMEM.h"
+
+1437555519 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenSpecialDayView.cpp
+	"screenSpecialDayView.h"
+	"screenSpecialDayEditF2.h"
+	"screenSpecialDay.h"
+	"screenSegtype.h"
+	"screenSegtypeMenu.h"
+	"SCREENMain.h"
+	"LCD240x128.h"
+	"CSTC.h"
+	"var.h"
+	<stdio.h>
+	"SMEM.h"
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenStrategy.cpp
+	"screenStrategy.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"screenRunTableList.h"
+	"CSTC.h"
+	<stdio.h>
+	"SMEM.h"
+
+1437556055 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenVDActPhaseEdit.cpp
+	"screenVDActPhaseEdit.h"
+	"SCREENControlStrategyMenu.h"
+	"screenVDPhaseMapTableEdit.h"
+	"var.h"
+	"LCD240x128.h"
+	"SCREENMain.h"
+	"SCREENCtlSetup.h"
+	<stdio.h>
+	"SMEM.h"
+	<string.h>
+	<stdlib.h>
+	"CSTORINI.h"
+	"ConfigFile.h"
+	"SCREENActuateStrategyMenu.h"
+
+1437555508 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenVDPhaseMapTable.cpp
+	"screenVDPhaseMapTable.h"
+	"screenVDPhaseMapTableEdit.h"
+	"SCREENMain.h"
+	"SCREENControlStrategyMenu.h"
+	"LCD240x128.h"
+	"SMEM.h"
+
+1437555508 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenVDPhaseMapTableEdit.cpp
+	"screenVDPhaseMapTableEdit.h"
+	"screenVDPhaseMapTable.h"
+	"SCREENMain.h"
+	"LCD240x128.h"
+	"SMEM.h"
+	"CSTORINI.h"
+	"SCREENActuateStrategyMenu.h"
+
+1437555507 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenWeekDay.cpp
+	"screenWeekDay.h"
+	"screenWeekDayEditF2.h"
+	"SCREENMain.h"
+	"screenSegtype.h"
+	"screenSegtypeMenu.h"
+	"LCD240x128.h"
+	"CSTC.h"
+	<stdio.h>
+	"SMEM.h"
+
+1437555519 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/screenWeekDayEditF2.cpp
+	"screenWeekDayEditF2.h"
+	"screenWeekDay.h"
+	"SCREENMain.h"
+	"screenSegtype.h"
+	"screenSegtypeMenu.h"
+	"LCD240x128.h"
+	"CSTC.h"
+	<stdio.h>
+	"screenSegtypePreview.h"
+	"SMEM.h"
+
+1535108716 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/shirink_app.cpp
+	"shirink_app.h"
+	"SMEM.h"
+	"CTIMER.h"
+	"screenLightEdit.h"
+	"SCREENLast92TCPlanSegmentUpdate.h"
+	"PTRAFFIC92COMM.h"
+	"PTRAFFIC92TC.h"
+	"CSTC.h"
+
+1559479458 source:/home/cct/Desktop/Untitled4/has_been_log/shrink_app_server_tc/tc/temperatur_humidity_sensor.cpp
+	"temperatur_humidity_sensor.h"
+	"CTIMER.h"
+	"SMEM.h"
+	"CSTC.h"
+

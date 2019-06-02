@@ -27,6 +27,9 @@ TCPserver::~TCPserver()
 }
 int  TCPserver::HandleTCPClient( int clntSocket )
 {
+
+    printf("HandleTCPClient\n");
+
     char  echoBuffer[RCVBUFSIZE];        // Buffer for echo string
     int     recvMsgSize;                   // Size of received message
     int readSelectLength;
@@ -67,7 +70,7 @@ int  TCPserver::HandleTCPClient( int clntSocket )
 void* TCPserver::pthread_func(void *arg)
 {
     shirink_app  TcData=getTcData();
-
+    printf("TCPserver::pthread_func\n");
     int             tcpServSock;     // Socket descriptors for TCP server
     long            timeout;         // Timeout value given on command-line
 
@@ -219,6 +222,7 @@ void TCPserver::tcp_thread_generate()
 }
 int TCPserver::AcceptTCPConnection( int servSock )
 {
+    printf("AcceptTCPConnection\n");
     int                 clntSock;     // Socket descriptor for client
     struct sockaddr_in  echoClntAddr; // Client address
     unsigned int        clntLen;      // Length of client address data structure
@@ -242,6 +246,7 @@ int TCPserver::AcceptTCPConnection( int servSock )
 }
 int TCPserver::CreateTCPServerSocket(unsigned short port)
 {
+    printf("CreateTCPServerSocket port=%d\n",port);
     int sock;                        // socket to create
     struct sockaddr_in echoServAddr; // Local address
 
@@ -276,6 +281,7 @@ int TCPserver::CreateTCPServerSocket(unsigned short port)
 }
 bool TCPserver::parsTCP_JsonV3Content(char buff[4096],int connfd)
 {
+    printf("parsTCP_JsonV3Content connfd=%d\n",connfd);
     Json::Value JsonObjForAp;
     Json::Reader reader;
     shirink_app ShrinkAppDriver;
@@ -515,6 +521,8 @@ shirink_app TCPserver::getTcData()
 {
     try
     {
+
+        printf("getTcData\n");
         shirink_app TcData;
 
 
