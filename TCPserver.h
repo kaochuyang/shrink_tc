@@ -20,7 +20,7 @@ class TCPserver
 public:
     TCPserver();
     virtual ~TCPserver();
-    bool parsTCP_JsonV3Content(BYTE ReceiveBuff[4096],int connfd);
+    bool parsTCP_JsonV3Content(char ReceiveBuff[4096],int connfd);
     static void tcp_thread_generate();  //argc, argv is the parameter of main
     static void *pthread_func(void *);
     static shirink_app getTcData();

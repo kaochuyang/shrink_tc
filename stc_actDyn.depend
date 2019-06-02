@@ -2733,7 +2733,7 @@
 1538315372 /home/cct/桌面/shirink_app_tc/shrink_tc/var.h
 	<time.h>
 
-1559448177 /home/cct/桌面/shirink_app_tc/shrink_tc/SMEM.h
+1559448764 /home/cct/桌面/shirink_app_tc/shrink_tc/SMEM.h
 	"var.h"
 	"STORAGE.h"
 	"RS232.h"
@@ -2934,7 +2934,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1539159412 source:/home/cct/桌面/shirink_app_tc/shrink_tc/CSTC.cpp
+1559448764 source:/home/cct/桌面/shirink_app_tc/shrink_tc/CSTC.cpp
 	"CSTC.h"
 	"math.h"
 	"light.h"
@@ -3045,7 +3045,7 @@
 	<string.h>
 	"CSTC.h"
 
-1559448443 /home/cct/桌面/shirink_app_tc/shrink_tc/TCPserver.h
+1559448903 /home/cct/桌面/shirink_app_tc/shrink_tc/TCPserver.h
 	"shirink_app.h"
 	"json/json.h"
 	<stdio.h>
@@ -3407,7 +3407,7 @@
 	<sys/perm.h>
 	<sys/io.h>
 
-1539160236 source:/home/cct/桌面/shirink_app_tc/shrink_tc/main.cpp
+1559448765 source:/home/cct/桌面/shirink_app_tc/shrink_tc/main.cpp
 	"var.h"
 	"SMEM.h"
 	"PARSETRAFFIC.h"
@@ -5373,7 +5373,7 @@
 	"PTRAFFIC92TC.h"
 	"CSTC.h"
 
-1559448177 source:/home/cct/桌面/shirink_app_tc/shrink_tc/SMEM.cpp
+1559448764 source:/home/cct/桌面/shirink_app_tc/shrink_tc/SMEM.cpp
 	"SMEM.h"
 	"WRITEJOB.h"
 	"CDataToMessageOK.h"
@@ -5412,7 +5412,7 @@
 	<netdb.h>
 	<pthread.h>
 
-1559441818 source:/home/cct/桌面/shirink_app_tc/shrink_tc/TCPserver.cpp
+1559448764 source:/home/cct/桌面/shirink_app_tc/shrink_tc/TCPserver.cpp
 	"TCPserver.h"
 	<iostream>
 	<string.h>
@@ -5427,7 +5427,7 @@
 	<climits>
 	<arpa/inet.h>
 
-1539156430 source:/home/cct/桌面/shirink_app_tc/shrink_tc/temperatur_humidity_sensor.cpp
+1559448765 source:/home/cct/桌面/shirink_app_tc/shrink_tc/temperatur_humidity_sensor.cpp
 	"temperatur_humidity_sensor.h"
 	"CTIMER.h"
 	"SMEM.h"

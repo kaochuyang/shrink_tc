@@ -15,6 +15,7 @@
 #define MAXLINE 4096
 
 using namespace std;
+TCPserver _tcpserver;
 TCPserver::TCPserver()
 {
     //ctor
@@ -26,7 +27,7 @@ TCPserver::~TCPserver()
 }
 int  TCPserver::HandleTCPClient( int clntSocket )
 {
-    BYTE    echoBuffer[RCVBUFSIZE];        // Buffer for echo string
+    char  echoBuffer[RCVBUFSIZE];        // Buffer for echo string
     int     recvMsgSize;                   // Size of received message
     int readSelectLength;
     bzero( echoBuffer, RCVBUFSIZE );
@@ -216,7 +217,64 @@ void TCPserver::tcp_thread_generate()
     pthread_attr_destroy( & attr );
 
 }
-bool TCPserver::parsTCP_JsonV3Content(BYTE buff[4096],int connfd)
+int TCPserver::AcceptTCPConnection( int servSock )
+{
+    int                 clntSock;     // Socket descriptor for client
+    struct sockaddr_in  echoClntAddr; // Client address
+    unsigned int        clntLen;      // Length of client address data structure
+
+    // Set the size of the in-out parameter
+    clntLen = sizeof( echoClntAddr );
+
+    // Wait for a client to connect
+    if ( ( clntSock = accept( servSock, (struct sockaddr *) &echoClntAddr, &clntLen ) ) < 0 )
+    {
+        perror("accept() failed");
+        exit(1);
+    }
+
+    // clntSock is connected to a client!
+
+    printf( "Handling client %s:%d (%d)\n", inet_ntoa( echoClntAddr.sin_addr ),
+            ntohs( echoClntAddr.sin_port ), clntSock );
+
+    return clntSock;
+}
+int TCPserver::CreateTCPServerSocket(unsigned short port)
+{
+    int sock;                        // socket to create
+    struct sockaddr_in echoServAddr; // Local address
+
+    // Create socket for incoming connections
+    if ( ( sock = socket( PF_INET, SOCK_STREAM, IPPROTO_TCP ) ) < 0 )
+    {
+        perror( "socket() failed" );
+        exit(1);
+    }
+
+    // Construct local address structure
+    memset( &echoServAddr, 0, sizeof( echoServAddr ) );     // Zero out structure
+    echoServAddr.sin_family = AF_INET;                      // Internet address family
+    echoServAddr.sin_addr.s_addr = htonl( INADDR_ANY );     // Any incoming interface
+    echoServAddr.sin_port = htons( port );                  // Local port
+
+    // Bind to the local address
+    if ( bind(sock, (struct sockaddr *) &echoServAddr, sizeof( echoServAddr ) ) < 0 )
+    {
+        perror( "bind() failed" );
+        exit(1);
+    }
+
+    // Mark the socket so it will listen for incoming connections
+    if ( listen( sock, MAXPENDING ) < 0 )
+    {
+        perror( "listen() failed" );
+        exit(1);
+    }
+
+    return sock;
+}
+bool TCPserver::parsTCP_JsonV3Content(char buff[4096],int connfd)
 {
     Json::Value JsonObjForAp;
     Json::Reader reader;
@@ -448,7 +506,7 @@ bool TCPserver::parsTCP_JsonV3Content(BYTE buff[4096],int connfd)
     }
     catch(exception e)
     {
-        smem.vWriteMsgToDOM(e);
+     printf("%s\n",e);
     }
 
 }
