@@ -2051,7 +2051,7 @@ int main(int argc, char* argv[])
                                         case (0xda):
 
 
-     _tcpserver.tcp_thread_generate();        //OT Fix 950727   LCN0000
+//     _tcpserver.tcp_thread_generate();        //OT Fix 950727   LCN0000
                                         break;
                                         case (0xdb):
 
