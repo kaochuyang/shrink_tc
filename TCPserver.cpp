@@ -66,7 +66,7 @@ int  TCPserver::HandleTCPClient( int clntSocket )
 }
 void* TCPserver::pthread_func(void *arg)
 {
-    shirink_app  TcData=getTcData();
+    ShrinkAppDriver=getTcData();
 
     int             tcpServSock;     // Socket descriptors for TCP server
     long            timeout;         // Timeout value given on command-line
@@ -85,7 +85,7 @@ void* TCPserver::pthread_func(void *arg)
     int                     noEvents;               // EPOLL event number.
 
 
-    timeout =60;//atol( argv[1] );      // First arg: Timeout
+    timeout =-1;//atol( argv[1] );      // First arg: Timeout
     portNo =smem.GetLocalIP1(5);// atoi( argv[2] );
 
     // Create epoll file descriptor.
@@ -119,11 +119,12 @@ void* TCPserver::pthread_func(void *arg)
         // Wait for events.
         // int epoll_wait(int epfd, struct epoll_event *events, int maxevents, int timeout);
         // Specifying a timeout of -1 makes epoll_wait() wait indefinitely.
-        noEvents = epoll_wait( epfd, events, FD_SETSIZE , ( timeout * 1000 ) );
+        noEvents = epoll_wait( epfd, events, FD_SETSIZE , (timeout) );
 
         if ( noEvents <= 0 )
         {
             printf("No echo requests for %ld secs...Server still alive\n", timeout);
+            smem.vWriteMsgToDOM("No echo requests for %ld secs...Server still alive\n");
             continue;
         }
 
@@ -278,7 +279,7 @@ bool TCPserver::parsTCP_JsonV3Content(char buff[4096],int connfd)
 {
     Json::Value JsonObjForAp;
     Json::Reader reader;
-    shirink_app ShrinkAppDriver;
+
     string check;
     int chek=0;
     Json::Value object_c;
@@ -506,7 +507,9 @@ bool TCPserver::parsTCP_JsonV3Content(char buff[4096],int connfd)
     }
     catch(exception e)
     {
-     printf("%s\n",e);
+//     printf("%s\n",e);
+    smem.vWriteMsgToDOM("parsTCP_JsonV3Content exception\n");
+
     }
 
 }

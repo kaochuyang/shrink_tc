@@ -2733,7 +2733,7 @@
 1538315372 /home/cct/桌面/shirink_app_tc/shrink_tc/var.h
 	<time.h>
 
-1559923449 /home/cct/桌面/shirink_app_tc/shrink_tc/SMEM.h
+1559980123 /home/cct/桌面/shirink_app_tc/shrink_tc/SMEM.h
 	"var.h"
 	"STORAGE.h"
 	"RS232.h"
@@ -3045,7 +3045,7 @@
 	<string.h>
 	"CSTC.h"
 
-1559923449 /home/cct/桌面/shirink_app_tc/shrink_tc/TCPserver.h
+1559981591 /home/cct/桌面/shirink_app_tc/shrink_tc/TCPserver.h
 	"shirink_app.h"
 	"json/json.h"
 	<stdio.h>
@@ -3407,7 +3407,7 @@
 	<sys/perm.h>
 	<sys/io.h>
 
-1559926059 source:/home/cct/桌面/shirink_app_tc/shrink_tc/main.cpp
+1560008696 source:/home/cct/桌面/shirink_app_tc/shrink_tc/main.cpp
 	"var.h"
 	"SMEM.h"
 	"PARSETRAFFIC.h"
@@ -5398,7 +5398,7 @@
 	<netdb.h>
 	<pthread.h>
 
-1559924354 source:/home/cct/桌面/shirink_app_tc/shrink_tc/TCPserver.cpp
+1560007469 source:/home/cct/桌面/shirink_app_tc/shrink_tc/TCPserver.cpp
 	"TCPserver.h"
 	<iostream>
 	<string.h>
@@ -5435,7 +5435,7 @@
 	<unistd.h>
 	"screenCurrentCommPacket.h"
 
-1559926199 source:/home/cct/桌面/shirink_app_tc/shrink_tc/SMEM.cpp
+1559980123 source:/home/cct/桌面/shirink_app_tc/shrink_tc/SMEM.cpp
 	"SMEM.h"
 	"WRITEJOB.h"
 	"CDataToMessageOK.h"

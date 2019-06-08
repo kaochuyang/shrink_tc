@@ -25,6 +25,7 @@ public:
     static void *pthread_func(void *);
     static shirink_app getTcData();
     string StringForSend;
+    static shirink_app ShrinkAppDriver;
     int     CreateTCPServerSocket( unsigned short );
     int     AcceptTCPConnection( int );
     int     HandleTCPClient( int );

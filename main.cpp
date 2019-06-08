@@ -2049,9 +2049,8 @@ int main(int argc, char* argv[])
                                     switch(revAPP_messagein.packet[1])
                                     {
                                         case (0xda):
-
-
-//     _tcpserver.tcp_thread_generate();        //OT Fix 950727   LCN0000
+                                        //if the tcp_thread was dead, shrink app would invoke the thread.
+                                        _tcpserver.tcp_thread_generate();
                                         break;
                                         case (0xdb):
 
